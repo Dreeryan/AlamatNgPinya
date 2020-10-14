@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 389
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -338,21 +338,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UI/Main
+    - Assets/Scripts/Main
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/UI/Main
+  - Assets/Scripts/Main
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Raphael Antonio\Documents\GitHub\SenshiPinya\Senshi
     Pinya
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 14}
-    m_SelectedIDs: 3c3a0000
-    m_LastClickedID: 14908
-    m_ExpandedIDs: 00000000cc380000d8380000dc38000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 4a390000
+    m_LastClickedID: 14666
+    m_ExpandedIDs: 000000003c3900003e3900004c39000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -380,7 +380,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cc380000
+    m_ExpandedIDs: 000000003c3900003e390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -473,7 +473,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 183
+  m_LastVerticalScrollValue: 0
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -503,9 +503,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 5c3a0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 32d8fffff6e6ffffb8e7fffffae7ffff10ebffffe6f0ffff1ef8ffff28f8ffff48f8ffff66f8ffff92f8ffff5efbffff223a0000
+      m_ExpandedIDs: 5efbffffac380000ec380000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -565,9 +565,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 618.3812, y: 299.91946, z: -381.875}
+    m_Target: {x: 672.1509, y: 264.6732, z: -388.9848}
     speed: 2
-    m_Value: {x: 618.3812, y: 299.91946, z: -381.875}
+    m_Value: {x: 672.1509, y: 264.6732, z: -388.9848}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -617,9 +617,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 369.23325
+    m_Target: 440.3175
     speed: 2
-    m_Value: 386.63168
+    m_Value: 440.3175
   m_Ortho:
     m_Target: 1
     speed: 2

@@ -11,25 +11,36 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-   
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Left click to move
         if (Input.GetMouseButton(0))
         {
             targetPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPoint.z = transform.position.z;
+            isMoving = true;
             print("Left click!");
         }
 
-        Movement();
+        if (isMoving)
+        {
+            Movement();
+        }
+
     }
 
+    // Player movement
     void Movement()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPoint, speed * Time.deltaTime);
         transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPoint);
+        if (transform.position == targetPoint)
+        {
+            isMoving = false;
+        }
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour
 {
+    [SerializeField] Interactable interactable;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,4 +18,11 @@ public class UIController : MonoBehaviour
     {
         
     }
+
+    // Play the minigame
+    public void Play()
+    {
+        interactable.LoadMinigame();
+    }
+
 }

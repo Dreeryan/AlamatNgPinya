@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] Text nameText;
+    [SerializeField] Text dialogueText;
+    [SerializeField] GameObject dialogueBox;
     private Queue<string> sentences;
 
     void Start()
     {
         sentences = new Queue<string>();
+        dialogueBox.SetActive(false);
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("You're talking to " + dialogue.name);
-
+        dialogueBox.SetActive(true);
+        nameText.text = dialogue.name;
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
@@ -34,11 +38,12 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+        dialogueText.text = sentence;
     }
 
     void EndDialogue()
     {
+        dialogueBox.SetActive(false);
         Debug.Log("End Dialogue");
     }
 }

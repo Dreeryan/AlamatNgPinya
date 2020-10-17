@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour
     
     }
 
-    // Load the minigame
+    // Loads the minigame scene
     public void LoadMinigame()
     {
         SceneManager.LoadScene("CleanUp");
@@ -29,6 +29,7 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // If the player collides with the Item, the button will appear
         if (collision.gameObject.CompareTag("Player"))
         {
             itemButton.gameObject.SetActive(true);
@@ -37,6 +38,7 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
+        // If the player collides with the Item and stay, the button will appear
         if (collision.gameObject.CompareTag("Player"))
         {
             itemButton.gameObject.SetActive(true);
@@ -46,6 +48,7 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
+        // If the player is already far from the Item, the button will disappear
         if (collision.gameObject.CompareTag("Player"))
         {
             itemButton.gameObject.SetActive(false);

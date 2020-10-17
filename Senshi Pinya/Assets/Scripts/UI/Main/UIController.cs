@@ -19,7 +19,7 @@ public class UIController : MonoBehaviour
         
     }
 
-    // Play the minigame
+    // Calls the loadminigame function to load minigame scene
     public void Play()
     {
         interactable.LoadMinigame();

@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
             targetPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPoint.z = transform.position.z;
             isMoving = true;
-            print("Left click!");
         }
 
         if (isMoving)

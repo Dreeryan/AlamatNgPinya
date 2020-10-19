@@ -351,20 +351,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts/UI/Main
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts/UI/Main
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Raphael Antonio\Documents\SenshiPinya\Senshi Pinya
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 803a0000
-    m_LastClickedID: 14976
-    m_ExpandedIDs: 000000007e3a0000803a0000823a000000ca9a3b
+    m_SelectedIDs: ae3a0000
+    m_LastClickedID: 15022
+    m_ExpandedIDs: 000000007e3a0000803a0000823a00008c3a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,9 +576,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.01433152, y: 1.9600416, z: -1.0421171}
+    m_Target: {x: 0.25584388, y: 1.9124836, z: -1.0663855}
     speed: 2
-    m_Value: {x: 0.01433152, y: 1.9600416, z: -1.0421171}
+    m_Value: {x: 0.25584388, y: 1.9124836, z: -1.0663855}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -628,9 +628,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.394509
+    m_Target: 5.637262
     speed: 2
-    m_Value: 5.394509
+    m_Value: 5.637262
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -684,9 +684,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a23a0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 10fbffff
+      m_SelectedIDs: 303a0000
+      m_LastClickedID: 14896
+      m_ExpandedIDs: 5afbffff243a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

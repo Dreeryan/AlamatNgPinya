@@ -2584,6 +2584,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GetTimeLeft: 0
   maxTime: 10
+  isCountingUp: 0
+  isCountingDown: 1
   OnTimerEnd:
     m_PersistentCalls:
       m_Calls: []

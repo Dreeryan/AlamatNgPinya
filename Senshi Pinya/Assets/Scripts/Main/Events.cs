@@ -12,7 +12,7 @@ public class Events : MonoBehaviour
     private void OnMouseOver()
     {
         Debug.Log("Cursor above " + gameObject.name);
-        if (Input.GetMouseButtonDown(0)) OnObjectClick.Invoke();
+        if (Input.GetMouseButtonDown(0)) OnObjectClick.Invoke();  // Calls the event if object is clicked on;
     }
 
 }

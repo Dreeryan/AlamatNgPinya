@@ -17,7 +17,7 @@ public class AskObjective : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Time remaining until objective disappears: " + currentSeconds);
+        //Debug.Log("Time remaining until objective disappears: " + currentSeconds);
         currentSeconds -= 1 * Time.deltaTime;
 
         if (currentSeconds <= 0)

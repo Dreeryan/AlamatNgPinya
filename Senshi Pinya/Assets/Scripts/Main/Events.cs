@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Events : MonoBehaviour
 {
-    [SerializeField] GameObject object1;
+    [SerializeField] private GameObject object1;
     public UnityEvent OnObjectClick;
 
     private void OnMouseOver()

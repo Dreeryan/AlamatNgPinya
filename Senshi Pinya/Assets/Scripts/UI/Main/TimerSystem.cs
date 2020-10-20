@@ -4,48 +4,47 @@ using UnityEngine;
 using UnityEngine.Events;
 public class TimerSystem : MonoBehaviour
 {
-    [SerializeField] float GetTimeLeft;
+    [SerializeField] float currentTime;
     [SerializeField] float maxTime;
     [SerializeField] bool isCountingUp;
     [SerializeField] bool isCountingDown;
-    public UnityEvent OnTimerEnd;
 
     void Start()
     {
-        
+        currentTime = 0;
+        currentTime = maxTime;
     }
 
     void Update()
     {
-        if (isCountingUp == true && isCountingDown == false) StartCoroutine(StartCountUpTimer(1));
-        if (isCountingDown == true && isCountingUp == false) StartCoroutine(StartCountDownTimer(1)); 
+        if (isCountingUp == true && isCountingDown == false) StartCountUpTimer(); // Starts if isCountingUp is ticked
+        if (isCountingDown == true && isCountingUp == false) StartCountDownTimer(); // Starts if isCountingDown is ticked
     }
 
-    public IEnumerator StartCountUpTimer(float seconds)
+    public void StartCountUpTimer() // Count Up Timer
     {
         Debug.Log("Counting up");
-        GetTimeLeft = 0;
-        GetTimeLeft += seconds * Time.deltaTime;
-        if (GetTimeLeft >= maxTime) 
+        currentTime += 1 * Time.deltaTime;
+        if (currentTime >= maxTime) 
         {
-            GetTimeLeft = 0;
-            StopCoroutine(StartCountUpTimer(0));
+            ResetTimer();
         }
-
-        yield return new WaitForSeconds(seconds);
     }
 
-    public IEnumerator StartCountDownTimer(float seconds)
+    public void StartCountDownTimer() // Count Down Timer
     {
         Debug.Log("Counting down");
-        GetTimeLeft = maxTime;
-        GetTimeLeft -= seconds * Time.deltaTime;
-        if (GetTimeLeft <= 0)
+        currentTime -= 1 * Time.deltaTime;
+        if (currentTime <= 0)
         {
-            GetTimeLeft = 0;
-            StopCoroutine(StartCountDownTimer(0));
+            ResetTimer();
         }
-        yield return new WaitForSeconds(seconds);
+    }
+
+    private void ResetTimer()
+    {
+        if (isCountingUp == true && isCountingDown == false) currentTime = 0; // Resets CountUpTimer when reaching maxTime
+        if (isCountingDown == true && isCountingUp == false) currentTime = maxTime; // Resets CountDownTimer when reaching maxTime
     }
 
 }

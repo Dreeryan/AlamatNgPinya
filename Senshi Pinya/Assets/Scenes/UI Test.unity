@@ -2582,13 +2582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc01b583661f374aa3d1d092ae3fc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GetTimeLeft: 0
+  currentTime: 0
   maxTime: 10
   isCountingUp: 0
   isCountingDown: 1
-  OnTimerEnd:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1828808951
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AskObjective : MonoBehaviour
 {
-    [SerializeField] GameObject objectives;
-    [SerializeField] float currentSeconds;
-    [SerializeField] float resetTime;
+    [SerializeField] private GameObject objectives;
+    [SerializeField] private float currentSeconds;
+    [SerializeField] private float resetTime;
     // Start is called before the first frame update
     void Start()
     {

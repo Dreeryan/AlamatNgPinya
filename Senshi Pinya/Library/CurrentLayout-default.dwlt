@@ -75,7 +75,11 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 196
+=======
+  controlID: 76
+>>>>>>> 0a46b19dfd1c19c568d0da3d75450268f240ab02
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -97,7 +101,11 @@ MonoBehaviour:
     height: 947
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
+<<<<<<< HEAD
   m_ActualView: {fileID: 16}
+=======
+  m_ActualView: {fileID: 15}
+>>>>>>> 0a46b19dfd1c19c568d0da3d75450268f240ab02
   m_Panes:
   - {fileID: 16}
   m_Selected: 0
@@ -173,7 +181,11 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 112
+=======
+  controlID: 97
+>>>>>>> 0a46b19dfd1c19c568d0da3d75450268f240ab02
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -216,7 +228,11 @@ MonoBehaviour:
     height: 631
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+<<<<<<< HEAD
   m_ActualView: {fileID: 14}
+=======
+  m_ActualView: {fileID: 13}
+>>>>>>> 0a46b19dfd1c19c568d0da3d75450268f240ab02
   m_Panes:
   - {fileID: 15}
   - {fileID: 14}
@@ -290,7 +306,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -328,7 +344,7 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -351,20 +367,26 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UI/Main
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/UI/Main
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Raphael Antonio\Documents\SenshiPinya\Senshi Pinya
+  m_LastProjectPath: C:\Users\Paul Lopez\Documents\SenshiPinya\Senshi Pinya
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 923a0000
     m_LastClickedID: 14994
     m_ExpandedIDs: 00000000783a00007a3a00007c3a00008c3a000000ca9a3b
+=======
+    m_SelectedIDs: 883a0000
+    m_LastClickedID: 14984
+    m_ExpandedIDs: 00000000863a0000883a00008a3a0000903a000000ca9a3b
+>>>>>>> 0a46b19dfd1c19c568d0da3d75450268f240ab02
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -392,7 +414,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000783a00007a3a00007c3a0000
+=======
+    m_ExpandedIDs: 00000000863a0000883a00008a3a0000
+>>>>>>> 0a46b19dfd1c19c568d0da3d75450268f240ab02
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -464,7 +490,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -556,7 +582,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -671,7 +697,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -684,9 +710,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 82320000
       m_LastClickedID: 0
       m_ExpandedIDs: 1afbffff
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: fcfaffff
+>>>>>>> 0a46b19dfd1c19c568d0da3d75450268f240ab02
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

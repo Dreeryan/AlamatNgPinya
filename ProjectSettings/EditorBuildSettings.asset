@@ -18,17 +18,20 @@ EditorBuildSettings:
     path: Assets/Scenes/UI Test.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/MinigameSelection.unity
+    guid: 04fa1cecf81af5642be71a02825c7f93
+  - enabled: 1
     path: Assets/Scenes/Minigames/CookPorridge.unity
     guid: 8dd30a390d7ae5441adb7e352b96c526
   - enabled: 1
     path: Assets/Scenes/Minigames/DishWashing.unity
     guid: 5309c12825509674abceab4bfcf51d7c
   - enabled: 1
-    path: Assets/Scenes/Minigames/EggsToDishrack.unity
-    guid: dd43c1bac285ee44b8b73c1d7a162dff
-  - enabled: 1
     path: Assets/Scenes/Minigames/FeedAnimals.unity
     guid: 22ad49e97a9fca84db7d2a8adf7f9e29
+  - enabled: 1
+    path: Assets/Scenes/Minigames/PlatesAtDishrack.unity
+    guid: 6be607dec73ddf34890bedaa206bfbc5
   - enabled: 1
     path: Assets/Scenes/Minigames/FloorSweeping.unity
     guid: c36409289b92d824d8a64ca0d7107614

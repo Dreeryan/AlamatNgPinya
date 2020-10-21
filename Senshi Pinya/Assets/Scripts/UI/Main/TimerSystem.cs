@@ -17,12 +17,12 @@ public class TimerSystem : MonoBehaviour
 
     }
 
-    public float GetTimeLeft(TimerType type)
+    /*public float GetTimeLeft(TimerType type)
     {
         if (type == TimerType.CountUp) return timer; // Starts if isCountingUp is ticked
 
         if (type == TimerType.CountDown) return (timer - currentTime); // Starts if isCountingDown is ticked
-    }
+    }*/
 
     IEnumerator StartTimer(float seconds)
     {

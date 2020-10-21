@@ -18,6 +18,33 @@ EditorBuildSettings:
     path: Assets/Scenes/UI Test.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/CleanUp.unity
+    path: Assets/Scenes/Minigames/CleanUp.unity
     guid: f9997b20055ad0b45b796444d2db54f2
+  - enabled: 1
+    path: Assets/Scenes/Minigames/CookPorridge.unity
+    guid: 8dd30a390d7ae5441adb7e352b96c526
+  - enabled: 1
+    path: Assets/Scenes/Minigames/DishWashing.unity
+    guid: 5309c12825509674abceab4bfcf51d7c
+  - enabled: 1
+    path: Assets/Scenes/Minigames/EggsToDishrack.unity
+    guid: dd43c1bac285ee44b8b73c1d7a162dff
+  - enabled: 1
+    path: Assets/Scenes/Minigames/FeedAnimals.unity
+    guid: 22ad49e97a9fca84db7d2a8adf7f9e29
+  - enabled: 1
+    path: Assets/Scenes/Minigames/FloorSweeping.unity
+    guid: c36409289b92d824d8a64ca0d7107614
+  - enabled: 1
+    path: Assets/Scenes/Minigames/FoldLaundry.unity
+    guid: 862c6d84551477a46bbde95c347e742f
+  - enabled: 1
+    path: Assets/Scenes/Minigames/GrabEggs.unity
+    guid: f273e896280065049b3d8c49f8e5c3fd
+  - enabled: 1
+    path: Assets/Scenes/Minigames/HangLaundry.unity
+    guid: 4a65d479c9352c346984b54c39be8baf
+  - enabled: 1
+    path: Assets/Scenes/Minigames/PlantWatering.unity
+    guid: ad47eb91ea535794bb972fd81fb34dd5
   m_configObjects: {}

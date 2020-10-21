@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] Text nameText;
-    [SerializeField] Text dialogueText;
-    [SerializeField] GameObject dialogueBox;
+    [SerializeField] private Text nameText;
+    [SerializeField] private Text dialogueText;
+    [SerializeField] private GameObject dialogueBox;
     private Queue<string> sentences;
 
     void Start()
@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue) // Used to start the dialogue UI
     {
         dialogueBox.SetActive(true);
         nameText.text = dialogue.name;
@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence() // For Continue button to proceed to the next sentence
     {
-        if (sentences.Count == 0)
+        if (sentences.Count == 0) // Ends the dialogue if all sentences are finished
         {
             EndDialogue();
             return;

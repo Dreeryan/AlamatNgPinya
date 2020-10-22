@@ -2,39 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
+
+public enum TimerType
+{
+    CountUp,
+    CountDown
+}
+
 public class TimerSystem : MonoBehaviour
 {
-    public enum TimerType { CountUp, CountDown}
+    [SerializeField] private TextMeshProUGUI timerText;
 
     private float timer;
-    private float currentTime;
-
+    private float timeSet;
+          
     public UnityEvent OnTimerEnd;
 
-    void Start()
+    private void Update()
     {
-        StartCoroutine(StartTimer(5f));
-
+        // For testing purposes
+        timerText.text = Mathf.RoundToInt(GetTimeLeft(TimerType.CountUp)).ToString();
     }
 
-    /*public float GetTimeLeft(TimerType type)
+    public float GetTimeLeft(TimerType type)
     {
-        if (type == TimerType.CountUp) return timer; // Starts if isCountingUp is ticked
+        if (type == TimerType.CountUp) return timer; 
 
-        if (type == TimerType.CountDown) return (timer - currentTime); // Starts if isCountingDown is ticked
-    }*/
+        if (type == TimerType.CountDown) return timeSet -timer; 
 
-    IEnumerator StartTimer(float seconds)
+        else return 0f;
+    }
+
+    private IEnumerator StartTimer(float seconds)
     {
-        currentTime = seconds;
-        Debug.Log("Timer Start");
-        yield return new WaitForSeconds(seconds); // Waits for how many seconds in the start before invoking the event 
+        // Stores the timeset on call
+        timeSet = seconds;
+
+        while (timer <= timeSet)
+        {
+            // Timer logic
+            timer += 1 * Time.deltaTime;
+        }
+        // Invokes when timer ends
         OnTimerEnd.Invoke();
+        yield return new WaitForSeconds(0.1f);
+    }
+
+    public void StartTimers(float seconds)
+    {
+        StartCoroutine(StartTimer(seconds));
     }
 
     public void StopTimer()
     {
-        Time.timeScale = 0f;
         StopCoroutine("StartTimer");
         Debug.Log("Stopped timer");
     }

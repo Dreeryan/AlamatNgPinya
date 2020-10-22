@@ -12,8 +12,8 @@ public enum TimerType
 
 public class TimerSystem : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI timerText;
-
+    [SerializeField] private TextMeshProUGUI countUpTimerText;
+    [SerializeField] private TextMeshProUGUI countDownTimerText;
     private float timer;
     private float timeSet;
           
@@ -22,31 +22,33 @@ public class TimerSystem : MonoBehaviour
     private void Update()
     {
         // For testing purposes
-        timerText.text = Mathf.RoundToInt(GetTimeLeft(TimerType.CountUp)).ToString();
+        countUpTimerText.text = Mathf.RoundToInt(GetTimeLeft(TimerType.CountUp)).ToString();
+        countDownTimerText.text = Mathf.RoundToInt(GetTimeLeft(TimerType.CountDown)).ToString();
     }
 
     public float GetTimeLeft(TimerType type)
     {
         if (type == TimerType.CountUp) return timer; 
 
-        if (type == TimerType.CountDown) return timeSet -timer; 
+        if (type == TimerType.CountDown) return timeSet - timer; 
 
         else return 0f;
     }
 
-    private IEnumerator StartTimer(float seconds)
+    public IEnumerator StartTimer(float seconds)
     {
-        // Stores the timeset on call
         timeSet = seconds;
-
+        
+        // Stores the timeset on call
         while (timer <= timeSet)
         {
+            yield return null;
             // Timer logic
             timer += 1 * Time.deltaTime;
         }
+
         // Invokes when timer ends
         OnTimerEnd.Invoke();
-        yield return new WaitForSeconds(0.1f);
     }
 
     public void StartTimers(float seconds)
@@ -57,6 +59,5 @@ public class TimerSystem : MonoBehaviour
     public void StopTimer()
     {
         StopCoroutine("StartTimer");
-        Debug.Log("Stopped timer");
     }
 }

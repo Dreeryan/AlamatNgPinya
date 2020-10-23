@@ -14,6 +14,7 @@ public class TimerSystem : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI countUpTimerText;
     [SerializeField] private TextMeshProUGUI countDownTimerText;
+
     private float timer;
     private float timeSet;
           
@@ -21,7 +22,7 @@ public class TimerSystem : MonoBehaviour
 
     private void Update()
     {
-        // For testing purposes
+        // For testing purposes: Prints time to Text
         countUpTimerText.text = Mathf.RoundToInt(GetTimeLeft(TimerType.CountUp)).ToString();
         countDownTimerText.text = Mathf.RoundToInt(GetTimeLeft(TimerType.CountDown)).ToString();
     }

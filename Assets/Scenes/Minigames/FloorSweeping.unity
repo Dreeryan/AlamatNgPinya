@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 684779498}
   - component: {fileID: 684779497}
   - component: {fileID: 684779496}
-  - component: {fileID: 684779495}
+  - component: {fileID: 684779494}
   m_Layer: 0
   m_Name: Broom
   m_TagString: Broom
@@ -644,7 +644,7 @@ Transform:
   m_Father: {fileID: 978452791}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &684779495
+--- !u!114 &684779494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -653,9 +653,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 684779492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a11977cfe931e31459d456e7107fd9f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 91082076aecc48e43a858ba797988e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 206580261}
 --- !u!50 &684779496
 Rigidbody2D:
   serializedVersion: 4
@@ -1455,7 +1456,7 @@ GameObject:
   - component: {fileID: 1493699591}
   - component: {fileID: 1493699590}
   m_Layer: 0
-  m_Name: Sweepable
+  m_Name: Sweepable Object
   m_TagString: SweepableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1488,6 +1489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   broom: {fileID: 684779492}
+  pushStrength: 500
 --- !u!50 &1493699591
 Rigidbody2D:
   serializedVersion: 4

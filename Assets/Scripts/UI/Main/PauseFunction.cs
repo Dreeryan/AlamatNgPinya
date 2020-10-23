@@ -16,21 +16,29 @@ public class PauseFunction : MonoBehaviour
 
     public void Pause()
     {
-        Time.timeScale = 0.0f; // Freezes the game
-        pauseButton.SetActive(false); // Hides Pause Button
-        PauseMenu.SetActive(true); // Opens Pause Menu UI
+        // Freezes the game
+        Time.timeScale = 0.0f;
+        // Hides Pause Button
+        pauseButton.SetActive(false);
+        // Opens Pause Menu UI
+        PauseMenu.SetActive(true); 
     }
 
-    public void Resume() // Continues the game via timescale and closes pause menu
+    // Continues the game via timescale and closes pause menu
+    public void Resume() 
     {
-        Time.timeScale = 1.0f; // Unfreezes the game
-        pauseButton.SetActive(true); // Shows Pause Button
-        PauseMenu.SetActive(false); // Closes Pause Menu UI
+        // Unfreezes the game
+        Time.timeScale = 1.0f;
+        // Shows Pause Button
+        pauseButton.SetActive(true);
+        // Closes Pause Menu UI
+        PauseMenu.SetActive(false); 
     }
 
     public void MainMenu()
     {
-        Time.timeScale = 1.0f; 
-        SceneManager.LoadScene("MainMenu"); // Switches to the Main Menu scene
+        Time.timeScale = 1.0f;
+        // Switches to the Main Menu scene
+        SceneManager.LoadScene("MainMenu"); 
     }
 }

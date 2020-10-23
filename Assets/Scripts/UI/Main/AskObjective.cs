@@ -5,8 +5,8 @@ using UnityEngine;
 public class AskObjective : MonoBehaviour
 {
     [SerializeField] private GameObject objectives;
-    [SerializeField] private float currentSeconds;
-    [SerializeField] private float resetTime;
+    [SerializeField] private float      currentSeconds;
+    [SerializeField] private float      resetTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,7 @@ public class AskObjective : MonoBehaviour
     {
         currentSeconds -= 1 * Time.deltaTime;
 
+        // Hides the objectives UI if time runs out 
         if (currentSeconds <= 0)
         {
             currentSeconds = 0;
@@ -26,6 +27,7 @@ public class AskObjective : MonoBehaviour
         }
     }
 
+    // Resets seconds and shows objectives UI
     public void StartTime()
     {
         currentSeconds = resetTime;

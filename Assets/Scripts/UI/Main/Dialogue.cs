@@ -6,6 +6,7 @@ public class Dialogue : MonoBehaviour
 {
     public string name;
 
-    [TextArea(3, 10)] // Resizes the text area for the dialogue boxes in the inspector
+    // Resizes the text area for the dialogue boxes in the inspector
+    [TextArea(3, 10)] 
     public string[] sentences;
 }

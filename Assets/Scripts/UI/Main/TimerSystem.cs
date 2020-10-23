@@ -59,6 +59,7 @@ public class TimerSystem : MonoBehaviour
 
     public void StopTimer()
     {
-        StopCoroutine("StartTimer");
+        StopCoroutine(StartTimer(0));
+        Debug.Log("Work");
     }
 }

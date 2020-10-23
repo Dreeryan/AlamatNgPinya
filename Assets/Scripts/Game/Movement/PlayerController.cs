@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     private Vector3 targetPoint;
-    private bool isMoving;
+    public bool isMoving;
 
     // Start is called before the first frame update
     void Start()

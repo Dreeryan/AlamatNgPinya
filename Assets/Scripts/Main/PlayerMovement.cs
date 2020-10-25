@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+	//A: Explicitly private
     [Header("Variables")]
     Vector3 targetPoint;
     public float moveSpeed = 5f;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
             isMoving = true;
         }
 
+		//A: Can const the vector instead of new since it will instantiate a new vector which is expensive
         // If the mouse position is less than -1, the player's y rotation axis will be flipped to 180
         if (targetPoint.x < -1)
         {
@@ -49,7 +51,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // To move the player to the desired position
         transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
-
+		
+		//A: Be careful with exact checks like this, floating point will cause bugs
         if (transform.position == targetPoint)
         {
             isMoving = false;

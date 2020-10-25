@@ -6,6 +6,7 @@ using TMPro;
 
 public class Dish : MonoBehaviour
 {
+	//A: Explicitly private
     [SerializeField] Sponge sponge;
 
     [Header("Variables")]
@@ -19,12 +20,16 @@ public class Dish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		//A: Null check
         cleanRateText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+		//A: Is it not possible to do this into a method thats called when the player cleans it
+		// rather than per frame
+		
         // If the current clean rate is equal to the max clean rate
         if (currentCleanRate > maxRate)
         {
@@ -40,6 +45,7 @@ public class Dish : MonoBehaviour
         // If the dish is staying within the sponge
         if (collision.gameObject.CompareTag("Sponge"))
         {
+			//A: Null check
             cleanRateText.gameObject.SetActive(true);
             sponge = collision.gameObject.GetComponent<Sponge>();
             cleanRateText.text = "Current clean rate: " + currentCleanRate.ToString("f0") + "%";

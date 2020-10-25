@@ -10,6 +10,7 @@ public class AskObjective : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		//A: Nullcheck
         currentSeconds = 0;
         objectives.SetActive(false);
     }

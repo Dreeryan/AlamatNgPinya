@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPoint, speed * Time.deltaTime);
         transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPoint);
+		
+		//A: Be careful with this kind of exact check, 
+		//a hidden floating point will cause bugs for this bool
         if (transform.position == targetPoint)
         {
             isMoving = false;

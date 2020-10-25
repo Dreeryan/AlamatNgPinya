@@ -6,6 +6,7 @@ using TMPro;
 
 public class Sponge : MonoBehaviour
 {
+	//A: Explicitly private
     [SerializeField] Dish dish;
 
     private Vector2 mousePos;
@@ -38,6 +39,8 @@ public class Sponge : MonoBehaviour
         if (collision.gameObject.CompareTag("Dish"))
         {
             dish = collision.gameObject.GetComponent<Dish>();
+			
+			//A: Null check
             dish.currentCleanRate += fillRate * Time.deltaTime;
         }
     }

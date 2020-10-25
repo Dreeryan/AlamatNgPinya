@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CleanToy : MonoBehaviour
 {
+	//A: Explicitly private
     [Header("Variables")]
     [SerializeField] CarryController carryController;
     [SerializeField] public Transform itemHolder;
@@ -27,6 +28,7 @@ public class CleanToy : MonoBehaviour
 
     public void ItemHolderPosition()
     {
+		//A: Null check item holder
         // To put the item in the holder.
         transform.position = new Vector2(itemHolder.transform.position.x, itemHolder.transform.position.y);
     }

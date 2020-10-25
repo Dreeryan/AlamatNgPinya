@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CarryController : MonoBehaviour
 {
+	//A: Explicitly private 
     [Header("Variables")]
     [SerializeField] CleanToy cleanToy;
     public Transform itemDetector;
@@ -15,6 +16,9 @@ public class CarryController : MonoBehaviour
         if (collision.gameObject.CompareTag("Item"))
         {
             cleanToy = collision.gameObject.GetComponent<CleanToy>();
+			
+			//A: You will want to make this into a method since you are doing the same sequence thrice
+			//with minimal changes
             collision.gameObject.transform.parent = itemCarrier;
             collision.gameObject.transform.position = itemCarrier.position;
             collision.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;

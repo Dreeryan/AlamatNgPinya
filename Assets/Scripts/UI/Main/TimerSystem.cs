@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
-
+//A: You dont need an enum for this. You can just use a bool if its only 2 arguments
 public enum TimerType
 {
     CountUp,
@@ -12,6 +12,7 @@ public enum TimerType
 
 public class TimerSystem : MonoBehaviour
 {
+	//A: You can just use 1 text to show the value. Do not duplicate, this will make things hard to maintain
     [SerializeField] private TextMeshProUGUI countUpTimerText;
     [SerializeField] private TextMeshProUGUI countDownTimerText;
 
@@ -22,6 +23,7 @@ public class TimerSystem : MonoBehaviour
 
     private void Update()
     {
+		//A: Nullcheck
         // For testing purposes: Prints time to Text
         countUpTimerText.text = Mathf.RoundToInt(GetTimeLeft(TimerType.CountUp)).ToString();
         countDownTimerText.text = Mathf.RoundToInt(GetTimeLeft(TimerType.CountDown)).ToString();

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SelectionScene : MonoBehaviour
 {
+	//A: This entire script is gonna be a pain in the future.
+	// I recommend instead to have the function take in a string sceneName then load that sceneName
+	
     // Loads the clean up minigame
     public void PlayCleanUpMinigame()
     {

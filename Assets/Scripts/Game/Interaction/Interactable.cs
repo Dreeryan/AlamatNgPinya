@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour
 {
+	//A: Explicitly private
     [SerializeField] Button itemButton;
     private bool isNear;
 
     // Start is called before the first frame update
     void Start()
     {
+		//A: Nullcheck
         itemButton.gameObject.SetActive(false);
     }
 
@@ -29,6 +31,7 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+		//A: Nullcheck
         // If the player collides with the Item, the button will appear
         if (collision.gameObject.CompareTag("Player"))
         {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
+	//A: Explicitly private the variables and methods
     Animator anim;
     PlayerController controller;
     PlayerMovement movement;
@@ -19,6 +20,8 @@ public class PlayerAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		//A: Null check anim first before accessing
+		//A: You will want to do specific triggers than keeping this in update		
         // Walking animation
         anim.SetBool("IsWalking", controller.isMoving);
 

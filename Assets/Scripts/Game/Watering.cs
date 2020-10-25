@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Watering : MonoBehaviour
 {
+	//A: Explicitly private
     [Header("Variables")]
     [Tooltip("The amount to be reached")]
     [SerializeField] float maxFill;
@@ -21,9 +22,11 @@ public class Watering : MonoBehaviour
     void Start()
     {
         // hide the bar at the start
+		//A: Null check
         fillBar.SetActive(false);
 
         // warnings for the designer
+		//A: Can instead add a default value for the float instead so it can work when design just wants to test function before balancing
         if (maxFill <= 0) Debug.LogWarning("maxFill Variable not set or set to a value below 0");
         if (fillRate <= 0) Debug.LogWarning("fillAmount Variable not set or set to a value below 0");
 
@@ -48,11 +51,12 @@ public class Watering : MonoBehaviour
                 // clamping of values
                 fillAmount = maxFill;
 
+				//A: You null check it here so game can keep running
                 // hide the bar when its full
                 fillBar.SetActive(false);
             }
         }
-
+		
         UpdateUI();
     }
 

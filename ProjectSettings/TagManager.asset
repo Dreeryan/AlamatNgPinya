@@ -8,6 +8,8 @@ TagManager:
   - Goal
   - Broom
   - Item
+  - Dish
+  - Sponge
   layers:
   - Default
   - TransparentFX

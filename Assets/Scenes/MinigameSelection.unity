@@ -204,14 +204,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 742416113}
-        m_MethodName: PlayHangLaundryMinigame
-        m_Mode: 1
+        m_MethodName: LoadMinigame
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: HangLaundry
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &17399044
@@ -737,7 +737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &333530552
 RectTransform:
   m_ObjectHideFlags: 0
@@ -802,14 +802,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 742416113}
-        m_MethodName: PlayDishWashingMinigame
-        m_Mode: 1
+        m_MethodName: LoadMinigame
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: DishWashing
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &333530554
@@ -932,14 +932,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 742416113}
-        m_MethodName: PlayWaterPlantsMinigame
-        m_Mode: 1
+        m_MethodName: LoadMinigame
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PlantWatering
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &377730046
@@ -1218,14 +1218,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 742416113}
-        m_MethodName: PlayCleanUpMinigame
-        m_Mode: 1
+        m_MethodName: LoadMinigame
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: CleanUp
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &407174542
@@ -1348,14 +1348,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 742416113}
-        m_MethodName: PlayPlatesAtDishrackMinigame
-        m_Mode: 1
+        m_MethodName: LoadMinigame
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PlatesAtDishrack
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &453220059
@@ -1478,14 +1478,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 742416113}
-        m_MethodName: PlayFoldLaundryMinigame
-        m_Mode: 1
+        m_MethodName: LoadMinigame
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: FoldLaundry
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &674938910
@@ -1935,14 +1935,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 742416113}
-        m_MethodName: PlayGrabEggsMinigame
-        m_Mode: 1
+        m_MethodName: LoadMinigame
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: GrabEggs
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &778643705
@@ -2221,14 +2221,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 742416113}
-        m_MethodName: PlayFeedAnimalsMinigame
-        m_Mode: 1
+        m_MethodName: LoadMinigame
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: FeedAnimals
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1102542339
@@ -2286,7 +2286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1292967089
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2351,14 +2351,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 742416113}
-        m_MethodName: PlayFloorSweepMinigame
-        m_Mode: 1
+        m_MethodName: LoadMinigame
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: FloorSweeping
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1292967091
@@ -3204,14 +3204,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 742416113}
-        m_MethodName: PlayCookPorridgeMinigame
-        m_Mode: 1
+        m_MethodName: LoadMinigame
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: CookPorridge
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1807208620

@@ -7,7 +7,6 @@ public class PlayerAnimations : MonoBehaviour
 	//A: Explicitly private the variables and methods
     Animator anim;
     PlayerController controller;
-    PlayerMovement movement;
     TimerSystem timerSystem;
 
     // Start is called before the first frame update

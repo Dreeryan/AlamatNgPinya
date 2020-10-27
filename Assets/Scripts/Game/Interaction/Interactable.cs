@@ -6,21 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour
 {
-	//A: Explicitly private
-    [SerializeField] Button itemButton;
+    [SerializeField] private Button itemButton;
     private bool isNear;
 
     // Start is called before the first frame update
     void Start()
     {
-		//A: Nullcheck
-        itemButton.gameObject.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    
+        if (itemButton != null) itemButton.gameObject.SetActive(false);
     }
 
     // Loads the minigame scene
@@ -31,11 +23,10 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-		//A: Nullcheck
         // If the player collides with the Item, the button will appear
         if (collision.gameObject.CompareTag("Player"))
         {
-            itemButton.gameObject.SetActive(true);
+            if (itemButton != null) itemButton.gameObject.SetActive(true);
         }
     }
 

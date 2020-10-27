@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class CarryController : MonoBehaviour
 {
-	//A: Explicitly private 
     [Header("Variables")]
-    [SerializeField] CleanToy cleanToy;
-    public Transform itemDetector;
-    public Transform itemCarrier;
+    [SerializeField] private CleanToy cleanToy;
+    [SerializeField] private Transform itemDetector;
+    [SerializeField] private Transform itemCarrier;
+
+    void Start()
+    {
+        // Assigns the transform the child
+        itemDetector = this.gameObject.transform.GetChild(0);
+        itemCarrier = this.gameObject.transform.GetChild(1);
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,7 +38,6 @@ public class CarryController : MonoBehaviour
             }
 
         }
-
     }
 
     void OnTriggerExit2D(Collider2D collision)

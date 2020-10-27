@@ -2483,8 +2483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cleanToy: {fileID: 0}
-  itemDetector: {fileID: 1123739137}
-  itemCarrier: {fileID: 535280777}
+  itemDetector: {fileID: 0}
+  itemCarrier: {fileID: 0}
 --- !u!1 &1350566374
 GameObject:
   m_ObjectHideFlags: 0

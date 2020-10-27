@@ -5,16 +5,15 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-	//A: Explicitly private
-    [SerializeField] TextMeshProUGUI currentScoreText;
-    [SerializeField] TextMeshProUGUI highScoreText;
+    [SerializeField] private TextMeshProUGUI currentScoreText;
+    [SerializeField] private TextMeshProUGUI highScoreText;
 
-    public int currentScore;
-    public int highScore;
+    [SerializeField] private int currentScore;
+    [SerializeField] private int highScore;
 
     void Start()
     {
-        CheckHighScore();
+        GetHighScore();
     }
 
     void Update()
@@ -25,42 +24,33 @@ public class ScoreManager : MonoBehaviour
             AddScore(1);
         }
 
-		//A: Do this check when the score is increased rather than per frame
-        // If current score is greater than the high score, it will update the high score to the new score.
-        if (currentScore > highScore)
-        {
-            highScore = currentScore;
-            PlayerPrefs.SetInt("score", highScore);
-        }
-		
-		//A: Only update text when the score actually changed
-        currentScoreText.text = "Score: " + currentScore;
-        highScoreText.text = "High Score: " + highScore;
+        CurrentScoreUI();
+        HighScoreUI();
     }
 
     // Add score for a minigame
     public void AddScore(int score)
     {
         currentScore += score;
-		//A: This is where you can trigger the text update and high score checks instead
+
+        // If current score is greater than the high score, it will update the high score to the new score.
+        if (currentScore > highScore)
+        {
+            highScore = currentScore;
+            SetHighScore();
+            highScoreText.text = "High Score: " + highScore;
+        }
     }
 
-    /*public void SavePlayerScore()
+    // Setting the high score
+    public void SetHighScore()
     {
-        PlayerPrefs.SetInt("score", currentScore);
-    }*/
+        PlayerPrefs.SetInt("score", highScore);
+    }
 
     // Getting the high score
     public void GetHighScore()
     {
-		//A: Why is this set if its a get?
-        PlayerPrefs.SetInt("score", highScore);
-    }
-
-    // Checking the high score
-    public void CheckHighScore()
-    {
-		//A: What exactly are you checking? This only gets (Make sure method name is doing what it says)
         highScore = PlayerPrefs.GetInt("score");
     }
 
@@ -75,5 +65,17 @@ public class ScoreManager : MonoBehaviour
     {
         highScore = 0;
         PlayerPrefs.SetInt("score", 0);
+    }
+
+    // HighScore UI
+    public void HighScoreUI()
+    {
+        highScoreText.text = "High Score: " + highScore;
+    }
+    
+    // Current Score UI
+    public void CurrentScoreUI()
+    {
+        currentScoreText.text = "Score: " + currentScore;
     }
 }

@@ -1,31 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class PlayerAnimations : MonoBehaviour
 {
-	//A: Explicitly private the variables and methods
-    Animator anim;
-    PlayerController controller;
-    TimerSystem timerSystem;
+    private Animator anim;
+    private PlayerController controller;
+    private TimerSystem timerSystem;
 
+    public UnityEvent OnObjectClick;
+    
     // Start is called before the first frame update
     void Start()
     {
         controller = this.GetComponent<PlayerController>();
         anim = this.GetComponent<Animator>();
+
+        // Only for testing
+        PlayerWalking(); 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayerWalking()
     {
-		//A: Null check anim first before accessing
-		//A: You will want to do specific triggers than keeping this in update		
-        // Walking animation
-        anim.SetBool("IsWalking", controller.isMoving);
+        if (anim != null)
+            // Walking animation
+            anim.SetBool("IsWalking", controller.isMoving);
 
-
-        SwitchForAnim();
+        Debug.Log("Walking animation");
     }
 
     // For form changes (to be implemented later on once other scripts are made)

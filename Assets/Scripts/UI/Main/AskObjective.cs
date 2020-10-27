@@ -10,9 +10,12 @@ public class AskObjective : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		//A: Nullcheck
-        currentSeconds = 0;
-        objectives.SetActive(false);
+        if (currentSeconds != null && objectives != null)
+        {
+            currentSeconds = 0;
+            objectives.SetActive(false);
+        }
+
     }
 
     // Update is called once per frame

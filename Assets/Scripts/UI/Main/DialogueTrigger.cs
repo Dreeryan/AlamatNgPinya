@@ -9,7 +9,9 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-		//A: Nullcheck
-        dialogueManager.StartDialogue(dialogue);
+        if (dialogue != null && dialogueManager != null)
+        {
+            dialogueManager.StartDialogue(dialogue);
+        }
     }
 }

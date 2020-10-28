@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Draggable : MonoBehaviour
+public class Egg : MonoBehaviour
 {
-    [SerializeField] private Transform itemHolder;
+    [SerializeField] private Transform eggBasket;
+    [SerializeField] private Rigidbody2D rb;
 
     private Vector2 mousePos;
     private Vector2 currentPosition;
@@ -13,6 +14,8 @@ public class Draggable : MonoBehaviour
     void Start()
     {
         currentPosition = transform.position;
+        rb = GetComponent<Rigidbody2D>();
+        eggBasket = GameObject.Find("Egg Basket").transform;
     }
 
     void OnMouseDrag()
@@ -29,11 +32,12 @@ public class Draggable : MonoBehaviour
     void OnMouseUp()
     {
         // If the object is near the item holder, the object will automatically be placed.
-        if (Mathf.Abs(transform.position.x - itemHolder.transform.position.x) <= 1.2f &&
-            Mathf.Abs(transform.position.y - itemHolder.transform.position.y) <= 1.2f)
+        if (Mathf.Abs(transform.position.x - eggBasket.transform.position.x) <= 1.2f &&
+            Mathf.Abs(transform.position.y - eggBasket.transform.position.y) <= 1.2f)
         {
-            transform.position = new Vector2(itemHolder.transform.position.x, itemHolder.transform.position.y);
+            transform.position = new Vector2(eggBasket.transform.position.x, eggBasket.transform.position.y);
             isPlaced = true;
+            rb.isKinematic = true;
         }
         // Else, it will be placed back to it's last position
         else

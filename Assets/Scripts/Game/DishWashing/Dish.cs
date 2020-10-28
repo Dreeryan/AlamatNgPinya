@@ -10,7 +10,7 @@ public class Dish : MonoBehaviour
 
     [Header("Variables")]
     [SerializeField] public float currentCleanRate;
-    [SerializeField] Transform dishRack;
+    [SerializeField] private Transform dishRack;
     [SerializeField] private float maxRate;
 
     [Header("UI")]
@@ -20,6 +20,7 @@ public class Dish : MonoBehaviour
     void Start()
     {
         if (cleanRateText != null) cleanRateText.gameObject.SetActive(false);
+        dishRack = GameObject.Find("Dish Rack").transform;
     }
 
     void OnTriggerStay2D(Collider2D collision)
@@ -42,7 +43,7 @@ public class Dish : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Dish"))
+        if (collision.gameObject.CompareTag("Sponge"))
         {
             cleanRateText.gameObject.SetActive(false);
         }

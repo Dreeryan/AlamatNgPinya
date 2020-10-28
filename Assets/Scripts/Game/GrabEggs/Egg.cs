@@ -26,7 +26,6 @@ public class Egg : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;
         }
-
     }
 
     void OnMouseUp()
@@ -43,7 +42,6 @@ public class Egg : MonoBehaviour
         else
         {
             transform.position = new Vector2(currentPosition.x, currentPosition.y);
-
         }
     }
 }

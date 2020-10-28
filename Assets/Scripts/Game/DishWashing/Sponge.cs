@@ -14,9 +14,40 @@ public class Sponge : MonoBehaviour
     [Header("Variables")]
     [SerializeField] private float fillRate = 10.0f;
 
+    [SerializeField] private float maxWater = 100.0f;
+    [SerializeField] private float consumeWater = 1.0f;
+    [SerializeField] private float waterFillRate = 1.0f;
+
+    private bool isUsingWater;
+
+    [Header("UI")]
+    [SerializeField] GameObject WaterBasin;
+    [SerializeField] Image waterBar;
+    [SerializeField] TextMeshProUGUI guideText;
+
     void Start()
     {
         currentPosition = transform.position;
+
+        if (guideText != null) guideText.gameObject.SetActive(true);
+    }
+
+    void Update()
+    {
+        if (isUsingWater)
+        {
+            waterBar.fillAmount -= consumeWater / 8.0f * Time.deltaTime;
+
+            if (waterBar.fillAmount != 0)
+            {
+                dish.currentCleanRate += fillRate * Time.deltaTime;
+            }
+            else return;
+        }
+        else
+        {
+            waterBar.fillAmount += waterFillRate / 15.0f * Time.deltaTime;
+        }
     }
 
     void OnMouseDrag()
@@ -37,7 +68,22 @@ public class Sponge : MonoBehaviour
         if (collision.gameObject.CompareTag("Dish"))
         {
             dish = collision.gameObject.GetComponent<Dish>();
-            dish.currentCleanRate += fillRate * Time.deltaTime;
+            isUsingWater = true;
+            StartCoroutine(DeactivateGuide());
         }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Dish"))
+        {
+            isUsingWater = false;
+        }
+    }
+
+    IEnumerator DeactivateGuide()
+    {
+        yield return new WaitForSeconds(4);
+        guideText.gameObject.SetActive(false);
     }
 }

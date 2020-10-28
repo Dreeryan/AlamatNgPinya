@@ -7,8 +7,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Text       nameText;
     [SerializeField] private Text       dialogueText;
     [SerializeField] private GameObject dialogueBox;
-	
-	//A: You can just do the init here to save space
+
     private Queue<string> sentences = new Queue<string>();
 
     void Start()
@@ -22,7 +21,6 @@ public class DialogueManager : MonoBehaviour
     // Used to start the dialogue UI
     public void StartDialogue(Dialogue dialogue) 
     {
-		//A: Nullcheck
         if (dialogueBox != null && nameText != null)
         {
             dialogueBox.SetActive(true);

@@ -2148,7 +2148,7 @@ GameObject:
   - component: {fileID: 1347747191}
   - component: {fileID: 1347747193}
   - component: {fileID: 1347747194}
-  - component: {fileID: 1347747195}
+  - component: {fileID: 1347747197}
   - component: {fileID: 1347747196}
   m_Layer: 0
   m_Name: Player
@@ -2271,18 +2271,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1347747195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347747190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 419247c55e0c1b64aa813d1c5261e4b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1347747196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2298,6 +2286,21 @@ MonoBehaviour:
   cleanToy: {fileID: 0}
   itemDetector: {fileID: 0}
   itemCarrier: {fileID: 0}
+--- !u!114 &1347747197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347747190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e099a0a90ba25564f820bba3db9c47f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  targetPoint: {x: 0, y: 0, z: 0}
+  isMoving: 0
 --- !u!1 &1350566374
 GameObject:
   m_ObjectHideFlags: 0

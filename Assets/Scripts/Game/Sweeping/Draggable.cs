@@ -8,7 +8,7 @@ public class Draggable : MonoBehaviour
 
     private Vector2 mousePos;
     private Vector2 currentPosition;
-    public bool isPlaced;
+    public  bool    isPlaced;
 
     void Start()
     {

@@ -944,6 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemHolder: {fileID: 206580261}
+  isPlaced: 0
 --- !u!50 &684779496
 Rigidbody2D:
   serializedVersion: 4
@@ -2064,7 +2065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   broom: {fileID: 684779492}
-  pushStrength: 500
+  pushStrength: 50
 --- !u!50 &1493699591
 Rigidbody2D:
   serializedVersion: 4

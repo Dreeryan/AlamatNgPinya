@@ -5,7 +5,15 @@ using UnityEngine;
 public class SweepableObject : MonoBehaviour
 {
     [SerializeField] private GameObject broom;
-    [SerializeField] float              pushStrength;
+    [SerializeField] private float      pushStrength;
+
+    public void Update()
+    {
+        transform.position.Normalize();
+        
+        if (broom != null)
+            broom.transform.position.Normalize();
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,15 +22,5 @@ public class SweepableObject : MonoBehaviour
         {
             Debug.Log("Sweeped to the right spot");
         }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        transform.position.Normalize();
-        broom.transform.position.Normalize();
-
-        // Pushes the object
-        if (broom != null)
-            GetComponent<Rigidbody2D>().AddForce((transform.position - broom.transform.position) * pushStrength);
     }
 }

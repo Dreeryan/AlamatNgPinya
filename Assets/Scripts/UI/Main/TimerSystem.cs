@@ -16,7 +16,7 @@ public class TimerSystem : MonoBehaviour
 
     private void Update()
     {
-        if (timer != null && TimerText != null)
+        if (TimerText != null)
         {
             // For testing purposes: Prints time to Text
             if (CountingUp == true) TimerText.text = Mathf.RoundToInt(GetTimeLeft()).ToString();

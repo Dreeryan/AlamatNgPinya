@@ -6,11 +6,14 @@ using UnityEngine.Events;
 public class ShakeObject : MonoBehaviour
 {
     public UnityEvent OnShake;
-    private Draggable draggableObject;
 
     void OnMouseDrag()
     {
         OnShake.Invoke();
         Debug.Log("Object shaking");
+    }
+
+    void Shaking()
+    {
     }
 }

@@ -70,12 +70,14 @@ public class ScoreManager : MonoBehaviour
     // HighScore UI
     public void HighScoreUI()
     {
+		//A: Nullcheck
         highScoreText.text = "High Score: " + highScore;
     }
     
     // Current Score UI
     public void CurrentScoreUI()
     {
+		//A: Nullcheck
         currentScoreText.text = "Score: " + currentScore;
     }
 }

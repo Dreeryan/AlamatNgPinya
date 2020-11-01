@@ -47,6 +47,8 @@ public class CarryController : MonoBehaviour
         {
             collision.gameObject.transform.parent = cleanToy.itemHolder;
             collision.gameObject.transform.position = cleanToy.itemHolder.position;
+			
+			//A: Null check before accessing
             collision.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
         }
     }

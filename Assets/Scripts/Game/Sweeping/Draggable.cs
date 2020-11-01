@@ -29,6 +29,7 @@ public class Draggable : MonoBehaviour
     void OnMouseUp()
     {
         // If the object is near the item holder, the object will automatically be placed.
+		//A: Make this into a variable so design can adjust and easier to maintain
         if (Mathf.Abs(transform.position.x - itemHolder.transform.position.x) <= 1.2f &&
             Mathf.Abs(transform.position.y - itemHolder.transform.position.y) <= 1.2f)
         {
@@ -38,6 +39,7 @@ public class Draggable : MonoBehaviour
         // Else, it will be placed back to it's last position
         else
         {
+			//A: Directly assign instead of making new vector if possible. This can cause memory issues
             transform.position = new Vector2(currentPosition.x, currentPosition.y);
 
         }

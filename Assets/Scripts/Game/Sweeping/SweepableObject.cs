@@ -19,6 +19,7 @@ public class SweepableObject : MonoBehaviour
             broom.transform.position.Normalize();
 
         if (isPlaced == true)
+			//A: Directly assign instead of making new vector if possible. This can cause memory issues
             transform.position = new Vector2(itemHolder.transform.position.x, itemHolder.transform.position.y);
     }
 
@@ -28,11 +29,13 @@ public class SweepableObject : MonoBehaviour
         if (collision.gameObject.tag == "Goal")
         {
             // Snaps the object into the specified area if it collides with it
+			//A: Directly assign instead of making new vector if possible. This can cause memory issues
             transform.position = new Vector2(itemHolder.transform.position.x, itemHolder.transform.position.y);
             isPlaced = true;
             
             if (trashCounter != null)
                 // Adds a point to the trashCollected counter
+				//A: Make sure this doesnt get double triggered especially at different FPS
                 trashCounter.trashCollected = trashCounter.trashCollected + 1;
 
             Debug.Log("Sweeped to the right spot");

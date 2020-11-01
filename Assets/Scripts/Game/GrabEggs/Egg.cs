@@ -14,7 +14,9 @@ public class Egg : MonoBehaviour
     void Start()
     {
         currentPosition = transform.position;
+		//A: Better to check if these are null before finding and getting. This is expensive
         rb = GetComponent<Rigidbody2D>();
+		//A: Finding via name is very risky and bug prone
         eggBasket = GameObject.Find("Egg Basket").transform;
     }
 
@@ -34,6 +36,7 @@ public class Egg : MonoBehaviour
         if (Mathf.Abs(transform.position.x - eggBasket.transform.position.x) <= 1.2f &&
             Mathf.Abs(transform.position.y - eggBasket.transform.position.y) <= 1.2f)
         {
+			//A: Assign directly instead of new vector if possible. This can cause memory issues
             transform.position = new Vector2(eggBasket.transform.position.x, eggBasket.transform.position.y);
             isPlaced = true;
             rb.isKinematic = true;
@@ -41,6 +44,7 @@ public class Egg : MonoBehaviour
         // Else, it will be placed back to it's last position
         else
         {
+			//A: Assign directly instead of new vector if possible. This can cause memory issues
             transform.position = new Vector2(currentPosition.x, currentPosition.y);
         }
     }

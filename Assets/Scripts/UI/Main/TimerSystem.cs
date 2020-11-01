@@ -6,6 +6,7 @@ using TMPro;
 
 public class TimerSystem : MonoBehaviour
 {
+	//A: use camelCase
     [SerializeField] private bool            CountingUp;
     [SerializeField] private TextMeshProUGUI TimerText;
 
@@ -29,6 +30,7 @@ public class TimerSystem : MonoBehaviour
     {
         if (CountingUp == true) return timer; 
 
+		//A; Why not make this the else?
         if (CountingUp == false) return timeSet - timer; 
 
         else return 0f;

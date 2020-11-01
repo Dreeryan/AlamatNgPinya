@@ -47,11 +47,13 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
+		//A: Nullcheck
         dialogueText.text = sentence;
     }
 
     void EndDialogue()
     {
+		//A: Nullcheck
         dialogueBox.SetActive(false);
         Debug.Log("End Dialogue");
     }

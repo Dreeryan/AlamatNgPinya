@@ -24,11 +24,18 @@ public class EggSpawner : MonoBehaviour
         // Instantiates prefabs into spawnedItems list
         foreach (GameObject go in eggPrefabs)
         {
+			//A: Make these into a variable
             int spawnX = Random.Range(-8, 8);
             int spawnY = Random.Range(-4, 4);
+			
             Vector2 spawnPosition = new Vector2(spawnX, spawnY);
 
             GameObject newItems = Instantiate(go, transform.position, Quaternion.identity);
+			
+			//A: If all you need is the spawn count and not the actual spawned items objects
+			// Just increment the int instead of assigning
+			// You should also assign the count AFTER and OUTSIDE the loop or its doing this again and again
+			// Not performant
             spawnedItems.Add(newItems);
             spawnCount = spawnedItems.Count;
         }

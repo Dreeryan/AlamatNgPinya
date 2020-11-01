@@ -13,6 +13,7 @@ public class Stove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		//A: if possible make it only find the comp if the slider is null. This is expensive
         slider = GameObject.Find("Stove Slider").GetComponent<Slider>();
         temperatureText = GameObject.Find("Temperature Text").GetComponent<TextMeshProUGUI>();
     }
@@ -30,6 +31,7 @@ public class Stove : MonoBehaviour
 
     void UpdateUI()
     {
+		//A: Null check
         temperatureText.text = stoveTemperature.ToString("f0") + "°C";
     }
 }

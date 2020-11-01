@@ -29,12 +29,16 @@ public class PlayerController : MonoBehaviour
         // If the mouse position is less than -1, the player's y rotation axis will be flipped to 180
         if (targetPoint.x < -1)
         {
+			//A: Probably better to reference a const vector than making a new one every frame the conditions are met.
+			//A: This can cause memory issues
             transform.localEulerAngles = new Vector3(0, 180, 0);
         }
 
         // // If the mouse position is greater than -1, the player's y rotation axis will be flipped to 0
         else
         {
+			//A: Probably better to reference a const vector than making a new one every frame the conditions are met.
+			//A: This can cause memory issues
             transform.localEulerAngles = new Vector3(0, 0, 0);
         }
 

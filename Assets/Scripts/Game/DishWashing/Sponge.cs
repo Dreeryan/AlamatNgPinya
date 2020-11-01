@@ -20,6 +20,7 @@ public class Sponge : MonoBehaviour
 
     private bool isUsingWater;
 
+	//A: Explictly private
     [Header("UI")]
     [SerializeField] GameObject WaterBasin;
     [SerializeField] Image waterBar;
@@ -59,6 +60,7 @@ public class Sponge : MonoBehaviour
     void OnMouseUp()
     {
         // The sponge will be back to its current position
+		//A: Assign directly instead of making new vector if possible. This can cause memory issues
         transform.position = new Vector2(currentPosition.x, currentPosition.y);
     }
 
@@ -83,6 +85,7 @@ public class Sponge : MonoBehaviour
 
     IEnumerator DeactivateGuide()
     {
+		//A: Make this a variable so design can adjust
         yield return new WaitForSeconds(4);
         guideText.gameObject.SetActive(false);
     }

@@ -17,6 +17,7 @@ public class Chicken : MonoBehaviour
     {
         target = transform.position;
         isSelected = false;
+		//A: Nullcheck
         endPointObject.SetActive(false);
     }
 
@@ -61,6 +62,7 @@ public class Chicken : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             isSelected = false;
+			//A: Nullcheck
             endPointObject.SetActive(false);
         }
     }

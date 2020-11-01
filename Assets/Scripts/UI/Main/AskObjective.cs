@@ -27,6 +27,7 @@ public class AskObjective : MonoBehaviour
         if (currentSeconds <= 0)
         {
             currentSeconds = 0;
+			//A: Nullcheck
             objectives.SetActive(false);
         }
     }
@@ -35,6 +36,7 @@ public class AskObjective : MonoBehaviour
     public void StartTime()
     {
         currentSeconds = resetTime;
+		//A: Nullcheck
         objectives.SetActive(true);
     }
 }

@@ -15,13 +15,21 @@ public class Watering : MonoBehaviour
     private bool isFilling;
 
     [Header("UI")]
-    [SerializeField] GameObject fillBar;
-    [SerializeField] Image fillBarImage;
+    [SerializeField] private GameObject fillBar;
+    [SerializeField] private Image fillBarImage;
+
+    [Header("Sprites")]
+    [SerializeField] private Image plant;
+    [SerializeField] private Sprite dryPlant;
+    [SerializeField] private Sprite wateredPlant;
     
     void Start()
     {
         // hide the bar at the start
 		if (fillBar != null) fillBar.SetActive(false);
+
+        // show the dry plant at the start
+        if (dryPlant != null) plant.sprite = dryPlant;
 
         // null check
         if (fillBar == null) Debug.LogWarning("no object referenced for fillBar");
@@ -46,10 +54,13 @@ public class Watering : MonoBehaviour
 
                 // hide the bar when its full
                 if (fillBar != null) fillBar.SetActive(false);
+
+                // show watered version of plant
+                if (wateredPlant != null) plant.sprite = wateredPlant;
             }
+
+            UpdateUI();
         }
-		
-        UpdateUI();
     }
 
     public void ToggleFill()

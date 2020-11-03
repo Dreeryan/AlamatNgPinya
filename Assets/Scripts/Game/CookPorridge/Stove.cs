@@ -31,7 +31,7 @@ public class Stove : MonoBehaviour
 
     void UpdateUI()
     {
-		//A: Null check
+        if (temperatureText != null)
         temperatureText.text = stoveTemperature.ToString("f0") + "°C";
     }
 }

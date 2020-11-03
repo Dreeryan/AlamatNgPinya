@@ -17,14 +17,13 @@ public class Sponge : MonoBehaviour
     [SerializeField] private float maxWater = 100.0f;
     [SerializeField] private float consumeWater = 1.0f;
     [SerializeField] private float waterFillRate = 1.0f;
-
+    [SerializeField] private float valueToDeactivateGuide = 4.0f;
     private bool isUsingWater;
 
-	//A: Explictly private
     [Header("UI")]
-    [SerializeField] GameObject WaterBasin;
-    [SerializeField] Image waterBar;
-    [SerializeField] TextMeshProUGUI guideText;
+    [SerializeField] private GameObject WaterBasin;
+    [SerializeField] private Image waterBar;
+    [SerializeField] private TextMeshProUGUI guideText;
 
     void Start()
     {
@@ -60,8 +59,7 @@ public class Sponge : MonoBehaviour
     void OnMouseUp()
     {
         // The sponge will be back to its current position
-		//A: Assign directly instead of making new vector if possible. This can cause memory issues
-        transform.position = new Vector2(currentPosition.x, currentPosition.y);
+        transform.position = currentPosition;
     }
 
     void OnTriggerStay2D(Collider2D collision)
@@ -85,8 +83,7 @@ public class Sponge : MonoBehaviour
 
     IEnumerator DeactivateGuide()
     {
-		//A: Make this a variable so design can adjust
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(valueToDeactivateGuide);
         guideText.gameObject.SetActive(false);
     }
 }

@@ -21,7 +21,7 @@ public class Dish : MonoBehaviour
     {
         if (cleanRateText != null) cleanRateText.gameObject.SetActive(false);
 		
-		//A: Make it check if dishRack is null before finding. This is expensive
+        if (dishRack != null)
 		//Also very risky using gameobject name to assign. This can break in build
         dishRack = GameObject.Find("Dish Rack").transform;
     }
@@ -35,16 +35,15 @@ public class Dish : MonoBehaviour
             {
                 currentCleanRate = maxRate;
                 // The clean dish will be put into the rack
-				//A: Just assign directly instead of making an new vector if possible
-				// This can cause memory issues
-                transform.position = new Vector2(dishRack.transform.position.x, dishRack.transform.position.y);
+                transform.position = dishRack.transform.position;
             }
 
-            if (cleanRateText != null) cleanRateText.gameObject.SetActive(true);
-            sponge = collision.gameObject.GetComponent<Sponge>();
-			
-			//A: Put this inside the nullcheck scope. This is still amounting to not nullchecking
-            cleanRateText.text = "Current clean rate: " + currentCleanRate.ToString("f0") + "%";
+            if (cleanRateText != null)
+            {
+                cleanRateText.gameObject.SetActive(true);
+                sponge = collision.gameObject.GetComponent<Sponge>();
+                cleanRateText.text = "Current clean rate: " + currentCleanRate.ToString("f0") + "%";
+            }
         }
     }
 
@@ -52,7 +51,7 @@ public class Dish : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Sponge"))
         {
-			//A: Nullcheck
+            if (cleanRateText != null)
             cleanRateText.gameObject.SetActive(false);
         }
     }

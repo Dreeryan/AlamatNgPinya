@@ -1170,8 +1170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e099a0a90ba25564f820bba3db9c47f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  targetPoint: {x: 0, y: 0, z: 0}
+  moveSpeed: 5
   isMoving: 0
 --- !u!50 &814423597
 Rigidbody2D:
@@ -1342,8 +1341,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc01b583661f374aa3d1d092ae3fc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountingUp: 0
-  TimerText: {fileID: 87851145}
+  countingUp: 0
+  timerText: {fileID: 87851145}
   OnTimerEnd:
     m_PersistentCalls:
       m_Calls:

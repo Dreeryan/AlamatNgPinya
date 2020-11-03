@@ -816,7 +816,6 @@ MonoBehaviour:
   broom: {fileID: 684779492}
   pushStrength: 50
   itemHolder: {fileID: 206580261}
-  draggable: {fileID: 684779494}
   trashCounter: {fileID: 1625645137}
 --- !u!50 &258208420
 Rigidbody2D:
@@ -2218,7 +2217,6 @@ MonoBehaviour:
   broom: {fileID: 684779492}
   pushStrength: 50
   itemHolder: {fileID: 206580261}
-  draggable: {fileID: 684779494}
   trashCounter: {fileID: 1625645137}
 --- !u!50 &1493699591
 Rigidbody2D:
@@ -2854,7 +2852,6 @@ MonoBehaviour:
   broom: {fileID: 684779492}
   pushStrength: 50
   itemHolder: {fileID: 206580261}
-  draggable: {fileID: 684779494}
   trashCounter: {fileID: 1625645137}
 --- !u!50 &1754427675
 Rigidbody2D:
@@ -3043,8 +3040,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc01b583661f374aa3d1d092ae3fc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountingUp: 0
-  TimerText: {fileID: 102953099}
+  countingUp: 0
+  timerText: {fileID: 102953099}
   OnTimerEnd:
     m_PersistentCalls:
       m_Calls:

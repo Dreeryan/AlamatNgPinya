@@ -9,6 +9,7 @@ public class ShakeObject : MonoBehaviour
     private Vector2 startPos;
     private Vector3 randomPos;
     private bool goingUp;
+
     // This is for testing
     [SerializeField] private bool isShaking;
     void Update()
@@ -17,6 +18,19 @@ public class ShakeObject : MonoBehaviour
         {
             OnShake.Invoke();
         }
+
+       // Hold Space to shake
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isShaking = true;
+        }
+
+        // Release Space to stop shaking
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isShaking = false;
+        }
+
     }
 
     public void Shaking()

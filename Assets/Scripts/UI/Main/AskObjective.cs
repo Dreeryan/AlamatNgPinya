@@ -7,10 +7,11 @@ public class AskObjective : MonoBehaviour
     [SerializeField] private GameObject objectives;
     [SerializeField] private float      currentSeconds;
     [SerializeField] private float      resetTime;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (currentSeconds != null && objectives != null)
+        if (objectives != null)
         {
             currentSeconds = 0;
             objectives.SetActive(false);
@@ -27,8 +28,9 @@ public class AskObjective : MonoBehaviour
         if (currentSeconds <= 0)
         {
             currentSeconds = 0;
-			//A: Nullcheck
-            objectives.SetActive(false);
+			
+            if (objectives != null)
+                objectives.SetActive(false);
         }
     }
 
@@ -36,7 +38,8 @@ public class AskObjective : MonoBehaviour
     public void StartTime()
     {
         currentSeconds = resetTime;
-		//A: Nullcheck
-        objectives.SetActive(true);
+
+        if (objectives != null)
+            objectives.SetActive(true);
     }
 }

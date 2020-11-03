@@ -884,8 +884,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc01b583661f374aa3d1d092ae3fc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountingUp: 0
-  TimerText: {fileID: 65236584}
+  countingUp: 0
+  timerText: {fileID: 65236584}
   OnTimerEnd:
     m_PersistentCalls:
       m_Calls:
@@ -2299,7 +2299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  targetPoint: {x: 0, y: 0, z: 0}
   isMoving: 0
 --- !u!1 &1350566374
 GameObject:

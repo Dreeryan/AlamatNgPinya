@@ -6,9 +6,8 @@ using TMPro;
 
 public class TimerSystem : MonoBehaviour
 {
-	//A: use camelCase
-    [SerializeField] private bool            CountingUp;
-    [SerializeField] private TextMeshProUGUI TimerText;
+    [SerializeField] private bool            countingUp;
+    [SerializeField] private TextMeshProUGUI timerText;
 
     private float timer;
     private float timeSet;
@@ -17,23 +16,22 @@ public class TimerSystem : MonoBehaviour
 
     private void Update()
     {
-        if (TimerText != null)
+        if (timerText != null)
         {
             // For testing purposes: Prints time to Text
-            if (CountingUp == true) TimerText.text = Mathf.RoundToInt(GetTimeLeft()).ToString();
+            if (countingUp == true) timerText.text = Mathf.RoundToInt(GetTimeLeft()).ToString();
 
-            else TimerText.text = Mathf.RoundToInt(GetTimeLeft()).ToString();
+            else timerText.text = Mathf.RoundToInt(GetTimeLeft()).ToString();
         }
     }
 
     public float GetTimeLeft()
     {
-        if (CountingUp == true) return timer; 
+        if (countingUp == true) return timer; 
 
 		//A; Why not make this the else?
-        if (CountingUp == false) return timeSet - timer; 
+        else return timeSet - timer; 
 
-        else return 0f;
     }
 
     public IEnumerator StartTimer(float seconds)

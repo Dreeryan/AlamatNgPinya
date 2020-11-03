@@ -47,8 +47,9 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-		//A: Nullcheck
-        dialogueText.text = sentence;
+
+        if (dialogueText != null)
+            dialogueText.text = sentence;
     }
 
     void EndDialogue()

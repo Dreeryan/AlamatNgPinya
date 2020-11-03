@@ -2030,8 +2030,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc01b583661f374aa3d1d092ae3fc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountingUp: 0
-  TimerText: {fileID: 327317707}
+  countingUp: 0
+  timerText: {fileID: 327317707}
   OnTimerEnd:
     m_PersistentCalls:
       m_Calls:

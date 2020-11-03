@@ -30,7 +30,7 @@ public class SweepableObject : MonoBehaviour
         {
             // Snaps the object into the specified area if it collides with it
 			//A: Directly assign instead of making new vector if possible. This can cause memory issues
-            transform.position = new Vector2(itemHolder.transform.position.x, itemHolder.transform.position.y);
+           transform.position = new Vector2(itemHolder.transform.position.x, itemHolder.transform.position.y);
             isPlaced = true;
             
             if (trashCounter != null)

@@ -46,8 +46,10 @@ public class Chicken : MonoBehaviour
                 endPoint.transform.position = target;
         }
 
-        // Tells the chicken to move to the endpoint's postion
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        // Can only move if it's selected to target point and stops movement if deselected
+        if (isSelected)
+            // Tells the chicken to move to the endpoint's postion
+            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
 
     private void OnMouseOver()
@@ -63,6 +65,8 @@ public class Chicken : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             isSelected = false;
+
+            transform.position = transform.position;
 
             if (endPointObject != null)
                 endPointObject.SetActive(false);

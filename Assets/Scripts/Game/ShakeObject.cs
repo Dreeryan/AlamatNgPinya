@@ -5,47 +5,56 @@ using UnityEngine.Events;
 
 public class ShakeObject : MonoBehaviour
 {
-    public UnityEvent OnShake;
-    private Vector2 startPos;
-    private Vector3 randomPos;
-    private bool goingUp;
+    public  UnityEvent  OnShake;
+
+    private Vector3     lastPosition;
+    private Vector3     currentPosition;
+
+    private float       velocity;
 
     // This is for testing
     [SerializeField] private bool isShaking;
+
+    private void Awake()
+    {
+        lastPosition = transform.position;
+    }
+
+    private void Start()
+    {
+        lastPosition = transform.position;
+        //Draggable d   ragObject = FindObjectOfType<Draggable>();
+        //dragObject.OnMouseDrag();
+    }
+
     void Update()
     {
-       if (isShaking)
+        currentPosition = transform.position;
+
+        if (isShaking)
         {
             OnShake.Invoke();
         }
 
-       // Hold Space to shake
-        if (Input.GetKeyDown(KeyCode.Space))
+
+
+        if (currentPosition.x < lastPosition.x)
         {
             isShaking = true;
         }
 
-        // Release Space to stop shaking
-        if (Input.GetKeyUp(KeyCode.Space))
+
+        else if (currentPosition.x > lastPosition.x)
         {
             isShaking = false;
         }
 
+
+        lastPosition = currentPosition;
     }
 
-    public void Shaking()
+    public void Test()
     {
-        if (goingUp)
-        {
-            transform.Translate(0, 0.1f, 0);
-            goingUp = false;
-        }
-
-        else
-        {
-            transform.Translate(0, -0.1f, 0);
-            goingUp = true;
-        }
+        Debug.Log("Shook");
     }
-
 }

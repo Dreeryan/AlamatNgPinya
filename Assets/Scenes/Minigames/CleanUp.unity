@@ -2810,7 +2810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseButton: {fileID: 1066558331}
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 1834264371}
 --- !u!114 &1575343168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2966,6 +2966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47775fc7bf2d27478fa2df644ae6333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  valueToTarget: 1.2
   carryController: {fileID: 0}
   itemHolder: {fileID: 583218884}
   isPlaced: 0
@@ -3260,6 +3261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47775fc7bf2d27478fa2df644ae6333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  valueToTarget: 1.2
   carryController: {fileID: 0}
   itemHolder: {fileID: 1063420316}
   isPlaced: 0

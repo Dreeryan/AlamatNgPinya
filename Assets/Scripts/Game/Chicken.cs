@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Chicken : MonoBehaviour
 {
-    public Transform endPoint;
-    public float speed;
+    public Transform    endPoint;
+    public float        speed;
 
-    private float pushStrength;
-    private Vector3 target;
+    private float       pushStrength;
+    private bool        hasMoved;
+    private Vector3     target;
 
-    [SerializeField] private bool isSelected;
     [SerializeField] private GameObject endPointObject;
 
     void Start()
     {
         target = transform.position;
-        isSelected = false;
-
+        hasMoved = false;
         if (endPointObject != null)
             endPointObject.SetActive(false);
     }
@@ -29,10 +28,11 @@ public class Chicken : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0) && isSelected == true)
+        if (Input.GetMouseButtonDown(0))
         {
+
             // Sets object the chickens will move to active
-            if (endPointObject != null)
+            if (endPointObject != null && !hasMoved)
                 endPointObject.SetActive(true);
 
             // Gets the mouse cursor's position
@@ -46,30 +46,14 @@ public class Chicken : MonoBehaviour
                 endPoint.transform.position = target;
         }
 
-        // Can only move if it's selected to target point and stops movement if deselected
-        if (isSelected)
-            // Tells the chicken to move to the endpoint's postion
+        if (hasMoved == false)
             transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-    }
 
-    private void OnMouseOver()
-    {
-        // For selection of chickens that will move
-        //Left Click to deselect
-        if (Input.GetMouseButtonDown(0))
+        // Disables chicken movement once it moves to specified location
+        if (transform.position == endPoint.position)
         {
-            isSelected = true;
-        }
-
-        // Right Click to deselect
-        if (Input.GetMouseButtonDown(1))
-        {
-            isSelected = false;
-
-            transform.position = transform.position;
-
-            if (endPointObject != null)
-                endPointObject.SetActive(false);
+            hasMoved = true;
+            endPointObject.SetActive(false);
         }
     }
 }

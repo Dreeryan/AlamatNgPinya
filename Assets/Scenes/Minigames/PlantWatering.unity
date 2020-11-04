@@ -2019,7 +2019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseButton: {fileID: 1671345188}
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 1905074463}
 --- !u!114 &1195297096
 MonoBehaviour:
   m_ObjectHideFlags: 0

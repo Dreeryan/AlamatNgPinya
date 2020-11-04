@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseButton: {fileID: 787637523}
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 248801634}
 --- !u!114 &996339358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2308,6 +2308,7 @@ MonoBehaviour:
   maxWater: 100
   consumeWater: 1
   waterFillRate: 1
+  valueToDeactivateGuide: 4
   WaterBasin: {fileID: 1631200508}
   waterBar: {fileID: 1310199401}
   guideText: {fileID: 787026395}

@@ -9,19 +9,20 @@ public class Pot : MonoBehaviour
     [Header("UI")]
     public GameObject Meter;
     public Image progressBar;
+    public GameObject winningPanel;
 
     [Header("Variables")]
     [SerializeField] private float maxTemperature;
     [SerializeField] public float addTemperature;
+    [SerializeField] private float decreaseTemperature;
     [SerializeField] public float uncookedTemp;
     [SerializeField] public float undercookedTemp;
     [SerializeField] public float cookedTemp;
-    [SerializeField] public float burnedTemp;
+    [SerializeField] private float secondsToWin;
 
     [SerializeField] TextMeshProUGUI cookStatus;
 
     [SerializeField] Porridge porridge;
-    [SerializeField] Draggable draggable;
 
     public bool isOccupied;
 
@@ -29,20 +30,37 @@ public class Pot : MonoBehaviour
     void Start()
     {
         cookStatus = GameObject.Find("Cook Status").GetComponent<TextMeshProUGUI>();
-        draggable = GameObject.FindGameObjectWithTag("Porridge").GetComponent<Draggable>();
+        if (winningPanel != null) winningPanel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         // If pot is occupied and the porridge is placed
-        if (isOccupied && draggable.isPlaced == true)
+        if (isOccupied)
         {
-            porridge.porridgeTemp += addTemperature * Time.deltaTime;
-
-            if (porridge.porridgeTemp >= maxTemperature)
+            if (Input.GetMouseButton(0))
             {
-                porridge.porridgeTemp = maxTemperature;
+                porridge.porridgeTemp += addTemperature * Time.deltaTime;
+
+                if (porridge.porridgeTemp >= maxTemperature)
+                {
+                    porridge.porridgeTemp = maxTemperature;
+                }
+
+                StartCoroutine(Countdown());
+                //if (cookStatus != null) cookStatus.text = " " + porridge.CurrentState;
+                //if (progressBar != null) UpdateUI();
+            }
+
+            else
+            {
+                porridge.porridgeTemp -= decreaseTemperature * Time.deltaTime;
+
+                if(porridge.porridgeTemp <= 0)
+                {
+                    porridge.porridgeTemp = 0;
+                }
             }
 
             if (cookStatus != null) cookStatus.text = " " + porridge.CurrentState;
@@ -81,5 +99,16 @@ public class Pot : MonoBehaviour
     void UpdateUI()
     {
         progressBar.fillAmount = porridge.porridgeTemp / maxTemperature;
+    }
+
+    IEnumerator Countdown()
+    {
+        while (porridge.porridgeTemp > undercookedTemp)
+        {
+            yield return new WaitForSeconds(secondsToWin);
+            if (winningPanel != null)
+                winningPanel.SetActive(true);
+            porridge.porridgeTemp = progressBar.fillAmount;
+        }
     }
 }

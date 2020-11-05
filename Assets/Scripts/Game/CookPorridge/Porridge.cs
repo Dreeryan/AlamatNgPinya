@@ -6,7 +6,7 @@ public class Porridge : MonoBehaviour
 {
     public enum CookState
     {
-        Uncooked, Undercooked, Cooked, Burned
+        Uncooked, Undercooked, Cooked
     }
 
     public CookState CurrentState;
@@ -43,11 +43,6 @@ public class Porridge : MonoBehaviour
             {
                 CurrentState = CookState.Cooked;
                 rd.material.color = new Color32(234, 222, 201, 255);
-            }
-            else if (porridgeTemp < pot.burnedTemp)
-            {
-                CurrentState = CookState.Burned;
-                rd.material.color = new Color32(246, 206, 131, 255);
             }
         }
     }

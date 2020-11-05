@@ -5,52 +5,55 @@ using UnityEngine.Events;
 
 public class ShakeObject : MonoBehaviour
 {
-    public  UnityEvent  OnShake;
+    public UnityEvent   OnShake;
+    public Transform    shakeObject;
 
     private Vector3     lastPosition;
     private Vector3     currentPosition;
-
-    private float       velocity;
+    private float       threshold = 0.0f;
 
     // This is for testing
     [SerializeField] private bool isShaking;
 
-    private void Awake()
-    {
-        lastPosition = transform.position;
-    }
 
     private void Start()
     {
-        lastPosition = transform.position;
-        //Draggable d   ragObject = FindObjectOfType<Draggable>();
-        //dragObject.OnMouseDrag();
+        lastPosition = shakeObject.position;
     }
 
     void Update()
     {
-        currentPosition = transform.position;
+        currentPosition = shakeObject.position - lastPosition;
+
+        // For shaking left and right
+        if (currentPosition.x > threshold || currentPosition.x < -threshold)
+        {
+            // Updates last position
+            lastPosition = shakeObject.position;
+
+            isShaking = true;
+        }
+
+        // For shaking up and down
+        if (currentPosition.y > threshold || currentPosition.y <- threshold)
+        {
+            lastPosition = shakeObject.position;
+
+            isShaking = true;   
+        }
+
+        if (currentPosition == lastPosition)
+        {
+            // Updates last position
+            lastPosition = shakeObject.position;
+
+            isShaking = false;
+        }
 
         if (isShaking)
         {
             OnShake.Invoke();
         }
-
-
-
-        if (currentPosition.x < lastPosition.x)
-        {
-            isShaking = true;
-        }
-
-
-        else if (currentPosition.x > lastPosition.x)
-        {
-            isShaking = false;
-        }
-
-
-        lastPosition = currentPosition;
     }
 
     public void Test()

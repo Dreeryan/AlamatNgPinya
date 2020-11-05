@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class BlockerResizer : MonoBehaviour
 {
-    
     // Start is called before the first frame update
     void Start()
     {
         // Converts
-        gameObject.transform.localScale = Camera.main.WorldToScreenPoint(gameObject.transform.localScale * 10);
-        Debug.Log(gameObject.transform.localScale);
+        gameObject.transform.localScale = Camera.main.WorldToScreenPoint(gameObject.transform.localScale);
+        Debug.Log(gameObject.transform.localScale);     
     }
 }

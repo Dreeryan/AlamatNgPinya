@@ -11,6 +11,9 @@ TagManager:
   - Dish
   - Sponge
   - Chicken
+  - Porridge
+  - Pot
+  - CookedPorridgeHolder
   layers:
   - Default
   - TransparentFX

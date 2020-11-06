@@ -10,7 +10,7 @@ public class Draggable : MonoBehaviour
     private Vector2 mousePos;
     private Vector2 currentPosition;
     public  bool    isPlaced;
-    public bool     canSnapbackToStart;
+    public  bool    canSnapbackToStart;
 
     void Start()
     {
@@ -36,6 +36,7 @@ public class Draggable : MonoBehaviour
         // Else, it will be placed back to it's last position
         else
         {
+            // Snapback can be turned on or off in the Inspector
             if (canSnapbackToStart)
                 transform.position = currentPosition;
         }

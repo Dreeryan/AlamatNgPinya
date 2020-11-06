@@ -45,7 +45,7 @@ public class SweepableObject : MonoBehaviour
 
             force.Normalize();
 
-            // Pushes the object
+            // Pushes the object back when colliding with a Blocker
             GetComponent<Rigidbody2D>().AddForce(force * pushStrength);
         }
     }

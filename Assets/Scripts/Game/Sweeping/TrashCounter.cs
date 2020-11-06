@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrashCounter : MonoBehaviour
 {
-    public int trashCollected;
+    public  int trashCollected;
     private int previousTrashCollected;
 
     [SerializeField] private int        trashGoal;

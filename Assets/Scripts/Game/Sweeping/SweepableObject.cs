@@ -37,8 +37,16 @@ public class SweepableObject : MonoBehaviour
                 // Adds a point to the trashCollected counter
 				//A: Make sure this doesnt get double triggered especially at different FPS
                 trashCounter.trashCollected = trashCounter.trashCollected + 1;
+        }
 
-            Debug.Log("Sweeped to the right spot");
+        if (collision.gameObject.tag == "Blocker")
+        {
+            var force = transform.position - collision.transform.position;
+
+            force.Normalize();
+
+            // Pushes the object
+            GetComponent<Rigidbody2D>().AddForce(force * pushStrength);
         }
     }
 }

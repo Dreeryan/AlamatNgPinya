@@ -30,7 +30,6 @@ public class TrashCounter : MonoBehaviour
             // If goal is reached, broom will be unusuable
             if (trashCollected >= trashGoal)
             {
-                Debug.Log("broom");
                 broom.isPlaced = true;
             }
         }

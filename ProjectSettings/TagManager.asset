@@ -14,6 +14,7 @@ TagManager:
   - Porridge
   - Pot
   - CookedPorridgeHolder
+  - Egg
   layers:
   - Default
   - TransparentFX

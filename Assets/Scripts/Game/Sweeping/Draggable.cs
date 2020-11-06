@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour
 {
-    [SerializeField] private Transform itemHolder;
-    [SerializeField] private float valueToTarget = 1.2f;
+    [SerializeField] private Transform  itemHolder;
+    [SerializeField] private float      valueToTarget = 1.2f;
 
     private Vector2 mousePos;
     private Vector2 currentPosition;
     public  bool    isPlaced;
+    public bool     canSnapbackToStart;
 
     void Start()
     {
@@ -35,7 +36,8 @@ public class Draggable : MonoBehaviour
         // Else, it will be placed back to it's last position
         else
         {
-            transform.position = currentPosition;
+            if (canSnapbackToStart)
+                transform.position = currentPosition;
         }
     }
 }

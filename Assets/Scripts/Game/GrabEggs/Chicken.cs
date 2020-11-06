@@ -18,7 +18,7 @@ public class Chicken : MonoBehaviour
 
     private void Update()
     {
-        if(isSelected)
+        if (isSelected)
             transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
 

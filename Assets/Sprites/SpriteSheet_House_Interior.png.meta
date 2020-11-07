@@ -1,0 +1,428 @@
+fileFormatVersion: 2
+guid: 1d70ad1c2f0b0a042a9807c49856a0c1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8052011174774349839
+    second: SpriteSheet_House_Interior_0
+  - first:
+      213: -1995031114926387142
+    second: SpriteSheet_House_Interior_1
+  - first:
+      213: -5191643048619186584
+    second: SpriteSheet_House_Interior_2
+  - first:
+      213: 7261115177672397138
+    second: SpriteSheet_House_Interior_3
+  - first:
+      213: -8730435051653953562
+    second: SpriteSheet_House_Interior_4
+  - first:
+      213: 6961382969033221036
+    second: SpriteSheet_House_Interior_5
+  - first:
+      213: -7630800361839960629
+    second: SpriteSheet_House_Interior_6
+  - first:
+      213: -4117986879932310287
+    second: SpriteSheet_House_Interior_7
+  - first:
+      213: 46031184903090326
+    second: SpriteSheet_House_Interior_8
+  - first:
+      213: -1047627008984228798
+    second: SpriteSheet_House_Interior_9
+  - first:
+      213: -1388983105506501298
+    second: SpriteSheet_House_Interior_10
+  - first:
+      213: 7408309632926697748
+    second: SpriteSheet_House_Interior_11
+  - first:
+      213: -2274375630258363046
+    second: SpriteSheet_House_Interior_0
+  - first:
+      213: -6134758814773402585
+    second: SpriteSheet_House_Interior_1
+  - first:
+      213: -7760003907704320827
+    second: SpriteSheet_House_Interior_2
+  - first:
+      213: 8352245764548597903
+    second: SpriteSheet_House_Interior_3
+  - first:
+      213: -2626252867213606995
+    second: SpriteSheet_House_Interior_4
+  - first:
+      213: -6124410658259008506
+    second: SpriteSheet_House_Interior_5
+  - first:
+      213: 6886900904000702847
+    second: SpriteSheet_House_Interior_6
+  - first:
+      213: -5721348712688583424
+    second: SpriteSheet_House_Interior_7
+  - first:
+      213: -4353739180716751660
+    second: SpriteSheet_House_Interior_8
+  - first:
+      213: 1335941672271199644
+    second: SpriteSheet_House_Interior_9
+  - first:
+      213: 8983985448450260595
+    second: SpriteSheet_House_Interior_10
+  - first:
+      213: 5672365337690231143
+    second: SpriteSheet_House_Interior_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 517
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f00a6e7808d7ebf60800000000000000
+      internalID: 8052011174774349839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_1
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 517
+        width: 30
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3016f665c93054e0800000000000000
+      internalID: -1995031114926387142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_2
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 517
+        width: 30
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8666d6e572493f7b0800000000000000
+      internalID: -5191643048619186584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_3
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 516
+        width: 30
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2515c5678c9a4c460800000000000000
+      internalID: 7261115177672397138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 259
+        width: 256
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e70c8b839347d680800000000000000
+      internalID: -8730435051653953562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_5
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 259
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca3eda66deccb9060800000000000000
+      internalID: 6961382969033221036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_6
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 259
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd5b982083f91690800000000000000
+      internalID: -7630800361839960629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_7
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 259
+        width: 30
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc5aef20c8f9d6c0800000000000000
+      internalID: -4117986879932310287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6903db86e1983a000800000000000000
+      internalID: 46031184903090326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_9
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24cd36039c41671f0800000000000000
+      internalID: -1047627008984228798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_10
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 2
+        width: 256
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4d1445893759bce0800000000000000
+      internalID: -1388983105506501298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_11
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 2
+        width: 256
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41943b83c5a9fc660800000000000000
+      internalID: 7408309632926697748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

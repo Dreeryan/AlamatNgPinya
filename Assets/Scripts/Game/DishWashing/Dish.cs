@@ -7,52 +7,65 @@ using TMPro;
 public class Dish : MonoBehaviour
 {
     [SerializeField] private Sponge sponge;
+    [SerializeField] private Transform dishRack;
 
     [Header("Variables")]
-    [SerializeField] public float currentCleanRate;
-    [SerializeField] private Transform dishRack;
-    [SerializeField] private float maxRate;
+    [SerializeField] public float currentDirt;
+    [SerializeField] public float drainRate;
+    [SerializeField] private float minDirt;
+    [SerializeField] private float valueToDeactivateGuide;
 
     [Header("UI")]
-    [SerializeField] TextMeshProUGUI cleanRateText;
+    [SerializeField] TextMeshProUGUI dirtRateText;
+
+    public bool isMouseDrag;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (cleanRateText != null) cleanRateText.gameObject.SetActive(false);
-		
-        if (dishRack != null)
-		//Also very risky using gameobject name to assign. This can break in build
-        dishRack = GameObject.Find("Dish Rack").transform;
+        if (dirtRateText == null) dirtRateText = GameObject.Find("Current dirt rate").GetComponent<TextMeshProUGUI>();
+
+        if (dishRack == null)
+            dishRack = GameObject.FindGameObjectWithTag("DishRack").transform;
+
+        if (sponge == null)
+            sponge = GameObject.FindGameObjectWithTag("Sponge").GetComponent<Sponge>();
     }
 
-    void OnTriggerStay2D(Collider2D collision)
+    void OnMouseDrag()
     {
-        // If the dish is staying within the sponge
-        if (collision.gameObject.CompareTag("Sponge"))
+        Vector2 screenPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(screenPos, Vector2.zero);
+        if (hit.collider != null)
         {
-            if (currentCleanRate > maxRate)
-            {
-                currentCleanRate = maxRate;
-                // The clean dish will be put into the rack
-                transform.position = dishRack.transform.position;
-            }
+            isMouseDrag = true;
+            sponge.isUsingWater = true;
 
-            if (cleanRateText != null)
+            if (dirtRateText != null)
             {
-                cleanRateText.gameObject.SetActive(true);
-                sponge = collision.gameObject.GetComponent<Sponge>();
-                cleanRateText.text = "Current clean rate: " + currentCleanRate.ToString("f0") + "%";
+                dirtRateText.gameObject.SetActive(true);
+                dirtRateText.text = "Current dirt rate: " + currentDirt.ToString("f0") + "%";
             }
+        }
+        else
+        {
+            sponge.isUsingWater = false;
+        }
+
+        if (currentDirt < minDirt)
+        {
+            currentDirt = minDirt;
+            transform.position = dishRack.transform.position;
         }
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    void OnMouseUp()
     {
-        if (collision.gameObject.CompareTag("Sponge"))
+        isMouseDrag = false;
+        sponge.isUsingWater = false;
+        if (!isMouseDrag && dirtRateText != null)
         {
-            if (cleanRateText != null)
-            cleanRateText.gameObject.SetActive(false);
+            dirtRateText.gameObject.SetActive(false);
         }
     }
 }

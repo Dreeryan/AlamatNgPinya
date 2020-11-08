@@ -6,9 +6,11 @@ public class CleanToy : MonoBehaviour
 {
     [Header("Variables")]
     [SerializeField] private float valueToTarget = 1.2f;
-    [SerializeField] private CarryController carryController;
     [SerializeField] public Transform itemHolder;
     public bool isPlaced;
+    public bool isMouseDown;
+    public bool isPlayerNear;
+    [SerializeField] private CarryController carryController;
 
     // Update is called once per frame
     void Update()
@@ -24,12 +26,40 @@ public class CleanToy : MonoBehaviour
         {
             isPlaced = false;
         }
+
+        if (isPlayerNear && isMouseDown)
+        {
+            carryController.PickupItem();
+        }
+
     }
 
     public void ItemHolderPosition()
     {
         // To put the item in the holder.
         if (itemHolder != null)
-        transform.position = itemHolder.transform.position;
+            transform.position = itemHolder.transform.position;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isPlayerNear = true;
+            carryController = GameObject.FindGameObjectWithTag("Player").GetComponent<CarryController>();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isPlayerNear = false;
+        }
+    }
+
+    void OnMouseDown()
+    {
+        isMouseDown = true;
     }
 }

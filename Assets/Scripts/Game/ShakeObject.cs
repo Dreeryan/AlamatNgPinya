@@ -18,6 +18,7 @@ public class ShakeObject : MonoBehaviour
 
     private void Start()
     {
+        currentPosition = transform.position;
         lastPosition = shakeObject.position;
     }
 
@@ -25,7 +26,6 @@ public class ShakeObject : MonoBehaviour
     {
         currentPosition = shakeObject.position - lastPosition;
 
-        lastPosition = shakeObject.position;
         // For shaking left and right
         if (currentPosition.x > threshold || currentPosition.x < -threshold)
         {
@@ -44,6 +44,7 @@ public class ShakeObject : MonoBehaviour
             isShaking = true;   
         }
 
+        // Called when shaking stops
         if (currentPosition == lastPosition)
         {
             // Updates last position
@@ -55,9 +56,6 @@ public class ShakeObject : MonoBehaviour
         {
             OnShake.Invoke();
         }
-
-        Debug.Log("cur: " + currentPosition);
-        Debug.Log("last: " + lastPosition);
     }
 
     public void Test()

@@ -11,7 +11,8 @@ public class Events : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0)) OnObjectClick.Invoke();  // Calls the event if object is clicked on;
+        // Calls the event if object is clicked on;
+        if (Input.GetMouseButtonDown(0)) OnObjectClick.Invoke();
     }
 
 }

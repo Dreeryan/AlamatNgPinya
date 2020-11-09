@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/PlantWatering.unity
     guid: 316b7b6a1f4f4bc458885e0d5a0f0b50
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: d9ae8f2237d1e914d94b5e3f9796fad3
   m_configObjects: {}

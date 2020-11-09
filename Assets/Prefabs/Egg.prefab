@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6409897020900722042}
   - component: {fileID: 6409897020900722037}
   - component: {fileID: 3746543945012756444}
-  m_Layer: 9
+  - component: {fileID: 4653104684366659466}
+  m_Layer: 0
   m_Name: Egg
   m_TagString: Egg
   m_Icon: {fileID: 0}
@@ -94,7 +95,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00055160525, y: -0.0016547799}
@@ -130,3 +131,24 @@ MonoBehaviour:
   objectToSnapback: {fileID: 6409897020900722038}
   objectCollider: {fileID: 6409897020900722042}
   isSeen: 0
+--- !u!50 &4653104684366659466
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409897020900722038}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0

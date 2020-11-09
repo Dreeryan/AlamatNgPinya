@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrashCounter : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class TrashCounter : MonoBehaviour
             if (trashCollected >= trashGoal)
             {
                 broom.isPlaced = true;
+                SceneManager.LoadScene("Main");
             }
         }
     }

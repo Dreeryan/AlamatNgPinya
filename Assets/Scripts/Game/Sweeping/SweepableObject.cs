@@ -43,7 +43,6 @@ public class SweepableObject : MonoBehaviour
         // Place all objectives that happen once trash is sweeped to specified area here
         if (collision.gameObject.tag == "Goal")
         {
-            Debug.Log("Collided with goal");
             boxCollider.enabled = false;
             // Snaps the object into the specified area if it collides with it
             //A: Directly assign instead of making new vector if possible. This can cause memory issues

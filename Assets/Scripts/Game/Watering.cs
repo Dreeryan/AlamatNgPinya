@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Watering : MonoBehaviour
 {
@@ -57,6 +58,8 @@ public class Watering : MonoBehaviour
 
                 // show watered version of plant
                 if (wateredPlant != null) plant.sprite = wateredPlant;
+
+                SceneManager.LoadScene("Main");
             }
 
             UpdateUI();

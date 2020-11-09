@@ -6,12 +6,11 @@ using UnityEngine.Events;
 
 public class Events : MonoBehaviour
 {
-    [SerializeField] private GameObject object1;
+    [SerializeField] private GameObject objectTrigger;
     public UnityEvent OnObjectClick;
 
     private void OnMouseOver()
     {
-        Debug.Log("Cursor above " + gameObject.name);
         if (Input.GetMouseButtonDown(0)) OnObjectClick.Invoke();  // Calls the event if object is clicked on;
     }
 

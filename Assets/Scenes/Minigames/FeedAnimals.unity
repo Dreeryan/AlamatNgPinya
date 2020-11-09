@@ -2546,8 +2546,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemHolder: {fileID: 334180484}
   valueToTarget: 0
-  isPlaced: 0
-  canSnapbackToStart: 1
+  isPlaced: 1
+  canSnapbackToStart: 0
   vision: {fileID: 2020409175}
 --- !u!50 &2020409171
 Rigidbody2D:
@@ -2676,7 +2676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSnapback: {fileID: 2020409168}
   objectCollider: {fileID: 2020409169}
-  isSeen: 0
+  isSeen: 1
 --- !u!1 &2059892759
 GameObject:
   m_ObjectHideFlags: 0

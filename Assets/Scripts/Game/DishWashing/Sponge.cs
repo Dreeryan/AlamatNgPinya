@@ -6,23 +6,21 @@ using TMPro;
 
 public class Sponge : MonoBehaviour
 {
-    [SerializeField] private Dish dish;
+    [SerializeField] Dish dish;
 
     private Vector2 mousePos;
     private Vector2 currentPosition;
 
     [Header("Variables")]
-    [SerializeField] private float fillRate = 10.0f;
-
-    [SerializeField] private float maxWater = 100.0f;
-    [SerializeField] private float consumeWater = 1.0f;
-    [SerializeField] private float waterFillRate = 1.0f;
-    [SerializeField] public float drainRate;
+    [SerializeField] float drainRate;
+    [SerializeField] float maxWater;
+    [SerializeField] float consumeWater;
+    [SerializeField] float waterFillRate;
     public bool isUsingWater;
 
     [Header("UI")]
-    [SerializeField] private GameObject WaterBasin;
-    [SerializeField] private Image waterBar;
+    [SerializeField] GameObject WaterBasin;
+    [SerializeField] Image waterBar;
 
     void Start()
     {
@@ -33,21 +31,51 @@ public class Sponge : MonoBehaviour
     {
         if (isUsingWater)
         {
-            waterBar.fillAmount -= consumeWater / 15.0f * Time.deltaTime;
+            waterBar.fillAmount -= consumeWater / 12.0f * Time.deltaTime;
 
-            Vector2 screenPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(screenPos, Vector2.zero);
-
-            if (waterBar.fillAmount != 0 && hit.collider != null)
+            if (waterBar.fillAmount != 0)
             {
-                dish = hit.collider.GetComponent<Dish>();
-                dish.currentDirt -= drainRate * Time.deltaTime;
+                dish.currentDirtRate -= drainRate * Time.deltaTime;
             }
             else return;
+
         }
         else
         {
             waterBar.fillAmount += waterFillRate / 10.0f * Time.deltaTime;
+        }
+    }
+
+    void OnMouseDrag()
+    {
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = mousePos;
+    }
+
+    void OnMouseUp()
+    {
+        // The sponge will be back to its current position
+        transform.position = currentPosition;
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        // If the sponge is staying around the dish
+        if (collision.gameObject.CompareTag("Dish"))
+        {
+            dish = collision.gameObject.GetComponent<Dish>();
+
+            //A: Null check
+
+            isUsingWater = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Dish"))
+        {
+            isUsingWater = false;
         }
     }
 }

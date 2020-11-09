@@ -1975,13 +1975,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sponge: {fileID: 0}
+  currentDirtRate: 100
+  minDirtRate: 0
   dishRack: {fileID: 495238521}
-  currentDirt: 100
-  drainRate: 0
-  minDirt: 0
-  valueToDeactivateGuide: 0
-  dirtRateText: {fileID: 0}
-  isMouseDrag: 0
+  cleanRateText: {fileID: 0}
+  isPlaced: 0
 --- !u!1 &1109554584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2058,7 @@ GameObject:
   - component: {fileID: 1195904687}
   - component: {fileID: 1195904686}
   - component: {fileID: 1195904689}
+  - component: {fileID: 1195904688}
   - component: {fileID: 1195904690}
   m_Layer: 0
   m_Name: Sponge
@@ -2132,6 +2131,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1195904688
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195904685}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00067479536, y: -0.00022496283}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.14245185, y: 0.13885236}
+  m_EdgeRadius: 0
 --- !u!50 &1195904689
 Rigidbody2D:
   serializedVersion: 4
@@ -2166,11 +2191,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dish: {fileID: 0}
-  fillRate: 10
+  drainRate: 5
   maxWater: 100
   consumeWater: 1
   waterFillRate: 1
-  drainRate: 5
   isUsingWater: 0
   WaterBasin: {fileID: 1631200508}
   waterBar: {fileID: 1310199401}

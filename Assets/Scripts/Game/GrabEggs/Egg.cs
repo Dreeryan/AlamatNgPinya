@@ -9,12 +9,19 @@ public class Egg : MonoBehaviour
     private Vector2 mousePos;
     private Vector2 currentPosition;
     public bool isPlaced;
+    public ReturnIfVisionLost vision;
 
     void Start()
     {
         currentPosition = transform.position;
 		//A: Finding via name is very risky and bug prone
         eggBasket = GameObject.Find("Egg Basket").transform;
+    }
+
+    private void Update()
+    {
+        if (vision.isSeen == false && vision != null)
+            transform.position = currentPosition;
     }
 
     void OnMouseDrag()

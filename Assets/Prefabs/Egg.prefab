@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6409897020900722039}
   - component: {fileID: 6409897020900722042}
   - component: {fileID: 6409897020900722037}
+  - component: {fileID: 3746543945012756444}
   m_Layer: 9
   m_Name: Egg
   m_TagString: Egg
@@ -113,3 +114,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eggBasket: {fileID: 0}
   isPlaced: 0
+  vision: {fileID: 3746543945012756444}
+--- !u!114 &3746543945012756444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409897020900722038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8731e54c18d540d418b6cdde0236e4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSnapback: {fileID: 6409897020900722038}
+  objectCollider: {fileID: 6409897020900722042}
+  isSeen: 0

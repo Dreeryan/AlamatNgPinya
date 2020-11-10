@@ -1,24 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class EggCounter : MonoBehaviour
+public class DishCounter : MonoBehaviour
 {
-    public  int eggsCollected;
-    private int previousEggsCollected;
+    public int  dishCollected;
+    private int previousDishCollected;
 
-    [SerializeField] private int        eggGoal;
+    [SerializeField] private int toysGoal;
     [SerializeField] private GameObject winScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        previousEggsCollected = eggsCollected;
+        previousDishCollected = dishCollected;
 
         // Sets the goal to how many eggs are active
-        eggGoal = GameObject.FindGameObjectsWithTag("Egg").Length;
+        toysGoal = GameObject.FindGameObjectsWithTag("Dish").Length;
 
         winScreen.SetActive(false);
     }
@@ -26,11 +24,11 @@ public class EggCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (eggsCollected > previousEggsCollected)
+        if (dishCollected > previousDishCollected)
         {
-            previousEggsCollected = eggsCollected;
+            previousDishCollected = dishCollected;
 
-            if (eggsCollected >= eggGoal)
+            if (dishCollected >= toysGoal)
             {
                 winScreen.SetActive(true);
             }
@@ -39,10 +37,10 @@ public class EggCounter : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Egg")
+        if (collision.gameObject.tag == "Dish")
         {
             // Adds a point for every egg that collides with the egg basket
-            eggsCollected++;
+            dishCollected++;
         }
     }
 }

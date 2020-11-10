@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TrashCounter : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class TrashCounter : MonoBehaviour
 
     [SerializeField] private int        trashGoal;
     [SerializeField] private Draggable  broom;
-
+    [SerializeField] private GameObject winScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,8 @@ public class TrashCounter : MonoBehaviour
 
         // Sets the goal to how many sweepable objects are present
         trashGoal = GameObject.FindGameObjectsWithTag("SweepableObject").Length;
+
+        winScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,7 +35,7 @@ public class TrashCounter : MonoBehaviour
             if (trashCollected >= trashGoal)
             {
                 broom.isPlaced = true;
-                SceneManager.LoadScene("Main");
+                winScreen.SetActive(true);
             }
         }
     }

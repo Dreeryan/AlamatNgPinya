@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LaundryCounter : MonoBehaviour
 {
-    public int clothesCollected;
+    public  int clothesCollected;
     private int previousClothesCollected;
 
-    [SerializeField] private int laundryGoal;
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private int        laundryGoal;
 
     // Start is called before the first frame update
     void Start()
     {
         previousClothesCollected = clothesCollected;
 
-        // Sets the goal to how many eggs are active
+        // Sets the goal to how many clothes are active
         laundryGoal = GameObject.FindGameObjectsWithTag("Clothing").Length;
+
+        winScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,7 +32,8 @@ public class LaundryCounter : MonoBehaviour
 
             if (clothesCollected >= laundryGoal)
             {
-                SceneManager.LoadScene("Main");
+
+                winScreen.SetActive(true);
             }
         }
     }
@@ -37,7 +42,7 @@ public class LaundryCounter : MonoBehaviour
     {
         if (collision.gameObject.tag == "Clothing")
         {
-            // Adds a point for every egg that collides with the egg basket
+            // Adds a point for every egg that collides with the clothesline
             clothesCollected++;
         }
     }

@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 public class EggCounter : MonoBehaviour
 {
-    public  int eggsCollected;
-    private int previousEggsCollected;
+    public  TextMeshProUGUI counterText;
+    public  int             eggsCollected;
+    private int             previousEggsCollected;
 
     [SerializeField] private int        eggGoal;
     [SerializeField] private GameObject winScreen;
@@ -36,6 +38,8 @@ public class EggCounter : MonoBehaviour
                 winScreen.SetActive(true);
             }
         }
+
+        counterText.text = "Eggs collected: " + eggsCollected + " / " + eggGoal;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

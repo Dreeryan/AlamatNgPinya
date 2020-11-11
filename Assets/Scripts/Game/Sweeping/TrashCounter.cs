@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class TrashCounter : MonoBehaviour
 {
-    public  int trashCollected;
-    private int previousTrashCollected;
+    public  TextMeshProUGUI counterText;
+    public  int             trashCollected;
+    private int             previousTrashCollected;
 
     [SerializeField] private int        trashGoal;
     [SerializeField] private Draggable  broom;
@@ -38,5 +40,7 @@ public class TrashCounter : MonoBehaviour
                 winScreen.SetActive(true);
             }
         }
+
+        counterText.text = "Trash collected: " + trashCollected + " / " + trashGoal;
     }
 }

@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
+
 public class LaundryCounter : MonoBehaviour
 {
-    public  int clothesCollected;
-    private int previousClothesCollected;
+    public  TextMeshProUGUI counterText;
+    public  int             clothesCollected;
+    private int             previousClothesCollected;
+
 
     [SerializeField] private GameObject             winScreen;
     [SerializeField] private int                    laundryGoal;
@@ -39,6 +43,8 @@ public class LaundryCounter : MonoBehaviour
                 winScreen.SetActive(true);
             }
         }
+
+        counterText.text = "Clothes hung: " + clothesCollected + " / " + laundryGoal;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

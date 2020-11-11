@@ -7,7 +7,7 @@ public class DishCounter : MonoBehaviour
     public int  dishCollected;
     private int previousDishCollected;
 
-    [SerializeField] private int toysGoal;
+    [SerializeField] private int dishGoal;
     [SerializeField] private GameObject winScreen;
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class DishCounter : MonoBehaviour
         previousDishCollected = dishCollected;
 
         // Sets the goal to how many eggs are active
-        toysGoal = GameObject.FindGameObjectsWithTag("Dish").Length;
+        dishGoal = GameObject.FindGameObjectsWithTag("Dish").Length;
 
         winScreen.SetActive(false);
     }
@@ -28,7 +28,7 @@ public class DishCounter : MonoBehaviour
         {
             previousDishCollected = dishCollected;
 
-            if (dishCollected >= toysGoal)
+            if (dishCollected >= dishGoal)
             {
                 winScreen.SetActive(true);
             }

@@ -1078,6 +1078,7 @@ GameObject:
   - component: {fileID: 504803006}
   - component: {fileID: 504803005}
   - component: {fileID: 504803007}
+  - component: {fileID: 504803008}
   m_Layer: 0
   m_Name: Shirt (2)
   m_TagString: Clothing
@@ -1228,6 +1229,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &504803008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504803001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCollided: 0
+  collider: {fileID: 504803004}
 --- !u!1 &622098418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,6 +1950,7 @@ GameObject:
   - component: {fileID: 1059201452}
   - component: {fileID: 1059201451}
   - component: {fileID: 1059201453}
+  - component: {fileID: 1059201454}
   m_Layer: 0
   m_Name: Shirt
   m_TagString: Clothing
@@ -2085,6 +2101,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1059201454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059201447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCollided: 0
+  collider: {fileID: 1059201450}
 --- !u!1 &1070268890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,7 +2644,7 @@ GameObject:
   - component: {fileID: 1441841107}
   - component: {fileID: 1441841108}
   m_Layer: 0
-  m_Name: New Sprite (2)
+  m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2735,6 +2765,7 @@ GameObject:
   - component: {fileID: 1598950580}
   - component: {fileID: 1598950579}
   - component: {fileID: 1598950581}
+  - component: {fileID: 1598950582}
   m_Layer: 0
   m_Name: Shirt (1)
   m_TagString: Clothing
@@ -2885,6 +2916,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1598950582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598950575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCollided: 0
+  collider: {fileID: 1598950578}
 --- !u!1 &1632094592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3369,7 +3414,7 @@ GameObject:
   - component: {fileID: 1753569344}
   m_Layer: 0
   m_Name: Line
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3479,6 +3524,42 @@ MonoBehaviour:
   clothesCollected: 0
   winScreen: {fileID: 1556030491}
   laundryGoal: 0
+  OnHanging:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1059201454}
+        m_MethodName: Update
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1598950582}
+        m_MethodName: Update
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 504803008}
+        m_MethodName: Update
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1883948204
 GameObject:
   m_ObjectHideFlags: 0
@@ -3991,7 +4072,7 @@ GameObject:
   - component: {fileID: 2113886027}
   - component: {fileID: 2113886028}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

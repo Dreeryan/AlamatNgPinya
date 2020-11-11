@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6409897020900722037}
   - component: {fileID: 3746543945012756444}
   - component: {fileID: 4653104684366659466}
+  - component: {fileID: 6685725489185511279}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Egg
@@ -152,3 +153,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &6685725489185511279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409897020900722038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCollided: 0
+  collider: {fileID: 6409897020900722042}

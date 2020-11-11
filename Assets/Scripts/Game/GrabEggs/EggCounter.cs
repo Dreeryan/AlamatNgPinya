@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class EggCounter : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class EggCounter : MonoBehaviour
 
     [SerializeField] private int        eggGoal;
     [SerializeField] private GameObject winScreen;
-
+    [SerializeField] private UnityEvent onEggPlacement;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +44,7 @@ public class EggCounter : MonoBehaviour
         {
             // Adds a point for every egg that collides with the egg basket
             eggsCollected++;
+            onEggPlacement.Invoke();
         }
     }
 }

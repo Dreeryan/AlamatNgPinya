@@ -8,7 +8,6 @@ public class SweepableObject : MonoBehaviour
     [SerializeField] private float          pushStrength;
     [SerializeField] private Transform      itemHolder;
     [SerializeField] private TrashCounter   trashCounter;
-    [SerializeField] private BoxCollider2D  boxCollider;
 
     public ReturnIfVisionLost vision;
 
@@ -43,7 +42,6 @@ public class SweepableObject : MonoBehaviour
         // Place all objectives that happen once trash is sweeped to specified area here
         if (collision.gameObject.tag == "Goal")
         {
-            boxCollider.enabled = false;
             // Snaps the object into the specified area if it collides with it
             //A: Directly assign instead of making new vector if possible. This can cause memory issues
             transform.position = new Vector2(itemHolder.transform.position.x, itemHolder.transform.position.y);

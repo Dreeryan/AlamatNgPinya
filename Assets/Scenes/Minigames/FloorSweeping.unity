@@ -1069,6 +1069,7 @@ GameObject:
   - component: {fileID: 336352467}
   - component: {fileID: 336352466}
   - component: {fileID: 336352465}
+  - component: {fileID: 336352470}
   m_Layer: 0
   m_Name: Trash (1)
   m_TagString: SweepableObject
@@ -1121,7 +1122,6 @@ MonoBehaviour:
   pushStrength: 100
   itemHolder: {fileID: 206580261}
   trashCounter: {fileID: 1625645137}
-  boxCollider: {fileID: 336352468}
   vision: {fileID: 336352465}
 --- !u!50 &336352467
 Rigidbody2D:
@@ -1220,6 +1220,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &336352470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336352463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCollided: 0
+  collider: {fileID: 336352468}
 --- !u!1 &347979745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,6 +2759,7 @@ GameObject:
   - component: {fileID: 1493699591}
   - component: {fileID: 1493699590}
   - component: {fileID: 1493699594}
+  - component: {fileID: 1493699595}
   m_Layer: 0
   m_Name: Trash
   m_TagString: SweepableObject
@@ -2782,7 +2797,6 @@ MonoBehaviour:
   pushStrength: 100
   itemHolder: {fileID: 206580261}
   trashCounter: {fileID: 1625645137}
-  boxCollider: {fileID: 1493699592}
   vision: {fileID: 1493699594}
 --- !u!50 &1493699591
 Rigidbody2D:
@@ -2896,6 +2910,20 @@ MonoBehaviour:
   objectToSnapback: {fileID: 1493699588}
   objectCollider: {fileID: 1493699592}
   isSeen: 0
+--- !u!114 &1493699595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493699588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCollided: 0
+  collider: {fileID: 1493699592}
 --- !u!1 &1542784950
 GameObject:
   m_ObjectHideFlags: 0

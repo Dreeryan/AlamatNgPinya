@@ -18,6 +18,8 @@ TagManager:
   - Egg
   - ObjectiveCounter
   - Clothing
+  - Wall
+  - Minigame
   layers:
   - Default
   - TransparentFX

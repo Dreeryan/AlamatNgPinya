@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//A: You might want to make this a general class that can handle all instances of this mechanic. Just expose more variables like tag to make it flexible
 public class CleanUpCounter : MonoBehaviour
 {
     public int  toysCollected;

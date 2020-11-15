@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Porridge : MonoBehaviour
 {
+	//A: Please follow the enum format in the code standards. This is dangerous
     public enum CookState
     {
         Uncooked, Undercooked, Cooked
@@ -11,7 +12,7 @@ public class Porridge : MonoBehaviour
 
     public CookState CurrentState;
 
-    [SerializeField] Pot pot;
+    [SerializeField] private Pot pot;
     [SerializeField] public float porridgeTemp;
 
     private Renderer rd;
@@ -29,6 +30,7 @@ public class Porridge : MonoBehaviour
     {
         if (isCooking)
         {
+			//A: Null check the rd
             if (porridgeTemp < pot.uncookedTemp)
             {
                 CurrentState = CookState.Uncooked;
@@ -37,11 +39,13 @@ public class Porridge : MonoBehaviour
             else if (porridgeTemp < pot.undercookedTemp)
             {
                 CurrentState = CookState.Undercooked;
+				//A: Make this a variable design can adjust
                 rd.material.color = new Color32(229, 229, 229, 255);
             }
             else if (porridgeTemp < pot.cookedTemp)
             {
                 CurrentState = CookState.Cooked;
+				//A: Make this a variable design can adjust
                 rd.material.color = new Color32(234, 222, 201, 255);
             }
         }

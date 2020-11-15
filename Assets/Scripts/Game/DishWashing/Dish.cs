@@ -8,6 +8,7 @@ public class Dish : MonoBehaviour
 {
     [SerializeField] private Sponge sponge;
 
+	//A: Dont do headers this way. Make it more specific (UI, Move Settings, etc)
     [Header("Variables")]
     [SerializeField] public float currentDirtRate;
     [SerializeField] private float minDirtRate = 0f;
@@ -38,6 +39,8 @@ public class Dish : MonoBehaviour
             // The clean dish will be put into the rack
             transform.position = dishRack.transform.position;
             isPlaced = true;
+			
+			//A: Nullcheck
             cleanRateText.gameObject.SetActive(false);
         }
     }
@@ -50,6 +53,8 @@ public class Dish : MonoBehaviour
             if (cleanRateText != null)
             cleanRateText.gameObject.SetActive(true);
             sponge = collision.gameObject.GetComponent<Sponge>();
+			
+			//A: Move this into the nullcheck scope. This is still dangerouse
             cleanRateText.text = "Current dirt rate: " + currentDirtRate.ToString("f0") + "%";
         }
     }

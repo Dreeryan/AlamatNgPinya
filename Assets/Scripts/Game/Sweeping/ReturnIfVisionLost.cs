@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ReturnIfVisionLost : MonoBehaviour
 {
+	//A: Does Renderer.isVisible not sufficient? This is a bit expensive
     // Detects manually if object is seen by the camera
 
     [SerializeField] private GameObject objectToSnapback;

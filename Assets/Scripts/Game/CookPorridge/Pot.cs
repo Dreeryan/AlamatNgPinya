@@ -11,6 +11,7 @@ public class Pot : MonoBehaviour
     public Image progressBar;
     public GameObject winningPanel;
 
+	//A: Dont do headers this way. Make it more specific (UI, Move Settings, etc)
     [Header("Variables")]
     [SerializeField] private float maxTemperature;
     [SerializeField] public float addTemperature;
@@ -108,6 +109,8 @@ public class Pot : MonoBehaviour
             yield return new WaitForSeconds(secondsToWin);
             if (winningPanel != null)
                 winningPanel.SetActive(true);
+			
+			//A: Nullcheck then yield break;
             porridge.porridgeTemp = progressBar.fillAmount;
         }
     }

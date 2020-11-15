@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CleanToy : MonoBehaviour
 {
+	//A: Dont do headers this way. Make it more specific (UI, Move Settings, etc)
     [Header("Variables")]
     [SerializeField] private float valueToTarget = 1.2f;
     [SerializeField] public Transform itemHolder;
@@ -16,6 +17,7 @@ public class CleanToy : MonoBehaviour
     void Update()
     {
         // If the object is near the item holder, the object will automatically be placed.
+		//A: To make life easer, you can make this into a method that you can call instead
         if (Mathf.Abs(transform.position.x - itemHolder.transform.position.x) <= valueToTarget &&
             Mathf.Abs(transform.position.y - itemHolder.transform.position.y) <= valueToTarget)
         {
@@ -33,6 +35,13 @@ public class CleanToy : MonoBehaviour
         }
 
     }
+	
+	/* //Can call this instead to reduce code length
+	private bool IsValueUnderTarget(float initPos, float targetPos)
+	{
+		return (Mathf.Abs(initPos - targetPos)) <= valueToTarget;
+	}
+	*/
 
     public void ItemHolderPosition()
     {
@@ -42,10 +51,13 @@ public class CleanToy : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collision)
-    {
+    {	
+		//A: Cleaner to do the opposite condition then return
         if (collision.gameObject.CompareTag("Player"))
         {
             isPlayerNear = true;
+			
+			//A: Null check before accessing
             carryController = GameObject.FindGameObjectWithTag("Player").GetComponent<CarryController>();
         }
     }

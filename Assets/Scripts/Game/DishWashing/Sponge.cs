@@ -31,6 +31,7 @@ public class Sponge : MonoBehaviour
     {
         if (isUsingWater)
         {
+			//A: What is 12 and 10? Make those into variables
             waterBar.fillAmount -= consumeWater / 12.0f * Time.deltaTime;
 
             if (waterBar.fillAmount != 0)

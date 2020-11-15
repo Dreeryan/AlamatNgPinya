@@ -33,6 +33,7 @@ public class ScoreManager : MonoBehaviour
     {
         currentScore += score;
 
+		//A: I would put this 
         // If current score is greater than the high score, it will update the high score to the new score.
         if (currentScore > highScore)
         {

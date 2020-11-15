@@ -26,6 +26,7 @@ public class CollisionChecker : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+		//A: Make this a variable so its very flexible
         if (collision.gameObject.tag == "Goal")
         {
             hasCollided = true;

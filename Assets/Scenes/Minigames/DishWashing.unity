@@ -2186,7 +2186,6 @@ GameObject:
   - component: {fileID: 996339359}
   - component: {fileID: 996339358}
   - component: {fileID: 996339357}
-  - component: {fileID: 996339362}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -2298,18 +2297,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &996339362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996339356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714c1505e8776e240a19216d44878a1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1010219947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2549,7 +2536,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1171402097}
-        m_MethodName: LoadMinigame
+        m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2828,7 +2815,7 @@ GameObject:
   - component: {fileID: 1171402098}
   - component: {fileID: 1171402097}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2843,7 +2830,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1171402096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714c1505e8776e240a19216d44878a1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 70a51f05ff5729b48ac2e666a4caa55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1171402098
@@ -4269,15 +4256,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 996339362}
-        m_MethodName: LoadSelectionScene
-        m_Mode: 1
+      - m_Target: {fileID: 1171402097}
+        m_MethodName: ChangeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Main
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1646812728

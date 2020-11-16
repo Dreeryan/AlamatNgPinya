@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 public class PauseFunction : MonoBehaviour
 {
     public GameObject pauseButton;
@@ -45,12 +45,6 @@ public class PauseFunction : MonoBehaviour
         // Closes Pause Menu UI
         if (pauseMenu != null)
             pauseMenu.SetActive(false); 
-    }
-
-    public void MainMenu()
-    {
-        // Switches to the Main Menu scene
-        SceneManager.LoadScene("MainMenu"); 
     }
 
     //A: Should probably create a private set method to handle the timescale change AND object active set so you dont have to do it twice

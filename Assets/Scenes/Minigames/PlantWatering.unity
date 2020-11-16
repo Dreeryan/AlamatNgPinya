@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 542165243}
   - component: {fileID: 542165242}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 542165241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714c1505e8776e240a19216d44878a1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 70a51f05ff5729b48ac2e666a4caa55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &542165243
@@ -1059,15 +1059,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1195297096}
-        m_MethodName: LoadSelectionScene
-        m_Mode: 1
+      - m_Target: {fileID: 542165242}
+        m_MethodName: ChangeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Main
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &767076988
@@ -3291,7 +3291,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 542165242}
-        m_MethodName: LoadMinigame
+        m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

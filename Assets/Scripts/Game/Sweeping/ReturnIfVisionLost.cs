@@ -4,29 +4,24 @@ using UnityEngine;
 
 public class ReturnIfVisionLost : MonoBehaviour
 {
-	//A: Does Renderer.isVisible not sufficient? This is a bit expensive
     // Detects manually if object is seen by the camera
 
-    [SerializeField] private GameObject objectToSnapback;
-    [SerializeField] private Collider2D objectCollider;
-
     public bool isSeen;
-    Camera cam;
-    Plane[] planes;
+    private Renderer renderers;
 
     void Start()
     {
-        cam = Camera.main;
-        planes = GeometryUtility.CalculateFrustumPlanes(cam);
-        objectCollider = GetComponent<Collider2D>();
+        renderers = GetComponent<Renderer>();
+
     }
 
     void Update()
     {
-        if (GeometryUtility.TestPlanesAABB(planes, objectCollider.bounds))
+        if (renderers.isVisible)
         {
             isSeen = true;
         }
+
         else
         {
             isSeen = false;

@@ -592,6 +592,7 @@ GameObject:
   - component: {fileID: 206580264}
   - component: {fileID: 206580263}
   - component: {fileID: 206580262}
+  - component: {fileID: 206580265}
   m_Layer: 0
   m_Name: TrashBin
   m_TagString: Goal
@@ -711,6 +712,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &206580265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206580260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterText: {fileID: 1686197274}
+  objectsCollected: 0
+  objectGoal: 0
+  winScreen: {fileID: 514375005}
+  onPlacement:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &213725520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1136,7 @@ GameObject:
   - component: {fileID: 336352470}
   m_Layer: 0
   m_Name: Trash (1)
-  m_TagString: SweepableObject
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1133,7 +1153,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 978452791}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &336352465
 MonoBehaviour:
@@ -1163,7 +1183,6 @@ MonoBehaviour:
   broom: {fileID: 684779492}
   pushStrength: 100
   itemHolder: {fileID: 206580261}
-  trashCounter: {fileID: 1625645137}
   vision: {fileID: 336352465}
 --- !u!50 &336352467
 Rigidbody2D:
@@ -2050,7 +2069,6 @@ Transform:
   m_Children:
   - {fileID: 684779493}
   - {fileID: 206580261}
-  - {fileID: 1625645136}
   - {fileID: 1912425951}
   - {fileID: 1493699589}
   - {fileID: 336352464}
@@ -3134,7 +3152,7 @@ GameObject:
   - component: {fileID: 1493699595}
   m_Layer: 0
   m_Name: Trash
-  m_TagString: SweepableObject
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3151,7 +3169,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 978452791}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1493699590
 MonoBehaviour:
@@ -3168,7 +3186,6 @@ MonoBehaviour:
   broom: {fileID: 684779492}
   pushStrength: 100
   itemHolder: {fileID: 206580261}
-  trashCounter: {fileID: 1625645137}
   vision: {fileID: 1493699594}
 --- !u!50 &1493699591
 Rigidbody2D:
@@ -3580,54 +3597,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615585666}
   m_CullTransparentMesh: 0
---- !u!1 &1625645135
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1625645136}
-  - component: {fileID: 1625645137}
-  m_Layer: 0
-  m_Name: ObjectiveManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1625645136
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625645135}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 978452791}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1625645137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625645135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f336e8866d324b04ca2382848b089ada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counterText: {fileID: 1686197274}
-  trashCollected: 0
-  trashGoal: 0
-  broom: {fileID: 684779494}
-  winScreen: {fileID: 514375005}
 --- !u!1 &1686197272
 GameObject:
   m_ObjectHideFlags: 0
@@ -4153,7 +4122,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 978452791}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1917670742
 GameObject:

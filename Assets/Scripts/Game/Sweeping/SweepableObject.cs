@@ -7,7 +7,6 @@ public class SweepableObject : MonoBehaviour
     [SerializeField] private GameObject     broom;
     [SerializeField] private float          pushStrength;
     [SerializeField] private Transform      itemHolder;
-    [SerializeField] private TrashCounter   trashCounter;
 
     public ReturnIfVisionLost vision;
 
@@ -46,12 +45,6 @@ public class SweepableObject : MonoBehaviour
             //A: Directly assign instead of making new vector if possible. This can cause memory issues
             transform.position = new Vector2(itemHolder.transform.position.x, itemHolder.transform.position.y);
             isPlaced = true;
-
-            if (trashCounter != null)
-            {
-                // Adds a point to the trashCollected counter
-                trashCounter.trashCollected++;
-            }
         }
     }
 }

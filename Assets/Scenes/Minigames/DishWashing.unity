@@ -3099,11 +3099,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dish: {fileID: 0}
-  drainRate: 5
+  drainRate: 8
   maxWater: 100
-  consumeWater: 1
+  consumeWater: 1.5
   waterFillRate: 1
-  isUsingWater: 0
+  consumeWaitTime: 15
+  fillWaitTime: 10
+  dragTreshold: 0.01
   WaterBasin: {fileID: 1631200508}
   waterBar: {fileID: 1310199401}
 --- !u!1 &1235673232

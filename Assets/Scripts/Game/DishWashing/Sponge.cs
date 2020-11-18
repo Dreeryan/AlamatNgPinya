@@ -11,12 +11,20 @@ public class Sponge : MonoBehaviour
     private Vector2 mousePos;
     private Vector2 currentPosition;
 
-    [Header("Variables")]
-    [SerializeField] float drainRate;
-    [SerializeField] float maxWater;
-    [SerializeField] float consumeWater;
-    [SerializeField] float waterFillRate;
-    public bool isUsingWater;
+    private bool isUsingWater;
+    private bool isMouseDrag;
+
+    [Header("Washing Variables")]
+    [SerializeField] private float drainRate;
+    [SerializeField] private float maxWater;
+    [SerializeField] private float consumeWater;
+    [SerializeField] private float waterFillRate;
+    [SerializeField] private float consumeWaitTime;
+    [SerializeField] private float fillWaitTime;
+
+
+    private Vector2 previousPos = Vector2.zero;
+    [SerializeField] private float dragTreshold = 0.01f;
 
     [Header("UI")]
     [SerializeField] GameObject WaterBasin;
@@ -29,21 +37,23 @@ public class Sponge : MonoBehaviour
 
     void Update()
     {
-        if (isUsingWater)
+        if (Vector2.Distance(previousPos, Input.mousePosition) >= dragTreshold)
         {
-			//A: What is 12 and 10? Make those into variables
-            waterBar.fillAmount -= consumeWater / 12.0f * Time.deltaTime;
-
-            if (waterBar.fillAmount != 0)
+            if (isUsingWater)
             {
-                dish.currentDirtRate -= drainRate * Time.deltaTime;
-            }
-            else return;
+                waterBar.fillAmount -= consumeWater / consumeWaitTime * Time.deltaTime;
 
-        }
-        else
-        {
-            waterBar.fillAmount += waterFillRate / 10.0f * Time.deltaTime;
+                if (waterBar.fillAmount != 0)
+                {
+                    dish.currentDirtRate -= drainRate * Time.deltaTime;
+                }
+                else return;
+                previousPos = Input.mousePosition;
+            }
+            else
+            {
+                waterBar.fillAmount += waterFillRate / fillWaitTime * Time.deltaTime;
+            }
         }
     }
 
@@ -57,6 +67,14 @@ public class Sponge : MonoBehaviour
     {
         // The sponge will be back to its current position
         transform.position = currentPosition;
+
+        isMouseDrag = false;
+    }
+
+    void OnMouseDown()
+    {
+        isMouseDrag = true;
+        previousPos = Input.mousePosition;
     }
 
     void OnTriggerStay2D(Collider2D collision)
@@ -65,9 +83,6 @@ public class Sponge : MonoBehaviour
         if (collision.gameObject.CompareTag("Dish"))
         {
             dish = collision.gameObject.GetComponent<Dish>();
-
-            //A: Null check
-
             isUsingWater = true;
         }
     }

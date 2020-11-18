@@ -8,6 +8,11 @@ public class SceneLoader : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+
+        if (sceneName == "MainMenu")
+        {
+            Time.timeScale = 1.0f;
+        }
     }
 
     public void QuitGame()

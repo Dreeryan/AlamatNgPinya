@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
         {
             // Player will go to the clicked area.
             targetPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);

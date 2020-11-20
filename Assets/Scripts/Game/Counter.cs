@@ -29,6 +29,7 @@ public class Counter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        objectGoal = GameObject.FindGameObjectsWithTag("Item").Length;
         if (objectsCollected > previousObjectsCollected)
         {
             previousObjectsCollected = objectsCollected;

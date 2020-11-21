@@ -3507,8 +3507,8 @@ GameObject:
   - component: {fileID: 1893579926}
   - component: {fileID: 1893579928}
   m_Layer: 0
-  m_Name: Pot
-  m_TagString: Pot
+  m_Name: Porridge
+  m_TagString: Porridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3593,6 +3593,7 @@ MonoBehaviour:
   animator: {fileID: 1276045677}
   tempText: {fileID: 1700684967}
   winningPanel: {fileID: 1432861938}
+  secondsToActivate: 3
   coldTemp: 30
   rightTemp: 60
   hotTemp: 100

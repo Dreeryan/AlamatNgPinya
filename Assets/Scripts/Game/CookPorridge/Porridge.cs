@@ -7,17 +7,20 @@ public class Porridge : MonoBehaviour
 {
     public Animator animator;
     private float currentTemp = 0.0f;
-    private float addTemperature = 6.0f;
-    private float decreaseTemperature = 6.0f;
+    private float maxTemp = 100.0f;
+    private float minTemp = 0.0f;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI tempText;
     [SerializeField] private GameObject winningPanel;
+    [SerializeField] private float secondsToActivate;
 
     [Header("Porridge Variables")]
     [SerializeField] private float coldTemp;
     [SerializeField] private float rightTemp;
     [SerializeField] private float hotTemp;
+    [SerializeField] private float addTemperature;
+    [SerializeField] private float decreaseTemperature;
     [SerializeField] private GameObject fireObj;
 
     private bool isCold = false;
@@ -51,14 +54,14 @@ public class Porridge : MonoBehaviour
         {
             currentTemp += addTemperature * Time.deltaTime;
 
-            if (currentTemp >= 100) currentTemp = 100;
+            if (currentTemp >= maxTemp) currentTemp = maxTemp;
         }
 
         else
         {
             currentTemp -= decreaseTemperature * Time.deltaTime;
 
-            if (currentTemp <= 0) currentTemp = 0;
+            if (currentTemp <= minTemp) currentTemp = minTemp;
         }
 
         if (currentTemp > 0)
@@ -98,7 +101,7 @@ public class Porridge : MonoBehaviour
 
     IEnumerator WinCountdown()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(secondsToActivate);
         winningPanel.SetActive(true);
     }
 }

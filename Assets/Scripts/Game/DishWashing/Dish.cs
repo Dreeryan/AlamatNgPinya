@@ -6,27 +6,23 @@ using TMPro;
 
 public class Dish : MonoBehaviour
 {
+    [SerializeField] private CircleCollider2D cd;
     [SerializeField] private Sponge sponge;
 
-	//A: Dont do headers this way. Make it more specific (UI, Move Settings, etc)
-    [Header("Variables")]
+    [Header("Sponge Variables")]
     [SerializeField] public float currentDirtRate;
     [SerializeField] private float minDirtRate = 0f;
     [SerializeField] private Transform dishRack;
 
     [Header("UI")]
-    [SerializeField] private TextMeshProUGUI cleanRateText;
+    [SerializeField] private TextMeshProUGUI dirtRateText;
 
     public bool isPlaced;
     // Start is called before the first frame update
     void Start()
     {
-        if (cleanRateText != null)
-        cleanRateText.gameObject.SetActive(false);
-        cleanRateText = GameObject.Find("Current dirt rate").GetComponent<TextMeshProUGUI>();
-
-
-        dishRack = GameObject.Find("Dish Rack").transform;
+        if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
+        cd = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -39,9 +35,13 @@ public class Dish : MonoBehaviour
             // The clean dish will be put into the rack
             transform.position = dishRack.transform.position;
             isPlaced = true;
-			
-			//A: Nullcheck
-            cleanRateText.gameObject.SetActive(false);
+
+            //if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
+        }
+
+        if (isPlaced)
+        {
+            cd.enabled = false;
         }
     }
 
@@ -50,12 +50,9 @@ public class Dish : MonoBehaviour
         // If the dish is staying within the sponge
         if (collision.gameObject.CompareTag("Sponge"))
         {
-            if (cleanRateText != null)
-            cleanRateText.gameObject.SetActive(true);
+            if (dirtRateText != null) dirtRateText.gameObject.SetActive(true);
             sponge = collision.gameObject.GetComponent<Sponge>();
-			
-			//A: Move this into the nullcheck scope. This is still dangerouse
-            cleanRateText.text = "Current dirt rate: " + currentDirtRate.ToString("f0") + "%";
+            dirtRateText.text = "Current dirt rate: " + currentDirtRate.ToString("f0") + "%";
         }
     }
 
@@ -63,7 +60,7 @@ public class Dish : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Sponge"))
         {
-            cleanRateText.gameObject.SetActive(false);
+            dirtRateText.gameObject.SetActive(false);
         }
     }
 }

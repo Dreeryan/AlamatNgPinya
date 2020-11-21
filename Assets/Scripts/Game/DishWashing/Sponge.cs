@@ -10,49 +10,32 @@ public class Sponge : MonoBehaviour
 
     private Vector2 mousePos;
     private Vector2 currentPosition;
+    private Vector2 previousPos = Vector2.zero;
 
-    private bool isUsingWater;
+    private bool isOnDish;
     private bool isMouseDrag;
 
     [Header("Washing Variables")]
     [SerializeField] private float drainRate;
-    [SerializeField] private float maxWater;
-    [SerializeField] private float consumeWater;
-    [SerializeField] private float waterFillRate;
-    [SerializeField] private float consumeWaitTime;
-    [SerializeField] private float fillWaitTime;
-
-
-    private Vector2 previousPos = Vector2.zero;
     [SerializeField] private float dragTreshold = 0.01f;
 
     [Header("UI")]
-    [SerializeField] GameObject WaterBasin;
-    [SerializeField] Image waterBar;
+    [SerializeField] TextMeshProUGUI guideText;
 
     void Start()
     {
         currentPosition = transform.position;
+        if (guideText != null) guideText.gameObject.SetActive(true);
     }
 
     void Update()
     {
         if (Vector2.Distance(previousPos, Input.mousePosition) >= dragTreshold)
         {
-            if (isUsingWater)
+            if (isOnDish)
             {
-                waterBar.fillAmount -= consumeWater / consumeWaitTime * Time.deltaTime;
-
-                if (waterBar.fillAmount != 0)
-                {
-                    dish.currentDirtRate -= drainRate * Time.deltaTime;
-                }
-                else return;
+                dish.currentDirtRate -= drainRate * Time.deltaTime;
                 previousPos = Input.mousePosition;
-            }
-            else
-            {
-                waterBar.fillAmount += waterFillRate / fillWaitTime * Time.deltaTime;
             }
         }
     }
@@ -67,7 +50,6 @@ public class Sponge : MonoBehaviour
     {
         // The sponge will be back to its current position
         transform.position = currentPosition;
-
         isMouseDrag = false;
     }
 
@@ -83,7 +65,10 @@ public class Sponge : MonoBehaviour
         if (collision.gameObject.CompareTag("Dish"))
         {
             dish = collision.gameObject.GetComponent<Dish>();
-            isUsingWater = true;
+            isOnDish = true;
+
+            if (guideText != null)
+            guideText.gameObject.SetActive(false);
         }
     }
 
@@ -91,7 +76,7 @@ public class Sponge : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Dish"))
         {
-            isUsingWater = false;
+            isOnDish = false;
         }
     }
 }

@@ -1,70 +1,104 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Porridge : MonoBehaviour
 {
-	//A: Please follow the enum format in the code standards. This is dangerous
-    public enum CookState
-    {
-        Uncooked, Undercooked, Cooked
-    }
+    public Animator animator;
+    private float currentTemp = 0.0f;
+    private float addTemperature = 6.0f;
+    private float decreaseTemperature = 6.0f;
 
-    public CookState CurrentState;
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI tempText;
+    [SerializeField] private GameObject winningPanel;
 
-    [SerializeField] private Pot pot;
-    [SerializeField] public float porridgeTemp;
+    [Header("Porridge Variables")]
+    [SerializeField] private float coldTemp;
+    [SerializeField] private float rightTemp;
+    [SerializeField] private float hotTemp;
+    [SerializeField] private GameObject fireObj;
 
-    private Renderer rd;
-    private bool isCooking;
+    private bool isCold = false;
+    private bool isRight = false;
+    private bool isHot = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        rd = GetComponent<Renderer>();
-        CurrentState = CookState.Uncooked;
+        if (fireObj != null) fireObj.SetActive(false);
+        if (winningPanel != null) winningPanel.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (isCooking)
+        UpdateTemp();
+
+        if (isRight)
         {
-			//A: Null check the rd
-            if (porridgeTemp < pot.uncookedTemp)
-            {
-                CurrentState = CookState.Uncooked;
-                rd.material.color = Color.white;
-            }
-            else if (porridgeTemp < pot.undercookedTemp)
-            {
-                CurrentState = CookState.Undercooked;
-				//A: Make this a variable design can adjust
-                rd.material.color = new Color32(229, 229, 229, 255);
-            }
-            else if (porridgeTemp < pot.cookedTemp)
-            {
-                CurrentState = CookState.Cooked;
-				//A: Make this a variable design can adjust
-                rd.material.color = new Color32(234, 222, 201, 255);
-            }
+            StartCoroutine("WinCountdown");
+        }
+        else
+        {
+            StopCoroutine("WinCountdown");
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public void UpdateTemp()
     {
-        if (collision.gameObject.CompareTag("Pot"))
+        if (Input.GetMouseButton(0))
         {
-            isCooking = true;
-            pot = collision.gameObject.GetComponent<Pot>();
+            currentTemp += addTemperature * Time.deltaTime;
+
+            if (currentTemp >= 100) currentTemp = 100;
         }
+
+        else
+        {
+            currentTemp -= decreaseTemperature * Time.deltaTime;
+
+            if (currentTemp <= 0) currentTemp = 0;
+        }
+
+        if (currentTemp > 0)
+        {
+            fireObj.SetActive(true);
+            animator.SetBool("isCooking", true);
+        }
+
+        if (currentTemp < coldTemp)
+        {
+            isCold = true;
+            isRight = false;
+            isHot = false;
+        }
+
+        else if (currentTemp < rightTemp)
+        {
+            isRight = true;
+            isCold = false;
+            isHot = false;
+        }
+
+        else if (currentTemp < hotTemp)
+        {
+            isHot = true;
+            isRight = false;
+            isCold = false;
+        }
+
+        UpdateUI();
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    void UpdateUI()
     {
-        if (collision.gameObject.CompareTag("Pot"))
-        {
-            isCooking = false;
-        }
+        if (tempText != null) tempText.text = currentTemp.ToString("f0") + "°C";
+    }
+
+    IEnumerator WinCountdown()
+    {
+        yield return new WaitForSeconds(3f);
+        winningPanel.SetActive(true);
     }
 }

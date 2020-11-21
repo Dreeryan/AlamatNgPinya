@@ -6,112 +6,67 @@ using TMPro;
 
 public class Pot : MonoBehaviour
 {
-    [Header("UI")]
-    public GameObject Meter;
-    public Image progressBar;
-    public GameObject winningPanel;
+    //A: Please follow the enum format in the code standards. This is dangerous
+    public enum CookState
+    {
+        Uncooked, Undercooked, Cooked
+    }
 
-	//A: Dont do headers this way. Make it more specific (UI, Move Settings, etc)
-    [Header("Variables")]
-    [SerializeField] private float maxTemperature;
-    [SerializeField] public float addTemperature;
-    [SerializeField] private float decreaseTemperature;
-    [SerializeField] public float uncookedTemp;
-    [SerializeField] public float undercookedTemp;
-    [SerializeField] public float cookedTemp;
-    [SerializeField] private float secondsToWin;
+    public CookState CurrentState;
 
-    [SerializeField] TextMeshProUGUI cookStatus;
+    [SerializeField] private Pot pot;
+    [SerializeField] public float porridgeTemp;
 
-    [SerializeField] Porridge porridge;
-
-    public bool isOccupied;
+    private Renderer rd;
+    private bool isCooking;
 
     // Start is called before the first frame update
     void Start()
     {
-        cookStatus = GameObject.Find("Cook Status").GetComponent<TextMeshProUGUI>();
-        if (winningPanel != null) winningPanel.SetActive(false);
+        rd = GetComponent<Renderer>();
+        CurrentState = CookState.Uncooked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // If pot is occupied and the porridge is placed
-        if (isOccupied)
+        if (isCooking)
         {
-            if (Input.GetMouseButton(0))
+            //A: Null check the rd
+            // if (porridgeTemp < pot.uncookedTemp)
             {
-                porridge.porridgeTemp += addTemperature * Time.deltaTime;
-
-                if (porridge.porridgeTemp >= maxTemperature)
-                {
-                    porridge.porridgeTemp = maxTemperature;
-                }
-
-                StartCoroutine(Countdown());
-                //if (cookStatus != null) cookStatus.text = " " + porridge.CurrentState;
-                //if (progressBar != null) UpdateUI();
+                CurrentState = CookState.Uncooked;
+                rd.material.color = Color.white;
             }
-
-            else
+            //else if (porridgeTemp < pot.undercookedTemp)
             {
-                porridge.porridgeTemp -= decreaseTemperature * Time.deltaTime;
-
-                if(porridge.porridgeTemp <= 0)
-                {
-                    porridge.porridgeTemp = 0;
-                }
+                CurrentState = CookState.Undercooked;
+                //A: Make this a variable design can adjust
+                rd.material.color = new Color32(229, 229, 229, 255);
             }
-
-            if (cookStatus != null) cookStatus.text = " " + porridge.CurrentState;
-            if (progressBar != null) UpdateUI();
+            // else if (porridgeTemp < pot.cookedTemp)
+            {
+                CurrentState = CookState.Cooked;
+                //A: Make this a variable design can adjust
+                rd.material.color = new Color32(234, 222, 201, 255);
+            }
         }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Porridge"))
+        if (collision.gameObject.CompareTag("Pot"))
         {
-            porridge = collision.gameObject.GetComponent<Porridge>();
-            isOccupied = true;
-
-            if (cookStatus != null)
-            {
-                cookStatus.gameObject.SetActive(true);
-            }
+            isCooking = true;
+            pot = collision.gameObject.GetComponent<Pot>();
         }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Porridge"))
+        if (collision.gameObject.CompareTag("Pot"))
         {
-            isOccupied = false;
-            progressBar.fillAmount = 0;
-
-            if (cookStatus != null)
-            {
-                cookStatus.gameObject.SetActive(false);
-            }
-        }
-    }
-
-    void UpdateUI()
-    {
-        progressBar.fillAmount = porridge.porridgeTemp / maxTemperature;
-    }
-
-    IEnumerator Countdown()
-    {
-        while (porridge.porridgeTemp > undercookedTemp)
-        {
-            yield return new WaitForSeconds(secondsToWin);
-            if (winningPanel != null)
-                winningPanel.SetActive(true);
-			
-			//A: Nullcheck then yield break;
-            porridge.porridgeTemp = progressBar.fillAmount;
+            isCooking = false;
         }
     }
 }

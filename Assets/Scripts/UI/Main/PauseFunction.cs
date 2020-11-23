@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class PauseFunction : MonoBehaviour
 {
-    public GameObject pauseButton;
-    public GameObject pauseMenu;
+    [SerializeField] private GameObject pauseButton;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject askMomButton;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,10 @@ public class PauseFunction : MonoBehaviour
         if (pauseButton != null)
             pauseButton.SetActive(false);
 
+        // Hides Ask Mom Button
+        if (askMomButton != null)
+            askMomButton.SetActive(false);
+
         // Opens Pause Menu UI
         if (pauseMenu != null)
             pauseMenu.SetActive(true); 
@@ -41,6 +46,10 @@ public class PauseFunction : MonoBehaviour
         // Shows Pause Button
         if (pauseButton != null)
             pauseButton.SetActive(true);
+
+        // Shows Ask Mom Button
+        if (askMomButton != null)
+            askMomButton.SetActive(true);
 
         // Closes Pause Menu UI
         if (pauseMenu != null)

@@ -728,7 +728,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 542165242}
         m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
@@ -4131,6 +4131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseButton: {fileID: 1202915314}
   pauseMenu: {fileID: 1190636232}
+  askMomButton: {fileID: 1969702449}
 --- !u!1 &1969702449
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class CollisionChecker : MonoBehaviour
 {
     public bool hasCollided;
 
-    [SerializeField] private Collider2D collider;
+    [SerializeField] private Collider2D col;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +19,8 @@ public class CollisionChecker : MonoBehaviour
     {
         if (hasCollided)
         {
-            if (collider != null)
-                collider.enabled = false;
+            if (col != null)
+                col.enabled = false;
         }
     }
 

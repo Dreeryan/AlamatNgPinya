@@ -10,7 +10,7 @@ public class SweepableObject : MonoBehaviour
 
     public ReturnIfVisionLost vision;
 
-    private bool isPlaced;
+    private bool    isPlaced;
     private Vector2 currentPosition;
 
     private void Start()

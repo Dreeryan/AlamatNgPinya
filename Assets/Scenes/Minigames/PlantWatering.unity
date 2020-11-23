@@ -1527,7 +1527,7 @@ MonoBehaviour:
   fillRate: 20
   fillBar: {fileID: 1849826984}
   fillBarImage: {fileID: 1106237153}
-  winScreen: {fileID: 0}
+  winScreen: {fileID: 799077130}
   plant: {fileID: 2012011375}
   dryPlant: {fileID: 21300000, guid: 397077c950d708d4eb630eb8377a1f77, type: 3}
   wateredPlant: {fileID: 21300000, guid: db13f5792963b374cb8b4cec12a62176, type: 3}

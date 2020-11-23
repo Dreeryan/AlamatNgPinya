@@ -8,11 +8,11 @@ public class ShakeObject : MonoBehaviour
     public UnityEvent OnShake;
     public Transform shakeObject;
 
-    private bool isMouseDrag;
+    private bool    isMouseDrag;
     private Vector2 currentPosition;
     private Vector2 mousePos;
     private Vector2 previousPos = Vector2.zero;
-    private float threshold = 0.1f;
+    private float   threshold   = 0.1f;
 
     // This is for testing
     [SerializeField] private bool isShaking;

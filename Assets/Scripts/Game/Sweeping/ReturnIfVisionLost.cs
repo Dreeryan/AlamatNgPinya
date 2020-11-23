@@ -6,7 +6,7 @@ public class ReturnIfVisionLost : MonoBehaviour
 {
     // Detects manually if object is seen by the camera
 
-    public bool isSeen;
+    public  bool     isSeen;
     private Renderer renderers;
 
     void Start()

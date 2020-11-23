@@ -3981,12 +3981,12 @@ MonoBehaviour:
   animator: {fileID: 1276045677}
   tempText: {fileID: 1700684967}
   winningPanel: {fileID: 1432861938}
-  secondsToActivate: 3
+  secondsToWin: 3
   coldTemp: 30
   rightTemp: 60
   hotTemp: 100
-  addTemperature: 0
-  decreaseTemperature: 0
+  addTemperature: 3
+  decreaseTemperature: 6
   fireObj: {fileID: 1276045676}
 --- !u!1 &2119766491
 GameObject:

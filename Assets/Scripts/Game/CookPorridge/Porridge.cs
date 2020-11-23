@@ -13,7 +13,7 @@ public class Porridge : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI tempText;
     [SerializeField] private GameObject winningPanel;
-    [SerializeField] private float secondsToActivate;
+    [SerializeField] private float secondsToWin;
 
     [Header("Porridge Variables")]
     [SerializeField] private float coldTemp;
@@ -101,7 +101,7 @@ public class Porridge : MonoBehaviour
 
     IEnumerator WinCountdown()
     {
-        yield return new WaitForSeconds(secondsToActivate);
+        yield return new WaitForSeconds(secondsToWin);
         winningPanel.SetActive(true);
     }
 }

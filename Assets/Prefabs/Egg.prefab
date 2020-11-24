@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6409897020900722036}
   - component: {fileID: 6409897020900722039}
-  - component: {fileID: 6409897020900722042}
   - component: {fileID: 6409897020900722037}
   - component: {fileID: 3746543945012756444}
   - component: {fileID: 4653104684366659466}
   - component: {fileID: 6685725489185511279}
+  - component: {fileID: 4743468782995224815}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Item
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6409897020900722038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,8 +74,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 2973042679480291512, guid: db4aef609ab657d4f8c6440ca134abea,
+    type: 3}
   m_Color: {r: 0.9339623, g: 0.9295568, b: 0.9295568, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,22 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &6409897020900722042
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6409897020900722038}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00055160525, y: -0.0016547799}
-  m_Size: {x: 0.16800748, y: 0.17352341}
-  m_Direction: 0
 --- !u!114 &6409897020900722037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,4 +149,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasCollided: 0
-  collider: {fileID: 6409897020900722042}
+  col: {fileID: 0}
+--- !u!70 &4743468782995224815
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409897020900722038}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.22, y: 1.69}
+  m_Direction: 0

@@ -3169,7 +3169,6 @@ GameObject:
   - component: {fileID: 996339360}
   - component: {fileID: 996339359}
   - component: {fileID: 996339358}
-  - component: {fileID: 996339357}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -3177,21 +3176,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &996339357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996339356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f4a5cf36ea8c04d9494ebf4dabb6eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseButton: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  askMomButton: {fileID: 0}
 --- !u!114 &996339358
 MonoBehaviour:
   m_ObjectHideFlags: 0

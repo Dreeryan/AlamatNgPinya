@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasCollided: 0
-  col: {fileID: 0}
+  col: {fileID: 4743468782995224815}
 --- !u!70 &4743468782995224815
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

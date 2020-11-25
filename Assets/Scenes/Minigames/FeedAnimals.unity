@@ -11500,8 +11500,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   shakeObject: {fileID: 2020409174}
-  isOnFeedArea: 0
+  isMouseDrag: 0
   isShaking: 0
+  rb: {fileID: 2020409171}
 --- !u!212 &2020409173
 SpriteRenderer:
   m_ObjectHideFlags: 0

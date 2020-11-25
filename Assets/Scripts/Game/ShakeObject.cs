@@ -5,43 +5,52 @@ using UnityEngine.Events;
 
 public class ShakeObject : MonoBehaviour
 {
-    public UnityEvent OnShake;
-    public Transform shakeObject;
+    public UnityEvent   OnShake;
+    public Transform    shakeObject;
 
-    private bool     isOnFeedArea;
-    private bool    isMouseDrag;
+    private bool    isOnFeedArea;
+    public bool     isMouseDrag;
     private Vector2 currentPosition;
     private Vector2 mousePos;
     private Vector2 previousPos = Vector2.zero;
     private float   threshold   = 0.1f;
 
-    // This is for testing
     [SerializeField] private bool isShaking;
-
     private void Start()
     {
-        isOnFeedArea = false;
-        isShaking = false;
+        isMouseDrag     = false;
+        isOnFeedArea    = false;
+        isShaking       = false;
     }
 
     void Update()
     {
-        // Triggers shaking
-        if (isMouseDrag && isOnFeedArea)
-            isShaking = true;
+        if (transform.hasChanged)
+        {
+            isMouseDrag = true;
+            transform.hasChanged = false;
+        }
 
         else
-            isShaking = false;
+        {
+            isMouseDrag = false;
+        }
 
+        if (!isMouseDrag)
+        {
+            isShaking = false;  
+        }
+
+        // Calls event is object is shaken
         if (isShaking)
             OnShake.Invoke();
     }
 
     void OnMouseDrag()
     {
+        previousPos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = mousePos;
-        isMouseDrag = true;
     }
 
     void OnMouseUp()
@@ -50,11 +59,7 @@ public class ShakeObject : MonoBehaviour
         transform.position = currentPosition;
 
         isMouseDrag = false;
-    }
-
-    void OnMouseDown()
-    {
-        previousPos = Input.mousePosition;
+        isShaking = false;
     }
 
     void OnTriggerStay2D(Collider2D collision)
@@ -64,6 +69,12 @@ public class ShakeObject : MonoBehaviour
         {
             isOnFeedArea = true;
             Debug.Log("Is On Feed Area");
+
+            // Triggers shaking
+            if (isOnFeedArea && isMouseDrag)
+            {
+                isShaking = true;
+            }
         }
     }
 
@@ -73,6 +84,7 @@ public class ShakeObject : MonoBehaviour
         if (collision.gameObject.CompareTag("FeedArea"))
         {
             isOnFeedArea = false;
+            isShaking = false;
             Debug.Log("Left Feed Area");
         }
     }

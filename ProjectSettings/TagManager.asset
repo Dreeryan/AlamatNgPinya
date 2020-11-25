@@ -23,6 +23,7 @@ TagManager:
   - CleanDish
   - Rack
   - Endpoint
+  - FeedArea
   layers:
   - Default
   - TransparentFX

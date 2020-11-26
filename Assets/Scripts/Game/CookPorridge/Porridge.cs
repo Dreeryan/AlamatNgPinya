@@ -6,12 +6,12 @@ using TMPro;
 
 public class Porridge : MonoBehaviour
 {
-    public Animator fireAnimator;
-    public Animator potCoverAnimator;
-
     private float currentTemp = 0.0f;
     private float maxTemp = 100.0f;
-    private int tempValue;
+
+    [Header("Animator")]
+    public Animator fireAnimator;
+    public Animator potCoverAnimator;
 
     [Header("UI")]
     [SerializeField] private Slider porridgeSlider;
@@ -22,10 +22,6 @@ public class Porridge : MonoBehaviour
     [SerializeField] private float coldTemp;
     [SerializeField] private float cookTemp;
     [SerializeField] private float hotTemp;
-
-    public bool cold = false;
-    public bool right = false;
-    public bool hot = false;
 
     void Update()
     {
@@ -67,6 +63,10 @@ public class Porridge : MonoBehaviour
         else
         {
             fireAnimator.SetBool("isFireOn", false);
+        }
+
+        if (currentTemp < 30)
+        {
             potCoverAnimator.SetBool("isFireOn", false);
         }
     }

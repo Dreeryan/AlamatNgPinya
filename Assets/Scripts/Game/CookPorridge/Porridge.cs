@@ -6,7 +6,9 @@ using TMPro;
 
 public class Porridge : MonoBehaviour
 {
-    public Animator animator;
+    public Animator fireAnimator;
+    public Animator potCoverAnimator;
+
     private float currentTemp = 0.0f;
     private float maxTemp = 100.0f;
     private int tempValue;
@@ -37,7 +39,6 @@ public class Porridge : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             porridgeSlider.value += addTemperature * Time.deltaTime;
-            //currentTemp += addTemperature * Time.deltaTime;
 
             if (currentTemp >= maxTemp)
             {
@@ -55,15 +56,18 @@ public class Porridge : MonoBehaviour
             }
         }
 
-        animator.SetFloat("Temp", currentTemp);
+        fireAnimator.SetFloat("Temp", currentTemp);
+        potCoverAnimator.SetFloat("Temp", currentTemp);
 
         if (currentTemp > 0)
         {
-            animator.SetBool("isFireOn", true);
+            fireAnimator.SetBool("isFireOn", true);
+            potCoverAnimator.SetBool("isFireOn", true);
         }
         else
         {
-            animator.SetBool("isFireOn", false);
+            fireAnimator.SetBool("isFireOn", false);
+            potCoverAnimator.SetBool("isFireOn", false);
         }
     }
 }

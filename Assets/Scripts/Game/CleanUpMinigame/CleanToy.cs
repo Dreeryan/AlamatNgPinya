@@ -4,45 +4,40 @@ using UnityEngine;
 
 public class CleanToy : MonoBehaviour
 {
-	//A: Dont do headers this way. Make it more specific (UI, Move Settings, etc)
-    [Header("Variables")]
-    [SerializeField] private float valueToTarget = 1.2f;
+    [SerializeField] private CarryController carryController;
     [SerializeField] public Transform itemHolder;
+
+    public Collider2D col;
+
+    [Header("Toy Bin Variables")]
+    [SerializeField] private float distanceToToyBin = 1.2f;
+
     public bool isPlaced;
     public bool isMouseDown;
     public bool isPlayerNear;
-    [SerializeField] private CarryController carryController;
+
+    void Start()
+    {
+        col = GetComponent<Collider2D>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        // If the object is near the item holder, the object will automatically be placed.
-		//A: To make life easer, you can make this into a method that you can call instead
-        if (Mathf.Abs(transform.position.x - itemHolder.transform.position.x) <= valueToTarget &&
-            Mathf.Abs(transform.position.y - itemHolder.transform.position.y) <= valueToTarget)
-        {
-            ItemHolderPosition();
-            isPlaced = true;
-        }
-        else
-        {
-            isPlaced = false;
-        }
+        PlaceItem();
 
         if (isPlayerNear && isMouseDown)
         {
             carryController.PickupItem();
         }
 
+        if (isPlaced)
+        {
+            col.enabled = false;
+        }
+
     }
 	
-	/* //Can call this instead to reduce code length
-	private bool IsValueUnderTarget(float initPos, float targetPos)
-	{
-		return (Mathf.Abs(initPos - targetPos)) <= valueToTarget;
-	}
-	*/
-
     public void ItemHolderPosition()
     {
         // To put the item in the holder.
@@ -51,13 +46,12 @@ public class CleanToy : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collision)
-    {	
-		//A: Cleaner to do the opposite condition then return
+    {
         if (collision.gameObject.CompareTag("Player"))
         {
             isPlayerNear = true;
 			
-			//A: Null check before accessing
+            if (carryController != null)
             carryController = GameObject.FindGameObjectWithTag("Player").GetComponent<CarryController>();
         }
     }
@@ -73,5 +67,19 @@ public class CleanToy : MonoBehaviour
     void OnMouseDown()
     {
         isMouseDown = true;
+    }
+
+    public void PlaceItem()
+    {
+        if (Mathf.Abs(transform.position.x - itemHolder.transform.position.x) <= distanceToToyBin &&
+            Mathf.Abs(transform.position.y - itemHolder.transform.position.y) <= distanceToToyBin)
+        {
+            ItemHolderPosition();
+            isPlaced = true;
+        }
+        else
+        {
+            isPlaced = false;
+        }
     }
 }

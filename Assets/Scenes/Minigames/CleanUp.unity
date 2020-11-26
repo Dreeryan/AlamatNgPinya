@@ -1567,7 +1567,6 @@ GameObject:
   m_Component:
   - component: {fileID: 583218884}
   - component: {fileID: 583218883}
-  - component: {fileID: 583218885}
   - component: {fileID: 583218886}
   - component: {fileID: 583218887}
   m_Layer: 0
@@ -1615,7 +1614,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -1641,18 +1640,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &583218885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583218882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8bbea8c9e963e64ead1bfd24d008c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &583218886
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5188,8 +5175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cleanToy: {fileID: 0}
-  itemDetector: {fileID: 0}
-  itemCarrier: {fileID: 0}
+  itemDetector: {fileID: 1123739137}
+  itemCarrier: {fileID: 535280777}
   item: {fileID: 0}
   itemText: {fileID: 2073119353}
   isCarrying: 0
@@ -6288,9 +6275,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1598999238}
   - component: {fileID: 1598999237}
-  - component: {fileID: 1598999239}
   - component: {fileID: 1598999240}
   - component: {fileID: 1598999241}
+  - component: {fileID: 1598999239}
   m_Layer: 0
   m_Name: Box Item
   m_TagString: Item
@@ -6337,7 +6324,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 812549664900857559, guid: 138edeb395b9587469259d97b4960702, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6357,7 +6344,7 @@ Transform:
   m_GameObject: {fileID: 1598999236}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -555.94604, y: -350.3712, z: 52.5625}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1513266317}
   m_RootOrder: 2
@@ -6377,16 +6364,16 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 1.7, y: 1.92}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 1.7, y: 1.92}
   m_EdgeRadius: 0
 --- !u!50 &1598999240
 Rigidbody2D:
@@ -6421,12 +6408,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47775fc7bf2d27478fa2df644ae6333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueToTarget: 1.2
+  carryController: {fileID: 1347747196}
   itemHolder: {fileID: 583218884}
+  col: {fileID: 0}
+  distanceToToyBin: 1.2
   isPlaced: 0
   isMouseDown: 0
   isPlayerNear: 0
-  carryController: {fileID: 0}
 --- !u!1 &1614208634
 GameObject:
   m_ObjectHideFlags: 0
@@ -6747,9 +6735,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1830365972}
   - component: {fileID: 1830365971}
-  - component: {fileID: 1830365973}
   - component: {fileID: 1830365974}
   - component: {fileID: 1830365975}
+  - component: {fileID: 1830365973}
   m_Layer: 0
   m_Name: Circle Item
   m_TagString: Item
@@ -6796,7 +6784,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -6779536340980169775, guid: 138edeb395b9587469259d97b4960702,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6816,13 +6805,13 @@ Transform:
   m_GameObject: {fileID: 1830365970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -541.616, y: -353.42117, z: 52.5625}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1513266317}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1830365973
-CircleCollider2D:
+--- !u!61 &1830365973
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6835,8 +6824,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.54, y: 2.49}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Size: {x: 1.54, y: 2.49}
+  m_EdgeRadius: 0
 --- !u!50 &1830365974
 Rigidbody2D:
   serializedVersion: 4
@@ -6870,12 +6869,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47775fc7bf2d27478fa2df644ae6333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueToTarget: 1.2
+  carryController: {fileID: 1347747196}
   itemHolder: {fileID: 583218884}
+  col: {fileID: 0}
+  distanceToToyBin: 1.2
   isPlaced: 0
   isMouseDown: 0
   isPlayerNear: 0
-  carryController: {fileID: 0}
 --- !u!1 &1837570548
 GameObject:
   m_ObjectHideFlags: 0
@@ -7744,9 +7744,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2119677896}
   - component: {fileID: 2119677895}
-  - component: {fileID: 2119677894}
   - component: {fileID: 2119677893}
   - component: {fileID: 2119677892}
+  - component: {fileID: 2119677894}
   m_Layer: 0
   m_Name: Box Item (1)
   m_TagString: Item
@@ -7766,12 +7766,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47775fc7bf2d27478fa2df644ae6333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueToTarget: 1.2
+  carryController: {fileID: 1347747196}
   itemHolder: {fileID: 583218884}
+  col: {fileID: 0}
+  distanceToToyBin: 1.2
   isPlaced: 0
   isMouseDown: 0
   isPlayerNear: 0
-  carryController: {fileID: 0}
 --- !u!50 &2119677893
 Rigidbody2D:
   serializedVersion: 4
@@ -7808,16 +7809,16 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
 --- !u!212 &2119677895
 SpriteRenderer:
@@ -7858,7 +7859,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -1068885261661871075, guid: 138edeb395b9587469259d97b4960702,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7878,7 +7880,7 @@ Transform:
   m_GameObject: {fileID: 2119677891}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -554.046, y: -353.47318, z: 52.5625}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1513266317}
   m_RootOrder: 1

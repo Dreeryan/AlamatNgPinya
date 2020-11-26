@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Variables")]
+    [Header("Player move speed")]
     [SerializeField] private float moveSpeed = 5f;
+
     private Vector3 targetPoint;
     private Vector3 defaultAngle = new Vector3(0, 0, 0);
     private Vector3 newAngle = new Vector3(0, 180, 0);

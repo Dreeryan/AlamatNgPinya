@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClothesPlacement : MonoBehaviour
 {
     [SerializeField] private float valueToTarget = 1.2f;
-    [SerializeField] Transform     itemHolder;
+    public Transform     itemHolder;
 
     private Vector2 mousePos;
     private Vector2 currentPosition;

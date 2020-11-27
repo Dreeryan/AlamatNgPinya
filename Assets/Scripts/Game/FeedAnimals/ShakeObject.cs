@@ -9,7 +9,7 @@ public class ShakeObject : MonoBehaviour
     public Transform    shakeObject;
 
     private bool    isOnFeedArea;
-    public bool     isMouseDrag;
+    private bool    isMouseDrag;
     private Vector2 currentPosition;
     private Vector2 mousePos;
     private Vector2 previousPos = Vector2.zero;

@@ -24,6 +24,7 @@ TagManager:
   - Rack
   - Endpoint
   - FeedArea
+  - DirtyDish
   layers:
   - Default
   - TransparentFX

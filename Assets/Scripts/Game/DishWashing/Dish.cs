@@ -6,13 +6,15 @@ using TMPro;
 
 public class Dish : MonoBehaviour
 {
-    [SerializeField] private CircleCollider2D cd;
+    private Collider2D cd;
+    private Renderer rd;
+
     [SerializeField] private Sponge sponge;
 
     [Header("Sponge Variables")]
     [SerializeField] public float currentDirtRate;
     [SerializeField] private float minDirtRate = 0f;
-    [SerializeField] private Transform dishRack;
+    [SerializeField] private Transform cleanDishRack;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI dirtRateText;
@@ -22,7 +24,14 @@ public class Dish : MonoBehaviour
     void Start()
     {
         if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
-        cd = GetComponent<CircleCollider2D>();
+
+        if (cleanDishRack != null)
+        {
+            cleanDishRack = GameObject.Find("CleanDishRack").transform;
+        }
+
+        cd = GetComponent<Collider2D>();
+        rd = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -32,16 +41,12 @@ public class Dish : MonoBehaviour
         if (currentDirtRate < minDirtRate)
         {
             currentDirtRate = minDirtRate;
-            // The clean dish will be put into the rack
-            transform.position = dishRack.transform.position;
+            transform.position = cleanDishRack.transform.position;
             isPlaced = true;
 
-            //if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
-        }
-
-        if (isPlaced)
-        {
-            cd.enabled = false;
+            rd.material.color = new Color32(225, 225, 225, 0);
+            this.gameObject.transform.parent = cleanDishRack;
+            if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
         }
     }
 

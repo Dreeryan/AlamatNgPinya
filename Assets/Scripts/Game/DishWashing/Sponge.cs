@@ -62,7 +62,7 @@ public class Sponge : MonoBehaviour
     void OnTriggerStay2D(Collider2D collision)
     {
         // If the sponge is staying around the dish
-        if (collision.gameObject.CompareTag("Dish"))
+        if (collision.gameObject.CompareTag("DirtyDish"))
         {
             dish = collision.gameObject.GetComponent<Dish>();
             isOnDish = true;
@@ -74,7 +74,7 @@ public class Sponge : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Dish"))
+        if (collision.gameObject.CompareTag("DirtyDish"))
         {
             isOnDish = false;
         }

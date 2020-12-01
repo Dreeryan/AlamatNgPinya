@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ClothesPlacement : MonoBehaviour
 {
-    [SerializeField] private float valueToTarget = 1.2f;
-    public Transform     itemHolder;
+    [SerializeField] private float  valueToTarget = 1.2f;
+    public Transform                itemHolder;
+    public ClothingPositioning      clothingPosition;
 
     private Vector2 mousePos;
     private Vector2 currentPosition;
@@ -37,13 +38,13 @@ public class ClothesPlacement : MonoBehaviour
     {
         if (hasCollided)
         {
-            // If the object is near the item holder, the object will automatically be placed.
-            if (Mathf.Abs(transform.position.x - itemHolder.transform.position.x) <= valueToTarget &&
-                Mathf.Abs(transform.position.y - itemHolder.transform.position.y) <= valueToTarget)
+            if (clothingPosition != null)
             {
-                transform.position = itemHolder.transform.position;
+                transform.position = clothingPosition.GetNextAvailablePosition();
+                clothingPosition.UpdateIndex();
             }
         }
+
         // Else, it will be placed back to it's last position
         else
         {

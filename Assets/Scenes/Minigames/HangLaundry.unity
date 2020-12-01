@@ -1421,7 +1421,7 @@ GameObject:
   - component: {fileID: 208480615}
   - component: {fileID: 208480614}
   m_Layer: 0
-  m_Name: Shirt
+  m_Name: Shirt4
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1453,8 +1453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be758422c5e8def4dbec9f3f7cdd956f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueToTarget: 1.2
+  valueToTarget: 0
   itemHolder: {fileID: 58240757}
+  clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   hasCollided: 0
   vision: {fileID: 208480617}
@@ -2775,7 +2776,7 @@ GameObject:
   - component: {fileID: 504803008}
   - component: {fileID: 504803006}
   m_Layer: 0
-  m_Name: Shirt
+  m_Name: Shirt3
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2896,8 +2897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be758422c5e8def4dbec9f3f7cdd956f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueToTarget: 1.2
+  valueToTarget: 0
   itemHolder: {fileID: 58240757}
+  clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   hasCollided: 0
   vision: {fileID: 504803005}
@@ -5602,7 +5604,7 @@ GameObject:
   - component: {fileID: 1059201454}
   - component: {fileID: 1059201452}
   m_Layer: 0
-  m_Name: Shirt
+  m_Name: Shirt1
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5723,8 +5725,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be758422c5e8def4dbec9f3f7cdd956f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueToTarget: 1.2
+  valueToTarget: 0
   itemHolder: {fileID: 58240757}
+  clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   hasCollided: 0
   vision: {fileID: 1059201451}
@@ -9425,7 +9428,7 @@ GameObject:
   - component: {fileID: 1598950582}
   - component: {fileID: 1598950580}
   m_Layer: 0
-  m_Name: Shirt
+  m_Name: Shirt2
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9546,8 +9549,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be758422c5e8def4dbec9f3f7cdd956f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueToTarget: 1.2
+  valueToTarget: 0
   itemHolder: {fileID: 58240757}
+  clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   hasCollided: 0
   vision: {fileID: 1598950579}
@@ -10834,7 +10838,7 @@ MonoBehaviour:
   - {fileID: 2088131282}
   - {fileID: 1759016077}
   - {fileID: 1151815802}
-  clothing: []
+  isMouseUp: 0
 --- !u!1 &1755589747
 GameObject:
   m_ObjectHideFlags: 0
@@ -11355,7 +11359,7 @@ GameObject:
   - component: {fileID: 1824734649}
   - component: {fileID: 1824734648}
   m_Layer: 0
-  m_Name: Shirt
+  m_Name: Shirt5
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11387,8 +11391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be758422c5e8def4dbec9f3f7cdd956f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueToTarget: 1.2
+  valueToTarget: 0
   itemHolder: {fileID: 58240757}
+  clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   hasCollided: 0
   vision: {fileID: 1824734651}

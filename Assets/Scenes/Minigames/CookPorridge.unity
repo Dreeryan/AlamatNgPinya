@@ -459,7 +459,7 @@ RectTransform:
   - {fileID: 1208254938}
   - {fileID: 591553599}
   m_Father: {fileID: 279580515}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -749,12 +749,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 243001992}
-  - {fileID: 883889341}
-  - {fileID: 1432861939}
   - {fileID: 437591475}
   - {fileID: 1209122293}
   - {fileID: 129123084}
   - {fileID: 2024910070}
+  - {fileID: 1432861939}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -942,7 +941,7 @@ RectTransform:
   - {fileID: 2119766494}
   - {fileID: 615502416}
   m_Father: {fileID: 279580515}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2441,7 +2440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &883889341
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2454,12 +2453,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 479305393}
-  m_Father: {fileID: 279580515}
+  m_Father: {fileID: 1432861939}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -824.99994, y: 472.99994}
+  m_AnchoredPosition: {x: 13, y: -373}
   m_SizeDelta: {x: 177.68799, y: 47.687996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &883889342
@@ -3076,7 +3075,7 @@ RectTransform:
   - {fileID: 172328280}
   - {fileID: 1420107024}
   m_Father: {fileID: 279580515}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -3496,13 +3495,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1639854569}
+  - {fileID: 883889341}
   m_Father: {fileID: 279580515}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -54.1}
-  m_SizeDelta: {x: 0, y: -108.20459}
+  m_AnchoredPosition: {x: 0, y: -5.9000244}
+  m_SizeDelta: {x: 0, y: 47.06079}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1432861940
 MonoBehaviour:
@@ -3517,7 +3517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.98039216}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3812,11 +3812,15 @@ MonoBehaviour:
   fireAnimator: {fileID: 2134135917}
   potCoverAnimator: {fileID: 926880413}
   porridgeSlider: {fileID: 2024910071}
+  winningPanel: {fileID: 1432861938}
   addTemperature: 0.03
   decreaseTemperature: 0.03
   coldTemp: 30
   cookTemp: 60
   hotTemp: 100
+  secondsToUndercooked: 3
+  secondsToCooked: 5
+  secondsToWin: 2
 --- !u!1 &1639854568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,7 +3855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 113}
   m_SizeDelta: {x: 1506.7389, y: 657.8817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639854570
@@ -4600,7 +4604,7 @@ RectTransform:
   - {fileID: 2088808587}
   - {fileID: 1864621346}
   m_Father: {fileID: 279580515}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

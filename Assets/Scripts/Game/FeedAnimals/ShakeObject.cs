@@ -68,7 +68,6 @@ public class ShakeObject : MonoBehaviour
         if (collision.gameObject.CompareTag("FeedArea"))
         {
             isOnFeedArea = true;
-            Debug.Log("Is On Feed Area");
 
             // Triggers shaking
             if (isOnFeedArea && isMouseDrag)
@@ -85,7 +84,6 @@ public class ShakeObject : MonoBehaviour
         {
             isOnFeedArea = false;
             isShaking = false;
-            Debug.Log("Left Feed Area");
         }
     }
 

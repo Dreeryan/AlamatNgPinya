@@ -1,7 +1,70 @@
 fileFormatVersion: 2
 guid: a698d4c4de2fc344abd31a580cccc2a2
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7468929791927369107
+    second: SpriteSheet_HangingClothes_Cooking_Environment_0
+  - first:
+      213: -6241041585675351931
+    second: SpriteSheet_HangingClothes_Cooking_Environment_1
+  - first:
+      213: 8241956189453176714
+    second: SpriteSheet_HangingClothes_Cooking_Environment_2
+  - first:
+      213: 36915562476769075
+    second: SpriteSheet_HangingClothes_Cooking_Environment_3
+  - first:
+      213: -1580528881735594935
+    second: SpriteSheet_HangingClothes_Cooking_Environment_4
+  - first:
+      213: -3088771084960664418
+    second: SpriteSheet_HangingClothes_Cooking_Environment_5
+  - first:
+      213: 1838790704963931801
+    second: SpriteSheet_HangingClothes_Cooking_Environment_6
+  - first:
+      213: 1505235691532136737
+    second: SpriteSheet_HangingClothes_Cooking_Environment_7
+  - first:
+      213: 1978407534715867435
+    second: SpriteSheet_HangingClothes_Cooking_Environment_8
+  - first:
+      213: -9208061698386310438
+    second: SpriteSheet_HangingClothes_Cooking_Environment_9
+  - first:
+      213: 1375530065372556493
+    second: SpriteSheet_HangingClothes_Cooking_Environment_10
+  - first:
+      213: 4535540506943249098
+    second: SpriteSheet_HangingClothes_Cooking_Environment_11
+  - first:
+      213: -8265050325814995070
+    second: SpriteSheet_HangingClothes_Cooking_Environment_12
+  - first:
+      213: 3946264324781133884
+    second: SpriteSheet_HangingClothes_Cooking_Environment_13
+  - first:
+      213: 3708840340674089534
+    second: SpriteSheet_HangingClothes_Cooking_Environment_14
+  - first:
+      213: 8911692494848247480
+    second: SpriteSheet_HangingClothes_Cooking_Environment_15
+  - first:
+      213: 3477697896235027156
+    second: SpriteSheet_HangingClothes_Cooking_Environment_16
+  - first:
+      213: 4591049203576203986
+    second: SpriteSheet_HangingClothes_Cooking_Environment_17
+  - first:
+      213: 5285873752962359301
+    second: SpriteSheet_HangingClothes_Cooking_Environment_18
+  - first:
+      213: 8739448138901858696
+    second: SpriteSheet_HangingClothes_Cooking_Environment_19
+  - first:
+      213: -749264048602766777
+    second: SpriteSheet_HangingClothes_Cooking_Environment_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +103,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +134,462 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3074
+        width: 1022
+        height: 1022
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6246d32de7095890800000000000000
+      internalID: -7468929791927369107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3074
+        width: 1026
+        height: 1022
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58841698ebd5369a0800000000000000
+      internalID: -6241041585675351931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_2
+      rect:
+        serializedVersion: 2
+        x: 2122
+        y: 3408
+        width: 882
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f40be8c7f416270800000000000000
+      internalID: 8241956189453176714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_3
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 3330
+        width: 818
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f8c1c2286238000800000000000000
+      internalID: 36915562476769075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 2104
+        width: 640
+        height: 878
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94c87e62b55d01ae0800000000000000
+      internalID: -1580528881735594935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_5
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 2180
+        width: 526
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94fb60301b7225d0800000000000000
+      internalID: -3088771084960664418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_6
+      rect:
+        serializedVersion: 2
+        x: 2226
+        y: 2072
+        width: 732
+        height: 992
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e4aa16762b48910800000000000000
+      internalID: 1838790704963931801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_7
+      rect:
+        serializedVersion: 2
+        x: 3076
+        y: 2054
+        width: 1020
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1213309e2eba3e410800000000000000
+      internalID: 1505235691532136737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_8
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 2128
+        width: 56
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2112b7bb27b47b10800000000000000
+      internalID: 1978407534715867435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1042
+        width: 4096
+        height: 714
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adacdc5fba4663080800000000000000
+      internalID: -9208061698386310438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 8
+        width: 106
+        height: 1026
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcca66c7e4dd61310800000000000000
+      internalID: 1375530065372556493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_11
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 8
+        width: 104
+        height: 1026
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca5fbc8f0a71fe30800000000000000
+      internalID: 4535540506943249098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_12
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 8
+        width: 104
+        height: 1026
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287121fc484ac4d80800000000000000
+      internalID: -8265050325814995070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_13
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 8
+        width: 106
+        height: 1026
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c305064ce72f3c630800000000000000
+      internalID: 3946264324781133884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_14
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 48
+        width: 734
+        height: 842
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32948ab3a2787330800000000000000
+      internalID: 3708840340674089534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_15
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 414
+        width: 1024
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6c1fe9b11bcab70800000000000000
+      internalID: 8911692494848247480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_16
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 292
+        width: 902
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da463d9fc3434030800000000000000
+      internalID: 3477697896235027156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_17
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 372
+        width: 1024
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2daef7d1deea6bf30800000000000000
+      internalID: 4591049203576203986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_18
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 330
+        width: 1024
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500e1ec2c223b5940800000000000000
+      internalID: 5285873752962359301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_19
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 286
+        width: 1024
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889a13c57c1c84970800000000000000
+      internalID: 8739448138901858696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_HangingClothes_Cooking_Environment_20
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 214
+        width: 1024
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742af0c41541a95f0800000000000000
+      internalID: -749264048602766777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

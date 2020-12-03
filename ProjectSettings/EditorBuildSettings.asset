@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: d9ae8f2237d1e914d94b5e3f9796fad3
+  - enabled: 1
+    path: Assets/Scenes/Minigames/HideAndSeek.unity
+    guid: d112c649d71acf247a0b73927c63025e
   m_configObjects: {}

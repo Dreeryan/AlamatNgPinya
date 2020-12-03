@@ -8,6 +8,9 @@ public class CleanDishRack : MonoBehaviour
     [SerializeField] private Dish dish;
     [SerializeField] private Sprite[] cleanSprites;
 
+    [Header("References")]
+    [SerializeField] ProgressManager progressManager;
+
     void Update()
     {
         if (dishCounter == 1)
@@ -23,7 +26,9 @@ public class CleanDishRack : MonoBehaviour
             dish = collision.gameObject.GetComponent<Dish>();
             dishCounter++;
             dish.gameObject.GetComponent<Collider2D>().enabled = false;
-        }
 
+            // add progress
+            progressManager.AddProgress();
+        }
     }
 }

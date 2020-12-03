@@ -15,10 +15,12 @@ public class Watering : MonoBehaviour
     private float fillAmount;
     private bool isFilling;
 
+    [Header("References")]
+    [SerializeField] private ProgressManager progressManager;
+
     [Header("UI")]
     [SerializeField] private GameObject fillBar;
     [SerializeField] private Image fillBarImage;
-    [SerializeField] private GameObject winScreen;
 
     [Header("Sprites")]
     [SerializeField] private Image plant;
@@ -39,8 +41,6 @@ public class Watering : MonoBehaviour
 
         // setting the default value of the boolean for toggling
         isFilling = false;
-
-        winScreen.SetActive(false);
     }
 
     void Update()
@@ -62,7 +62,7 @@ public class Watering : MonoBehaviour
                 // show watered version of plant
                 if (wateredPlant != null) plant.sprite = wateredPlant;
 
-                winScreen.SetActive(true);
+                progressManager.AddProgress();
             }
 
             UpdateUI();

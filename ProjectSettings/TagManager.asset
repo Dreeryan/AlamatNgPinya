@@ -25,6 +25,7 @@ TagManager:
   - Endpoint
   - FeedArea
   - DirtyDish
+  - Friend
   layers:
   - Default
   - TransparentFX

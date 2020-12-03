@@ -26,6 +26,7 @@ TagManager:
   - FeedArea
   - DirtyDish
   - Friend
+  - Clothes
   layers:
   - Default
   - TransparentFX

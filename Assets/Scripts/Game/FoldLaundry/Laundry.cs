@@ -15,8 +15,12 @@ public class Laundry : MonoBehaviour
 
     public Directions currentDirection;
 
+    [Header("Laundry Sprites")]
     [SerializeField] private Sprite[] laundrySprites;
+    [SerializeField] private Transform foldedRack;
 
+    private Renderer rd;
+    private Collider2D cd;
     private Vector2 startPosition;
     private Vector2 endPosition;
 
@@ -24,7 +28,7 @@ public class Laundry : MonoBehaviour
     private bool isBottom;
     private bool isRight;
     private bool isTop;
-    
+
     private int currentSequence;
 
     // Start is called before the first frame update
@@ -32,6 +36,14 @@ public class Laundry : MonoBehaviour
     {
         currentDirection = 0;
         currentSequence = 0;
+
+        cd = GetComponent<Collider2D>();
+        rd = GetComponent<Renderer>();
+
+        if (foldedRack != null)
+        {
+            foldedRack = GameObject.Find("Folded Clothes").transform;
+        }
     }
 
     // Update is called once per frame
@@ -40,14 +52,13 @@ public class Laundry : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             startPosition = Input.mousePosition;
-
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             endPosition = Input.mousePosition;
             SwipeDirection();
-            FoldSequence();
+            PantsSequence();
         }
     }
 
@@ -127,5 +138,34 @@ public class Laundry : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = laundrySprites[2];
             currentSequence++;
         }
+    }
+
+    public void PantsSequence()
+    {
+        // Swipe from right to left
+        if (currentSequence == 0 && isLeft == true && isRight == false)
+        {
+            GetComponent<SpriteRenderer>().sprite = laundrySprites[0];
+            currentSequence++;
+        }
+
+        if (currentSequence == 1 && isTop == true && isBottom == false)
+        {
+            GetComponent<SpriteRenderer>().sprite = laundrySprites[1];
+            currentSequence++;
+        }
+
+        if (currentSequence == 2)
+        {
+            StartCoroutine("ChangeSprite");
+        }
+    }
+
+    IEnumerator ChangeSprite()
+    {
+        yield return new WaitForSeconds(1f);
+        transform.position = foldedRack.transform.position;
+        rd.material.color = new Color32(225, 225, 225, 0);
+        this.gameObject.transform.parent = foldedRack;
     }
 }

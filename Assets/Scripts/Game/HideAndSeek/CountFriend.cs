@@ -8,6 +8,7 @@ public class CountFriend : MonoBehaviour
 
     public void CountFriends()
     {
+        // Counts a friend if found by player
         friendFound.friendsFound++;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }

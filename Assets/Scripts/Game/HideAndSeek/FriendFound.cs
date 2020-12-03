@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FriendFound : MonoBehaviour
 {
-    public int friendsFound;
+    public  int friendsFound;
     private int previousFriendsFound;
 
     [SerializeField] private int friendsGoal;
@@ -17,6 +17,7 @@ public class FriendFound : MonoBehaviour
 
     void Update()
     {
+        // Detects number of friends present and sets it as the goal
         friendsGoal = GameObject.FindGameObjectsWithTag("Friend").Length;
 
         if (friendsFound > previousFriendsFound)

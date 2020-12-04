@@ -6,8 +6,8 @@ using TMPro;
 
 public class Dish : MonoBehaviour
 {
-    private Collider2D cd;
-    private Renderer rd;
+    private Collider2D col;
+    private Renderer rend;
 
     [SerializeField] private Sponge sponge;
 
@@ -30,8 +30,8 @@ public class Dish : MonoBehaviour
             cleanDishRack = GameObject.Find("CleanDishRack").transform;
         }
 
-        cd = GetComponent<Collider2D>();
-        rd = GetComponent<Renderer>();
+        col = GetComponent<Collider2D>();
+        rend = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class Dish : MonoBehaviour
             transform.position = cleanDishRack.transform.position;
             isPlaced = true;
 
-            rd.material.color = new Color32(225, 225, 225, 0);
+            rend.material.color = new Color32(225, 225, 225, 0);
             this.gameObject.transform.parent = cleanDishRack;
             if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
         }

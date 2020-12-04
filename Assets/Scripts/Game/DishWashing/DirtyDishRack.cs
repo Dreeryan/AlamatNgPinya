@@ -16,5 +16,10 @@ public class DirtyDishRack : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = dirtySprites[0];
             dirtyDishes[0].gameObject.SetActive(true);
         }
+        if (rack.dishCounter == 2)
+        {
+            GetComponent<SpriteRenderer>().sprite = dirtySprites[1];
+            dirtyDishes[1].gameObject.SetActive(true);
+        }
     }
 }

@@ -17,6 +17,16 @@ public class CleanDishRack : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = cleanSprites[0];
         }
+
+        if (dishCounter == 2)
+        {
+            GetComponent<SpriteRenderer>().sprite = cleanSprites[1];
+        }
+
+        if (dishCounter == 3)
+        {
+            GetComponent<SpriteRenderer>().sprite = cleanSprites[2];
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

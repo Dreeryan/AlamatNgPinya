@@ -25,7 +25,7 @@ public class FriendFound : MonoBehaviour
         {
             previousFriendsFound = friendsFound;
 
-            // Opens win screen if all friends have found
+            // Opens win screen if all friends have been found
             if (friendsFound >= friendsGoal)
             {
                 winScreen.SetActive(true);

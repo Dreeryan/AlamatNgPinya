@@ -27,6 +27,7 @@ TagManager:
   - DirtyDish
   - Friend
   - Clothes
+  - HidingSpot
   layers:
   - Default
   - TransparentFX

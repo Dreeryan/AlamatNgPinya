@@ -6,6 +6,11 @@ public class CountFriend : MonoBehaviour
 {
     [SerializeField] private FriendFound friendFound;
 
+    private void Start()
+    {
+        friendFound = FindObjectOfType<FriendFound>();
+    }
+
     public void CountFriends()
     {
         // Counts a friend if found by player

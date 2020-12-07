@@ -8,6 +8,7 @@ public class ShakeObject : MonoBehaviour
     public UnityEvent   OnShake;
     public Transform    shakeObject;
 
+    private SpriteRenderer renderers;
     private bool    isOnFeedArea;
     private bool    isMouseDrag;
     private Vector2 currentPosition;
@@ -21,6 +22,8 @@ public class ShakeObject : MonoBehaviour
         isMouseDrag     = false;
         isOnFeedArea    = false;
         isShaking       = false;
+
+        renderers = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -84,11 +87,13 @@ public class ShakeObject : MonoBehaviour
         {
             isOnFeedArea = false;
             isShaking = false;
+            renderers.flipY = false;
         }
     }
 
     public void Test()
     {
         Debug.Log("Shook");
+        renderers.flipY = true;
     }
 }

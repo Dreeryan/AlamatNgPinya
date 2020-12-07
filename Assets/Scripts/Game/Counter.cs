@@ -37,6 +37,7 @@ public class Counter : MonoBehaviour
             if (objectsCollected >= objectGoal)
             {
                 winScreen.SetActive(true);
+                Time.timeScale = 0.0f;
             }
         }
 

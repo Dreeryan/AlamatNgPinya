@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DishCounter : MonoBehaviour
+public class DishRackCounter : MonoBehaviour
 {
-    public  int     dishCollected;
-    private int     previousDishCollected;
+    public int dishCollected;
+    private int previousDishCollected;
 
-    [SerializeField] private int        dishGoal;
+    [SerializeField] private int dishGoal;
     [SerializeField] private GameObject winScreen;
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class DishCounter : MonoBehaviour
         previousDishCollected = dishCollected;
 
         // Sets the goal to how many eggs are active
-        dishGoal = GameObject.FindGameObjectsWithTag("Dish").Length;
+        dishGoal = GameObject.FindGameObjectsWithTag("CleanDish").Length;
 
         winScreen.SetActive(false);
     }
@@ -37,7 +37,7 @@ public class DishCounter : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Dish")
+        if (collision.gameObject.tag == "CleanDish")
         {
             // Adds a point for every egg that collides with the egg basket
             dishCollected++;

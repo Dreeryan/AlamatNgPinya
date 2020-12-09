@@ -7,7 +7,7 @@ public class CleanDish : MonoBehaviour
     private Vector2 mousePos;
     private Vector2 currentPosition;
     public bool isPlaced = false;
-    public CircleCollider2D cd;
+    private CircleCollider2D cd;
 
     [Header("Rack Variables")]
     [SerializeField] private GameObject dishRack;
@@ -51,10 +51,6 @@ public class CleanDish : MonoBehaviour
             Mathf.Abs(transform.position.y - dishRack.transform.position.y) <= distanceToRack)
             {
                 isPlaced = true;
-            }
-            else
-            {
-                isPlaced = false;
             }
         }
     }

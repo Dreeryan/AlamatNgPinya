@@ -7,6 +7,14 @@ public class PlayerTag : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private Vector3 targetPoint;
     private bool isMoving = false;
+    private bool playerIsIt = true;
+
+    public SpriteRenderer spriteRend;
+
+    void Start()
+    {
+        spriteRend = GetComponent<SpriteRenderer>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,6 +30,15 @@ public class PlayerTag : MonoBehaviour
         {
             Movement();
         }
+
+        if (playerIsIt)
+        {
+            spriteRend.color = Color.blue;
+        }
+        else
+        {
+            spriteRend.color = Color.white;
+        }
     }
 
     void Movement()
@@ -31,6 +48,19 @@ public class PlayerTag : MonoBehaviour
         if (transform.position == targetPoint)
         {
             isMoving = false;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && !playerIsIt)
+        {
+            playerIsIt = true;
+        }
+
+        else
+        {
+            playerIsIt = false;
         }
     }
 }

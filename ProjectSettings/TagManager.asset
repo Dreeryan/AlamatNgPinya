@@ -28,6 +28,7 @@ TagManager:
   - Friend
   - Clothes
   - HidingSpot
+  - Enemy
   layers:
   - Default
   - TransparentFX

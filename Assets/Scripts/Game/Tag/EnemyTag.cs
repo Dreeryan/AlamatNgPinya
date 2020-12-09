@@ -14,6 +14,11 @@ public class EnemyTag : MonoBehaviour
 
     public EnemyState curState;
 
+    private bool enemyIsIt = false;
+    private Vector2 targetPos;
+    private int randPoint;
+    private SpriteRenderer spriteRend;
+
     [Header("Target and Patrol Points")]
     [SerializeField] private Transform targetPlayer;
     [SerializeField] private Transform[] patrolPoints;
@@ -22,14 +27,11 @@ public class EnemyTag : MonoBehaviour
     [SerializeField] private float curSpeed;
     [SerializeField] private float targetRange;
 
-    private bool isIt = true;
-    private Vector2 targetPos;
-    private int randPoint;
-
     // Start is called before the first frame update
     void Start()
     {
         curState = EnemyState.Patrol;
+        spriteRend = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -41,9 +43,13 @@ public class EnemyTag : MonoBehaviour
             case EnemyState.Patrol: AIPatrol(); break;
         }
 
-        if (isIt)
+        if (enemyIsIt)
         {
-            // curState = EnemyState.Chase;
+            spriteRend.color = Color.blue;
+        }
+        else
+        {
+            spriteRend.color = Color.white;
         }
     }
 
@@ -52,7 +58,7 @@ public class EnemyTag : MonoBehaviour
         if (Vector2.Distance(targetPlayer.position, transform.position) > targetRange)
         {
             curState = EnemyState.Patrol;
-            isIt = false;
+            //isIt = false;
         }
 
         transform.position = (Vector2.MoveTowards(transform.position, targetPlayer.position, curSpeed * Time.deltaTime));
@@ -65,19 +71,25 @@ public class EnemyTag : MonoBehaviour
             randPoint = Random.Range(0, patrolPoints.Length);
         }
 
-        if (Vector2.Distance(targetPlayer.position, transform.position) <= 2f)
+       /* if (Vector2.Distance(targetPlayer.position, transform.position) <= 2f)
         {
             curState = EnemyState.Chase;
-        }
+        }*/
 
         transform.position = Vector2.MoveTowards(transform.position, patrolPoints[randPoint].position, curSpeed * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !enemyIsIt)
         {
             targetPlayer = collision.gameObject.transform;
+            enemyIsIt = true;
+        }
+
+        else
+        {
+            enemyIsIt = false;
         }
     }
 }

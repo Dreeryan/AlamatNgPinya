@@ -29,7 +29,6 @@ public class TimerSystem : MonoBehaviour
     {
         if (countingUp == true) return timer; 
 
-		//A; Why not make this the else?
         else return timeSet - timer; 
 
     }

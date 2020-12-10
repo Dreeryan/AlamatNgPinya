@@ -71,11 +71,6 @@ public class EnemyTag : MonoBehaviour
             randPoint = Random.Range(0, patrolPoints.Length);
         }
 
-       /* if (Vector2.Distance(targetPlayer.position, transform.position) <= 2f)
-        {
-            curState = EnemyState.Chase;
-        }*/
-
         transform.position = Vector2.MoveTowards(transform.position, patrolPoints[randPoint].position, curSpeed * Time.deltaTime);
     }
 

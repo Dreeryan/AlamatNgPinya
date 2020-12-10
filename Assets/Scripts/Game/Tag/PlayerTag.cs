@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerTag : MonoBehaviour
 {
+    [Header("Player Variables")]
     [SerializeField] private float moveSpeed;
+
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI playerItText;
+
     private Vector3 targetPoint;
     private bool isMoving = false;
     private bool playerIsIt = true;
-
-    public SpriteRenderer spriteRend;
+    private SpriteRenderer spriteRend;
 
     void Start()
     {
@@ -34,10 +39,12 @@ public class PlayerTag : MonoBehaviour
         if (playerIsIt)
         {
             spriteRend.color = Color.blue;
+            playerItText.text = "Player It: Yes";
         }
         else
         {
             spriteRend.color = Color.white;
+            playerItText.text = "Player It: No";
         }
     }
 

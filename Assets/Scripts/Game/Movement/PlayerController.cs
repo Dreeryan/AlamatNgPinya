@@ -5,13 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player move speed")]
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed;
+
+    public Animator playerAnim;
 
     private Vector3 targetPoint;
     private Vector3 defaultAngle = new Vector3(0, 0, 0);
     private Vector3 newAngle = new Vector3(0, 180, 0);
 
-    public bool isMoving;
+    private bool isMoving = false;
 
     void Update()
     {
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
         {
             // Player will go to the clicked area.
             targetPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            targetPoint.z = transform.position.z;
             transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
             transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPoint);
 
@@ -27,26 +30,30 @@ public class PlayerController : MonoBehaviour
             transform.localEulerAngles = currentRotation;
 
             isMoving = true;
-        }
 
-        SetTargetPoint();
+            SetTargetPoint();
+        }
 
         // To move the player
         if (isMoving)
         {
             Movement();
+            playerAnim.SetBool("isRunning", true);
+        }
+        else
+        {
+            playerAnim.SetBool("isRunning", false);
         }
     }
 
     void Movement()
     {
         // To move the player to the desired position
-        transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
-
+        transform.position = Vector3.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+       
         if (transform.position == targetPoint)
         {
             isMoving = false;
-
         }
     }
 

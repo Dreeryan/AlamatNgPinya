@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 defaultAngle = new Vector3(0, 0, 0);
     private Vector3 newAngle = new Vector3(0, 180, 0);
 
-    private bool isMoving = false;
+    [HideInInspector]
+    public bool isMoving = false;
 
     void Update()
     {
@@ -38,11 +39,11 @@ public class PlayerController : MonoBehaviour
         if (isMoving)
         {
             Movement();
-            playerAnim.SetBool("isRunning", true);
+            if (playerAnim != null) playerAnim.SetBool("isRunning", true);
         }
         else
         {
-            playerAnim.SetBool("isRunning", false);
+            if (playerAnim != null) playerAnim.SetBool("isRunning", false);
         }
     }
 

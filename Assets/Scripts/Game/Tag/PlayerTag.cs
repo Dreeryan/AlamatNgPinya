@@ -10,6 +10,8 @@ public class PlayerTag : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI playerItText;
+    [SerializeField] private float secondsToWin;
+    [SerializeField] private GameObject winScreen;
 
     private Vector3 targetPoint;
     private bool isMoving = false;
@@ -19,6 +21,7 @@ public class PlayerTag : MonoBehaviour
     void Start()
     {
         spriteRend = GetComponent<SpriteRenderer>();
+        if (winScreen != null) winScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -40,11 +43,13 @@ public class PlayerTag : MonoBehaviour
         {
             spriteRend.color = Color.blue;
             playerItText.text = "Player It: Yes";
+            StopCoroutine("CountdownToWin");
         }
         else
         {
             spriteRend.color = Color.white;
             playerItText.text = "Player It: No";
+            StartCoroutine("CountdownToWin");
         }
     }
 
@@ -69,5 +74,11 @@ public class PlayerTag : MonoBehaviour
         {
             playerIsIt = false;
         }
+    }
+
+    IEnumerator CountdownToWin()
+    {
+        yield return new WaitForSeconds(secondsToWin);
+        if (winScreen != null) winScreen.SetActive(true);
     }
 }

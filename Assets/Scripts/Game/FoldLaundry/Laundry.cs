@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Laundry : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Laundry : MonoBehaviour
     }
 
     public Directions currentDirection;
+    public UnityEvent otherFunctions;
 
     [Header("Laundry Sprites")]
     [SerializeField] private Sprite[] laundrySprites;
@@ -58,7 +60,7 @@ public class Laundry : MonoBehaviour
         {
             endPosition = Input.mousePosition;
             SwipeDirection();
-            PantsSequence();
+            otherFunctions.Invoke();
         }
     }
 
@@ -140,7 +142,7 @@ public class Laundry : MonoBehaviour
         }
     }
 
-    public void PantsSequence()
+    public void TwoFoldSequence()
     {
         // Swipe from right to left
         if (currentSequence == 0 && isLeft == true && isRight == false)

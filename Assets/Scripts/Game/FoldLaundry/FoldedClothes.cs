@@ -6,13 +6,33 @@ public class FoldedClothes : MonoBehaviour
 {
     public int clothesCounter = 0;
     [SerializeField] private Laundry laundry;
-    [SerializeField] private Sprite[] foldedSprites;
+    [SerializeField] private GameObject[] foldedSprites;
 
     void Update()
     {
         if (clothesCounter == 1)
         {
-            GetComponent<SpriteRenderer>().sprite = foldedSprites[0];
+            foldedSprites[0].gameObject.SetActive(true);
+        }
+
+        if (clothesCounter == 2)
+        {
+            foldedSprites[1].gameObject.SetActive(true);
+        }
+
+        if (clothesCounter == 3)
+        {
+            foldedSprites[2].gameObject.SetActive(true);
+        }
+
+        if (clothesCounter == 4)
+        {
+            foldedSprites[3].gameObject.SetActive(true);
+        }
+
+        if (clothesCounter == 5)
+        {
+            foldedSprites[4].gameObject.SetActive(true);
         }
     }
 

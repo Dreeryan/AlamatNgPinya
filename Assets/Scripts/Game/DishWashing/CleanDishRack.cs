@@ -10,6 +10,7 @@ public class CleanDishRack : MonoBehaviour
 
     [Header("References")]
     [SerializeField] ProgressManager progressManager;
+    [SerializeField] DishPlayerPrefs dishPlayerPrefs;
 
     void Update()
     {
@@ -39,6 +40,7 @@ public class CleanDishRack : MonoBehaviour
 
             // add progress
             progressManager.AddProgress();
+            dishPlayerPrefs.AddCounter();
         }
     }
 }

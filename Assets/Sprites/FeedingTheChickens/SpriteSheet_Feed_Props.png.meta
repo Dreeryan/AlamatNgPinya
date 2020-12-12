@@ -1,13 +1,31 @@
 fileFormatVersion: 2
-guid: f82fc7f97a3b2c747afc2bb87927c515
+guid: 918bdd7ca5d948345bb0e5cb1f7e7b7f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5356027856677067242
-    second: SpriteSheet_WateringPlants_Environment_0
+      213: 3395594898382251650
+    second: SpriteSheet_Feed_Props_0
   - first:
-      213: 2935129418431270342
-    second: SpriteSheet_WateringPlants_Environment_1
+      213: -4017156455746251316
+    second: SpriteSheet_Feed_Props_1
+  - first:
+      213: 8712246126254108584
+    second: SpriteSheet_Feed_Props_2
+  - first:
+      213: -8208178471824545043
+    second: SpriteSheet_Feed_Props_3
+  - first:
+      213: -8577208178504027300
+    second: SpriteSheet_Feed_Props_0
+  - first:
+      213: 3400700465301595971
+    second: SpriteSheet_Feed_Props_1
+  - first:
+      213: 1707598446638318543
+    second: SpriteSheet_Feed_Props_2
+  - first:
+      213: 7343803184960051395
+    second: SpriteSheet_Feed_Props_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -93,43 +111,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet_WateringPlants_Environment_0
+      name: SpriteSheet_Feed_Props_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3075
-        height: 4096
+        x: 69
+        y: 1094
+        width: 920
+        height: 261
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 616aaa3ba019ba5b0800000000000000
-      internalID: -5356027856677067242
+      spriteID: c5331bb0b92a7f880800000000000000
+      internalID: -8577208178504027300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_WateringPlants_Environment_1
+      name: SpriteSheet_Feed_Props_1
       rect:
         serializedVersion: 2
-        x: 3069
-        y: 0
-        width: 1027
-        height: 4096
+        x: 1026
+        y: 1039
+        width: 1019
+        height: 378
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cd0563b7acabb820800000000000000
-      internalID: 2935129418431270342
+      spriteID: 347aec53e07b13f20800000000000000
+      internalID: 3400700465301595971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_Feed_Props_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 20
+        width: 1020
+        height: 379
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3c2ee6dbb92b710800000000000000
+      internalID: 1707598446638318543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_Feed_Props_3
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 90
+        width: 394
+        height: 383
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c81deb661e6ae560800000000000000
+      internalID: 7343803184960051395
       vertices: []
       indices: 
       edges: []

@@ -7,17 +7,18 @@ public class SpriteFlipper : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     private Vector2 lastPosition;
+    private Vector2 currentPosition;
     private bool    isFlipped;
 
     // Start is called before the first frame update
     void Start()
     {
-        lastPosition = transform.position;
+        currentPosition = transform.position;
         isFlipped= false;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isFlipped)
         {
@@ -31,12 +32,19 @@ public class SpriteFlipper : MonoBehaviour
                 spriteRenderer.flipX = false;
         }
 
+
         // If moving right
-        if (transform.position.x >= lastPosition.x)
+        if (transform.position.x > lastPosition.x)
+        {
             isFlipped = true;
+        }
 
         // If moving left  
-        if (transform.position.x <= lastPosition.x)
+        if (transform.position.x < lastPosition.x)
+        {
             isFlipped = false;
+        }
+
+        lastPosition = transform.position;
     }
 }

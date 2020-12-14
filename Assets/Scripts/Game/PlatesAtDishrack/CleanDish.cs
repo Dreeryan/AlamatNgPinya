@@ -39,6 +39,10 @@ public class CleanDish : MonoBehaviour
         {
             transform.position = dishRack.transform.position;
         }
+        else
+        {
+            transform.position = currentPosition;
+        }
     }
 
     void OnTriggerStay2D(Collider2D collision)

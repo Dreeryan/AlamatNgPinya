@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
 
             isMoving = true;
 
-            SetTargetPoint();
         }
 
         // To move the player
@@ -69,19 +68,5 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         isMoving = false;
-    }
-
-    void SetTargetPoint()
-    {
-        if (targetPoint.x < -1)
-        {
-            transform.localEulerAngles = defaultAngle;
-        }
-
-        // // If the mouse position is greater than -1, the player's y rotation axis will be flipped to 0
-        else
-        {
-            transform.localEulerAngles = newAngle;
-        }
     }
 }

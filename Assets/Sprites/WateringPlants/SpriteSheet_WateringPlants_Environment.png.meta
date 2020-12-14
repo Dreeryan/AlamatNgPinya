@@ -26,6 +26,42 @@ TextureImporter:
   - first:
       213: -2583143632103454968
     second: SpriteSheet_WateringPlants_Environment_5
+  - first:
+      213: 2628627236333412486
+    second: SpriteSheet_WateringPlants_Environment_2
+  - first:
+      213: 5530263076675432384
+    second: SpriteSheet_WateringPlants_Environment_3
+  - first:
+      213: -3605222476939141937
+    second: SpriteSheet_WateringPlants_Environment_4
+  - first:
+      213: -1796648111540559768
+    second: SpriteSheet_WateringPlants_Environment_5
+  - first:
+      213: -2027098523350720854
+    second: SpriteSheet_WateringPlants_Environment_6
+  - first:
+      213: 966627548465689801
+    second: SpriteSheet_WateringPlants_Environment_7
+  - first:
+      213: 8696602646602182892
+    second: SpriteSheet_WateringPlants_Environment_8
+  - first:
+      213: 4793031243938486370
+    second: SpriteSheet_WateringPlants_Environment_9
+  - first:
+      213: -9145389164554678451
+    second: SpriteSheet_WateringPlants_Environment_10
+  - first:
+      213: -2922327304120337502
+    second: SpriteSheet_WateringPlants_Environment_11
+  - first:
+      213: 6749011966024035161
+    second: SpriteSheet_WateringPlants_Environment_12
+  - first:
+      213: 7814917899643295977
+    second: SpriteSheet_WateringPlants_Environment_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,9 +151,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 3074
-        height: 4096
+        y: 3072
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,10 +171,10 @@ TextureImporter:
       name: SpriteSheet_WateringPlants_Environment_1
       rect:
         serializedVersion: 2
-        x: 3490
-        y: 3386
-        width: 4
-        height: 4
+        x: 1024
+        y: 3072
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,10 +192,10 @@ TextureImporter:
       name: SpriteSheet_WateringPlants_Environment_2
       rect:
         serializedVersion: 2
-        x: 3674
-        y: 3384
-        width: 4
-        height: 4
+        x: 2048
+        y: 3072
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6746ca44198c419d0800000000000000
-      internalID: -2804396141697014666
+      spriteID: 680e19c5b82ca7420800000000000000
+      internalID: 2628627236333412486
       vertices: []
       indices: 
       edges: []
@@ -177,10 +213,10 @@ TextureImporter:
       name: SpriteSheet_WateringPlants_Environment_3
       rect:
         serializedVersion: 2
-        x: 3686
-        y: 3384
-        width: 4
-        height: 4
+        x: 3072
+        y: 3072
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03ae6202e0fe8c6e0800000000000000
-      internalID: -1816939605695993296
+      spriteID: 0cfa2b7b7f07fbc40800000000000000
+      internalID: 5530263076675432384
       vertices: []
       indices: 
       edges: []
@@ -198,10 +234,10 @@ TextureImporter:
       name: SpriteSheet_WateringPlants_Environment_4
       rect:
         serializedVersion: 2
-        x: 3148
-        y: 3072
-        width: 902
-        height: 314
+        x: 0
+        y: 2048
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,8 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12839357993497b80800000000000000
-      internalID: -8396605703879837663
+      spriteID: fccd9cd224da7fdc0800000000000000
+      internalID: -3605222476939141937
       vertices: []
       indices: 
       edges: []
@@ -219,10 +255,10 @@ TextureImporter:
       name: SpriteSheet_WateringPlants_Environment_5
       rect:
         serializedVersion: 2
-        x: 3070
-        y: 2054
-        width: 1026
-        height: 454
+        x: 1024
+        y: 2048
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,8 +266,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80749ac7d84d62cd0800000000000000
-      internalID: -2583143632103454968
+      spriteID: 860af35cf060117e0800000000000000
+      internalID: -1796648111540559768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_6
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae16fe02ac4ed3e0800000000000000
+      internalID: -2027098523350720854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_7
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4776842a62a6d00800000000000000
+      internalID: 966627548465689801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0f17fc70a80b870800000000000000
+      internalID: 8696602646602182892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2685d449584448240800000000000000
+      internalID: 4793031243938486370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_10
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f030a520d051180800000000000000
+      internalID: -9145389164554678451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab7b70dccec177d0800000000000000
+      internalID: -2922327304120337502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_12
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b29b310ae49ad50800000000000000
+      internalID: 6749011966024035161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_13
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8941dac6a247c60800000000000000
+      internalID: 7814917899643295977
       vertices: []
       indices: 
       edges: []

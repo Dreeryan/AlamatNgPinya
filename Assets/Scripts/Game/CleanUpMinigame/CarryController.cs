@@ -19,10 +19,6 @@ public class CarryController : MonoBehaviour
 
     void Start()
     {
-
-        //itemDetector = this.gameObject.transform.GetChild(0);
-        //itemCarrier = this.gameObject.transform.GetChild(1);
-
         if (itemText != null) itemText.gameObject.SetActive(false);
     }
 

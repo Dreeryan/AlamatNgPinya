@@ -89,11 +89,6 @@ public class Porridge : MonoBehaviour
             potCoverAnimator.SetBool("isFireOn", false);
         }
 
-        if (currentTemp < 30)
-        {
-            //potCoverAnimator.SetBool("isFireOn", false);
-        }
-
         if (currentTemp > rightTemp)
         {
             isRightTemp = true;

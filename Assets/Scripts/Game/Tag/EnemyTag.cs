@@ -45,7 +45,7 @@ public class EnemyTag : MonoBehaviour
 
         if (enemyIsIt)
         {
-            spriteRend.color = Color.blue;
+            spriteRend.color = Color.black;
         }
         else
         {
@@ -58,7 +58,6 @@ public class EnemyTag : MonoBehaviour
         if (Vector2.Distance(targetPlayer.position, transform.position) > targetRange)
         {
             curState = EnemyState.Patrol;
-            //isIt = false;
         }
 
         transform.position = (Vector2.MoveTowards(transform.position, targetPlayer.position, curSpeed * Time.deltaTime));

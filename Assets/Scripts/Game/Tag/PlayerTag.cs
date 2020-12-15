@@ -41,7 +41,7 @@ public class PlayerTag : MonoBehaviour
 
         if (playerIsIt)
         {
-            //spriteRend.color = new Color(255f, 255f, 255f, 255f);
+            // The player turns black if It
             spriteRend.color = Color.black;
             playerItText.text = "Player It: Yes";
             StopCoroutine("CountdownToWin");

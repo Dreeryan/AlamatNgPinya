@@ -45,7 +45,7 @@ public class EnemyTag : MonoBehaviour
 
         if (enemyIsIt)
         {
-            spriteRend.color = Color.blue;
+            spriteRend.color = Color.black;
         }
         else
         {

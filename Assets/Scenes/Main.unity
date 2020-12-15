@@ -3116,7 +3116,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4623013704069786145, guid: 213746fc40ef34d4ca35a8aebdbbb356,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3442,8 +3442,6 @@ GameObject:
   m_Component:
   - component: {fileID: 354746839}
   - component: {fileID: 354746838}
-  - component: {fileID: 354746840}
-  - component: {fileID: 354746841}
   - component: {fileID: 354746842}
   m_Layer: 0
   m_Name: Plant
@@ -3517,45 +3515,6 @@ Transform:
   m_Father: {fileID: 594155801}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &354746840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354746837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76de81348e987842beb3c9757b2d5c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemButton: {fileID: 2104065710}
---- !u!61 &354746841
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354746837}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 0.86, y: 1.23}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.23}
-  m_EdgeRadius: 0
 --- !u!61 &354746842
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3580,7 +3539,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.23}
+  m_Size: {x: 10.24, y: 10.24}
   m_EdgeRadius: 0
 --- !u!1 &359981382
 GameObject:
@@ -4485,8 +4444,6 @@ GameObject:
   m_Component:
   - component: {fileID: 440338322}
   - component: {fileID: 440338321}
-  - component: {fileID: 440338323}
-  - component: {fileID: 440338324}
   - component: {fileID: 440338325}
   m_Layer: 0
   m_Name: Plant4
@@ -4560,45 +4517,6 @@ Transform:
   m_Father: {fileID: 594155801}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &440338323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440338320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76de81348e987842beb3c9757b2d5c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemButton: {fileID: 2104065710}
---- !u!61 &440338324
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440338320}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 0.86, y: 1.17}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.17}
-  m_EdgeRadius: 0
 --- !u!61 &440338325
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4623,7 +4541,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.17}
+  m_Size: {x: 10.24, y: 10.24}
   m_EdgeRadius: 0
 --- !u!1 &444897975
 GameObject:
@@ -8003,7 +7921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613855718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.99, y: 2.17, z: 0}
+  m_LocalPosition: {x: 10.72, y: 2.57, z: 0}
   m_LocalScale: {x: 0.5674, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 506015513}
@@ -13617,6 +13535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1070244649}
   - component: {fileID: 1070244648}
+  - component: {fileID: 1070244650}
   m_Layer: 0
   m_Name: SpriteSheet_House Props_Interior_6
   m_TagString: Untagged
@@ -13689,6 +13608,32 @@ Transform:
   m_Father: {fileID: 1949218657}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1070244650
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070244647}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9, y: 1.27}
+    newSize: {x: 0.9, y: 1.27}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1.27}
+  m_EdgeRadius: 0
 --- !u!1 &1082561402
 GameObject:
   m_ObjectHideFlags: 0
@@ -15399,8 +15344,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1198493761}
   - component: {fileID: 1198493760}
-  - component: {fileID: 1198493762}
-  - component: {fileID: 1198493763}
   - component: {fileID: 1198493764}
   m_Layer: 0
   m_Name: Plant3
@@ -15474,45 +15417,6 @@ Transform:
   m_Father: {fileID: 594155801}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1198493762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198493759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76de81348e987842beb3c9757b2d5c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemButton: {fileID: 2104065710}
---- !u!61 &1198493763
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198493759}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 0.86, y: 1.27}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.27}
-  m_EdgeRadius: 0
 --- !u!61 &1198493764
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15537,7 +15441,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.27}
+  m_Size: {x: 10.24, y: 10.24}
   m_EdgeRadius: 0
 --- !u!1 &1208167790
 GameObject:
@@ -15936,8 +15840,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1280791180}
   - component: {fileID: 1280791184}
-  - component: {fileID: 1280791183}
-  - component: {fileID: 1280791182}
   - component: {fileID: 1280791181}
   m_Layer: 0
   m_Name: Plant5
@@ -15984,47 +15886,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.17}
+  m_Size: {x: 10.24, y: 10.24}
   m_EdgeRadius: 0
---- !u!61 &1280791182
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280791179}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 0.86, y: 1.17}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.17}
-  m_EdgeRadius: 0
---- !u!114 &1280791183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280791179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76de81348e987842beb3c9757b2d5c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemButton: {fileID: 2104065710}
 --- !u!212 &1280791184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16086,8 +15949,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1285751074}
   - component: {fileID: 1285751073}
-  - component: {fileID: 1285751075}
-  - component: {fileID: 1285751077}
   - component: {fileID: 1285751076}
   m_Layer: 0
   m_Name: Plant2
@@ -16161,19 +16022,6 @@ Transform:
   m_Father: {fileID: 594155801}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1285751075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285751072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76de81348e987842beb3c9757b2d5c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemButton: {fileID: 2104065710}
 --- !u!61 &1285751076
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16198,33 +16046,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.15}
-  m_EdgeRadius: 0
---- !u!61 &1285751077
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285751072}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 0.86, y: 1.15}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.86, y: 1.15}
+  m_Size: {x: 10.24, y: 10.24}
   m_EdgeRadius: 0
 --- !u!1 &1294800833
 GameObject:

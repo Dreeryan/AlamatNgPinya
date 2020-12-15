@@ -24,6 +24,9 @@ public class ShakeObject : MonoBehaviour
         isShaking       = false;
 
         renderers = GetComponent<SpriteRenderer>();
+
+        currentPosition = gameObject.transform.position;
+
     }
 
     void Update()
@@ -76,6 +79,7 @@ public class ShakeObject : MonoBehaviour
             if (isOnFeedArea && isMouseDrag)
             {
                 isShaking = true;
+                renderers.flipY = true;
             }
         }
     }
@@ -89,11 +93,5 @@ public class ShakeObject : MonoBehaviour
             isShaking = false;
             renderers.flipY = false;
         }
-    }
-
-    public void Test()
-    {
-        Debug.Log("Shook");
-        renderers.flipY = true;
     }
 }

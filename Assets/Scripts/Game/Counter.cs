@@ -13,8 +13,9 @@ public class Counter : MonoBehaviour
     private int             previousObjectsCollected;
 
     [SerializeField] private int        objectGoal;
-    [SerializeField] private GameObject winScreen;
+    [SerializeField] GameObject winScreen;
     [SerializeField] private UnityEvent onPlacement;
+    [SerializeField] CleanToy cleanToy;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,8 +49,10 @@ public class Counter : MonoBehaviour
     {
         if (collision.gameObject.tag == "Item")
         {
+            cleanToy = collision.gameObject.GetComponent<CleanToy>();
             // Adds a point for every item that collides with the goal
             objectsCollected++;
+            cleanToy.gameObject.GetComponent<Collider2D>().enabled = false;
             onPlacement.Invoke();
         }
     }

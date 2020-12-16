@@ -7,7 +7,7 @@ public class CleanToy : MonoBehaviour
     [SerializeField] private CarryController carryController;
     [SerializeField] public Transform itemHolder;
 
-    public Collider2D col;
+    private Collider2D col2d;
 
     [Header("Toy Bin Variables")]
     [SerializeField] private float distanceToToyBin = 1.2f;
@@ -18,7 +18,7 @@ public class CleanToy : MonoBehaviour
 
     void Start()
     {
-        col = GetComponent<Collider2D>();
+        col2d = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -30,12 +30,6 @@ public class CleanToy : MonoBehaviour
         {
             carryController.PickupItem();
         }
-
-        if (isPlaced)
-        {
-            col.enabled = false;
-        }
-
     }
 	
     public void ItemHolderPosition()
@@ -53,6 +47,7 @@ public class CleanToy : MonoBehaviour
 			
             if (carryController != null)
             carryController = GameObject.FindGameObjectWithTag("Player").GetComponent<CarryController>();
+            //carryController = GameObject.Find("Player").GetComponent<CarryController>();
         }
     }
 

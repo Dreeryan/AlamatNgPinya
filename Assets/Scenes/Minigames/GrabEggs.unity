@@ -827,6 +827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 160605255}
+  spriteFacingRight: 0
 --- !u!1 &168171010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3095,7 +3096,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3109,7 +3110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.22, y: 3.8100002}
   m_EdgeRadius: 0
 --- !u!114 &897994918
 MonoBehaviour:
@@ -3683,6 +3684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1039249734}
+  spriteFacingRight: 0
 --- !u!114 &1039249736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4617,6 +4619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1452078683}
+  spriteFacingRight: 0
 --- !u!114 &1452078685
 MonoBehaviour:
   m_ObjectHideFlags: 0

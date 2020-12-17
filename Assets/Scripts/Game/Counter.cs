@@ -8,14 +8,15 @@ using TMPro;
 
 public class Counter : MonoBehaviour
 {
-    public  TextMeshProUGUI counterText;
-    public  int             objectsCollected;
-    private int             previousObjectsCollected;
+    public  TextMeshProUGUI     counterText;
+    public  int                 objectsCollected;
+    private int                 previousObjectsCollected;
+    private bool                isCounted;
 
-    [SerializeField] private int        objectGoal;
-    [SerializeField] GameObject winScreen;
-    [SerializeField] private UnityEvent onPlacement;
-    [SerializeField] CleanToy cleanToy;
+    [SerializeField] private CollisionChecker   collisionChecker;
+    [SerializeField] private int                objectGoal;
+    [SerializeField] private GameObject         winScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,11 +50,12 @@ public class Counter : MonoBehaviour
     {
         if (collision.gameObject.tag == "Item")
         {
-            cleanToy = collision.gameObject.GetComponent<CleanToy>();
+
+            collisionChecker = collision.gameObject.GetComponent<CollisionChecker>();
+
             // Adds a point for every item that collides with the goal
             objectsCollected++;
-            cleanToy.gameObject.GetComponent<Collider2D>().enabled = false;
-            onPlacement.Invoke();
+
         }
     }
 }

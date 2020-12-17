@@ -1,40 +1,49 @@
 fileFormatVersion: 2
-guid: f7c4bc4902f235f419dc6977632e5dcb
+guid: 42e8499e043dd8a4b9f49ff677a117ee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4679620243530797696
-    second: SpriteSheet_Tag_Minigame (1)_0
+      213: -6512062434861713189
+    second: SpriteSheet_Tag and HidenSeek_Minigame_0
   - first:
-      213: 2074207932694108415
-    second: SpriteSheet_Tag_Minigame (1)_1
+      213: -7677071473944938889
+    second: SpriteSheet_Tag and HidenSeek_Minigame_1
   - first:
-      213: 8953199699703868491
-    second: SpriteSheet_Tag_Minigame (1)_2
+      213: 2244615523437892977
+    second: SpriteSheet_Tag and HidenSeek_Minigame_2
   - first:
-      213: -2511194420667472485
-    second: SpriteSheet_Tag_Minigame (1)_3
+      213: 1249673218588279920
+    second: SpriteSheet_Tag and HidenSeek_Minigame_3
   - first:
-      213: -7431574641448214228
-    second: SpriteSheet_Tag_Minigame (1)_4
+      213: 2538748696426668958
+    second: SpriteSheet_Tag and HidenSeek_Minigame_4
   - first:
-      213: -1279754207305021936
-    second: SpriteSheet_Tag_Minigame (1)_5
+      213: -4810448911865435798
+    second: SpriteSheet_Tag and HidenSeek_Minigame_5
   - first:
-      213: -8659384707401602978
-    second: SpriteSheet_Tag_Minigame (1)_6
+      213: -7340701501378061580
+    second: SpriteSheet_Tag and HidenSeek_Minigame_6
   - first:
-      213: -2672056055496066658
-    second: SpriteSheet_Tag_Minigame (1)_7
+      213: -7308906628510028021
+    second: SpriteSheet_Tag and HidenSeek_Minigame_7
   - first:
-      213: 8034257534149919966
-    second: SpriteSheet_Tag_Minigame (1)_8
+      213: -7195908864682554898
+    second: SpriteSheet_Tag and HidenSeek_Minigame_8
   - first:
-      213: 125136613829786674
-    second: SpriteSheet_Tag_Minigame (1)_9
+      213: -7675616601687382310
+    second: SpriteSheet_Tag and HidenSeek_Minigame_9
   - first:
-      213: 9265025726831426
-    second: SpriteSheet_Tag_Minigame (1)_10
+      213: -6096998930885365947
+    second: SpriteSheet_Tag and HidenSeek_Minigame_10
+  - first:
+      213: 7014519344711231093
+    second: SpriteSheet_Tag and HidenSeek_Minigame_11
+  - first:
+      213: 1842464371821742173
+    second: SpriteSheet_Tag and HidenSeek_Minigame_12
+  - first:
+      213: -3896389779171095139
+    second: SpriteSheet_Tag and HidenSeek_Minigame_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet_Tag_Minigame (1)_0
+      name: SpriteSheet_Tag and HidenSeek_Minigame_0
       rect:
         serializedVersion: 2
         x: 0
@@ -134,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08dae94ae26ae0fb0800000000000000
-      internalID: -4679620243530797696
+      spriteID: bd8f6e6c7b180a5a0800000000000000
+      internalID: -6512062434861713189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Tag_Minigame (1)_1
+      name: SpriteSheet_Tag and HidenSeek_Minigame_1
       rect:
         serializedVersion: 2
         x: 256
@@ -155,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff8978a002119cc10800000000000000
-      internalID: 2074207932694108415
+      spriteID: 7763a385b20957590800000000000000
+      internalID: -7677071473944938889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Tag_Minigame (1)_2
+      name: SpriteSheet_Tag and HidenSeek_Minigame_2
       rect:
         serializedVersion: 2
         x: 512
@@ -176,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4cabf7d0b7204c70800000000000000
-      internalID: 8953199699703868491
+      spriteID: 175d7d31de9762f10800000000000000
+      internalID: 2244615523437892977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Tag_Minigame (1)_3
+      name: SpriteSheet_Tag and HidenSeek_Minigame_3
       rect:
         serializedVersion: 2
         x: 768
@@ -197,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b952c22baf1762dd0800000000000000
-      internalID: -2511194420667472485
+      spriteID: 0740647db2bb75110800000000000000
+      internalID: 1249673218588279920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Tag_Minigame (1)_4
+      name: SpriteSheet_Tag and HidenSeek_Minigame_4
       rect:
         serializedVersion: 2
         x: 0
@@ -218,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c21adaedc3ebdd890800000000000000
-      internalID: -7431574641448214228
+      spriteID: e936f701d727b3320800000000000000
+      internalID: 2538748696426668958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Tag_Minigame (1)_5
+      name: SpriteSheet_Tag and HidenSeek_Minigame_5
       rect:
         serializedVersion: 2
         x: 256
@@ -239,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 016c5c134566d3ee0800000000000000
-      internalID: -1279754207305021936
+      spriteID: a69a816933add3db0800000000000000
+      internalID: -4810448911865435798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Tag_Minigame (1)_6
+      name: SpriteSheet_Tag and HidenSeek_Minigame_6
       rect:
         serializedVersion: 2
         x: 512
@@ -260,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e58a0edec7fa3d780800000000000000
-      internalID: -8659384707401602978
+      spriteID: 4fa1f2090e6902a90800000000000000
+      internalID: -7340701501378061580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Tag_Minigame (1)_7
+      name: SpriteSheet_Tag and HidenSeek_Minigame_7
       rect:
         serializedVersion: 2
         x: 768
@@ -281,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e99b938bc23faead0800000000000000
-      internalID: -2672056055496066658
+      spriteID: b0f6927452c819a90800000000000000
+      internalID: -7308906628510028021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Tag_Minigame (1)_8
+      name: SpriteSheet_Tag and HidenSeek_Minigame_8
       rect:
         serializedVersion: 2
         x: 0
@@ -302,14 +311,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed40305f8aa6f7f60800000000000000
-      internalID: 8034257534149919966
+      spriteID: ee9038c530ff22c90800000000000000
+      internalID: -7195908864682554898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Tag_Minigame (1)_9
+      name: SpriteSheet_Tag and HidenSeek_Minigame_9
       rect:
         serializedVersion: 2
         x: 256
@@ -323,14 +332,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23c38b756139cb100800000000000000
-      internalID: 125136613829786674
+      spriteID: ad625503e5bba7590800000000000000
+      internalID: -7675616601687382310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Tag_Minigame (1)_10
+      name: SpriteSheet_Tag and HidenSeek_Minigame_10
       rect:
         serializedVersion: 2
         x: 512
@@ -344,8 +353,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24b5847ed7ae02000800000000000000
-      internalID: 9265025726831426
+      spriteID: 54f24a096cb136ba0800000000000000
+      internalID: -6096998930885365947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_Tag and HidenSeek_Minigame_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5766e93fd24985160800000000000000
+      internalID: 7014519344711231093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_Tag and HidenSeek_Minigame_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d588fb9959fb19910800000000000000
+      internalID: 1842464371821742173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_Tag and HidenSeek_Minigame_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d4b0ac32e3de9c0800000000000000
+      internalID: -3896389779171095139
       vertices: []
       indices: 
       edges: []

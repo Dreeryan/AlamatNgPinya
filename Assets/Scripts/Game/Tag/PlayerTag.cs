@@ -75,6 +75,19 @@ public class PlayerTag : MonoBehaviour
         {
             playerIsIt = false;
         }
+
+        if (collision.gameObject.tag == "Wall")
+        {
+            isMoving = false;
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            isMoving = false;
+        }
     }
 
     IEnumerator CountdownToWin()

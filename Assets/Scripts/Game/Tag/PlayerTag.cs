@@ -15,7 +15,7 @@ public class PlayerTag : MonoBehaviour
 
     private Vector3 targetPoint;
     private bool isMoving = false;
-    private bool playerIsIt = true;
+    public bool playerIsIt = true;
     private SpriteRenderer spriteRend;
 
     void Start()
@@ -64,21 +64,16 @@ public class PlayerTag : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && !playerIsIt)
         {
             playerIsIt = true;
         }
 
-        else
+        if (collision.gameObject.CompareTag("Enemy") && playerIsIt)
         {
             playerIsIt = false;
-        }
-
-        if (collision.gameObject.tag == "Wall")
-        {
-            isMoving = false;
         }
     }
 
@@ -89,6 +84,7 @@ public class PlayerTag : MonoBehaviour
             isMoving = false;
         }
     }
+
 
     IEnumerator CountdownToWin()
     {

@@ -73,7 +73,7 @@ public class EnemyTag : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, patrolPoints[randPoint].position, curSpeed * Time.deltaTime);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && !enemyIsIt)
         {

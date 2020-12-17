@@ -6,10 +6,12 @@ public class Egg : MonoBehaviour
 {
     [SerializeField] private Transform eggBasket;
 
-    private Vector2 mousePos;
-    private Vector2 currentPosition;
-    public bool isPlaced;
-    public ReturnIfVisionLost vision;
+    private Vector2             mousePos;
+    private Vector2             currentPosition;
+    public  bool                isPlaced;
+    public  ReturnIfVisionLost  vision;
+
+    [SerializeField] private CollisionChecker collisionChecker;
 
     void Start()
     {
@@ -32,6 +34,9 @@ public class Egg : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;
         }
+
+        if (collisionChecker.hasCollided)
+            transform.position = eggBasket.transform.position;
     }
 
     void OnMouseUp()
@@ -43,6 +48,7 @@ public class Egg : MonoBehaviour
             transform.position = eggBasket.transform.position;
             isPlaced = true;
         }
+
         // Else, it will be placed back to it's last position
         else
         {

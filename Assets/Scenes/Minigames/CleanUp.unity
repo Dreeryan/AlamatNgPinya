@@ -2855,7 +2855,7 @@ GameObject:
   - component: {fileID: 583218887}
   m_Layer: 0
   m_Name: Toy Box Holder
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2938,7 +2938,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011144757, y: 0.2458548}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2949,7 +2949,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7158136, y: 0.28348315}
+  m_Size: {x: 2.09, y: 0.91}
   m_EdgeRadius: 0
 --- !u!114 &583218887
 MonoBehaviour:
@@ -2965,12 +2965,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counterText: {fileID: 259120497}
   objectsCollected: 0
+  collisionChecker: {fileID: 0}
   objectGoal: 0
   winScreen: {fileID: 574603370}
-  onPlacement:
-    m_PersistentCalls:
-      m_Calls: []
-  cleanToy: {fileID: 0}
 --- !u!1 &607997856
 GameObject:
   m_ObjectHideFlags: 0
@@ -9681,6 +9678,7 @@ GameObject:
   - component: {fileID: 1598999240}
   - component: {fileID: 1598999241}
   - component: {fileID: 1598999239}
+  - component: {fileID: 1598999242}
   m_Layer: 0
   m_Name: Box Item
   m_TagString: Item
@@ -9817,6 +9815,20 @@ MonoBehaviour:
   isPlaced: 0
   isMouseDown: 0
   isPlayerNear: 0
+--- !u!114 &1598999242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598999236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCollided: 0
+  col: {fileID: 1598999239}
 --- !u!1 &1610476809
 GameObject:
   m_ObjectHideFlags: 0
@@ -10497,6 +10509,7 @@ GameObject:
   - component: {fileID: 1830365974}
   - component: {fileID: 1830365975}
   - component: {fileID: 1830365973}
+  - component: {fileID: 1830365976}
   m_Layer: 0
   m_Name: Circle Item
   m_TagString: Item
@@ -10634,6 +10647,20 @@ MonoBehaviour:
   isPlaced: 0
   isMouseDown: 0
   isPlayerNear: 0
+--- !u!114 &1830365976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830365970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCollided: 0
+  col: {fileID: 1830365973}
 --- !u!1 &1837570548
 GameObject:
   m_ObjectHideFlags: 0
@@ -12351,6 +12378,7 @@ GameObject:
   - component: {fileID: 2119677893}
   - component: {fileID: 2119677892}
   - component: {fileID: 2119677894}
+  - component: {fileID: 2119677897}
   m_Layer: 0
   m_Name: Box Item (1)
   m_TagString: Item
@@ -12488,6 +12516,20 @@ Transform:
   m_Father: {fileID: 1513266317}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2119677897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119677891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCollided: 0
+  col: {fileID: 2119677894}
 --- !u!1 &2132216170
 GameObject:
   m_ObjectHideFlags: 0

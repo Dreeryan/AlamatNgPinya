@@ -1234,8 +1234,8 @@ MonoBehaviour:
   itemHolder: {fileID: 58240757}
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
-  hasCollided: 0
   vision: {fileID: 177444135}
+  collisionChecker: {fileID: 0}
 --- !u!114 &177444133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1449,8 +1449,8 @@ MonoBehaviour:
   itemHolder: {fileID: 58240757}
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
-  hasCollided: 0
   vision: {fileID: 208480617}
+  collisionChecker: {fileID: 0}
 --- !u!114 &208480615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3118,8 +3118,8 @@ MonoBehaviour:
   itemHolder: {fileID: 58240757}
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
-  hasCollided: 0
   vision: {fileID: 504803005}
+  collisionChecker: {fileID: 0}
 --- !u!50 &504803007
 Rigidbody2D:
   serializedVersion: 4
@@ -6251,8 +6251,8 @@ MonoBehaviour:
   itemHolder: {fileID: 58240757}
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
-  hasCollided: 0
   vision: {fileID: 1059201451}
+  collisionChecker: {fileID: 0}
 --- !u!50 &1059201453
 Rigidbody2D:
   serializedVersion: 4
@@ -10054,8 +10054,8 @@ MonoBehaviour:
   itemHolder: {fileID: 58240757}
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
-  hasCollided: 0
   vision: {fileID: 1598950579}
+  collisionChecker: {fileID: 0}
 --- !u!50 &1598950581
 Rigidbody2D:
   serializedVersion: 4
@@ -11189,10 +11189,6 @@ MonoBehaviour:
   collisionChecker: {fileID: 0}
   objectGoal: 0
   winScreen: {fileID: 934033613}
-  onPlacement:
-    m_PersistentCalls:
-      m_Calls: []
-  cleanToy: {fileID: 0}
 --- !u!114 &1753569345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11211,7 +11207,6 @@ MonoBehaviour:
   - {fileID: 2088131282}
   - {fileID: 1759016077}
   - {fileID: 1151815802}
-  isMouseUp: 0
 --- !u!1 &1755589747
 GameObject:
   m_ObjectHideFlags: 0

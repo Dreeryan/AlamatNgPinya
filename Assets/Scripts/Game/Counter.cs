@@ -52,7 +52,6 @@ public class Counter : MonoBehaviour
         {
 
             collisionChecker = collision.gameObject.GetComponent<CollisionChecker>();
-
             // Adds a point for every item that collides with the goal
             objectsCollected++;
 

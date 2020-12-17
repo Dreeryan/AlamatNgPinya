@@ -12,13 +12,13 @@ public class ClothesPlacement : MonoBehaviour
     private Vector2 currentPosition;
 
     public bool                 canSnapbackToStart;
-    public bool                 hasCollided;
     public ReturnIfVisionLost   vision;
+
+    [SerializeField] private CollisionChecker collisionChecker;
 
     void Start()
     {
         currentPosition = transform.position;
-        hasCollided = false;
     }
 
     // Checks if object can be seen by the camera
@@ -36,13 +36,10 @@ public class ClothesPlacement : MonoBehaviour
 
     void OnMouseUp()
     {
-        if (hasCollided)
+        if (clothingPosition != null)
         {
-            if (clothingPosition != null)
-            {
-                transform.position = clothingPosition.GetNextAvailablePosition();
-                clothingPosition.UpdateIndex();
-            }
+            transform.position = clothingPosition.GetNextAvailablePosition();
+            clothingPosition.UpdateIndex();
         }
 
         // Else, it will be placed back to it's last position
@@ -53,11 +50,15 @@ public class ClothesPlacement : MonoBehaviour
                 transform.position = currentPosition;
         }
     }
+
     public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Goal")
         {
-            if (collision.gameObject.tag == "Goal")
+            if (collisionChecker != null)
             {
-                hasCollided = true;
+                collisionChecker = collision.gameObject.GetComponent<CollisionChecker>();
             }
         }
+    }
 }

@@ -6,7 +6,6 @@ public class ClothingPositioning : MonoBehaviour
 {
     // Make "First in First out" kind of placement
     [SerializeField] private List<GameObject> clothingSpots;
-    [SerializeField] private bool             isMouseUp;
     private int indexNum;
 
     private void Start()

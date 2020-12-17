@@ -15,7 +15,7 @@ public class SpriteFlipper : MonoBehaviour
     void Start()
     {
         currentPosition = transform.position;
-        isFlipped= false;
+        isFlipped = false;
     }
 
     // Update is called once per frame
@@ -24,13 +24,13 @@ public class SpriteFlipper : MonoBehaviour
         if (isFlipped)
         {
             if (spriteRenderer != null)
-                spriteRenderer.flipX = true;
+                transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
         else
         {
             if (spriteRenderer != null)
-                spriteRenderer.flipX = false;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         if (spriteFacingRight)

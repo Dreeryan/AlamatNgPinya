@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour
     private Vector3 defaultAngle = new Vector3(0, 0, 0);
     private Vector3 newAngle = new Vector3(0, 180, 0);
 
+    public bool isFacingRight = false;
     [HideInInspector]
     public bool isMoving = false;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
 
     void Update()
     {
@@ -31,7 +34,6 @@ public class PlayerController : MonoBehaviour
             transform.localEulerAngles = currentRotation;
 
             isMoving = true;
-            SetTargetPoint();
         }
 
         // To move the player
@@ -68,19 +70,5 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         isMoving = false;
-    }
-
-    void SetTargetPoint()
-    {
-        if (targetPoint.x < -1)
-        {
-            transform.localEulerAngles = defaultAngle;
-        }
-
-        // // If the mouse position is greater than -1, the player's y rotation axis will be flipped to 0
-        else
-        {
-            transform.localEulerAngles = newAngle;
-        }
     }
 }

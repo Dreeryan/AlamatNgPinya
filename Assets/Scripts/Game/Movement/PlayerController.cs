@@ -40,11 +40,11 @@ public class PlayerController : MonoBehaviour
         if (isMoving)
         {
             Movement();
-            if (playerAnim != null) playerAnim.SetBool("isRunning", true);
+            if (playerAnim != null) playerAnim.Play("Player_Running");
         }
         else
         {
-            if (playerAnim != null) playerAnim.SetBool("isRunning", false);
+            if (playerAnim != null) playerAnim.Play("Player_Idle");
         }
     }
 

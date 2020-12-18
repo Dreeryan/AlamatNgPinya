@@ -532,7 +532,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 59038139}
-  - component: {fileID: 59038140}
   m_Layer: 0
   m_Name: PlacesToHide
   m_TagString: Untagged
@@ -561,26 +560,6 @@ Transform:
   m_Father: {fileID: 2102415020}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &59038140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59038138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2841c5af848c544a99ba2d9dac0cdb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  friendPositions:
-  - {fileID: 891525976}
-  - {fileID: 807161203}
-  - {fileID: 1409421685}
-  - {fileID: 1488560892}
-  - {fileID: 409461031}
-  - {fileID: 284161401}
-  - {fileID: 1195426054}
 --- !u!1 &104763952
 GameObject:
   m_ObjectHideFlags: 0
@@ -10039,12 +10018,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395b6f85c1e847240b0960e541ee5f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionRandomizer: {fileID: 59038140}
+  friendPositions: []
   friendPrefabs:
   - {fileID: 2609790458234287859, guid: 17935cc9e10134d4186a73dd17febedc, type: 3}
   - {fileID: 2609790458234287859, guid: 17935cc9e10134d4186a73dd17febedc, type: 3}
   - {fileID: 2609790458234287859, guid: 17935cc9e10134d4186a73dd17febedc, type: 3}
-  spawnedItems: []
+  spawnedItems:
+  - {fileID: 891525976}
+  - {fileID: 409461031}
+  - {fileID: 1409421685}
+  - {fileID: 1488560892}
+  - {fileID: 807161203}
+  - {fileID: 284161401}
+  - {fileID: 1195426054}
 --- !u!1 &1910967071
 GameObject:
   m_ObjectHideFlags: 0

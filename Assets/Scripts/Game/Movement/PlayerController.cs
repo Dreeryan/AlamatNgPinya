@@ -46,6 +46,11 @@ public class PlayerController : MonoBehaviour
         {
             if (playerAnim != null) playerAnim.Play("Player_Idle");
         }
+
+        if (Input.GetMouseButton(1))
+        {
+            playerAnim.Play("Player_Pickup");
+        }
     }
 
     void Movement()

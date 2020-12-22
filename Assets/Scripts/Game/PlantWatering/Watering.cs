@@ -29,6 +29,8 @@ public class Watering : MonoBehaviour
     
     void Start()
     {
+        // test
+
         // hide the bar at the start
 		if (fillBar != null) fillBar.SetActive(false);
 

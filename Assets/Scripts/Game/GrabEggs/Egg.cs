@@ -34,9 +34,6 @@ public class Egg : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;
         }
-
-        if (collisionChecker.hasCollided)
-            transform.position = eggBasket.transform.position;
     }
 
     void OnMouseUp()
@@ -48,6 +45,10 @@ public class Egg : MonoBehaviour
             transform.position = eggBasket.transform.position;
             isPlaced = true;
         }
+
+
+        if (collisionChecker.hasCollided)
+            transform.position = eggBasket.transform.position;
 
         // Else, it will be placed back to it's last position
         else

@@ -9970,6 +9970,7 @@ GameObject:
   - component: {fileID: 1883901219}
   - component: {fileID: 1883901220}
   - component: {fileID: 1883901221}
+  - component: {fileID: 1883901222}
   m_Layer: 0
   m_Name: ChildrenSpawner
   m_TagString: Untagged
@@ -10019,11 +10020,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   friendPositions: []
+  positionRandomizer: {fileID: 1883901222}
   friendPrefabs:
   - {fileID: 2609790458234287859, guid: 17935cc9e10134d4186a73dd17febedc, type: 3}
   - {fileID: 2609790458234287859, guid: 17935cc9e10134d4186a73dd17febedc, type: 3}
   - {fileID: 2609790458234287859, guid: 17935cc9e10134d4186a73dd17febedc, type: 3}
   spawnedItems:
+  - {fileID: 891525976}
+  - {fileID: 409461031}
+  - {fileID: 1409421685}
+  - {fileID: 1488560892}
+  - {fileID: 807161203}
+  - {fileID: 284161401}
+  - {fileID: 1195426054}
+--- !u!114 &1883901222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883901218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2841c5af848c544a99ba2d9dac0cdb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  friendPositions:
   - {fileID: 891525976}
   - {fileID: 409461031}
   - {fileID: 1409421685}

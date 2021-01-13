@@ -40,8 +40,8 @@ public class Bucket : MonoBehaviour
         if (canFill)
         {
             transform.rotation = Quaternion.Euler(0, 0, canFillRotation);
-            
-            if(isFilling)
+
+            if (isFilling)
                 transform.rotation = Quaternion.Euler(0, 0, isFillingRotation);
         }
         else

@@ -26,11 +26,11 @@ public class Watering : MonoBehaviour
     [SerializeField] private Image plant;
     [SerializeField] private Sprite dryPlant;
     [SerializeField] private Sprite wateredPlant;
-    
+
     void Start()
     {
         // hide the bar at the start
-		if (fillBar != null) fillBar.SetActive(false);
+        if (fillBar != null) fillBar.SetActive(false);
 
         // show the dry plant at the start
         if (dryPlant != null) plant.sprite = dryPlant;
@@ -47,6 +47,9 @@ public class Watering : MonoBehaviour
     {
         if (isFilling)
         {
+            // show bar when its the first time or when it's not yet full
+            if (fillAmount < maxFill) fillBar.SetActive(true);
+
             // increase the fill amount by fill rate
             if (fillAmount < maxFill) fillAmount += fillRate * Time.deltaTime;
 
@@ -69,13 +72,10 @@ public class Watering : MonoBehaviour
         }
     }
 
-    public void ToggleFill()
+    public void SetFill(bool p_isFilling)
     {
-        // show bar when its the first time or when it's not yet full
-        if (fillAmount < maxFill) fillBar.SetActive(true);
-
-        // toggle the boolean
-        isFilling = !isFilling;
+        // set the boolean
+        isFilling = p_isFilling;  
     }
 
     void UpdateUI()

@@ -55,7 +55,7 @@ public class Porridge : MonoBehaviour
         // Getting the current temp from the slider value
         currentTemp = (int)(porridgeSlider.value * 100);
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && Time.timeScale > 0)
         {
             porridgeSlider.value += addTemperature * Time.deltaTime;
 

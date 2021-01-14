@@ -10,11 +10,13 @@ public class ClothesPlacement : MonoBehaviour
 
     private Vector2 mousePos;
     private Vector2 currentPosition;
+    private bool    isOnGoal;
 
     public bool                 canSnapbackToStart;
     public ReturnIfVisionLost   vision;
 
     [SerializeField] private CollisionChecker collisionChecker;
+    [SerializeField] private Counter          counter;
 
     void Start()
     {
@@ -36,7 +38,10 @@ public class ClothesPlacement : MonoBehaviour
 
     void OnMouseUp()
     {
-        if (clothingPosition != null)
+        if (isOnGoal)
+            counter.objectsCollected++;
+
+        if (clothingPosition != null && isOnGoal)
         {
             transform.position = clothingPosition.GetNextAvailablePosition();
             clothingPosition.UpdateIndex();
@@ -59,6 +64,19 @@ public class ClothesPlacement : MonoBehaviour
             {
                 collisionChecker = collision.gameObject.GetComponent<CollisionChecker>();
             }
+
+            counter = collision.gameObject.GetComponent<Counter>();
+
+            if (counter != null)
+                isOnGoal = true;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Goal")
+        {
+            isOnGoal = false;
         }
     }
 }

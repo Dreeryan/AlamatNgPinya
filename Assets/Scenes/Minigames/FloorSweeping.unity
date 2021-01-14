@@ -1413,6 +1413,7 @@ MonoBehaviour:
   broom: {fileID: 684779492}
   pushStrength: 100
   itemHolder: {fileID: 206580261}
+  counter: {fileID: 0}
   vision: {fileID: 336352465}
 --- !u!50 &336352467
 Rigidbody2D:
@@ -5031,6 +5032,7 @@ MonoBehaviour:
   broom: {fileID: 684779492}
   pushStrength: 100
   itemHolder: {fileID: 206580261}
+  counter: {fileID: 0}
   vision: {fileID: 1493699594}
 --- !u!50 &1493699591
 Rigidbody2D:
@@ -6039,6 +6041,7 @@ MonoBehaviour:
   broom: {fileID: 684779492}
   pushStrength: 100
   itemHolder: {fileID: 206580261}
+  counter: {fileID: 0}
   vision: {fileID: 1752371444}
 --- !u!50 &1752371446
 Rigidbody2D:

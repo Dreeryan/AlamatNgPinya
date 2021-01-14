@@ -1236,6 +1236,7 @@ MonoBehaviour:
   canSnapbackToStart: 1
   vision: {fileID: 177444135}
   collisionChecker: {fileID: 0}
+  counter: {fileID: 0}
 --- !u!114 &177444133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,7 +1244,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177444129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
   m_Name: 
@@ -1451,6 +1452,7 @@ MonoBehaviour:
   canSnapbackToStart: 1
   vision: {fileID: 208480617}
   collisionChecker: {fileID: 0}
+  counter: {fileID: 0}
 --- !u!114 &208480615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1458,7 +1460,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208480612}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
   m_Name: 
@@ -3120,6 +3122,7 @@ MonoBehaviour:
   canSnapbackToStart: 1
   vision: {fileID: 504803005}
   collisionChecker: {fileID: 0}
+  counter: {fileID: 0}
 --- !u!50 &504803007
 Rigidbody2D:
   serializedVersion: 4
@@ -3148,7 +3151,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504803001}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
   m_Name: 
@@ -6253,6 +6256,7 @@ MonoBehaviour:
   canSnapbackToStart: 1
   vision: {fileID: 1059201451}
   collisionChecker: {fileID: 0}
+  counter: {fileID: 0}
 --- !u!50 &1059201453
 Rigidbody2D:
   serializedVersion: 4
@@ -6281,7 +6285,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059201447}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
   m_Name: 
@@ -10056,6 +10060,7 @@ MonoBehaviour:
   canSnapbackToStart: 1
   vision: {fileID: 1598950579}
   collisionChecker: {fileID: 0}
+  counter: {fileID: 0}
 --- !u!50 &1598950581
 Rigidbody2D:
   serializedVersion: 4
@@ -10084,7 +10089,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598950575}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
   m_Name: 

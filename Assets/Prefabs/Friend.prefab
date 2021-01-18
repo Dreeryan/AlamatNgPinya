@@ -173,3 +173,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   friendFound: {fileID: 0}
+  spriteRenderer: {fileID: 2609790458234287856}
+  collider: {fileID: 2609790458234287854}

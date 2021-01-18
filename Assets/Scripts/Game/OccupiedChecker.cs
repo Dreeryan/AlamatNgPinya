@@ -18,7 +18,8 @@ public class OccupiedChecker : MonoBehaviour
     void Update()
     {
         if (isOccupied)
-            friendSpawner.GetSpawnPosition();
+            if (friendSpawner != null)
+                    friendSpawner.GetSpawnPosition();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CountFriend : MonoBehaviour
 {
-    [SerializeField] private FriendFound friendFound;
+    [SerializeField] private FriendFound    friendFound;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Collider2D     collider;
 
     private void Start()
     {
@@ -16,7 +18,7 @@ public class CountFriend : MonoBehaviour
         // Counts a friend if found by player
         friendFound.friendsFound++;
 
-        gameObject.SetActive(false);
-        //gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        spriteRenderer.enabled = false;
+        collider.enabled = false;
     }
 }

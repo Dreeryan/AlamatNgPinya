@@ -10313,7 +10313,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395b6f85c1e847240b0960e541ee5f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  friendPositions: []
+  friendPositions:
+  - {fileID: 891525979}
+  - {fileID: 409461034}
+  - {fileID: 1409421688}
+  - {fileID: 1488560895}
+  - {fileID: 807161206}
+  - {fileID: 284161404}
+  - {fileID: 1195426057}
   positionRandomizer: {fileID: 1883901222}
   friendPrefabs:
   - {fileID: 2609790458234287859, guid: 17935cc9e10134d4186a73dd17febedc, type: 3}

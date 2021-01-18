@@ -7,6 +7,7 @@ public class SweepableObject : MonoBehaviour
     [SerializeField] private GameObject     broom;
     [SerializeField] private float          pushStrength;
     [SerializeField] private Transform      itemHolder;
+    [SerializeField] private Counter        counter;
 
     public ReturnIfVisionLost vision;
 
@@ -45,6 +46,9 @@ public class SweepableObject : MonoBehaviour
             //A: Directly assign instead of making new vector if possible. This can cause memory issues
             transform.position = itemHolder.transform.position;
             isPlaced = true;
+
+            counter = collision.gameObject.GetComponent<Counter>();
+            counter.objectsCollected++;
         }
     }
 }

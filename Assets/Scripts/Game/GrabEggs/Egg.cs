@@ -8,11 +8,13 @@ public class Egg : MonoBehaviour
 
     private Vector2             mousePos;
     private Vector2             currentPosition;
+    private bool                isOnGoal;
+
     public  bool                isPlaced;
     public  ReturnIfVisionLost  vision;
 
     [SerializeField] private CollisionChecker collisionChecker;
-
+    [SerializeField] private Counter          counter;
     void Start()
     {
         currentPosition = transform.position;
@@ -50,10 +52,34 @@ public class Egg : MonoBehaviour
         if (collisionChecker.hasCollided)
             transform.position = eggBasket.transform.position;
 
+        if (isOnGoal)
+            counter.objectsCollected++;
+
         // Else, it will be placed back to it's last position
         else
         {
             transform.position = currentPosition;
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Goal")
+        {
+            counter = collision.gameObject.GetComponent<Counter>();
+
+            // Adds a point for every item that collides with the goal
+            if (counter != null)
+                isOnGoal = true;
+
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Goal")
+        {
+            isOnGoal = false;
         }
     }
 }

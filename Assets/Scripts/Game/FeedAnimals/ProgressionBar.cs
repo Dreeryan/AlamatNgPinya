@@ -5,19 +5,22 @@ using UnityEngine.UI;
 
 public class ProgressionBar : MonoBehaviour
 {
-    [SerializeField] private Slider slider;
+    [SerializeField] private Image bar;
     [SerializeField] GameObject WinScreen;
 
-    private int maxFood = 100;
+    private float maxFood = 1;
+    private float curFood = 0;
 
     private void Start()
     {
+        bar.fillAmount = curFood;
+
         WinScreen.SetActive(false);
     }
 
     private void Update()
     {
-        if (slider.value >= maxFood)
+        if (bar.fillAmount >= maxFood)
         {
             WinScreen.SetActive(true);
         }
@@ -25,11 +28,11 @@ public class ProgressionBar : MonoBehaviour
 
     public void SetFood(int food)
     {
-        slider.value = food;
+        bar.fillAmount = food;
     }
 
     public void AddFood()
     {
-        slider.value++;
+        bar.fillAmount += 1 * Time.deltaTime;
     }
 }

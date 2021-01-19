@@ -29,6 +29,7 @@ TagManager:
   - Clothes
   - HidingSpot
   - Enemy
+  - VisionChecker
   layers:
   - Default
   - TransparentFX

@@ -11,18 +11,21 @@ public class ReturnIfVisionLost : MonoBehaviour
 
     void Start()
     {
+        isSeen = true;
         renderers = GetComponent<Renderer>();
-
     }
 
-    void Update()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (renderers.isVisible)
+        if (collision.gameObject.tag == "VisionChecker")
         {
             isSeen = true;
         }
+    }
 
-        else
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "VisionChecker")
         {
             isSeen = false;
         }

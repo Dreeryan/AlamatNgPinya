@@ -12,10 +12,12 @@ public class TagManager : MonoBehaviour
 
     void Start()
     {
+        if (winScreen != null) winScreen.SetActive(false);
+
         // Adds listener for when a kid gets tagged
         foreach (TagCharacter kid in kids)
         {
-            kid.onTagged.AddListener(OnCurrentTaggedChange);
+            kid.tagged.AddListener(OnCurrentTaggedChange);
         }
 
         currentTagged = startingTagged;

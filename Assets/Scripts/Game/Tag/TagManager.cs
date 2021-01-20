@@ -8,6 +8,7 @@ public class TagManager : MonoBehaviour
 
     [SerializeField] private TagCharacter[] kids;
     [SerializeField] private TagCharacter   startingTagged;
+
     private TagCharacter currentTagged;
 
     void Start()
@@ -37,7 +38,13 @@ public class TagManager : MonoBehaviour
         currentTagged.IsTagged = true;
 
         // If the current tagged is one of the other kids, complete the minigame
-        if (currentTagged.CompareTag("Enemy")) DisplayWinScreen();
+        if (currentTagged.CompareTag("Enemy")) OnComplete();
+    }
+
+    void OnComplete()
+    {
+        DisplayWinScreen();
+        Time.timeScale = 0.0f;
     }
 
     void DisplayWinScreen() 

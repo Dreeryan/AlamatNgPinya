@@ -6,18 +6,17 @@ using UnityEngine.Events;
 public class TagCharacter : MonoBehaviour
 {
     public class OnTagged : UnityEvent<TagCharacter> { }
-    public OnTagged tagged = new OnTagged();
+    public OnTagged         tagged          = new OnTagged();
 
-    private bool    isTagged = false;
-    public bool     IsTagged
+    private bool            isTagged        = false;
+    public bool             IsTagged
     {
         get { return isTagged; }
         set { isTagged = value; }
     }
 
-
     private SpriteRenderer  renderer;
-    private TagCharacter    previousTagged = null;
+    private TagCharacter    previousTagged  = null;
 
     // Start is called before the first frame update
     void Start()

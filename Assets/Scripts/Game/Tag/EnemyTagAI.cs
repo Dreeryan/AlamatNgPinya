@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class EnemyTagAI : MonoBehaviour
 {
-    private Transform chaseTarget;
-    private Vector2 destination;
-    private float targetRange;
+    [SerializeField] private float      curSpeed = 3;
 
     [SerializeField] private Collider2D MoveArea;
     //[SerializeField] private Transform[] patrolPoints;
 
-    [Header("Enemy Variables")]
-    [SerializeField] private float curSpeed;
+    private Vector2 destination;
 
     void Start()
     {

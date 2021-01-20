@@ -30,6 +30,15 @@ public class Draggable : MonoBehaviour
     {
         isPlaced = false;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector3 maxScreen = new Vector3(Screen.width, Screen.height);
+        Vector3 maxWorld = Camera.main.ScreenToWorldPoint(maxScreen);
+
+        Vector3 minScreen = Vector3.zero;
+        Vector3 minWorld = Camera.main.ScreenToWorldPoint(minScreen);
+
+        mousePos.y = Mathf.Clamp(mousePos.y, minWorld.y, maxWorld.y);
+        mousePos.x = Mathf.Clamp(mousePos.x, minWorld.x, maxWorld.x);
         transform.position = mousePos;
     }
 

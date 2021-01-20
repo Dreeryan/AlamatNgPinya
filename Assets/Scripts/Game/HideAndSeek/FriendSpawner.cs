@@ -17,7 +17,13 @@ public class FriendSpawner : MonoBehaviour
             // Sets hiding spots as spawn points
             Vector3 hidingSpot = positionRandomizer.GetSpawnPosition();
 
-            Random hidingSpotRandomizer = new Random();
+            // Shuffles the spawnedItems list which contains the hiding spots
+            GameObject temp = spawnedItems[i];
+            int index = Random.Range(i, spawnedItems.Count);
+
+            spawnedItems[i] = spawnedItems[index];
+            spawnedItems[index] = temp;
+            
 
             GameObject newFriends = Instantiate(friendPrefabs[i], spawnedItems[i].transform.position, Quaternion.identity);
 

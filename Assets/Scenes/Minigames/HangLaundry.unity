@@ -1181,7 +1181,6 @@ GameObject:
   - component: {fileID: 177444136}
   - component: {fileID: 177444135}
   - component: {fileID: 177444134}
-  - component: {fileID: 177444133}
   - component: {fileID: 177444132}
   - component: {fileID: 177444131}
   m_Layer: 0
@@ -1235,22 +1234,8 @@ MonoBehaviour:
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   vision: {fileID: 177444135}
-  collisionChecker: {fileID: 0}
   counter: {fileID: 0}
---- !u!114 &177444133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177444129}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasCollided: 0
-  col: {fileID: 177444136}
+  collider: {fileID: 177444136}
 --- !u!50 &177444134
 Rigidbody2D:
   serializedVersion: 4
@@ -1410,7 +1395,6 @@ GameObject:
   - component: {fileID: 208480618}
   - component: {fileID: 208480617}
   - component: {fileID: 208480616}
-  - component: {fileID: 208480615}
   - component: {fileID: 208480614}
   - component: {fileID: 208480620}
   m_Layer: 0
@@ -1451,22 +1435,8 @@ MonoBehaviour:
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   vision: {fileID: 208480617}
-  collisionChecker: {fileID: 0}
   counter: {fileID: 0}
---- !u!114 &208480615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208480612}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasCollided: 0
-  col: {fileID: 208480618}
+  collider: {fileID: 208480618}
 --- !u!50 &208480616
 Rigidbody2D:
   serializedVersion: 4
@@ -2990,7 +2960,6 @@ GameObject:
   - component: {fileID: 504803004}
   - component: {fileID: 504803005}
   - component: {fileID: 504803007}
-  - component: {fileID: 504803008}
   - component: {fileID: 504803006}
   - component: {fileID: 504803009}
   m_Layer: 0
@@ -3121,8 +3090,8 @@ MonoBehaviour:
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   vision: {fileID: 504803005}
-  collisionChecker: {fileID: 0}
   counter: {fileID: 0}
+  collider: {fileID: 504803004}
 --- !u!50 &504803007
 Rigidbody2D:
   serializedVersion: 4
@@ -3144,20 +3113,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &504803008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504803001}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasCollided: 0
-  col: {fileID: 504803004}
 --- !u!114 &504803009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6124,7 +6079,6 @@ GameObject:
   - component: {fileID: 1059201450}
   - component: {fileID: 1059201451}
   - component: {fileID: 1059201453}
-  - component: {fileID: 1059201454}
   - component: {fileID: 1059201455}
   - component: {fileID: 1059201452}
   m_Layer: 0
@@ -6255,8 +6209,8 @@ MonoBehaviour:
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   vision: {fileID: 1059201451}
-  collisionChecker: {fileID: 0}
   counter: {fileID: 0}
+  collider: {fileID: 1059201450}
 --- !u!50 &1059201453
 Rigidbody2D:
   serializedVersion: 4
@@ -6278,20 +6232,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1059201454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1059201447}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasCollided: 0
-  col: {fileID: 1059201450}
 --- !u!114 &1059201455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9928,7 +9868,6 @@ GameObject:
   - component: {fileID: 1598950578}
   - component: {fileID: 1598950579}
   - component: {fileID: 1598950581}
-  - component: {fileID: 1598950582}
   - component: {fileID: 1598950580}
   - component: {fileID: 1598950583}
   m_Layer: 0
@@ -10059,8 +9998,8 @@ MonoBehaviour:
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   vision: {fileID: 1598950579}
-  collisionChecker: {fileID: 0}
   counter: {fileID: 0}
+  collider: {fileID: 1598950578}
 --- !u!50 &1598950581
 Rigidbody2D:
   serializedVersion: 4
@@ -10082,20 +10021,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1598950582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598950575}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasCollided: 0
-  col: {fileID: 1598950578}
 --- !u!114 &1598950583
 MonoBehaviour:
   m_ObjectHideFlags: 0

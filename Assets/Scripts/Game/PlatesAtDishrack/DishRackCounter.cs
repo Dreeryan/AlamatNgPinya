@@ -22,6 +22,7 @@ public class DishRackCounter : MonoBehaviour
     }
 
     // Update is called once per frame
+	//A: Do this only after dishCollected was modified.
     void Update()
     {
         if (dishCollected > previousDishCollected)
@@ -30,6 +31,7 @@ public class DishRackCounter : MonoBehaviour
 
             if (dishCollected >= dishGoal)
             {
+				//A: nullcheck
                 winScreen.SetActive(true);
             }
         }

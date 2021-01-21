@@ -69,6 +69,8 @@ public class Laundry : MonoBehaviour
         float horizontalSwipe = Mathf.Abs(startPosition.x - endPosition.x);
         float verticalSwipe = Mathf.Abs(startPosition.y - endPosition.y);
 
+		//A: Just use the enums instead of setting and checking 4 booleans
+
         if (horizontalSwipe > 0 || verticalSwipe > 0)
         {
             if (horizontalSwipe > verticalSwipe)
@@ -120,6 +122,8 @@ public class Laundry : MonoBehaviour
 
     public void FoldSequence()
     {
+		//A: Just use the enums instead of setting and checking 4 booleans
+		
         // Swipe from left to right
         if (currentSequence == 0 && isLeft == false && isRight == true)
         {

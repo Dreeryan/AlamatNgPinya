@@ -14,6 +14,10 @@ public class CleanDishRack : MonoBehaviour
 
     void Update()
     {
+		//A: Dont do this per update. Do this everytime the dishcounter was changed
+		//Can shorten to spriteRenderer.sprite = cleanSprites[dishCounter]
+		//Null check before accessing SpriteRenderer and cleanSprites element
+		
         if (dishCounter == 1)
         {
             GetComponent<SpriteRenderer>().sprite = cleanSprites[0];
@@ -36,6 +40,8 @@ public class CleanDishRack : MonoBehaviour
         {
             dish = collision.gameObject.GetComponent<Dish>();
             dishCounter++;
+			
+			//A: Null check before accessing 
             dish.gameObject.GetComponent<Collider2D>().enabled = false;
 
             // add progress

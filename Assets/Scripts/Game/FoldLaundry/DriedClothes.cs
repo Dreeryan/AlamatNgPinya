@@ -11,6 +11,14 @@ public class DriedClothes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		//A: Can simplify this to
+		//int clotheCounter = foldedClothes.clothesCounter
+		//dirtySprites[clotheCounter].SetActive(false)
+		//toFoldClothes[clotheCounter].SetActive(true)
+		
+		
+		//If its already a gameobject. Dont need to do myGameObject.gameObject
+		//Nullcheck
         if (foldedClothes.clothesCounter == 1)
         {
             dirtySprites[0].gameObject.SetActive(false);

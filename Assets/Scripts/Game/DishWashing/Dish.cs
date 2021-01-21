@@ -37,6 +37,7 @@ public class Dish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		//A: Better if you can move this to after the currentDirtRate was changed
         // If the current clean rate is equal to the max clean rate
         if (currentDirtRate < minDirtRate)
         {
@@ -44,7 +45,10 @@ public class Dish : MonoBehaviour
             transform.position = cleanDishRack.transform.position;
             isPlaced = true;
 
+			//A: Make this a variable instead. This will eat resources cause you are making
+			// a new color var per frame			
             rend.material.color = new Color32(225, 225, 225, 0);
+			
             this.gameObject.transform.parent = cleanDishRack;
             if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
         }

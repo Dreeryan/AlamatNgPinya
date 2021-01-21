@@ -39,6 +39,7 @@ public class DishPlayerPrefs : MonoBehaviour
 
     public void CurrentDishCount()
     {
+		//A: Null check
         dishCountText.text = "Dish: " + counter;
     }
 }

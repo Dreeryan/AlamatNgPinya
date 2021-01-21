@@ -24,6 +24,7 @@ public class DishCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		//A: Better to move this to after dishCollected was changed. Avoid putting things in update as much as possible
         if (dishCollected > previousDishCollected)
         {
             previousDishCollected = dishCollected;

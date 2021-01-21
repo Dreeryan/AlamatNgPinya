@@ -6,6 +6,7 @@ public class SpriteHider : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
 
+//A: null check
     // Start is called before the first frame update
     void Start()
     {

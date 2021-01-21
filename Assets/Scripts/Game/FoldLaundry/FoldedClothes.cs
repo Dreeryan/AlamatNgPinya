@@ -10,6 +10,8 @@ public class FoldedClothes : MonoBehaviour
 
     void Update()
     {
+		//A: Simplify. See DriedClothes.cs
+		//Do this after clothesCounter was changed instead
         if (clothesCounter == 1)
         {
             foldedSprites[0].gameObject.SetActive(true);

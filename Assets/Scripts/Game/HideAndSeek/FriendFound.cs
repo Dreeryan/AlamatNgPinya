@@ -21,6 +21,7 @@ public class FriendFound : MonoBehaviour
         friendsGoal = GameObject.FindGameObjectsWithTag("Friend").Length;
 
         
+		//A: Do this only after friendsFound was found.
         if (friendsFound > previousFriendsFound)
         {
             previousFriendsFound = friendsFound;

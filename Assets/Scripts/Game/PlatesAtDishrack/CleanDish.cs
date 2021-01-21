@@ -21,8 +21,10 @@ public class CleanDish : MonoBehaviour
 
     void Update()
     {
+		//Do this only when isPlaced is modified
         if (isPlaced)
         {
+			//A: nullcheck
             cd.enabled = false;
         }
     }

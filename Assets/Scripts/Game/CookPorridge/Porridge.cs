@@ -6,6 +6,7 @@ using TMPro;
 
 public class Porridge : MonoBehaviour
 {
+	//A: maxTemp and rightTemp should be available for design
     private float currentTemp = 0.0f;
     private float maxTemp = 100.0f;
     private float rightTemp = 30f;
@@ -19,6 +20,7 @@ public class Porridge : MonoBehaviour
     [SerializeField] private Slider porridgeSlider;
     [SerializeField] private GameObject winningPanel;
 
+	//A: Rename to Porridge Settings, not all designers have BG in prog
     [Header("Porridge Variables")]
     [SerializeField] private float addTemperature;
     [SerializeField] private float decreaseTemperature;

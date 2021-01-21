@@ -78,6 +78,7 @@ public class ShakeObject : MonoBehaviour
             // Triggers shaking
             if (isOnFeedArea && isMouseDrag)
             {
+				//A: Nullcheck
                 isShaking = true;
                 renderers.flipY = true;
             }

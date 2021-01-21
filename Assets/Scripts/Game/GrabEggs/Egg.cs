@@ -41,6 +41,7 @@ public class Egg : MonoBehaviour
 
     void OnMouseUp()
     {
+		//A: Cleaner to put this in a function that returns if its less than the value
         // If the object is near the item holder, the object will automatically be placed.
         if (Mathf.Abs(transform.position.x - eggBasket.transform.position.x) <= 1.2f &&
             Mathf.Abs(transform.position.y - eggBasket.transform.position.y) <= 1.2f)

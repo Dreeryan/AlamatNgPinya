@@ -46,6 +46,7 @@ public class ClothesPlacement : MonoBehaviour
             clothingPosition.UpdateIndex();
         }
 
+		//A: Dont space out the else from the if. This is gonna get confusing
         // Else, it will be placed back to it's last position
         else
         {

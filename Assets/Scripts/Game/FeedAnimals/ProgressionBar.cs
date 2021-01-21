@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//A: This implies this is a generic progression bar. Might want to also adjust the names to be less specific since you can recycle this
 public class ProgressionBar : MonoBehaviour
 {
     [SerializeField] private Image bar;
@@ -13,6 +14,7 @@ public class ProgressionBar : MonoBehaviour
 
     private void Start()
     {
+		//A: Nullcheck
         bar.fillAmount = curFood;
 
         WinScreen.SetActive(false);

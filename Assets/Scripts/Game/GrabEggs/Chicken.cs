@@ -34,6 +34,7 @@ public class Chicken : MonoBehaviour
             target.z = transform.position.z;
         }
 
+		//A: Nullcheck endpoint. Thats still an object
         // Disables chicken movement once it moves to specified location
         if (transform.position == endPoint.position)
         {

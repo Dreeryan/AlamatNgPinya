@@ -15,6 +15,7 @@ public class CountFriend : MonoBehaviour
 
     public void CountFriends()
     {
+		//A: Nullcheck
         // Counts a friend if found by player
         friendFound.friendsFound++;
 

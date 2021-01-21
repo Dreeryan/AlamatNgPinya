@@ -34,6 +34,7 @@ public class Sponge : MonoBehaviour
         {
             if (isOnDish)
             {
+				//A: Nullcheck
                 dish.currentDirtRate -= drainRate * Time.deltaTime;
                 previousPos = Input.mousePosition;
             }

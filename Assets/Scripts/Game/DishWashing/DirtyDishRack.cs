@@ -9,6 +9,10 @@ public class DirtyDishRack : MonoBehaviour
     [SerializeField] private GameObject[] dirtyDishes;
 
     // Update is called once per frame
+	
+	//A: Dont do this per update. Do this everytime the dishcounter was changed
+		//Can shorten to spriteRenderer.sprite = dirtySprites[dishCounter]
+		//Null check before accessing SpriteRenderer and dirtySprites element
     void Update()
     {
         if (rack.dishCounter == 1)

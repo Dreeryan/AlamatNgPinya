@@ -79,6 +79,7 @@ public class Egg : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
+        counter = collision.gameObject.GetComponent<Counter>();
         if (collision.gameObject.tag == "Goal")
         {
             isOnGoal = false;

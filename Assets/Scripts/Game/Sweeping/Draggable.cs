@@ -12,18 +12,9 @@ public class Draggable : MonoBehaviour
     public  bool    isPlaced;
     public  bool    canSnapbackToStart;
 
-    public ReturnIfVisionLost vision;
-
     void Start()
     {
         currentPosition = transform.position;
-    }
-
-    // Checks if object can be seen by the camera
-    private void Update()
-    {
-        if (vision.isSeen == false && vision != null)
-            transform.position = currentPosition;
     }
 
     void OnMouseDrag()

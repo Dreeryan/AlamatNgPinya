@@ -2932,7 +2932,6 @@ GameObject:
   - component: {fileID: 684779497}
   - component: {fileID: 684779496}
   - component: {fileID: 684779494}
-  - component: {fileID: 684779495}
   m_Layer: 0
   m_Name: Broom
   m_TagString: Broom
@@ -2970,20 +2969,6 @@ MonoBehaviour:
   valueToTarget: 1.2
   isPlaced: 0
   canSnapbackToStart: 0
-  vision: {fileID: 684779495}
---- !u!114 &684779495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684779492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8731e54c18d540d418b6cdde0236e4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSeen: 0
 --- !u!50 &684779496
 Rigidbody2D:
   serializedVersion: 4

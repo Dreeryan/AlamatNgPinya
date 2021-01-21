@@ -17,9 +17,24 @@ public class ReturnIfVisionLost : MonoBehaviour
 
     private void Update()
     {
-        Vector3 maxScreen = new Vector3(Screen.width, Screen.height);
-        Vector3 maxWorld = Camera.main.ScreenToWorldPoint(maxScreen);
+        CheckIfSeen();
 
-        
+        if (isSeen)
+        {
+            transform.position = transform.position;
+        }
+    }
+
+    public void CheckIfSeen()
+    {
+        if (renderers.isVisible)
+        {
+            isSeen = true;
+        }
+
+        else
+        {
+            isSeen = false;
+        }
     }
 }

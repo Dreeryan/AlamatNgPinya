@@ -15,6 +15,7 @@ public class Egg : MonoBehaviour
 
     [SerializeField] private CollisionChecker collisionChecker;
     [SerializeField] private Counter          counter;
+    [SerializeField] private Collider2D       collider;
     void Start()
     {
         currentPosition = transform.position;
@@ -67,6 +68,7 @@ public class Egg : MonoBehaviour
         if (collision.gameObject.tag == "Goal")
         {
             counter = collision.gameObject.GetComponent<Counter>();
+            collider.enabled = false;
 
             // Adds a point for every item that collides with the goal
             if (counter != null)

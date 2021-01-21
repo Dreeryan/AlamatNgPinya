@@ -104,6 +104,7 @@ MonoBehaviour:
   vision: {fileID: 3746543945012756444}
   collisionChecker: {fileID: 6685725489185511279}
   counter: {fileID: 0}
+  collider: {fileID: 4743468782995224815}
 --- !u!114 &3746543945012756444
 MonoBehaviour:
   m_ObjectHideFlags: 0

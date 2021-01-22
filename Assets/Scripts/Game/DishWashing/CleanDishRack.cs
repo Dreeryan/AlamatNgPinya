@@ -1,16 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CleanDishRack : MonoBehaviour
 {
-    public int dishCounter = 0;
-    [SerializeField] private Dish dish;
+    private UnityEvent  onDishCleaned = new UnityEvent();
+    public UnityEvent   OnDishCleaned 
+    {
+        get { return onDishCleaned; }
+    }
+
+    private int         dishCounter = 0;
+    public int          DishCounter
+    {
+        get { return dishCounter; }
+    }
+
+
+    [SerializeField] private Dish[] dirtyDishes;
     [SerializeField] private Sprite[] cleanSprites;
 
     [Header("References")]
     [SerializeField] ProgressManager progressManager;
-    [SerializeField] DishPlayerPrefs dishPlayerPrefs;
+
+    private SpriteRenderer sRenderer;
+
+    private void Start()
+    {
+        if (sRenderer == null) sRenderer = GetComponent<SpriteRenderer>();
+        foreach (Dish dish in dirtyDishes)
+        {
+            dish.OnDishAdded.AddListener(DishCleaned);
+        }
+    }
 
     void Update()
     {
@@ -18,35 +41,21 @@ public class CleanDishRack : MonoBehaviour
 		//Can shorten to spriteRenderer.sprite = cleanSprites[dishCounter]
 		//Null check before accessing SpriteRenderer and cleanSprites element
 		
-        if (dishCounter == 1)
-        {
-            GetComponent<SpriteRenderer>().sprite = cleanSprites[0];
-        }
-
-        if (dishCounter == 2)
-        {
-            GetComponent<SpriteRenderer>().sprite = cleanSprites[1];
-        }
-
-        if (dishCounter == 3)
-        {
-            GetComponent<SpriteRenderer>().sprite = cleanSprites[2];
-        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void ChangeSprite()
     {
-        if (collision.gameObject.CompareTag("DirtyDish"))
-        {
-            dish = collision.gameObject.GetComponent<Dish>();
-            dishCounter++;
-			
-			//A: Null check before accessing 
-            dish.gameObject.GetComponent<Collider2D>().enabled = false;
+        if (sRenderer == null ||
+            cleanSprites[dishCounter - 1] == null) return;
 
-            // add progress
-            progressManager.AddProgress();
-            dishPlayerPrefs.AddCounter();
-        }
+        GetComponent<SpriteRenderer>().sprite = cleanSprites[dishCounter - 1];
+    }
+
+    private void DishCleaned()
+    {
+        dishCounter++;
+        ChangeSprite();
+        progressManager.AddProgress();
+        onDishCleaned.Invoke();
     }
 }

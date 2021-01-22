@@ -1,73 +1,75 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
 public class Dish : MonoBehaviour
 {
-    private Collider2D col;
-    private Renderer rend;
+    private UnityEvent  onDishAdded = new UnityEvent();
+    public UnityEvent   OnDishAdded
+    {
+        get { return onDishAdded; }
+    }
 
-    [SerializeField] private Sponge sponge;
-
-    [Header("Sponge Variables")]
-    [SerializeField] public float currentDirtRate;
-    [SerializeField] private float minDirtRate = 0f;
-    [SerializeField] private Transform cleanDishRack;
+    [Header("Dish Settings")]
+    [SerializeField] private float              maxDirtRate = 100f;
+    [SerializeField] private float              minDirtRate = 0f;
+    [SerializeField] private Transform          cleanDishRack;
+    private float currentDirtRate = 0f;
 
     [Header("UI")]
-    [SerializeField] private TextMeshProUGUI dirtRateText;
+    [SerializeField] private TextMeshProUGUI    dirtRateText;
 
-    public bool isPlaced;
     // Start is called before the first frame update
     void Start()
     {
         if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
 
-        if (cleanDishRack != null)
-        {
-            cleanDishRack = GameObject.Find("CleanDishRack").transform;
-        }
+        if (cleanDishRack == null) cleanDishRack = FindObjectOfType<CleanDishRack>().transform;
 
-        col = GetComponent<Collider2D>();
-        rend = GetComponent<Renderer>();
+        currentDirtRate = maxDirtRate;
     }
 
     // Update is called once per frame
     void Update()
     {
-		//A: Better if you can move this to after the currentDirtRate was changed
-        // If the current clean rate is equal to the max clean rate
-        if (currentDirtRate < minDirtRate)
-        {
-            currentDirtRate = minDirtRate;
-            transform.position = cleanDishRack.transform.position;
-            isPlaced = true;
+    }
 
-			//A: Make this a variable instead. This will eat resources cause you are making
-			// a new color var per frame			
-            rend.material.color = new Color32(225, 225, 225, 0);
-			
-            this.gameObject.transform.parent = cleanDishRack;
-            if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
-        }
+    //A: Better if you can move this to after the currentDirtRate was changed
+
+    public void ReduceDirtRate(float drainRate)
+    {
+        currentDirtRate -= drainRate;
+        if (currentDirtRate <= minDirtRate) OnAllDishesCleaned();
+    }
+
+    private void OnAllDishesCleaned()
+    {
+        currentDirtRate = minDirtRate;
+
+        transform.position = cleanDishRack.transform.position;
+
+        transform.parent = cleanDishRack;
+        if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
+        onDishAdded.Invoke();
+        GetComponent<Collider2D>().enabled = false;
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
         // If the dish is staying within the sponge
-        if (collision.gameObject.CompareTag("Sponge"))
+        if (collision.GetComponent<Sponge>())
         {
             if (dirtRateText != null) dirtRateText.gameObject.SetActive(true);
-            sponge = collision.gameObject.GetComponent<Sponge>();
             dirtRateText.text = "Current dirt rate: " + currentDirtRate.ToString("f0") + "%";
         }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Sponge"))
+        if (collision.GetComponent<Sponge>())
         {
             dirtRateText.gameObject.SetActive(false);
         }

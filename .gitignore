@@ -60,3 +60,6 @@ crashlytics-build.properties
 
 # Logs
 *.log
+ProjectSettings/PackageManagerSettings.asset
+Assets/Sprites/Animations/Objects.meta
+Assets/Scripts/UI/Minigames.meta

@@ -664,7 +664,6 @@ GameObject:
   m_Component:
   - component: {fileID: 195094858}
   - component: {fileID: 195094857}
-  - component: {fileID: 195094856}
   - component: {fileID: 195094855}
   m_Layer: 0
   m_Name: Folded Clothes
@@ -685,40 +684,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3902527ed9da87b4d87bb49c2b437ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothesCounter: 0
-  laundry: {fileID: 0}
   foldedSprites:
   - {fileID: 511524340}
   - {fileID: 1163225911}
   - {fileID: 1369026025}
   - {fileID: 1540910076}
   - {fileID: 70556809}
---- !u!61 &195094856
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195094854}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  clothesToFold:
+  - {fileID: 857679855}
+  - {fileID: 1202216525}
+  - {fileID: 586937525}
+  - {fileID: 502635563}
+  - {fileID: 1142163240}
+  manager: {fileID: 0}
 --- !u!212 &195094857
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1955,25 +1933,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87f14be580e9aa4ea23ff94910d1093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDirection: 0
-  otherFunctions:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 502635563}
-        m_MethodName: TwoFoldSequence
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   laundrySprites:
   - {fileID: -1234569688458538474, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: 4199008262680283794, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
-  foldedRack: {fileID: 195094858}
+  currentSequence: 0
 --- !u!61 &502635564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2079,12 +2042,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502635562}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -186.87909, y: -357.37115, z: 30.827572}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1046410819}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &505151266
 GameObject:
@@ -2640,25 +2603,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87f14be580e9aa4ea23ff94910d1093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDirection: 0
-  otherFunctions:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 586937525}
-        m_MethodName: TwoFoldSequence
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   laundrySprites:
   - {fileID: -4554787893758244655, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: -1951711991544812820, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
-  foldedRack: {fileID: 195094858}
+  currentSequence: 0
 --- !u!61 &586937526
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2763,12 +2711,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586937524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -186.87909, y: -357.37115, z: 30.827572}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1046410819}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &598513235
 GameObject:
@@ -2862,7 +2810,7 @@ GameObject:
   m_Component:
   - component: {fileID: 663864306}
   m_Layer: 0
-  m_Name: Dried Sprites to spawn
+  m_Name: Unfolded Sprites to spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2884,7 +2832,7 @@ Transform:
   - {fileID: 1802079213}
   - {fileID: 598513237}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &673390985
 GameObject:
@@ -3857,25 +3805,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87f14be580e9aa4ea23ff94910d1093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDirection: 0
-  otherFunctions:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 857679855}
-        m_MethodName: TwoFoldSequence
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   laundrySprites:
   - {fileID: -3731932901275799694, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: -4216749805413827816, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
-  foldedRack: {fileID: 195094858}
+  currentSequence: 0
 --- !u!61 &857679856
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3981,12 +3914,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857679854}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -186.87909, y: -357.37115, z: 30.827572}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1046410819}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859582646
 GameObject:
@@ -4226,6 +4159,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883428301}
   m_CullTransparentMesh: 0
+--- !u!1 &1046410818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1046410819}
+  m_Layer: 0
+  m_Name: Clothes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1046410819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046410818}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 186.87909, y: 357.37115, z: -30.827572}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 857679859}
+  - {fileID: 1202216529}
+  - {fileID: 586937529}
+  - {fileID: 502635567}
+  - {fileID: 1142163244}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1087810788
 GameObject:
   m_ObjectHideFlags: 0
@@ -4496,25 +4464,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87f14be580e9aa4ea23ff94910d1093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDirection: 0
-  otherFunctions:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1142163240}
-        m_MethodName: TwoFoldSequence
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   laundrySprites:
   - {fileID: 766115594850046710, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: 1081487001028940082, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
-  foldedRack: {fileID: 195094858}
+  currentSequence: 0
 --- !u!61 &1142163241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4620,12 +4573,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142163239}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -186.87909, y: -357.37115, z: 30.827572}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1046410819}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1156100184
 GameObject:
@@ -4853,25 +4806,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87f14be580e9aa4ea23ff94910d1093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDirection: 0
-  otherFunctions:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1202216525}
-        m_MethodName: TwoFoldSequence
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   laundrySprites:
   - {fileID: -4441996566371481695, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: 781372478320572571, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
-  foldedRack: {fileID: 195094858}
+  currentSequence: 0
 --- !u!61 &1202216526
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4977,12 +4915,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202216524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -186.87909, y: -357.37115, z: 30.827572}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1046410819}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1202490122
 GameObject:
@@ -5298,8 +5236,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224960481}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9264269, y: 0, z: 0.1768786}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.912, y: 0, z: 0.1768786}
+  m_LocalScale: {x: 1.0078046, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 663864306}
   m_RootOrder: 0
@@ -6121,7 +6059,7 @@ Transform:
   - {fileID: 1540910077}
   - {fileID: 70556810}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369026025
 GameObject:
@@ -6855,6 +6793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1603624922}
   - component: {fileID: 1603624921}
+  - component: {fileID: 1603624923}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -6888,6 +6827,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1603624923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603624920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f885ec890ef39f04e936d918db0c2505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressChecks: 5
+  winUI: {fileID: 819137292}
 --- !u!1 &1617342132
 GameObject:
   m_ObjectHideFlags: 0
@@ -7805,7 +7758,7 @@ GameObject:
   - component: {fileID: 1850813060}
   - component: {fileID: 1850813059}
   m_Layer: 0
-  m_Name: Dried Clothes
+  m_Name: Unfolded Clothes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7823,13 +7776,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3c9f073ea93884b8eddcbbf6be8650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtySprites:
+  foldedClothesPile: {fileID: 195094855}
+  unfoldedSprites:
   - {fileID: 1224960481}
   - {fileID: 209453643}
   - {fileID: 1802079211}
   - {fileID: 598513235}
-  foldedClothes: {fileID: 195094855}
-  toFoldClothes:
+  clothesToFold:
   - {fileID: 1202216524}
   - {fileID: 586937524}
   - {fileID: 502635562}
@@ -8841,5 +8794,5 @@ Transform:
   - {fileID: 1249252185}
   - {fileID: 1156100185}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

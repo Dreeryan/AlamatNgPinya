@@ -1,50 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FoldedClothes : MonoBehaviour
 {
-    public int clothesCounter = 0;
-    [SerializeField] private Laundry laundry;
-    [SerializeField] private GameObject[] foldedSprites;
-
-    void Update()
+    private UnityEvent  onClothingAdded = new UnityEvent();
+    public UnityEvent   OnClothingAdded
     {
-		//A: Simplify. See DriedClothes.cs
-		//Do this after clothesCounter was changed instead
-        if (clothesCounter == 1)
-        {
-            foldedSprites[0].gameObject.SetActive(true);
-        }
+        get { return onClothingAdded; }
+    }
 
-        if (clothesCounter == 2)
-        {
-            foldedSprites[1].gameObject.SetActive(true);
-        }
+    private int         clothesCounter = 0;
+    public int          ClothesCounter
+    {
+        get { return clothesCounter; }
+    }
 
-        if (clothesCounter == 3)
-        {
-            foldedSprites[2].gameObject.SetActive(true);
-        }
+    [SerializeField] private ProgressManager    manager;
+    [SerializeField] private GameObject[]       foldedSprites;
+    [SerializeField] private Clothing[]         clothesToFold;
 
-        if (clothesCounter == 4)
-        {
-            foldedSprites[3].gameObject.SetActive(true);
-        }
+    private void Start()
+    {
+        if (manager == null) manager = FindObjectOfType<ProgressManager>();
 
-        if (clothesCounter == 5)
+        foreach (Clothing clothing in clothesToFold)
         {
-            foldedSprites[4].gameObject.SetActive(true);
+            clothing.OnClothingFolded.AddListener(ShowNextFoldedClothing);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void ShowNextFoldedClothing()
     {
-        if (collision.gameObject.CompareTag("Clothes"))
-        {
-            laundry = collision.gameObject.GetComponent<Laundry>();
-            clothesCounter++;
-            laundry.gameObject.GetComponent<Collider2D>().enabled = false;
-        }
+        clothesCounter++;
+        foldedSprites[clothesCounter - 1].gameObject.SetActive(true);
+        manager.AddProgress();
+        OnClothingAdded.Invoke();
     }
 }

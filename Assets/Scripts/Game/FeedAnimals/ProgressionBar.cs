@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//A: This implies this is a generic progression bar. Might want to also adjust the names to be less specific since you can recycle this
 public class ProgressionBar : MonoBehaviour
 {
-    [SerializeField] private Image bar;
-    [SerializeField] GameObject WinScreen;
+    [SerializeField] private Image      fillBar;
+    [SerializeField] private GameObject WinScreen;
 
-    private float maxFood = 1;
-    private float curFood = 0;
+    private float maxAmount = 1;
+    private float curAmount = 0;
 
     private void Start()
     {
-		//A: Nullcheck
-        bar.fillAmount = curFood;
+        if (fillBar != null)
+            fillBar.fillAmount = curAmount;
 
-        WinScreen.SetActive(false);
+        if (WinScreen != null)
+            WinScreen.SetActive(false);
     }
 
     private void Update()
     {
-        if (bar.fillAmount >= maxFood)
+        if (fillBar.fillAmount >= maxAmount)
         {
             WinScreen.SetActive(true);
         }
@@ -30,11 +30,11 @@ public class ProgressionBar : MonoBehaviour
 
     public void SetFood(int food)
     {
-        bar.fillAmount = food;
+        fillBar.fillAmount = food;
     }
 
     public void AddFood()
     {
-        bar.fillAmount += 1 * Time.deltaTime;
+        fillBar.fillAmount += 1 * Time.deltaTime;
     }
 }

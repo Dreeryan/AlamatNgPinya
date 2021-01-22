@@ -6,16 +6,17 @@ public class SpriteHider : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
 
-//A: null check
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer.enabled = false;
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = false;
     }
 
     // Shows sprite when collider is clicked
     private void OnMouseDown()
     {
-        spriteRenderer.enabled = true;
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = true;
     }
 }

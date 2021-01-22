@@ -8,13 +8,13 @@ public class ShakeObject : MonoBehaviour
     public UnityEvent   OnShake;
     public Transform    shakeObject;
 
-    private SpriteRenderer renderers;
-    private bool    isOnFeedArea;
-    private bool    isMouseDrag;
-    private Vector2 currentPosition;
-    private Vector2 mousePos;
-    private Vector2 previousPos = Vector2.zero;
-    private float   threshold   = 0.1f;
+    private SpriteRenderer  renderers;
+    private bool            isOnFeedArea;
+    private bool            isMouseDrag;
+    private Vector2         currentPosition;
+    private Vector2         mousePos;
+    private Vector2         previousPos = Vector2.zero;
+    private float           threshold   = 0.1f;
 
     [SerializeField] private bool isShaking;
     private void Start()
@@ -78,9 +78,10 @@ public class ShakeObject : MonoBehaviour
             // Triggers shaking
             if (isOnFeedArea && isMouseDrag)
             {
-				//A: Nullcheck
                 isShaking = true;
-                renderers.flipY = true;
+
+                if (renderers != null)
+                    renderers.flipY = true;
             }
         }
     }

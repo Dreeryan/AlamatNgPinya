@@ -20,18 +20,18 @@ public class FriendFound : MonoBehaviour
         // Detects number of friends present and sets it as the goal
         friendsGoal = GameObject.FindGameObjectsWithTag("Friend").Length;
 
-        
-		//A: Do this only after friendsFound was found.
-        if (friendsFound > previousFriendsFound)
+        if (friendsFound > 0)
         {
-            previousFriendsFound = friendsFound;
-
-            // Opens win screen if all friends have been found
-            if (friendsFound >= friendsGoal)
+            if (friendsFound > previousFriendsFound)
             {
-                winScreen.SetActive(true);
+                previousFriendsFound = friendsFound;
+
+                // Opens win screen if all friends have been found
+                if (friendsFound >= friendsGoal)
+                {
+                    winScreen.SetActive(true);
+                }
             }
         }
-
     }
 }

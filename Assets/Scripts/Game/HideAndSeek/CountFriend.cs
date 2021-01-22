@@ -15,11 +15,14 @@ public class CountFriend : MonoBehaviour
 
     public void CountFriends()
     {
-		//A: Nullcheck
         // Counts a friend if found by player
-        friendFound.friendsFound++;
+        if (friendFound != null)
+            friendFound.friendsFound++;
 
-        spriteRenderer.enabled = false;
-        collider.enabled = false;
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = false;
+
+        if (collider != null)
+            collider.enabled = false;
     }
 }

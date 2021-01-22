@@ -7,10 +7,10 @@ using TMPro;
 
 public class Dish : MonoBehaviour
 {
-    private UnityEvent  onDishAdded = new UnityEvent();
-    public UnityEvent   OnDishAdded
+    private UnityEvent  onDishCleaned = new UnityEvent();
+    public UnityEvent   OnDishCleaned
     {
-        get { return onDishAdded; }
+        get { return onDishCleaned; }
     }
 
     [Header("Dish Settings")]
@@ -32,13 +32,6 @@ public class Dish : MonoBehaviour
         currentDirtRate = maxDirtRate;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    //A: Better if you can move this to after the currentDirtRate was changed
-
     public void ReduceDirtRate(float drainRate)
     {
         currentDirtRate -= drainRate;
@@ -53,7 +46,7 @@ public class Dish : MonoBehaviour
 
         transform.parent = cleanDishRack;
         if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
-        onDishAdded.Invoke();
+        onDishCleaned.Invoke();
         GetComponent<Collider2D>().enabled = false;
     }
 

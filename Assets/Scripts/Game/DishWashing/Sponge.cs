@@ -29,7 +29,6 @@ public class Sponge : MonoBehaviour
     {
         if (Vector2.Distance(previousPos, Input.mousePosition) >= dragTreshold)
         {
-            //A: Nullcheck
             if (dish != null)
             {
                 dish.ReduceDirtRate(drainRate * Time.deltaTime);
@@ -58,8 +57,7 @@ public class Sponge : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Checks if the collided object is a dirty dish
-        if (collision.gameObject.GetComponent<Dish>() == null &&
-            collision.gameObject.CompareTag("DirtyDish") == false) return;
+        if (collision.gameObject.GetComponent<Dish>() == null) return;
 
         dish = collision.gameObject.GetComponent<Dish>();
         if (guideText != null) guideText.gameObject.SetActive(false);

@@ -2301,6 +2301,7 @@ GameObject:
   - component: {fileID: 540975656}
   - component: {fileID: 540975658}
   - component: {fileID: 540975657}
+  - component: {fileID: 540975659}
   m_Layer: 5
   m_Name: CounterText
   m_TagString: Untagged
@@ -2446,6 +2447,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540975655}
   m_CullTransparentMesh: 0
+--- !u!114 &540975659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540975655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ce8dc507975e9c4b888b91a1d3d06a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Counter: {fileID: 540975657}
 --- !u!1 &570332085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3460,7 +3474,7 @@ RectTransform:
   - {fileID: 1530446732}
   - {fileID: 1080394777}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4036,7 +4050,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1171402099
 MonoBehaviour:
@@ -4134,7 +4148,7 @@ Transform:
   m_LocalScale: {x: 5, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1195904688
 BoxCollider2D:

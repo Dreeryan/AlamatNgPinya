@@ -5,44 +5,17 @@ using TMPro;
 
 public class DishCounterUI : MonoBehaviour
 {
-    public  int     dishCollected;
-    private int     previousDishCollected;
-
-    [SerializeField] private int        dishGoal;
-    [SerializeField] private GameObject winScreen;
+    [SerializeField] private TMP_Text Counter;
 
     // Start is called before the first frame update
     void Start()
     {
-        previousDishCollected = dishCollected;
-
-        // Sets the goal to how many eggs are active
-        dishGoal = GameObject.FindGameObjectsWithTag("Dish").Length;
-
-        winScreen.SetActive(false);
+        CleanDishRack rack = FindObjectOfType<CleanDishRack>();
+        if (rack != null) rack.DishAdded.AddListener(OnDishCountUpdated);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnDishCountUpdated(int count) 
     {
-		//A: Better to move this to after dishCollected was changed. Avoid putting things in update as much as possible
-        if (dishCollected > previousDishCollected)
-        {
-            previousDishCollected = dishCollected;
-
-            if (dishCollected >= dishGoal)
-            {
-                winScreen.SetActive(true);
-            }
-        }
-    }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Dish")
-        {
-            // Adds a point for every egg that collides with the egg basket
-            dishCollected++;
-        }
+        if(Counter != null) Counter.text = count.ToString();
     }
 }

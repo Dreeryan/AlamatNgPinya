@@ -5,24 +5,20 @@ using UnityEngine.Events;
 
 public class CleanDishRack : MonoBehaviour
 {
-    private UnityEvent  onDishCleaned = new UnityEvent();
-    public UnityEvent   OnDishCleaned 
+    public class OnDishAdded : UnityEvent<int> { }
+    private OnDishAdded dishAdded = new OnDishAdded();
+    public OnDishAdded  DishAdded
     {
-        get { return onDishCleaned; }
+        get { return dishAdded; }
     }
 
     private int         dishCounter = 0;
-    public int          DishCounter
-    {
-        get { return dishCounter; }
-    }
 
-
-    [SerializeField] private Dish[] dirtyDishes;
-    [SerializeField] private Sprite[] cleanSprites;
+    [SerializeField] private Dish[]     dirtyDishes;
+    [SerializeField] private Sprite[]   cleanSprites;
 
     [Header("References")]
-    [SerializeField] ProgressManager progressManager;
+    [SerializeField] ProgressManager    progressManager;
 
     private SpriteRenderer sRenderer;
 
@@ -31,16 +27,8 @@ public class CleanDishRack : MonoBehaviour
         if (sRenderer == null) sRenderer = GetComponent<SpriteRenderer>();
         foreach (Dish dish in dirtyDishes)
         {
-            dish.OnDishAdded.AddListener(DishCleaned);
+            dish.OnDishCleaned.AddListener(DishCleaned);
         }
-    }
-
-    void Update()
-    {
-		//A: Dont do this per update. Do this everytime the dishcounter was changed
-		//Can shorten to spriteRenderer.sprite = cleanSprites[dishCounter]
-		//Null check before accessing SpriteRenderer and cleanSprites element
-		
     }
 
     private void ChangeSprite()
@@ -56,6 +44,6 @@ public class CleanDishRack : MonoBehaviour
         dishCounter++;
         ChangeSprite();
         progressManager.AddProgress();
-        onDishCleaned.Invoke();
+        dishAdded.Invoke(dishCounter);
     }
 }

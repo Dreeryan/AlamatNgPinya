@@ -684,6 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3902527ed9da87b4d87bb49c2b437ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   foldedSprites:
   - {fileID: 511524340}
   - {fileID: 1163225911}
@@ -696,7 +697,6 @@ MonoBehaviour:
   - {fileID: 586937525}
   - {fileID: 502635563}
   - {fileID: 1142163240}
-  manager: {fileID: 0}
 --- !u!212 &195094857
 SpriteRenderer:
   m_ObjectHideFlags: 0

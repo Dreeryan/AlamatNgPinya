@@ -6,11 +6,9 @@ using TMPro;
 
 public class Porridge : MonoBehaviour
 {
-	//A: maxTemp and rightTemp should be available for design
     private float currentTemp = 0.0f;
-    private float maxTemp = 100.0f;
-    private float rightTemp = 30f;
     private bool isRightTemp = false;
+    private bool hasWon = false;
 
     [Header("Animator")]
     public Animator fireAnimator;
@@ -20,8 +18,9 @@ public class Porridge : MonoBehaviour
     [SerializeField] private Slider porridgeSlider;
     [SerializeField] private GameObject winningPanel;
 
-	//A: Rename to Porridge Settings, not all designers have BG in prog
-    [Header("Porridge Variables")]
+    [Header("Porridge Settings")]
+    [SerializeField] private float maxTemp = 100.0f;
+    [SerializeField] private float rightTemp = 30f;
     [SerializeField] private float addTemperature;
     [SerializeField] private float decreaseTemperature;
     [SerializeField] private float coldTemp;
@@ -57,7 +56,7 @@ public class Porridge : MonoBehaviour
         // Getting the current temp from the slider value
         currentTemp = (int)(porridgeSlider.value * 100);
 
-        if (Input.GetMouseButton(0) && Time.timeScale > 0)
+        if (Input.GetMouseButton(0) && Time.timeScale > 0 && !hasWon)
         {
             porridgeSlider.value += addTemperature * Time.deltaTime;
 
@@ -69,7 +68,7 @@ public class Porridge : MonoBehaviour
 
         else
         {
-            porridgeSlider.value -= decreaseTemperature * Time.deltaTime;
+            if(!hasWon) porridgeSlider.value -= decreaseTemperature * Time.deltaTime;
 
             if (currentTemp <= 0)
             {
@@ -108,6 +107,7 @@ public class Porridge : MonoBehaviour
         yield return new WaitForSeconds(secondsToCooked);
         potCoverAnimator.SetBool("isCooked", true);
         yield return new WaitForSeconds(secondsToWin);
+        hasWon = true;
         winningPanel.SetActive(true);
     }
 }

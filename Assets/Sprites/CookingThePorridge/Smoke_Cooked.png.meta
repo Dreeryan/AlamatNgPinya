@@ -107,7 +107,7 @@ TextureImporter:
         width: 393
         height: 206
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -115,27 +115,6 @@ TextureImporter:
       bones: []
       spriteID: 990ce4638ba1c03e0800000000000000
       internalID: -2086263148891946855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Smoke_Cooked_1
-      rect:
-        serializedVersion: 2
-        x: 292
-        y: 883
-        width: 51
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e97689c034dbcfbd0800000000000000
-      internalID: -2594991189600475234
       vertices: []
       indices: 
       edges: []
@@ -149,7 +128,7 @@ TextureImporter:
         width: 393
         height: 226
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,7 +149,7 @@ TextureImporter:
         width: 393
         height: 226
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

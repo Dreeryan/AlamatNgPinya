@@ -15,18 +15,12 @@ public class CarryController : MonoBehaviour
         get { return itemCarrier;  }
     }
 
-    [Header("Toy Bin Settings")]
-    [Tooltip("Distance the toy can be before triggering the toy box")]
-    [SerializeField] private float      binDistOffset = 1.2f;
-
     [Header("UI")]
     [SerializeField] TextMeshProUGUI    itemText;
-
 
     #region TempFix
     [SerializeField] private Counter    toyBin;
     #endregion
-
 
     private bool    isCarrying = false;
     public bool     IsCarrying
@@ -43,7 +37,7 @@ public class CarryController : MonoBehaviour
     {
         if (toyBin != null && collision.gameObject.CompareTag("Goal"))
         {
-            if (isCarrying && CloseToToyBin()) DropToy(collision.gameObject);
+            if (isCarrying) DropToy(collision.gameObject);
         }
     }
 
@@ -108,13 +102,5 @@ public class CarryController : MonoBehaviour
 
         isCarrying = false;
         toyBin.objectsCollected++;
-    }
-
-    private bool CloseToToyBin()
-    {
-        Vector2 dist = new Vector2(Mathf.Abs(transform.position.x - toyBin.transform.position.x)
-            , Mathf.Abs(transform.position.y - toyBin.transform.position.y));
-
-        return dist.magnitude <= binDistOffset;
     }
 }

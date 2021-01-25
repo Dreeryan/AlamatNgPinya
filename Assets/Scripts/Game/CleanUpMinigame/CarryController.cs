@@ -5,17 +5,30 @@ using TMPro;
 
 public class CarryController : MonoBehaviour
 {
-    [SerializeField] private GameObject item;
-    [SerializeField] private CleanToy cleanToy;
+    private Toy overlappedToy;
+    private Toy carriedToy;
 
     [Header("Item Carrier")]
-    [SerializeField] private Transform itemDetector;
     [SerializeField] private Transform itemCarrier;
+    public Transform ItemCarrier
+    {
+        get { return itemCarrier;  }
+    }
 
     [Header("UI")]
     [SerializeField] TextMeshProUGUI itemText;
 
-    public bool isCarrying;
+
+    #region TempFix
+    [SerializeField] private Counter toyBin;
+    #endregion
+
+
+    private bool    isCarrying = false;
+    public bool     IsCarrying
+    {
+        get { return isCarrying; }
+    }
 
     void Start()
     {
@@ -24,52 +37,87 @@ public class CarryController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // If the player collides with the item
-        if (collision.gameObject.CompareTag("Item"))
+        if (collision.gameObject.CompareTag("Goal") && isCarrying)
         {
-            cleanToy = collision.gameObject.GetComponent<CleanToy>();
-
-            itemText.gameObject.SetActive(true);
-            itemText.text = "Left click the item to pickup";
-            item = collision.gameObject;
+            DropToy(collision.gameObject);
         }
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Item")) return;
+        if (collision.gameObject.GetComponent<Toy>())
         {
-            itemText.gameObject.SetActive(false);
+            if (isCarrying) return;
 
-            // If the item is placed and the player is far from the holder.
-            if (cleanToy.isPlaced)
+            overlappedToy = collision.gameObject.GetComponent<Toy>();
+
+            if (overlappedToy.WillBePickedUp)
             {
-                collision.gameObject.transform.parent = cleanToy.itemHolder;
-                collision.gameObject.transform.position = cleanToy.itemHolder.position;
-
-                if (collision.gameObject != null)
-                collision.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+                PickupToy();
+            }
+            else
+            {
+                itemText.gameObject.SetActive(true);
+                itemText.text = "Left click the item to pickup";
             }
         }
     }
 
-    public void PickupItem()
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!collision.gameObject.GetComponent<Toy>()) return;
+        
+        itemText.gameObject.SetActive(false);
+        overlappedToy = null;
+
+
+
+
+        // If the item is placed and the player is far from the holder.
+        //if (carriedToy.isPlaced)
+        //{
+        //    collision.gameObject.transform.parent = carriedToy.itemHolder;
+        //    collision.gameObject.transform.position = carriedToy.itemHolder.position;
+
+        //    if (collision.gameObject != null)
+        //        collision.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+        //}
+        
+    }
+
+    public void PickupToy()
     {
         isCarrying = true;
-        item.gameObject.transform.parent = itemCarrier;
-        item.gameObject.transform.position = itemCarrier.position;
-		
-		if (item.gameObject != null)
-            item.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-		
-        if (cleanToy.isPlaced)
-        {
-            item.gameObject.transform.parent = cleanToy.itemHolder;
-            item.gameObject.transform.position = cleanToy.itemHolder.position;
+        carriedToy = overlappedToy;
 
-            if (item.gameObject != null)
-                item.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
-            isCarrying = false;
-        }
+        carriedToy.gameObject.transform.parent = itemCarrier;
+        carriedToy.gameObject.transform.position = itemCarrier.position;
+  //      item.gameObject.SetActive(false);
+
+
+		//if (item.gameObject != null)
+  //          item.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+		
+  //      if (carriedToy.isPlaced)
+  //      {
+  //          item.gameObject.transform.parent = carriedToy.itemHolder;
+  //          item.gameObject.transform.position = carriedToy.itemHolder.position;
+
+  //          if (item.gameObject != null)
+  //              item.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+  //          isCarrying = false;
+  //      }
+    }
+
+    void DropToy(GameObject bin)
+    {
+        carriedToy.transform.parent = bin.transform;
+        carriedToy.transform.position = bin.transform.position;
+
+        bin.GetComponent<ProgressManager>().AddProgress();
+
+        isCarrying = false;
+        toyBin.objectsCollected++;
     }
 }

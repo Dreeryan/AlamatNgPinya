@@ -35,6 +35,12 @@ public class SweepableObject : MonoBehaviour
         {
             transform.position = currentPosition;
         }
+
+        Vector3 trashPos = transform.position;
+
+        trashPos.y = Mathf.Clamp(trashPos.y, -4.2f, 1.85f);
+        trashPos.x = Mathf.Clamp(trashPos.x, -9.5f, 6.3f);
+        transform.position = trashPos;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

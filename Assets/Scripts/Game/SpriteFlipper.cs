@@ -4,76 +4,39 @@ using UnityEngine;
 
 public class SpriteFlipper : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private bool           spriteFacingRight;
+    private SpriteRenderer spriteRenderer;
 
-    private Vector2 lastPosition;
-    private Vector2 currentPosition;
-    private bool    isFlipped;
+    private Vector2 destination;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentPosition = transform.position;
-        isFlipped = false;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (isFlipped)
+        if (spriteRenderer == null) return;
+
+        if (Input.GetMouseButtonDown(0))
         {
-            if (spriteRenderer != null)
+            SetDestination();
+
+            if (destination.x > transform.position.x)
+            {
                 transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
+            }
 
-        else
-        {
-            if (spriteRenderer != null)
+            else
+            {
                 transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
         }
-
-        if (spriteFacingRight)
-            FlippedSprite();
-
-        else
-            NormalSprite();
-
     }
 
-    // If the sprite asset is facing right initially
-    void NormalSprite()
+    void SetDestination()
     {
-        // If moving right
-        if (transform.position.x > lastPosition.x)
-        {
-            isFlipped = true;
-        }
-
-        // If moving left  
-        if (transform.position.x < lastPosition.x)
-        {
-            isFlipped = false;
-        }
-
-        lastPosition = transform.position;
-    }
-
-    // If the sprite asset is facing left initially
-    void FlippedSprite()
-    {
-        // If moving left
-        if (transform.position.x > lastPosition.x)
-        {
-            isFlipped = false;
-        }
-
-        // If moving right  
-        if (transform.position.x < lastPosition.x)
-        {
-            isFlipped = true;
-        }
-
-        lastPosition = transform.position;
+        destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 }

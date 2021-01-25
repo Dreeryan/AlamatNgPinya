@@ -4,17 +4,14 @@ using UnityEngine;
 using UnityEngine.Events;
 public class PlayerAnimations : MonoBehaviour
 {
-    private Animator anim;
-    private PlayerController controller;
-    private TimerSystem timerSystem;
-
-    public UnityEvent OnObjectClick;
+    private Animator            anim;
+    private PlayerController    controller;
     
     // Start is called before the first frame update
     void Start()
     {
-        controller = this.GetComponent<PlayerController>();
-        anim = this.GetComponent<Animator>();
+        controller = GetComponent<PlayerController>();
+        anim = GetComponent<Animator>();
 
         // Only for testing
         PlayerWalking(); 
@@ -24,7 +21,7 @@ public class PlayerAnimations : MonoBehaviour
     {
         if (anim != null)
             // Walking animation
-            anim.SetBool("IsWalking", controller.isMoving);
+            //anim.SetBool("IsWalking", controller.isMoving);
 
         Debug.Log("Walking animation");
     }

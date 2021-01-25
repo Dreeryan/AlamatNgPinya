@@ -91,6 +91,8 @@ public class CarryController : MonoBehaviour
 
         carriedToy.gameObject.transform.parent = itemCarrier;
         carriedToy.gameObject.transform.position = itemCarrier.position;
+
+        itemText.gameObject.SetActive(false);
     }
 
     void DropToy(GameObject bin)
@@ -102,5 +104,7 @@ public class CarryController : MonoBehaviour
 
         isCarrying = false;
         toyBin.objectsCollected++;
+
+        itemText.gameObject.SetActive(false);
     }
 }

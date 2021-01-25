@@ -10,8 +10,6 @@ public class PlayerController : MonoBehaviour
     public Animator playerAnim;
 
     private Vector3 targetPoint;
-    private Vector3 defaultAngle = new Vector3(0, 0, 0);
-    private Vector3 newAngle = new Vector3(0, 180, 0);
 
     public bool isFacingRight = false;
     [HideInInspector]
@@ -27,11 +25,11 @@ public class PlayerController : MonoBehaviour
             targetPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPoint.z = transform.position.z;
             transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPoint);
+            //transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPoint);
 
-            Vector3 currentRotation = transform.localEulerAngles;
-            currentRotation.z = 0;
-            transform.localEulerAngles = currentRotation;
+            //Vector3 currentRotation = transform.localEulerAngles;
+            //currentRotation.z = 0;
+            //transform.localEulerAngles = currentRotation;
 
             isMoving = true;
         }
@@ -47,10 +45,11 @@ public class PlayerController : MonoBehaviour
             if (playerAnim != null) playerAnim.Play("Player_Idle");
         }
 
-        if (Input.GetMouseButton(1))
-        {
-            playerAnim.Play("Player_Pickup");
-        }
+        // Uneeded for now
+        //if (Input.GetMouseButton(1))
+        //{
+        //    playerAnim.Play("Player_Pickup");
+        //}
     }
 
     void Movement()

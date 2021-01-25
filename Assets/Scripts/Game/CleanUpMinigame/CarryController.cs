@@ -9,18 +9,22 @@ public class CarryController : MonoBehaviour
     private Toy carriedToy;
 
     [Header("Item Carrier")]
-    [SerializeField] private Transform itemCarrier;
-    public Transform ItemCarrier
+    [SerializeField] private Transform  itemCarrier;
+    public Transform                    ItemCarrier
     {
         get { return itemCarrier;  }
     }
 
+    [Header("Toy Bin Settings")]
+    [Tooltip("Distance the toy can be before triggering the toy box")]
+    [SerializeField] private float      binDistOffset = 1.2f;
+
     [Header("UI")]
-    [SerializeField] TextMeshProUGUI itemText;
+    [SerializeField] TextMeshProUGUI    itemText;
 
 
     #region TempFix
-    [SerializeField] private Counter toyBin;
+    [SerializeField] private Counter    toyBin;
     #endregion
 
 
@@ -37,9 +41,9 @@ public class CarryController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Goal") && isCarrying)
+        if (toyBin != null && collision.gameObject.CompareTag("Goal"))
         {
-            DropToy(collision.gameObject);
+            if (isCarrying && CloseToToyBin()) DropToy(collision.gameObject);
         }
     }
 
@@ -93,21 +97,6 @@ public class CarryController : MonoBehaviour
 
         carriedToy.gameObject.transform.parent = itemCarrier;
         carriedToy.gameObject.transform.position = itemCarrier.position;
-  //      item.gameObject.SetActive(false);
-
-
-		//if (item.gameObject != null)
-  //          item.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-		
-  //      if (carriedToy.isPlaced)
-  //      {
-  //          item.gameObject.transform.parent = carriedToy.itemHolder;
-  //          item.gameObject.transform.position = carriedToy.itemHolder.position;
-
-  //          if (item.gameObject != null)
-  //              item.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
-  //          isCarrying = false;
-  //      }
     }
 
     void DropToy(GameObject bin)
@@ -119,5 +108,13 @@ public class CarryController : MonoBehaviour
 
         isCarrying = false;
         toyBin.objectsCollected++;
+    }
+
+    private bool CloseToToyBin()
+    {
+        Vector2 dist = new Vector2(Mathf.Abs(transform.position.x - toyBin.transform.position.x)
+            , Mathf.Abs(transform.position.y - toyBin.transform.position.y));
+
+        return dist.magnitude <= binDistOffset;
     }
 }

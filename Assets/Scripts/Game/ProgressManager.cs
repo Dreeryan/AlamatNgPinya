@@ -5,15 +5,12 @@ using UnityEngine;
 public class ProgressManager : MonoBehaviour
 {
     [Header("Variables")]
-    [SerializeField] 
     [Tooltip("How many tasks before the player wins")]
-    private int progressChecks;
-
+    [SerializeField] private int        progressChecks;
     private int progress;
 
     [Header("UI")]
-    [SerializeField] 
-    private GameObject winUI;
+    [SerializeField] private GameObject winUI;
 
     private void Start()
     {

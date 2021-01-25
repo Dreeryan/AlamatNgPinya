@@ -26,8 +26,11 @@ public class TagCharacter : MonoBehaviour
 
     void Update()
     {
-        if (isTagged) renderer.color = Color.black;
-        else renderer.color = Color.white;
+        if (renderer != null)
+        {
+            if (isTagged) renderer.color = Color.black;
+            else renderer.color = Color.white;
+        }
     }
 
     // Assign the target as the new tagged

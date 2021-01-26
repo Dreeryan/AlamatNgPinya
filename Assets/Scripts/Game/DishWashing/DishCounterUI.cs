@@ -16,6 +16,6 @@ public class DishCounterUI : MonoBehaviour
 
     void OnDishCountUpdated(int count) 
     {
-        if(Counter != null) Counter.text = count.ToString();
+        if (Counter != null) Counter.text = count.ToString();
     }
 }

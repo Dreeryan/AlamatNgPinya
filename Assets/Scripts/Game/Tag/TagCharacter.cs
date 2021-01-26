@@ -15,30 +15,38 @@ public class TagCharacter : MonoBehaviour
         set { isTagged = value; }
     }
 
-    private SpriteRenderer  renderer;
+    private SpriteRenderer  sRenderer;
     private TagCharacter    previousTagged  = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponent<SpriteRenderer>();
+        sRenderer = GetComponent<SpriteRenderer>();
+        DebugUpdateColor();
     }
 
-    void Update()
+    void DebugUpdateColor()
     {
-        if (renderer != null)
+        if (sRenderer != null)
         {
-            if (isTagged) renderer.color = Color.black;
-            else renderer.color = Color.white;
+            if (isTagged) sRenderer.color = Color.black;
+            else sRenderer.color = Color.white;
         }
     }
 
     // Assign the target as the new tagged
-    void TagTarget(TagCharacter colliding)
+    void TagTarget(TagCharacter target)
+    {
+        target.GetTagged(this);
+        DebugUpdateColor();
+    }
+
+    void GetTagged(TagCharacter collider)
     {
         // Assign the collided object's previous tagged object to avoid backtagging
-        colliding.previousTagged = this;
-        tagged.Invoke(colliding);
+        previousTagged = collider;
+        tagged.Invoke(this);
+        DebugUpdateColor();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

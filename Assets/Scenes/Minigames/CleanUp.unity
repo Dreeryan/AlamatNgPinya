@@ -411,8 +411,9 @@ Transform:
   - {fileID: 1227077204}
   - {fileID: 356370596}
   - {fileID: 415147576}
+  - {fileID: 1321080962}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &180394275
 GameObject:
@@ -4183,7 +4184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1098575440
 GameObject:
@@ -5406,16 +5407,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321080961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1286035, y: 0.10181605, z: -0.8010536}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.818449, y: 2.206992, z: 0.289648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1344200210}
   - {fileID: 1304379905}
   - {fileID: 311877570}
   - {fileID: 641521578}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 143910115}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1344200209
 GameObject:
@@ -5921,7 +5922,7 @@ Transform:
   - {fileID: 2119677896}
   - {fileID: 1598999238}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1517750915
 GameObject:
@@ -6180,7 +6181,7 @@ GameObject:
   - component: {fileID: 1575343164}
   - component: {fileID: 1575343163}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6264,7 +6265,7 @@ RectTransform:
   - {fileID: 2037335519}
   - {fileID: 37214011}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6741,7 +6742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1654001711}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Item Carrier
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -7161,7 +7162,7 @@ GameObject:
   - component: {fileID: 1924482960}
   - component: {fileID: 1924482959}
   - component: {fileID: 1924482966}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -7215,10 +7216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  playerAnim: {fileID: 1924482959}
-  isFacingRight: 0
-  isMoving: 0
-  spriteRenderer: {fileID: 1924482964}
+  moveOffset: 0.01
 --- !u!50 &1924482962
 Rigidbody2D:
   serializedVersion: 4
@@ -8261,7 +8259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2132216171}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Item Detector
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}

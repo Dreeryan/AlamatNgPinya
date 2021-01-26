@@ -25,15 +25,11 @@ public class TagManager : MonoBehaviour
         currentTagged.IsTagged = true;
     }
 
-    void Update()
-    {
-        
-    }
-
     // Changes the current tagged kid
     void OnCurrentTaggedChange(TagCharacter newTagged) 
     {
         currentTagged.IsTagged = false;
+
         currentTagged = newTagged;
         currentTagged.IsTagged = true;
 

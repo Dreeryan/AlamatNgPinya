@@ -44,17 +44,16 @@ public class Dish : MonoBehaviour
         if (currentDirtRate <= minDirtRate) OnCleaned();
     }
 
-
     public void EnableDish() 
     {
-        sRenderer.enabled = true;
-        collider.enabled = true;
+        if (sRenderer != null) sRenderer.enabled = true;
+        if (collider != null) collider.enabled = true;
     }
 
     public void DisableDish()
     {
-        sRenderer.enabled = false;
-        collider.enabled = false;
+        if (sRenderer != null) sRenderer.enabled = false;
+        if (collider != null) collider.enabled = false;
     }
 
     private void OnCleaned()

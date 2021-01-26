@@ -6,7 +6,7 @@ public class DirtyDishRack : MonoBehaviour
 {
     [SerializeField] private CleanDishRack  rack;
     [SerializeField] private Sprite[]       dirtySprites;
-    [SerializeField] private Dish[]   dirtyDishes;
+    [SerializeField] private Dish[]         dirtyDishes;
 
     private SpriteRenderer sRenderer;
 
@@ -26,13 +26,11 @@ public class DirtyDishRack : MonoBehaviour
 
     private void OnDishCleaned(int count)
     {
-        if (sRenderer == null) return;
-
         int dishCount = count - 1;
 
         if (dishCount < dirtyDishes.Length && dirtyDishes[dishCount] != null)
         { 
-            sRenderer.sprite = dirtySprites[dishCount];
+            if (sRenderer != null) sRenderer.sprite = dirtySprites[dishCount];
             dirtyDishes[dishCount].EnableDish();
         }
     }

@@ -6,16 +6,17 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player move speed")]
     [SerializeField] private float moveSpeed;
+    [Tooltip("Distance the player can be from the target position before stopping")]
+    [SerializeField] private float moveOffset = 0.01f;
 
-    public Animator playerAnim;
+    private Animator    playerAnim;
+    private Vector3     targetPoint;
+    private bool        isMoving = false;
 
-    private Vector3 targetPoint;
-
-    public bool isFacingRight = false;
-    [HideInInspector]
-    public bool isMoving = false;
-    [SerializeField] private SpriteRenderer spriteRenderer;
-
+    private void Start()
+    {
+        playerAnim = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -25,11 +26,6 @@ public class PlayerController : MonoBehaviour
             targetPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPoint.z = transform.position.z;
             transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
-            //transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPoint);
-
-            //Vector3 currentRotation = transform.localEulerAngles;
-            //currentRotation.z = 0;
-            //transform.localEulerAngles = currentRotation;
 
             isMoving = true;
         }
@@ -57,7 +53,7 @@ public class PlayerController : MonoBehaviour
         // To move the player to the desired position
         transform.position = Vector3.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
        
-        if (transform.position == targetPoint)
+        if (Vector3.Distance(transform.position, targetPoint) <= moveOffset)
         {
             isMoving = false;
         }
@@ -65,14 +61,11 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Wall")
-        {
-            isMoving = false;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
         isMoving = false;
     }
+
+    //void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    isMoving = false;
+    //}
 }

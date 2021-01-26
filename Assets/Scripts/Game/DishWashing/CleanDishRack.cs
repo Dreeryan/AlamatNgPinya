@@ -18,8 +18,8 @@ public class CleanDishRack : MonoBehaviour
     [SerializeField] private Sprite[]   cleanSprites;
 
     [Header("References")]
-    [SerializeField] ProgressManager    progressManager;
-
+    //[SerializeField] private ProgressManager    progressManager;
+    [SerializeField] private Counter            counter;
     private SpriteRenderer sRenderer;
 
     private void Start()
@@ -43,7 +43,8 @@ public class CleanDishRack : MonoBehaviour
     {
         dishCounter++;
         ChangeSprite();
-        progressManager.AddProgress();
+        //progressManager.AddProgress();
+        counter.objectsCollected++;
         dishAdded.Invoke(dishCounter);
     }
 }

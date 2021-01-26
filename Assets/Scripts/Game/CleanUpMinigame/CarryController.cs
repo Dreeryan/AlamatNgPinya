@@ -100,8 +100,6 @@ public class CarryController : MonoBehaviour
         carriedToy.transform.parent = bin.transform;
         carriedToy.transform.position = bin.transform.position;
 
-        bin.GetComponent<ProgressManager>().AddProgress();
-
         isCarrying = false;
         toyBin.objectsCollected++;
 

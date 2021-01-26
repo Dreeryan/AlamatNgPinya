@@ -2454,7 +2454,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540975655}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ce8dc507975e9c4b888b91a1d3d06a9, type: 3}
   m_Name: 
@@ -2799,7 +2799,7 @@ MonoBehaviour:
   - {fileID: -3008117399936434204, guid: 520b84549993ac646b716f225899acf4, type: 3}
   - {fileID: -178176429179049325, guid: 520b84549993ac646b716f225899acf4, type: 3}
   - {fileID: -2148111318400254264, guid: 520b84549993ac646b716f225899acf4, type: 3}
-  progressManager: {fileID: 1171402099}
+  counter: {fileID: 1171402100}
 --- !u!1 &756364298
 GameObject:
   m_ObjectHideFlags: 0
@@ -3188,7 +3188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &844382947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3201,7 +3201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417f3551a385c3b4ca2bbf90a85344cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDirtRate: 1
+  maxDirtRate: 20
   minDirtRate: 0
   cleanDishRack: {fileID: 723271611}
   dirtRateText: {fileID: 2080858299}
@@ -3500,7 +3500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1049752500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3513,7 +3513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417f3551a385c3b4ca2bbf90a85344cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDirtRate: 1
+  maxDirtRate: 20
   minDirtRate: 0
   cleanDishRack: {fileID: 723271611}
   dirtRateText: {fileID: 2080858299}
@@ -4019,6 +4019,7 @@ GameObject:
   - component: {fileID: 1171402098}
   - component: {fileID: 1171402097}
   - component: {fileID: 1171402099}
+  - component: {fileID: 1171402100}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -4059,13 +4060,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171402096}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f885ec890ef39f04e936d918db0c2505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   progressChecks: 3
   winUI: {fileID: 1530446731}
+--- !u!114 &1171402100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171402096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterText: {fileID: 540975657}
+  objectsCollected: 0
+  collisionChecker: {fileID: 0}
+  objectGoal: 0
+  winScreen: {fileID: 1530446731}
+  objectTag: DirtyDish
 --- !u!1 &1195904685
 GameObject:
   m_ObjectHideFlags: 0
@@ -5084,8 +5103,8 @@ MonoBehaviour:
   - {fileID: 2858184954837991465, guid: 520b84549993ac646b716f225899acf4, type: 3}
   - {fileID: 0}
   dirtyDishes:
-  - {fileID: 1049752499}
-  - {fileID: 844382946}
+  - {fileID: 1049752500}
+  - {fileID: 844382947}
 --- !u!1 &1447385060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5876,7 +5895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417f3551a385c3b4ca2bbf90a85344cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDirtRate: 1
+  maxDirtRate: 20
   minDirtRate: 0
   cleanDishRack: {fileID: 723271611}
   dirtRateText: {fileID: 2080858299}

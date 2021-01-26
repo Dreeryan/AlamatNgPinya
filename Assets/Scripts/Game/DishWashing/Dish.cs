@@ -22,9 +22,15 @@ public class Dish : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI    dirtRateText;
 
+    private SpriteRenderer  sRenderer;
+    private Collider2D      collider;
+
     // Start is called before the first frame update
     void Start()
     {
+        sRenderer = GetComponent<SpriteRenderer>();
+        collider = GetComponent<Collider2D>();
+
         if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
 
         if (cleanDishRack == null) cleanDishRack = FindObjectOfType<CleanDishRack>().transform;
@@ -35,10 +41,23 @@ public class Dish : MonoBehaviour
     public void ReduceDirtRate(float drainRate)
     {
         currentDirtRate -= drainRate;
-        if (currentDirtRate <= minDirtRate) OnAllDishesCleaned();
+        if (currentDirtRate <= minDirtRate) OnCleaned();
     }
 
-    private void OnAllDishesCleaned()
+
+    public void EnableDish() 
+    {
+        sRenderer.enabled = true;
+        collider.enabled = true;
+    }
+
+    public void DisableDish()
+    {
+        sRenderer.enabled = false;
+        collider.enabled = false;
+    }
+
+    private void OnCleaned()
     {
         currentDirtRate = minDirtRate;
 

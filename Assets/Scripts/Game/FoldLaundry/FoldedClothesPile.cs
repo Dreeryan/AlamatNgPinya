@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class FoldedClothes : MonoBehaviour
+public class FoldedClothesPile : MonoBehaviour
 {
     private UnityEvent  onClothingAdded = new UnityEvent();
     public UnityEvent   OnClothingAdded
@@ -17,13 +17,15 @@ public class FoldedClothes : MonoBehaviour
         get { return clothesCounter; }
     }
 
-    [SerializeField] private ProgressManager    manager;
+    //[SerializeField] private ProgressManager    manager;
+    [SerializeField] private Counter            counter;
     [SerializeField] private GameObject[]       foldedSprites;
     [SerializeField] private Clothing[]         clothesToFold;
 
     private void Start()
     {
-        if (manager == null) manager = FindObjectOfType<ProgressManager>();
+        //if (manager == null) manager = FindObjectOfType<ProgressManager>();
+        if (counter == null) counter = FindObjectOfType<Counter>();
 
         foreach (Clothing clothing in clothesToFold)
         {
@@ -35,7 +37,8 @@ public class FoldedClothes : MonoBehaviour
     {
         clothesCounter++;
         foldedSprites[clothesCounter - 1].gameObject.SetActive(true);
-        manager.AddProgress();
+        counter.objectsCollected++;
+        //manager.AddProgress();
         OnClothingAdded.Invoke();
     }
 }

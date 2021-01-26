@@ -1915,6 +1915,7 @@ MonoBehaviour:
   collisionChecker: {fileID: 0}
   objectGoal: 0
   winScreen: {fileID: 574603370}
+  objectTag: Toy
 --- !u!1 &607997856
 GameObject:
   m_ObjectHideFlags: 0
@@ -5899,7 +5900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1513266317}
   m_Layer: 0
-  m_Name: ObjectsToPickUp
+  m_Name: Toys
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6441,8 +6442,8 @@ GameObject:
   - component: {fileID: 1598999242}
   - component: {fileID: 1598999240}
   m_Layer: 0
-  m_Name: Box Item
-  m_TagString: Item
+  m_Name: Slingshot
+  m_TagString: Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6570,10 +6571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47775fc7bf2d27478fa2df644ae6333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemHolder: {fileID: 583218884}
-  binDistOffset: 1.2
   isPlaced: 0
-  isMouseDown: 0
 --- !u!114 &1598999242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6779,8 +6777,8 @@ GameObject:
   - component: {fileID: 1830365976}
   - component: {fileID: 1830365974}
   m_Layer: 0
-  m_Name: Circle Item
-  m_TagString: Item
+  m_Name: Top
+  m_TagString: Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6909,10 +6907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47775fc7bf2d27478fa2df644ae6333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemHolder: {fileID: 583218884}
-  binDistOffset: 1.2
   isPlaced: 0
-  isMouseDown: 0
 --- !u!114 &1830365976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7349,8 +7344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db697e663fb76a49b6d26b4a9e84d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1924482964}
-  spriteFacingRight: 0
 --- !u!1 &1926994980
 GameObject:
   m_ObjectHideFlags: 0
@@ -8114,8 +8107,8 @@ GameObject:
   - component: {fileID: 2119677897}
   - component: {fileID: 2119677893}
   m_Layer: 0
-  m_Name: Box Item (1)
-  m_TagString: Item
+  m_Name: Sipa
+  m_TagString: Toy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8132,10 +8125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47775fc7bf2d27478fa2df644ae6333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemHolder: {fileID: 583218884}
-  binDistOffset: 1.2
   isPlaced: 0
-  isMouseDown: 0
 --- !u!50 &2119677893
 Rigidbody2D:
   serializedVersion: 4

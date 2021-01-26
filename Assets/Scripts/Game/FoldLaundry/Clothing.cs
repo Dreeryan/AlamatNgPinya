@@ -26,17 +26,22 @@ public class Clothing : MonoBehaviour
 
     [SerializeField] private int        currentSequence;
 
-    private Vector2 startPosition;
-    private Vector2 endPosition;
-
+    private Vector2         startPosition;
+    private Vector2         endPosition;
+    private SpriteRenderer  sRenderer;
+    private bool            canBeFolded = false;
     void Start()
     {
         currentDirection = 0;
         currentSequence = 0;
+
+        sRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
+        if (!canBeFolded) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             startPosition = Input.mousePosition;
@@ -114,16 +119,29 @@ public class Clothing : MonoBehaviour
 
         if (currentSequence == 2)
         {
-            StartCoroutine(ChangeSprite());
+            StartCoroutine(OnFolded());
             currentSequence++;
         }
     }
 
-    IEnumerator ChangeSprite()
+    IEnumerator OnFolded()
     {
         yield return new WaitForSeconds(1f);
+        DisableCLothing();
         onClothingFolded.Invoke();
-        yield return null;
-        gameObject.SetActive(false);
+        //yield return null;
+        //gameObject.SetActive(false);
+    }
+
+    public void EnableClothing()
+    {
+        canBeFolded = true;
+        if (sRenderer != null) sRenderer.enabled = true;
+    }
+
+    public void DisableCLothing()
+    {
+        canBeFolded = false;
+        if (sRenderer != null) sRenderer.enabled = false;
     }
 }

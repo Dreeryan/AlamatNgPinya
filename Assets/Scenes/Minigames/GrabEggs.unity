@@ -825,8 +825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db697e663fb76a49b6d26b4a9e84d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 160605255}
-  spriteFacingRight: 0
 --- !u!1 &168171010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,6 +3199,7 @@ MonoBehaviour:
   collisionChecker: {fileID: 0}
   objectGoal: 0
   winScreen: {fileID: 635818997}
+  objectTag: Egg
 --- !u!1 &903934890
 GameObject:
   m_ObjectHideFlags: 0
@@ -3753,8 +3752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db697e663fb76a49b6d26b4a9e84d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1039249734}
-  spriteFacingRight: 0
 --- !u!114 &1039249736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4688,8 +4685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db697e663fb76a49b6d26b4a9e84d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1452078683}
-  spriteFacingRight: 0
 --- !u!114 &1452078685
 MonoBehaviour:
   m_ObjectHideFlags: 0

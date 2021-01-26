@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 177444131}
   m_Layer: 0
   m_Name: Shirt5
-  m_TagString: Item
+  m_TagString: Clothes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1399,7 +1399,7 @@ GameObject:
   - component: {fileID: 208480620}
   m_Layer: 0
   m_Name: Shirt4
-  m_TagString: Item
+  m_TagString: Clothes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2964,7 +2964,7 @@ GameObject:
   - component: {fileID: 504803009}
   m_Layer: 0
   m_Name: Shirt3
-  m_TagString: Item
+  m_TagString: Clothes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6083,7 +6083,7 @@ GameObject:
   - component: {fileID: 1059201452}
   m_Layer: 0
   m_Name: Shirt1
-  m_TagString: Item
+  m_TagString: Clothes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9872,7 +9872,7 @@ GameObject:
   - component: {fileID: 1598950583}
   m_Layer: 0
   m_Name: Shirt2
-  m_TagString: Item
+  m_TagString: Clothes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11119,6 +11119,7 @@ MonoBehaviour:
   collisionChecker: {fileID: 0}
   objectGoal: 0
   winScreen: {fileID: 934033613}
+  objectTag: Clothes
 --- !u!114 &1753569345
 MonoBehaviour:
   m_ObjectHideFlags: 0

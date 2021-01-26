@@ -796,6 +796,7 @@ MonoBehaviour:
   collisionChecker: {fileID: 0}
   objectGoal: 0
   winScreen: {fileID: 309316125}
+  objectTag: Trash
 --- !u!1 &220762485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,7 +1367,7 @@ GameObject:
   - component: {fileID: 336352470}
   m_Layer: 0
   m_Name: Trash (1)
-  m_TagString: Item
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5040,7 +5041,7 @@ GameObject:
   - component: {fileID: 1493699595}
   m_Layer: 0
   m_Name: Trash
-  m_TagString: Item
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6022,7 +6023,7 @@ GameObject:
   - component: {fileID: 1752371443}
   m_Layer: 0
   m_Name: Trash (2)
-  m_TagString: Item
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

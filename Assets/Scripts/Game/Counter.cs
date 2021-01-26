@@ -16,6 +16,7 @@ public class Counter : MonoBehaviour
     [SerializeField] private CollisionChecker   collisionChecker;
     [SerializeField] private int                objectGoal;
     [SerializeField] private GameObject         winScreen;
+    [SerializeField] private string             objectTag;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class Counter : MonoBehaviour
         previousObjectsCollected = objectsCollected;
 
         // Sets the goal to how many items are active
-        objectGoal = GameObject.FindGameObjectsWithTag("Item").Length;
+        objectGoal = GameObject.FindGameObjectsWithTag(objectTag).Length;
 
         winScreen.SetActive(false);
     }
@@ -31,7 +32,7 @@ public class Counter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        objectGoal = GameObject.FindGameObjectsWithTag("Item").Length;
+        objectGoal = GameObject.FindGameObjectsWithTag(objectTag).Length;
         if (objectsCollected > previousObjectsCollected)
         {
             previousObjectsCollected = objectsCollected;
@@ -48,7 +49,7 @@ public class Counter : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Item")
+        if (collision.gameObject.tag == objectTag)
         {
             collisionChecker = collision.gameObject.GetComponent<CollisionChecker>();
         }

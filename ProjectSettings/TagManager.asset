@@ -30,6 +30,7 @@ TagManager:
   - HidingSpot
   - Enemy
   - VisionChecker
+  - Trash
   layers:
   - Default
   - TransparentFX

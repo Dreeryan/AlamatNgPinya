@@ -10,6 +10,7 @@ public class Counter : MonoBehaviour
 {
     public  TextMeshProUGUI     counterText;
     public  int                 objectsCollected;
+    public bool                 hasWon;
     private int                 previousObjectsCollected;
     private bool                isCounted;
 
@@ -21,7 +22,8 @@ public class Counter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        previousObjectsCollected = objectsCollected;
+        hasWon                      = false;
+        previousObjectsCollected    = objectsCollected;
 
         // Sets the goal to how many items are active
         CheckForObjectsToCollect();
@@ -40,6 +42,7 @@ public class Counter : MonoBehaviour
 
             if (objectsCollected >= objectGoal)
             {
+                hasWon = true;
                 winScreen.SetActive(true);
                 Time.timeScale = 0.0f;
             }

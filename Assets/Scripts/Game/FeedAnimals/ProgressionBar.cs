@@ -8,6 +8,8 @@ public class ProgressionBar : MonoBehaviour
     [SerializeField] private Image      fillBar;
     [SerializeField] private GameObject WinScreen;
 
+    public  bool  hasWon;
+
     private float maxAmount = 1;
     private float curAmount = 0;
 
@@ -25,6 +27,7 @@ public class ProgressionBar : MonoBehaviour
         if (fillBar.fillAmount >= maxAmount)
         {
             WinScreen.SetActive(true);
+            hasWon = true;
         }
     }
 

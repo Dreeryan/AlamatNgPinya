@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class PauseFunction : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseButton;
-    [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject askMomButton;
+    [SerializeField] private GameObject     pauseButton;
+    [SerializeField] private GameObject     pauseMenu;
+    [SerializeField] private GameObject     askMomButton;
+    [SerializeField] private Counter        counter;
+    [SerializeField] private ProgressionBar progressionBar;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,18 @@ public class PauseFunction : MonoBehaviour
 
         if (pauseMenu != null)
             pauseMenu.SetActive(false);
+    }
+
+    private void Update()
+    {
+        // Hides Pause Button if Player wins
+        if (counter != null)
+            if (counter.hasWon)
+                pauseButton.SetActive(false);
+
+        if (progressionBar != null)
+            if (progressionBar.hasWon)
+                pauseButton.SetActive(false);
     }
 
     public void Pause()

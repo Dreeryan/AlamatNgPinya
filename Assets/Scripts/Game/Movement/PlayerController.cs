@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private Animator    playerAnim;
     private Vector3     targetPoint;
     private bool        isMoving = false;
-    protected bool        canMove  = true;
+    private bool        canMove  = true;
     public bool         CanMove
     {
         get { return canMove; }

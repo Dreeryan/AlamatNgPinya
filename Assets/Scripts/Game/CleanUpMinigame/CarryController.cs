@@ -7,6 +7,8 @@ public class CarryController : MonoBehaviour
 {
     private Toy overlappedToy;
     private Toy carriedToy;
+    
+    [SerializeField] private ToyBin toyBin;
 
     [Header("Item Carrier")]
     [SerializeField] private Transform  itemCarrier;
@@ -16,11 +18,7 @@ public class CarryController : MonoBehaviour
     }
 
     [Header("UI")]
-    [SerializeField] TextMeshProUGUI    itemText;
-
-    #region TempFix
-    [SerializeField] private Counter    toyBin;
-    #endregion
+    [SerializeField] GameObject         itemText;
 
     private bool    isCarrying = false;
     public bool     IsCarrying
@@ -31,57 +29,32 @@ public class CarryController : MonoBehaviour
     void Start()
     {
         if (itemText != null) itemText.gameObject.SetActive(false);
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (toyBin != null && collision.gameObject.CompareTag("Goal"))
-        {
-            if (isCarrying) DropToy(collision.gameObject);
-        }
+        if (toyBin == null) toyBin = FindObjectOfType<ToyBin>();
+        if (toyBin != null) toyBin.onMinigameCompleted.AddListener(OnMinigameComplete);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Toy>())
+        if (!isCarrying && collision.GetComponent<Toy>())
         {
-            if (isCarrying) return;
+            if (overlappedToy == null) overlappedToy = collision.GetComponent<Toy>();
+            if (overlappedToy.WillBePickedUp) PickupToy();
+            if (!itemText.activeSelf) itemText.SetActive(true);
+        }
 
-            overlappedToy = collision.gameObject.GetComponent<Toy>();
-
-            if (overlappedToy.WillBePickedUp)
-            {
-                PickupToy();
-            }
-            else
-            {
-                itemText.gameObject.SetActive(true);
-                itemText.text = "Left click the item to pickup";
-            }
+        if (isCarrying && collision.GetComponent<ToyBin>())
+        {
+            if (toyBin != null && toyBin.IsSelected) DropToy(toyBin);
         }
     }
 
-
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.gameObject.GetComponent<Toy>()) return;
-        
-        itemText.gameObject.SetActive(false);
-        overlappedToy = null;
-
-
-
-
-        // If the item is placed and the player is far from the holder.
-        //if (carriedToy.isPlaced)
-        //{
-        //    collision.gameObject.transform.parent = carriedToy.itemHolder;
-        //    collision.gameObject.transform.position = carriedToy.itemHolder.position;
-
-        //    if (collision.gameObject != null)
-        //        collision.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
-        //}
-        
+        if (collision.gameObject.GetComponent<Toy>() == overlappedToy)
+        {
+            itemText.gameObject.SetActive(false);
+            overlappedToy = null;
+        }
     }
 
     public void PickupToy()
@@ -95,14 +68,18 @@ public class CarryController : MonoBehaviour
         itemText.gameObject.SetActive(false);
     }
 
-    void DropToy(GameObject bin)
+    void DropToy(ToyBin bin)
     {
-        carriedToy.transform.parent = bin.transform;
-        carriedToy.transform.position = bin.transform.position;
+        bin.PlaceToy(carriedToy);
 
         isCarrying = false;
-        toyBin.objectsCollected++;
-
+        carriedToy = null;
         itemText.gameObject.SetActive(false);
+    }
+
+    void OnMinigameComplete()
+    {
+        PlayerController controller = GetComponent<PlayerController>();
+        if (controller != null) controller.CanMove = false;
     }
 }

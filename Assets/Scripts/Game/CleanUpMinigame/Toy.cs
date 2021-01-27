@@ -5,7 +5,7 @@ using UnityEngine;
 public class Toy : MonoBehaviour
 {
     public bool     isPlaced;
-    private bool    isSelected;
+    private bool    isHoveredOver;
 
     private bool    willBePickedUp;
     public bool     WillBePickedUp
@@ -13,28 +13,24 @@ public class Toy : MonoBehaviour
         get { return willBePickedUp; }
     }
 
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (isSelected)     willBePickedUp = true;
+            if (isHoveredOver)  willBePickedUp = true;
             else                willBePickedUp = false;
         }
     }
 
     private void OnMouseEnter()
     {
-        isSelected = true;
+        isHoveredOver = true;
     }
 
     private void OnMouseExit()
     {
-        isSelected = false;
+        isHoveredOver = false;
     }
 
     public void GetPickedUp(CarryController controller)

@@ -12,7 +12,7 @@ public class CleanDishRack : MonoBehaviour
         get { return dishAdded; }
     }
 
-    private int         dishCounter = 0;
+    private int         dishCount = 0;
 
     [SerializeField] private Dish[]     dirtyDishes;
     [SerializeField] private Sprite[]   cleanSprites;
@@ -34,17 +34,17 @@ public class CleanDishRack : MonoBehaviour
     private void ChangeSprite()
     {
         if (sRenderer == null ||
-            cleanSprites[dishCounter - 1] == null) return;
+            cleanSprites[dishCount - 1] == null) return;
 
-        GetComponent<SpriteRenderer>().sprite = cleanSprites[dishCounter - 1];
+        GetComponent<SpriteRenderer>().sprite = cleanSprites[dishCount - 1];
     }
 
     private void DishCleaned()
     {
-        dishCounter++;
+        dishCount++;
         ChangeSprite();
         //progressManager.AddProgress();
         counter.objectsCollected++;
-        dishAdded.Invoke(dishCounter);
+        dishAdded.Invoke(dishCount);
     }
 }

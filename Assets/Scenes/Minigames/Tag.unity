@@ -3472,7 +3472,6 @@ GameObject:
   - component: {fileID: 714823866}
   - component: {fileID: 714823865}
   - component: {fileID: 714823864}
-  - component: {fileID: 714823863}
   m_Layer: 0
   m_Name: kid (1)
   m_TagString: Enemy
@@ -3494,18 +3493,6 @@ Transform:
   m_Father: {fileID: 437404511}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &714823863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714823861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ddd9b9e1a13d74b8286a57561e82a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &714823864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6967,10 +6954,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winScreen: {fileID: 339277612}
   kids:
-  - {fileID: 1938974588}
-  - {fileID: 2118625865}
-  - {fileID: 714823863}
-  startingTagged: {fileID: 1938974588}
+  - {fileID: 1938974586}
+  - {fileID: 2118625864}
+  - {fileID: 714823864}
+  startingTagged: {fileID: 1938974586}
 --- !u!1 &1395867551
 GameObject:
   m_ObjectHideFlags: 0
@@ -8973,7 +8960,7 @@ GameObject:
   - component: {fileID: 1938974582}
   - component: {fileID: 1938974585}
   - component: {fileID: 1938974587}
-  - component: {fileID: 1938974588}
+  - component: {fileID: 1938974586}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9092,6 +9079,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.36, y: 2.72}
   m_EdgeRadius: 0
+--- !u!114 &1938974586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938974581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9cd8797d602a642bce1af1025a8860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1938974587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9106,18 +9105,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   moveOffset: 0.01
---- !u!114 &1938974588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938974581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ddd9b9e1a13d74b8286a57561e82a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1967276643
 GameObject:
   m_ObjectHideFlags: 0
@@ -9810,7 +9797,6 @@ GameObject:
   - component: {fileID: 2118625862}
   - component: {fileID: 2118625863}
   - component: {fileID: 2118625864}
-  - component: {fileID: 2118625865}
   m_Layer: 0
   m_Name: kid
   m_TagString: Enemy
@@ -9933,18 +9919,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curSpeed: 6
   MoveArea: {fileID: 1538571171}
---- !u!114 &2118625865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118625859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ddd9b9e1a13d74b8286a57561e82a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2132667230
 GameObject:
   m_ObjectHideFlags: 0

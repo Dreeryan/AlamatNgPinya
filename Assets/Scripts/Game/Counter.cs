@@ -32,6 +32,8 @@ public class Counter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckForObjectsToCollect();
+
         if (objectsCollected > previousObjectsCollected)
         {
             previousObjectsCollected = objectsCollected;

@@ -12,14 +12,23 @@ public class PlayerController : MonoBehaviour
     private Animator    playerAnim;
     private Vector3     targetPoint;
     private bool        isMoving = false;
-
-    private void Start()
+    protected bool        canMove  = true;
+    public bool         CanMove
     {
+        get { return canMove; }
+        set { canMove = value; }
+    }
+
+
+    protected void Start()
+    {
+        canMove = true;
         playerAnim = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if (!canMove) return;
         if (Input.GetMouseButtonUp(0))
         {
             // Player will go to the clicked area.

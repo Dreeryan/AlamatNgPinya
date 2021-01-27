@@ -1,9 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TagManager : MonoBehaviour
 {
+    private UnityEvent  onMinigameCompleted = new UnityEvent();
+    public UnityEvent   OnMinigameCompleted
+    {
+        get { return onMinigameCompleted; }
+    }
+
     [SerializeField] private GameObject     winScreen;
 
     [SerializeField] private TagCharacter[] kids;
@@ -19,10 +26,12 @@ public class TagManager : MonoBehaviour
         foreach (TagCharacter kid in kids)
         {
             kid.tagged.AddListener(OnCurrentTaggedChange);
+            kid.DebugUpdateColor();
         }
 
         currentTagged = startingTagged;
         currentTagged.IsTagged = true;
+        currentTagged.DebugUpdateColor();
     }
 
     // Changes the current tagged kid
@@ -40,7 +49,8 @@ public class TagManager : MonoBehaviour
     void OnComplete()
     {
         DisplayWinScreen();
-        Time.timeScale = 0.0f;
+        onMinigameCompleted.Invoke();
+        //Time.timeScale = 0.0f;
     }
 
     void DisplayWinScreen() 

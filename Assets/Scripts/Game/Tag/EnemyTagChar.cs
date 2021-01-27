@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTagAI : MonoBehaviour
+public class EnemyTagChar : TagCharacter
 {
     [SerializeField] private float      curSpeed = 3;
 
@@ -11,13 +11,9 @@ public class EnemyTagAI : MonoBehaviour
 
     private Vector2 destination;
 
-    void Start()
-    {
-    }
-
     void Update()
     {
-        AIRandom();
+        if (!isMinigameCompleted) AIRandom();
     }
 
     public void AIRandom()
@@ -37,9 +33,4 @@ public class EnemyTagAI : MonoBehaviour
             Random.Range(MoveArea.bounds.min.y, MoveArea.bounds.max.y));
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //TagCharacter collided = collision.collider.GetComponent<TagCharacter>();
-        //if (collided != null) destination = GetRandomPosition();
-    }
 }

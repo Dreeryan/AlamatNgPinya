@@ -6,26 +6,31 @@ using UnityEngine.Events;
 public class TagCharacter : MonoBehaviour
 {
     public class OnTagged : UnityEvent<TagCharacter> { }
-    public OnTagged         tagged          = new OnTagged();
+    public OnTagged             tagged              = new OnTagged();
 
-    private bool            isTagged        = false;
-    public bool             IsTagged
+    private bool                isTagged            = false;
+    public bool                 IsTagged
     {
         get { return isTagged; }
         set { isTagged = value; }
     }
 
-    private SpriteRenderer  sRenderer;
-    private TagCharacter    previousTagged  = null;
+    private SpriteRenderer      sRenderer;
+    private TagCharacter        previousTagged      = null;
+
+    protected bool                isMinigameCompleted = false;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         sRenderer = GetComponent<SpriteRenderer>();
         DebugUpdateColor();
+
+        TagManager manager = FindObjectOfType<TagManager>();
+        if (manager != null) manager.OnMinigameCompleted.AddListener(OnMinigameCompleted);
     }
 
-    void DebugUpdateColor()
+    public void DebugUpdateColor()
     {
         if (sRenderer != null)
         {
@@ -47,6 +52,11 @@ public class TagCharacter : MonoBehaviour
         previousTagged = collider;
         tagged.Invoke(this);
         DebugUpdateColor();
+    }
+
+    protected virtual void OnMinigameCompleted()
+    {
+        isMinigameCompleted = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

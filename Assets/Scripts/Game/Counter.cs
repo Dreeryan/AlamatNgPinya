@@ -24,7 +24,7 @@ public class Counter : MonoBehaviour
         previousObjectsCollected = objectsCollected;
 
         // Sets the goal to how many items are active
-        objectGoal = GameObject.FindGameObjectsWithTag(objectTag).Length;
+        CheckForObjectsToCollect();
 
         winScreen.SetActive(false);
     }
@@ -32,7 +32,6 @@ public class Counter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        objectGoal = GameObject.FindGameObjectsWithTag(objectTag).Length;
         if (objectsCollected > previousObjectsCollected)
         {
             previousObjectsCollected = objectsCollected;
@@ -45,6 +44,11 @@ public class Counter : MonoBehaviour
         }
 
         counterText.text = "Collected: " + objectsCollected + " / " + objectGoal;
+    }
+
+    public void CheckForObjectsToCollect()
+    {
+        objectGoal = GameObject.FindGameObjectsWithTag(objectTag).Length;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

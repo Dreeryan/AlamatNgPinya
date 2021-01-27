@@ -29,7 +29,8 @@ public class Clothing : MonoBehaviour
     private Vector2         startPosition;
     private Vector2         endPosition;
     private SpriteRenderer  sRenderer;
-    private bool            canBeFolded = false;
+    private bool            canBeFolded     = false;
+
     void Start()
     {
         currentDirection = 0;
@@ -40,16 +41,21 @@ public class Clothing : MonoBehaviour
 
     void Update()
     {
-        if (!canBeFolded) return;
+        if (!canBeFolded || Time.timeScale == 0.0f) return;
 
         if (Input.GetMouseButtonDown(0))
         {
             startPosition = Input.mousePosition;
+            endPosition = startPosition;
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            endPosition = Input.mousePosition;
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            endPosition = Input.mousePosition;
             SwipeDirection();
             TwoFoldSequence();
         }

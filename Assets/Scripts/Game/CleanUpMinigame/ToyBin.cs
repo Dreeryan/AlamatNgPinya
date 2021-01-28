@@ -5,11 +5,11 @@ using UnityEngine.Events;
 
 public class ToyBin : MonoBehaviour
 {
-    public UnityEvent onMinigameCompleted = new UnityEvent();
+    public UnityEvent   onMinigameCompleted = new UnityEvent();
 
-    private bool isHoveredOver;
-    private bool isSelected = false;
-    public bool IsSelected
+    private bool        isHoveredOver;
+    private bool        isSelected = false;
+    public bool         IsSelected
     {
         get { return isSelected; }
     }

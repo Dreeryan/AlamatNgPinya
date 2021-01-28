@@ -4,42 +4,33 @@ using UnityEngine;
 
 public class CleanDish : MonoBehaviour
 {
-    private Vector2 mousePos;
-    private Vector2 currentPosition;
-    public bool isPlaced = false;
-    private CircleCollider2D cd;
+    private Vector2             mousePos;
+    private Vector2             currentPosition;
+    private bool                isPlaced        = false;
+    private bool                isOverlapping   = false;
+    private GameObject          dishRack;
 
     [Header("Rack Variables")]
-    [SerializeField] private GameObject dishRack;
     [SerializeField] private float distanceToRack = 1.2f;
 
     void Start()
     {
         currentPosition = transform.position;
-        cd = GetComponent<CircleCollider2D>();
-    }
-
-    void Update()
-    {
-        //Do this only when isPlaced is modified
-        if (isPlaced)
-        {
-            //A: nullcheck
-            cd.enabled = false;
-        }
     }
 
     void OnMouseDrag()
     {
+        if (isPlaced) return;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = mousePos;
     }
 
-    void OnMouseUp()
+    void OnMouseUpAsButton()
     {
-        if (isPlaced)
+        if (isOverlapping)
         {
             transform.position = dishRack.transform.position;
+            isPlaced = true;
         }
         else
         {
@@ -49,15 +40,30 @@ public class CleanDish : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Rack"))
+        if (collision.GetComponent<Dishrack>() &&
+            !collision.GetComponent<Dishrack>().IsOccupied)
         {
-            dishRack = collision.gameObject;
+            if (dishRack == null) dishRack = collision.gameObject;
 
-            if (Mathf.Abs(transform.position.x - dishRack.transform.position.x) <= distanceToRack &&
-            Mathf.Abs(transform.position.y - dishRack.transform.position.y) <= distanceToRack)
+            if (CheckDistance())
             {
-                isPlaced = true;
+                isOverlapping = true;
             }
+        }
+    }
+
+    bool CheckDistance()
+    {
+        return Mathf.Abs(transform.position.x - dishRack.transform.position.x) <= distanceToRack &&
+            Mathf.Abs(transform.position.y - dishRack.transform.position.y) <= distanceToRack;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Dishrack>())
+        {
+            dishRack = null;
+            isOverlapping = false;
         }
     }
 }

@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SpriteFlipper : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer  spriteRenderer;
 
-    private Vector2 destination;
+    private Vector2         destination;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +18,12 @@ public class SpriteFlipper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spriteRenderer == null) return;
+        if (spriteRenderer == null || Time.timeScale == 0) return;
 
         if (Input.GetMouseButtonDown(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject()) return;
+
             SetDestination();
 
             if (destination.x > transform.position.x)

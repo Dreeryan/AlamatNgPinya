@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,7 +20,6 @@ public class PlayerController : MonoBehaviour
         set { canMove = value; }
     }
 
-
     protected void Start()
     {
         canMove = true;
@@ -28,8 +28,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!canMove) return;
-        if (Input.GetMouseButtonUp(0))
+        if (!canMove || Time.timeScale == 0) return;
+        if (Input.GetMouseButtonUp(0) &&
+            !EventSystem.current.IsPointerOverGameObject())
+            // Ignore click if clicking over UI object
         {
             // Player will go to the clicked area.
             targetPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);

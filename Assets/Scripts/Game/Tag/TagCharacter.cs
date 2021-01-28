@@ -18,7 +18,7 @@ public class TagCharacter : MonoBehaviour
     private SpriteRenderer      sRenderer;
     private TagCharacter        previousTagged      = null;
 
-    protected bool                isMinigameCompleted = false;
+    protected bool              isMinigameCompleted = false;
 
     // Start is called before the first frame update
     protected void Start()
@@ -59,7 +59,7 @@ public class TagCharacter : MonoBehaviour
         isMinigameCompleted = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         TagCharacter collided = collision.gameObject.GetComponent<TagCharacter>();
         // If tagging

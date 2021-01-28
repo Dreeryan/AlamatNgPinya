@@ -6961,6 +6961,8 @@ MonoBehaviour:
   - {fileID: 2118625864}
   - {fileID: 714823864}
   startingTagged: {fileID: 1938974586}
+  completionTimer: 5
+  debugTimer: 0
 --- !u!1 &1395867551
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerTagChar : TagCharacter
 {
-
     protected override void OnMinigameCompleted()
     {
         PlayerController controller = GetComponent<PlayerController>();

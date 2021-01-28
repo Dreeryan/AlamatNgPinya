@@ -11,12 +11,19 @@ public class TagManager : MonoBehaviour
         get { return onMinigameCompleted; }
     }
 
+    [Header("UI")]
     [SerializeField] private GameObject     winScreen;
 
+    [Header("Kids")]
     [SerializeField] private TagCharacter[] kids;
     [SerializeField] private TagCharacter   startingTagged;
 
+    [Header("Settings")]
+    [SerializeField] private float completionTimer = 5.0f;
+    public float debugTimer;
+
     private TagCharacter currentTagged;
+    private Coroutine   completionCountdown = null;
 
     void Start()
     {
@@ -43,7 +50,17 @@ public class TagManager : MonoBehaviour
         currentTagged.IsTagged = true;
 
         // If the current tagged is one of the other kids, complete the minigame
-        if (currentTagged.CompareTag("Enemy")) OnComplete();
+        if (currentTagged.CompareTag("Enemy")
+            && completionCountdown == null)
+        {
+            completionCountdown = StartCoroutine(BeginCompletionCountdown());
+        }
+        else if (currentTagged.CompareTag("Player")
+            && completionCountdown != null)
+        {
+            StopCoroutine(completionCountdown);
+            completionCountdown = null;
+        }
     }
 
     void OnComplete()
@@ -56,5 +73,19 @@ public class TagManager : MonoBehaviour
     void DisplayWinScreen() 
     {
         winScreen.SetActive(true);
+    }
+
+    IEnumerator BeginCompletionCountdown()
+    {
+        float timer = completionTimer;
+        debugTimer = timer;
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            debugTimer = timer;
+            yield return null;
+        }
+        yield return null;
+        OnComplete();
     }
 }

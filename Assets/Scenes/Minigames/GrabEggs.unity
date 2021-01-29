@@ -3152,7 +3152,8 @@ MonoBehaviour:
   - {fileID: 1550680306}
   - {fileID: 1388212874}
   - {fileID: 1344966311}
-  eggPrefab: {fileID: 0}
+  eggPrefab: {fileID: 6409897020900722038, guid: d3b5f152135658e4b9acf150f05421f5,
+    type: 3}
 --- !u!1 &897994914
 GameObject:
   m_ObjectHideFlags: 0

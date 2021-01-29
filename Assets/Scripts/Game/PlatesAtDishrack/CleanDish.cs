@@ -5,7 +5,7 @@ using UnityEngine;
 public class CleanDish : MonoBehaviour
 {
     private Vector2             mousePos;
-    private Vector2             currentPosition;
+    private Vector2             returnPos;
     private bool                isPlaced        = false;
     private bool                isOverlapping   = false;
     private GameObject          dishRack;
@@ -15,7 +15,7 @@ public class CleanDish : MonoBehaviour
 
     void Start()
     {
-        currentPosition = transform.position;
+        returnPos = transform.position;
     }
 
     void OnMouseDrag()
@@ -25,7 +25,7 @@ public class CleanDish : MonoBehaviour
         transform.position = mousePos;
     }
 
-    void OnMouseUpAsButton()
+    void OnMouseUp()
     {
         if (isOverlapping)
         {
@@ -34,7 +34,7 @@ public class CleanDish : MonoBehaviour
         }
         else
         {
-            transform.position = currentPosition;
+            transform.position = returnPos;
         }
     }
 

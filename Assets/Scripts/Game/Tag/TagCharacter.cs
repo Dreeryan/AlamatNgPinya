@@ -59,9 +59,9 @@ public class TagCharacter : MonoBehaviour
         isMinigameCompleted = true;
     }
 
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        TagCharacter collided = collision.gameObject.GetComponent<TagCharacter>();
+        TagCharacter collided = collision.GetComponent<TagCharacter>();
         // If tagging
         if (collided != null && isTagged)
         {
@@ -74,9 +74,9 @@ public class TagCharacter : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        TagCharacter collided = collision.collider.GetComponent<TagCharacter>();
+        TagCharacter collided = collision.GetComponent<TagCharacter>();
         if (collided != null && collided == previousTagged)
             previousTagged = null;
     }

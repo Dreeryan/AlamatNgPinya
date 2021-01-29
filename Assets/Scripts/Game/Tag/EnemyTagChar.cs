@@ -33,13 +33,13 @@ public class EnemyTagChar : TagCharacter
             Random.Range(MoveArea.bounds.min.y, MoveArea.bounds.max.y));
     }
 
-    protected override void OnCollisionEnter2D(Collision2D collision)
-    {
-        base.OnCollisionEnter2D(collision);
-        if (collision.collider.GetComponent<TagCharacter>())
-        {
-            destination = GetRandomPosition();
-        }
-    }
+    //protected override void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    base.OnCollisionEnter2D(collision);
+    //    if (collision.collider.GetComponent<TagCharacter>())
+    //    {
+    //        destination = GetRandomPosition();
+    //    }
+    //}
 
 }

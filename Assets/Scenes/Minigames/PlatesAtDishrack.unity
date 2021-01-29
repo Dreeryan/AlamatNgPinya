@@ -168,8 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea4b9b117eaf904fb2eabde464d3477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlaced: 0
-  dishRack: {fileID: 0}
   distanceToRack: 1.2
 --- !u!58 &299138
 CircleCollider2D:
@@ -195,7 +193,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299135}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3513,7 +3511,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040311957}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3554,8 +3552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea4b9b117eaf904fb2eabde464d3477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlaced: 0
-  dishRack: {fileID: 0}
   distanceToRack: 1.2
 --- !u!114 &1040311963
 MonoBehaviour:
@@ -3618,8 +3614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea4b9b117eaf904fb2eabde464d3477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlaced: 0
-  dishRack: {fileID: 0}
   distanceToRack: 1.2
 --- !u!58 &1085070811
 CircleCollider2D:
@@ -3645,7 +3639,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085070808}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -5804,8 +5798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea4b9b117eaf904fb2eabde464d3477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlaced: 0
-  dishRack: {fileID: 0}
   distanceToRack: 1.2
 --- !u!58 &2008981713
 CircleCollider2D:
@@ -5831,7 +5823,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008981711}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

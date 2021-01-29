@@ -18,9 +18,10 @@ public class AudioObject : MonoBehaviour
         aSource = this.gameObject.AddComponent<AudioSource>();
 
         aSource.clip = newData.AudioFile;
-
-        aSource.outputAudioMixerGroup = AudioManager.Instance
-            .AudioMix.FindMatchingGroups(newData.MixGroup)[0];
+	
+		if(AudioManager.Instance.AudioMix != null)
+			aSource.outputAudioMixerGroup = AudioManager.Instance
+				.AudioMix.FindMatchingGroups(newData.MixGroup)[0];
 
         aSource.volume = newData.Volume;
 

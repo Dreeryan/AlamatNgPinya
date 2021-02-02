@@ -13,10 +13,12 @@ public class MenuItems
     {
         if (EditorApplication.isPlaying) return;
 
-        EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
-        EditorSceneManager.OpenScene("Assets/Scenes/_Persistent.unity");
+        if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+        {
+            EditorSceneManager.OpenScene("Assets/Scenes/_Persistent.unity");
 
-        EditorApplication.isPlaying = true;
+            EditorApplication.isPlaying = true;
+        }
     }
 }
 #endif

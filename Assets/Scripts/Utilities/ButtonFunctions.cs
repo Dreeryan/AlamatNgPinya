@@ -8,4 +8,9 @@ public class ButtonFunctions : MonoBehaviour
     {
         AudioManager.PlayAudio(audioId);
     }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }

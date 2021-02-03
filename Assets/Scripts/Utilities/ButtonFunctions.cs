@@ -9,6 +9,12 @@ public class ButtonFunctions : MonoBehaviour
         AudioManager.PlayAudio(audioId);
     }
 
+    public void LoadScene(string sceneName)
+    {
+        //if (SceneLoader.Instance == null) return;
+        SceneLoader.ChangeScene(sceneName);
+    }
+
     public void CloseGame()
     {
         Application.Quit();

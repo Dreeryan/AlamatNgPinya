@@ -6,11 +6,11 @@ public class BootStart : MonoBehaviour
 {
     private void Start()
     {
-        SceneLoader loader = FindObjectOfType<SceneLoader>();
+        //SceneLoader loader = FindObjectOfType<SceneLoader>();
 
-        if (loader == null) return;
+        if (SceneLoader.Instance == null) return;
 
-        loader.ChangeScene("MainMenu");
+        SceneLoader.ChangeScene("MainMenu");
     }
 
 }

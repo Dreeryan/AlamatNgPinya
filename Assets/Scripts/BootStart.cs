@@ -10,7 +10,7 @@ public class BootStart : MonoBehaviour
 
         if (SceneLoader.Instance == null) return;
 
-        SceneLoader.ChangeScene("MainMenu");
+        SceneLoader.Instance.ChangeScene("MainMenu");
     }
 
 }

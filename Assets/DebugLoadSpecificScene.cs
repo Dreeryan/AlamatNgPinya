@@ -39,7 +39,7 @@ public class DebugLoadSpecificScene : MonoBehaviour
             {
                 print("Scene exists");
                 Time.timeScale = 1.0f;
-                SceneLoader.ChangeScene(sceneToLoad);
+                //SceneLoader.ChangeScene(sceneToLoad);
                 return;
             }
         }

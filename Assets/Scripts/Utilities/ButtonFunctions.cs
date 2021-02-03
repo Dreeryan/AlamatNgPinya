@@ -12,7 +12,7 @@ public class ButtonFunctions : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         //if (SceneLoader.Instance == null) return;
-        SceneLoader.ChangeScene(sceneName);
+        SceneLoader.Instance.ChangeScene(sceneName);
     }
 
     public void CloseGame()

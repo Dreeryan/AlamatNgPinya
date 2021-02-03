@@ -8,10 +8,6 @@ public class SceneLoader : BaseManager<SceneLoader>
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-
-        if (sceneName == "MainMenu")
-        {
-            Time.timeScale = 1.0f;
-        }
+        Time.timeScale = 1.0f;       
     }
 }

@@ -38,8 +38,7 @@ public class DebugLoadSpecificScene : MonoBehaviour
             if (string.Compare(sceneToLoad, sceneName, true) == 0)
             {
                 print("Scene exists");
-                Time.timeScale = 1.0f;
-                //SceneLoader.ChangeScene(sceneToLoad);
+                if (SceneLoader.Instance != null) SceneLoader.Instance.ChangeScene(sceneToLoad);
                 return;
             }
         }

@@ -3774,6 +3774,7 @@ GameObject:
   - component: {fileID: 607082011}
   - component: {fileID: 607082010}
   - component: {fileID: 607082009}
+  - component: {fileID: 607082012}
   m_Layer: 5
   m_Name: Folding the laundry button
   m_TagString: Untagged
@@ -3844,8 +3845,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 607082012}
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3892,6 +3893,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607082007}
   m_CullTransparentMesh: 0
+--- !u!114 &607082012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607082007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &612696295
 GameObject:
   m_ObjectHideFlags: 0
@@ -5239,6 +5252,7 @@ GameObject:
   - component: {fileID: 861684117}
   - component: {fileID: 861684116}
   - component: {fileID: 861684115}
+  - component: {fileID: 861684118}
   m_Layer: 5
   m_Name: Dish washing button
   m_TagString: Untagged
@@ -5309,8 +5323,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 607082012}
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5357,6 +5371,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861684113}
   m_CullTransparentMesh: 0
+--- !u!114 &861684118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861684113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &873602834
 GameObject:
   m_ObjectHideFlags: 0
@@ -5450,6 +5476,7 @@ GameObject:
   - component: {fileID: 910302901}
   - component: {fileID: 910302900}
   - component: {fileID: 910302899}
+  - component: {fileID: 910302902}
   m_Layer: 5
   m_Name: Cook the porridge button
   m_TagString: Untagged
@@ -5520,8 +5547,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 607082012}
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5568,6 +5595,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910302897}
   m_CullTransparentMesh: 0
+--- !u!114 &910302902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910302897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &929659761
 GameObject:
   m_ObjectHideFlags: 0
@@ -6259,6 +6298,7 @@ GameObject:
   - component: {fileID: 1017444031}
   - component: {fileID: 1017444030}
   - component: {fileID: 1017444029}
+  - component: {fileID: 1017444032}
   m_Layer: 5
   m_Name: HideAndSeekButton
   m_TagString: Untagged
@@ -6329,8 +6369,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 607082012}
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6377,6 +6417,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017444027}
   m_CullTransparentMesh: 0
+--- !u!114 &1017444032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017444027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1046263257
 GameObject:
   m_ObjectHideFlags: 0
@@ -7197,7 +7249,7 @@ PrefabInstance:
     - target: {fileID: 2249433026130453459, guid: 654bf7019572df0489e86a7ec15e7647,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2249433026130453459, guid: 654bf7019572df0489e86a7ec15e7647,
         type: 3}
@@ -8692,6 +8744,7 @@ GameObject:
   - component: {fileID: 1349863659}
   - component: {fileID: 1349863658}
   - component: {fileID: 1349863657}
+  - component: {fileID: 1349863660}
   m_Layer: 5
   m_Name: FeedAnimalsButton
   m_TagString: Untagged
@@ -8762,8 +8815,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 607082012}
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8810,6 +8863,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349863655}
   m_CullTransparentMesh: 0
+--- !u!114 &1349863660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349863655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1361822265
 GameObject:
   m_ObjectHideFlags: 0
@@ -9646,6 +9711,7 @@ GameObject:
   - component: {fileID: 1472373698}
   - component: {fileID: 1472373697}
   - component: {fileID: 1472373696}
+  - component: {fileID: 1472373699}
   m_Layer: 5
   m_Name: GrabEggsButton
   m_TagString: Untagged
@@ -9716,8 +9782,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 607082012}
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9764,6 +9830,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472373694}
   m_CullTransparentMesh: 0
+--- !u!114 &1472373699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472373694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1494367258
 GameObject:
   m_ObjectHideFlags: 0
@@ -10216,6 +10294,7 @@ GameObject:
   - component: {fileID: 1543791643}
   - component: {fileID: 1543791642}
   - component: {fileID: 1543791641}
+  - component: {fileID: 1543791644}
   m_Layer: 5
   m_Name: HangLaundryButton
   m_TagString: Untagged
@@ -10286,8 +10365,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 607082012}
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10334,6 +10413,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543791639}
   m_CullTransparentMesh: 0
+--- !u!114 &1543791644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543791639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1551155691
 GameObject:
   m_ObjectHideFlags: 0
@@ -10346,6 +10437,7 @@ GameObject:
   - component: {fileID: 1551155695}
   - component: {fileID: 1551155694}
   - component: {fileID: 1551155693}
+  - component: {fileID: 1551155696}
   m_Layer: 5
   m_Name: Clean up toys button
   m_TagString: Untagged
@@ -10416,8 +10508,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 1551155696}
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10464,6 +10556,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551155691}
   m_CullTransparentMesh: 0
+--- !u!114 &1551155696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551155691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1580732021
 GameObject:
   m_ObjectHideFlags: 0
@@ -10558,6 +10662,7 @@ GameObject:
   - component: {fileID: 1583741121}
   - component: {fileID: 1583741120}
   - component: {fileID: 1583741119}
+  - component: {fileID: 1583741122}
   m_Layer: 5
   m_Name: SweepFloorButton
   m_TagString: Untagged
@@ -10628,8 +10733,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 607082012}
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10676,6 +10781,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583741117}
   m_CullTransparentMesh: 0
+--- !u!114 &1583741122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583741117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1593375865
 GameObject:
   m_ObjectHideFlags: 0
@@ -13077,6 +13194,7 @@ GameObject:
   - component: {fileID: 2104065712}
   - component: {fileID: 2104065711}
   - component: {fileID: 2104065710}
+  - component: {fileID: 2104065713}
   m_Layer: 5
   m_Name: WaterPlantsButton
   m_TagString: Untagged
@@ -13147,8 +13265,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 607082012}
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13195,6 +13313,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104065708}
   m_CullTransparentMesh: 0
+--- !u!114 &2104065713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104065708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2113393698
 GameObject:
   m_ObjectHideFlags: 0

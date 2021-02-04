@@ -5,18 +5,19 @@ using UnityEngine;
 public class ClothesPlacement : MonoBehaviour
 {
     [SerializeField] private float  valueToTarget = 1.2f;
+
     public Transform                itemHolder;
     public ClothingPositioning      clothingPosition;
 
-    private Vector2     mousePos;
-    private Vector2     currentPosition;
-    private bool        isOnGoal;
+    private Vector2                 mousePos;
+    private Vector2                 currentPosition;
+    private bool                    isOnGoal;
+    private Counter                 counter;
 
-    public bool                 canSnapbackToStart;
-    public ReturnIfVisionLost   vision;
+    [SerializeField] private bool               canSnapbackToStart;
+    [SerializeField] private ReturnIfVisionLost vision;
+    [SerializeField] private Collider2D         collider;
 
-    [SerializeField] private Counter          counter;
-    [SerializeField] private Collider2D       collider;
     void Start()
     {
         currentPosition = transform.position;
@@ -37,13 +38,14 @@ public class ClothesPlacement : MonoBehaviour
 
     void OnMouseUp()
     {
-        if (isOnGoal)
+        if (counter != null && isOnGoal)
             counter.objectsCollected++;
 
         if (clothingPosition != null && isOnGoal)
         {
             transform.position = clothingPosition.GetNextAvailablePosition();
             clothingPosition.UpdateIndex();
+            collider.enabled = false;
         }
         // Else, it will be placed back to it's last position
         else
@@ -56,22 +58,15 @@ public class ClothesPlacement : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Goal")
+        if (collision.CompareTag("Goal"))
         {
-            collider.enabled = false;
-
             counter = collision.gameObject.GetComponent<Counter>();
-
-            if (counter != null)
-                isOnGoal = true;
+            if (counter != null) isOnGoal = true;
         }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Goal")
-        {
-            isOnGoal = false;
-        }
+        if (collision.CompareTag("Goal")) isOnGoal = false;
     }
 }

@@ -5576,8 +5576,8 @@ GameObject:
   - component: {fileID: 1059201450}
   - component: {fileID: 1059201451}
   - component: {fileID: 1059201453}
-  - component: {fileID: 1059201455}
   - component: {fileID: 1059201452}
+  - component: {fileID: 1059201455}
   m_Layer: 0
   m_Name: Shirt1
   m_TagString: Clothes

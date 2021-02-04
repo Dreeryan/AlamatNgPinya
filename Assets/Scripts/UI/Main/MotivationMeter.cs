@@ -19,7 +19,7 @@ public class MotivationMeter : MonoBehaviour
         MotivationManager.OnMotivationUpdated -= OnMotivationUpdated;
     }
 
-    private void OnMotivationUpdated(int newVal)
+    private void OnMotivationUpdated(float newVal)
     {
         if (fillImage == null) return;
 

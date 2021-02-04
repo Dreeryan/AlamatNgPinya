@@ -11,7 +11,7 @@ public class MotivationManager : BaseManager<MotivationManager>
     public int MaxMotivation => maxMotivation;
     public int CurrMotivation => currMotivation;
 
-    public static System.Action<int> OnMotivationUpdated;
+    public static System.Action<float> OnMotivationUpdated;
 
     protected override void Start()
     {
@@ -28,7 +28,9 @@ public class MotivationManager : BaseManager<MotivationManager>
             , 0
             , maxMotivation);
 
-        OnMotivationUpdated?.Invoke(currMotivation);
+        float fillRatio = (float)currMotivation / (float)maxMotivation;
+
+        OnMotivationUpdated?.Invoke(fillRatio);
     }
 
     public void ResetMotivation()

@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/Tag.unity
     guid: 28e213a34c4a3cf47880f75caa78024f
+  - enabled: 1
+    path: Assets/Scenes/Minigames/HarvestCrops.unity
+    guid: 2c1b9429363773a4cb10aab7498789af
   m_configObjects: {}

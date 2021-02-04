@@ -21,7 +21,7 @@ public class TagCharacter : MonoBehaviour
     protected bool              isMinigameCompleted = false;
 
     // Start is called before the first frame update
-    protected void Start()
+    protected virtual void Start()
     {
         sRenderer = GetComponent<SpriteRenderer>();
         DebugUpdateColor();

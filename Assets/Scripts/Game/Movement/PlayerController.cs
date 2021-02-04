@@ -10,11 +10,12 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Distance the player can be from the target position before stopping")]
     [SerializeField] private float moveOffset = 0.01f;
 
-    private Animator    playerAnim;
-    private Vector3     targetPoint;
-    private bool        isMoving = false;
-    private bool        canMove  = true;
-    public bool         CanMove
+    private SpriteFlipper   sFlipper;
+    private Animator        playerAnim;
+    private Vector3         targetPoint;
+    private bool            isMoving = false;
+    private bool            canMove  = true;
+    public bool             CanMove
     {
         get { return canMove; }
         set { canMove = value; }
@@ -24,19 +25,20 @@ public class PlayerController : MonoBehaviour
     {
         canMove = true;
         playerAnim = GetComponent<Animator>();
+        sFlipper = GetComponent<SpriteFlipper>();
     }
 
     void Update()
     {
         if (!canMove || Time.timeScale == 0) return;
-        if (Input.GetMouseButtonUp(0) &&
-            !EventSystem.current.IsPointerOverGameObject())
-            // Ignore click if clicking over UI object
+        if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             // Player will go to the clicked area.
             targetPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPoint.z = transform.position.z;
             transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+
+            if (sFlipper != null) sFlipper.FlipSprite(targetPoint.x - transform.position.x);
 
             isMoving = true;
         }

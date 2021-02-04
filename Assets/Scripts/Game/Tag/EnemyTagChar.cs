@@ -10,6 +10,14 @@ public class EnemyTagChar : TagCharacter
     //[SerializeField] private Transform[] patrolPoints;
 
     private Vector2 destination;
+    private SpriteFlipper sFlipper;
+
+    protected override void Start()
+    {
+        base.Start();
+
+        sFlipper = GetComponent<SpriteFlipper>();
+    }
 
     void Update()
     {
@@ -21,6 +29,7 @@ public class EnemyTagChar : TagCharacter
         if (Vector2.Distance(transform.position, destination) < 0.1f)
         {
             destination = GetRandomPosition();
+            if (sFlipper != null) sFlipper.FlipSprite(destination.x - transform.position.x);
         }
 
         transform.position = Vector2.MoveTowards(transform.position, destination, curSpeed * Time.deltaTime);

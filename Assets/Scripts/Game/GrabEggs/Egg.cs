@@ -9,8 +9,8 @@ public class Egg : MonoBehaviour
     private Vector2             mousePos;
     private Vector2             currentPosition;
     private bool                isOnGoal;
+    private bool                isPlaced;
 
-    public  bool                isPlaced;
     public  ReturnIfVisionLost  vision;
 
     [SerializeField] private CollisionChecker collisionChecker;
@@ -41,47 +41,51 @@ public class Egg : MonoBehaviour
 
     void OnMouseUp()
     {
-		//A: Cleaner to put this in a function that returns if its less than the value
+        //if (IsNearHolder())
+        //{
+
+        //}
+        // Else, it will be placed back to it's last position
+
+        //if (collisionChecker.hasCollided) transform.position = eggBasket.transform.position;
+
         // If the object is near the item holder, the object will automatically be placed.
-        if (Mathf.Abs(transform.position.x - eggBasket.transform.position.x) <= 1.2f &&
-            Mathf.Abs(transform.position.y - eggBasket.transform.position.y) <= 1.2f)
-        {
+        if (isOnGoal)
+        { 
+            // Adds a point for every item that collides with the goal
+            if (counter != null) counter.objectsCollected++;
+
             transform.position = eggBasket.transform.position;
+            if (collider != null) collider.enabled = false;
             isPlaced = true;
         }
-
-
-        if (collisionChecker.hasCollided)
-            transform.position = eggBasket.transform.position;
-
-        if (isOnGoal)
-            counter.objectsCollected++;
-
-        // Else, it will be placed back to it's last position
         else
         {
             transform.position = currentPosition;
         }
     }
 
+    private bool IsNearHolder()
+    {
+        return Mathf.Abs(transform.position.x - eggBasket.transform.position.x) <= 1.2f &&
+               Mathf.Abs(transform.position.y - eggBasket.transform.position.y) <= 1.2f;
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Goal")
+        if (collision.CompareTag("Goal"))
         {
-            counter = collision.gameObject.GetComponent<Counter>();
-            collider.enabled = false;
+            isOnGoal = true;
 
-            // Adds a point for every item that collides with the goal
-            if (counter != null)
-                isOnGoal = true;
-
+            if (counter == null)
+                counter = collision.gameObject.GetComponent<Counter>();
         }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        counter = collision.gameObject.GetComponent<Counter>();
-        if (collision.gameObject.tag == "Goal")
+        counter = null;
+        if (collision.CompareTag("Goal"))
         {
             isOnGoal = false;
         }

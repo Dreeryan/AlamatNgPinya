@@ -1357,54 +1357,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onLeftPointerDown:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1215787620}
-        m_MethodName: SetFill
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   onLeftPointerUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1215787620}
-        m_MethodName: SetFill
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onPointerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -1419,11 +1375,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  onPointerExit:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 1215787620}
-        m_MethodName: SetFill
+        m_MethodName: SetIsBucketOnMe
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1431,8 +1384,11 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
+  onPointerExit:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 2036420235}
         m_MethodName: SetCanFill
         m_Mode: 6
@@ -1444,8 +1400,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
+      - m_Target: {fileID: 1215787620}
+        m_MethodName: SetIsBucketOnMe
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1826,6 +1782,7 @@ MonoBehaviour:
   maxFill: 100
   fillRate: 35
   progressManager: {fileID: 542165244}
+  bucket: {fileID: 2036420235}
   fillBar: {fileID: 217817507}
   fillBarImage: {fileID: 2124692789}
   plant: {fileID: 1425908347}
@@ -4874,7 +4831,7 @@ PrefabInstance:
     - target: {fileID: 6192101272100059988, guid: de99fe26cb03ce045a925ebdf9ef7739,
         type: 3}
       propertyPath: m_Name
-      value: WinScreen (1)
+      value: WinScreen
       objectReference: {fileID: 0}
     - target: {fileID: 6192101272100059988, guid: de99fe26cb03ce045a925ebdf9ef7739,
         type: 3}
@@ -4919,7 +4876,7 @@ PrefabInstance:
     - target: {fileID: 6192101272100059989, guid: de99fe26cb03ce045a925ebdf9ef7739,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6192101272100059989, guid: de99fe26cb03ce045a925ebdf9ef7739,
         type: 3}
@@ -8004,6 +7961,7 @@ MonoBehaviour:
   maxFill: 100
   fillRate: 35
   progressManager: {fileID: 542165244}
+  bucket: {fileID: 2036420235}
   fillBar: {fileID: 743930562}
   fillBarImage: {fileID: 2031115997}
   plant: {fileID: 173252554}
@@ -8065,6 +8023,7 @@ MonoBehaviour:
   maxFill: 100
   fillRate: 35
   progressManager: {fileID: 542165244}
+  bucket: {fileID: 2036420235}
   fillBar: {fileID: 683024314}
   fillBarImage: {fileID: 1129890237}
   plant: {fileID: 853132466}
@@ -8654,54 +8613,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onLeftPointerDown:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1241407963}
-        m_MethodName: SetFill
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   onLeftPointerUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1241407963}
-        m_MethodName: SetFill
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onPointerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -8716,11 +8631,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  onPointerExit:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 1241407963}
-        m_MethodName: SetFill
+        m_MethodName: SetIsBucketOnMe
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8728,8 +8640,11 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
+  onPointerExit:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 2036420235}
         m_MethodName: SetCanFill
         m_Mode: 6
@@ -8741,8 +8656,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
+      - m_Target: {fileID: 1241407963}
+        m_MethodName: SetIsBucketOnMe
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9285,6 +9200,7 @@ MonoBehaviour:
   maxFill: 100
   fillRate: 35
   progressManager: {fileID: 542165244}
+  bucket: {fileID: 2036420235}
   fillBar: {fileID: 1849826984}
   fillBarImage: {fileID: 1106237153}
   plant: {fileID: 499842049}
@@ -11835,54 +11751,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onLeftPointerDown:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 191562790}
-        m_MethodName: SetFill
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   onLeftPointerUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 191562790}
-        m_MethodName: SetFill
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onPointerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -11897,11 +11769,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  onPointerExit:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 191562790}
-        m_MethodName: SetFill
+        m_MethodName: SetIsBucketOnMe
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11909,8 +11778,11 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
+  onPointerExit:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 2036420235}
         m_MethodName: SetCanFill
         m_Mode: 6
@@ -11922,8 +11794,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
+      - m_Target: {fileID: 191562790}
+        m_MethodName: SetIsBucketOnMe
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12739,54 +12611,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onLeftPointerDown:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1477079677}
-        m_MethodName: SetFill
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   onLeftPointerUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1477079677}
-        m_MethodName: SetFill
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onPointerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -12801,11 +12629,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  onPointerExit:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 1477079677}
-        m_MethodName: SetFill
+        m_MethodName: SetIsBucketOnMe
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12813,8 +12638,11 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
+  onPointerExit:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 2036420235}
         m_MethodName: SetCanFill
         m_Mode: 6
@@ -12826,8 +12654,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
+      - m_Target: {fileID: 1477079677}
+        m_MethodName: SetIsBucketOnMe
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13378,6 +13206,7 @@ MonoBehaviour:
   maxFill: 100
   fillRate: 35
   progressManager: {fileID: 542165244}
+  bucket: {fileID: 2036420235}
   fillBar: {fileID: 1802536333}
   fillBarImage: {fileID: 1531779854}
   plant: {fileID: 1506337739}
@@ -13438,54 +13267,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onLeftPointerDown:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2059104812}
-        m_MethodName: SetFill
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   onLeftPointerUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2059104812}
-        m_MethodName: SetFill
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onPointerEnter:
     m_PersistentCalls:
       m_Calls:
@@ -13500,11 +13285,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  onPointerExit:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 2059104812}
-        m_MethodName: SetFill
+        m_MethodName: SetIsBucketOnMe
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13512,8 +13294,11 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
+  onPointerExit:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 2036420235}
         m_MethodName: SetCanFill
         m_Mode: 6
@@ -13525,8 +13310,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036420235}
-        m_MethodName: SetIsFilling
+      - m_Target: {fileID: 2059104812}
+        m_MethodName: SetIsBucketOnMe
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

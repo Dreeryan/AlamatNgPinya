@@ -19,6 +19,18 @@ public class Bucket : MonoBehaviour
     void Update()
     {
         transform.position = Input.mousePosition;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            isFilling = true;
+            UpdateSprite();
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isFilling = false;
+            UpdateSprite();
+        }
     }
 
     public void SetCanFill(bool p_canFill)
@@ -28,11 +40,9 @@ public class Bucket : MonoBehaviour
         UpdateSprite();
     }
 
-    public void SetIsFilling(bool p_isFilling)
+    public bool GetisFilling()
     {
-        isFilling = p_isFilling;
-
-        UpdateSprite();
+        return isFilling;
     }
 
     void UpdateSprite()

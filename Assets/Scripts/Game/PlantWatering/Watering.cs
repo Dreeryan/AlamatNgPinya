@@ -13,10 +13,11 @@ public class Watering : MonoBehaviour
     [SerializeField] private float fillRate = 20f;
 
     private float fillAmount;
-    private bool isFilling;
+    private bool isBucketOnMe;
 
     [Header("References")]
     [SerializeField] private ProgressManager progressManager;
+    [SerializeField] private Bucket bucket;
 
     [Header("UI")]
     [SerializeField] private GameObject fillBar;
@@ -38,14 +39,12 @@ public class Watering : MonoBehaviour
         // null check
         if (fillBar == null) Debug.LogWarning("no object referenced for fillBar");
         if (fillBarImage == null) Debug.LogWarning("no object referenced for fillBarImage");
-
-        // setting the default value of the boolean for toggling
-        isFilling = false;
+        if (bucket == null) Debug.LogWarning("no object referenced for bucket");
     }
 
     void Update()
     {
-        if (isFilling)
+        if (bucket.GetisFilling() && isBucketOnMe)
         {
             // show bar when its the first time or when it's not yet full
             if (fillAmount < maxFill) fillBar.SetActive(true);
@@ -72,10 +71,9 @@ public class Watering : MonoBehaviour
         }
     }
 
-    public void SetFill(bool p_isFilling)
+    public void SetIsBucketOnMe(bool p_isBucketOnMe)
     {
-        // set the boolean
-        isFilling = p_isFilling;  
+        isBucketOnMe = p_isBucketOnMe;
     }
 
     void UpdateUI()

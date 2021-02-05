@@ -21,27 +21,39 @@ public class DebugLoadSpecificScene : MonoBehaviour
         if (Input.GetKeyDown(toggleKey)) panel.SetActive(!panel.activeSelf);
     }
 
-    public void LoadScene()
+    public void LoadScene(bool isPopup)
     {
-        SceneLoader loader = FindObjectOfType<SceneLoader>();
-        if (loader == null) return;
+        if (inputField == null) return;
 
         string sceneToLoad = inputField.text;
 
+        if(!IsSceneValid(sceneToLoad))
+        {
+            Debug.LogErrorFormat("{0} is not valid", sceneToLoad);
+            return;
+        }
+
+        if (isPopup)
+            SceneLoader.Instance.OpenPopup(sceneToLoad);
+        else
+            SceneLoader.Instance.ChangeScene(sceneToLoad);
+    }
+
+    private bool IsSceneValid(string nameToCheck)
+    {
         // https://gist.github.com/yagero/2cd50a12fcc928a6446539119741a343
+
         for (int x = 0; x < SceneManager.sceneCountInBuildSettings; x++)
         {
             var scenePath = SceneUtility.GetScenePathByBuildIndex(x);
             var lastSlash = scenePath.LastIndexOf("/");
-            var sceneName = scenePath.Substring(lastSlash + 1, scenePath.LastIndexOf(".") - lastSlash - 1);
+            var sceneName = scenePath.Substring(lastSlash + 1
+                , scenePath.LastIndexOf(".") - lastSlash - 1);
 
-            if (string.Compare(sceneToLoad, sceneName, true) == 0)
-            {
-                print("Scene exists");
-                if (SceneLoader.Instance != null) SceneLoader.Instance.ChangeScene(sceneToLoad);
-                return;
-            }
+            if (string.Compare(nameToCheck, sceneName, true) == 0)
+                return true;
         }
-        print("No scene exists");
+
+        return false;
     }
 }

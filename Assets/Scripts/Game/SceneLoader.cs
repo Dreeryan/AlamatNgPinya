@@ -10,4 +10,14 @@ public class SceneLoader : BaseManager<SceneLoader>
         SceneManager.LoadScene(sceneName);
         Time.timeScale = 1.0f;       
     }
+
+    public void OpenPopup(string popupName)
+    {
+        SceneManager.LoadScene(popupName, LoadSceneMode.Additive);
+    }
+
+    public void ClosePopup(string popupName)
+    {
+        SceneManager.UnloadSceneAsync(popupName);
+    }
 }

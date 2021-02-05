@@ -8,9 +8,7 @@ public class Sponge : MonoBehaviour
 {
     private Dish    dish;
 
-    private Vector2 mousePos;
-    private Vector2 currentPosition;
-    private Vector2 previousPos = Vector2.zero;
+    [SerializeField] private Draggable draggable;
 
     [Header("Sponge Settings")]
     [SerializeField] private float      drainRate;
@@ -21,37 +19,18 @@ public class Sponge : MonoBehaviour
 
     void Start()
     {
-        currentPosition = transform.position;
+        if (draggable == null) draggable = GetComponent<Draggable>();
+
         if (guideText != null) guideText.gameObject.SetActive(true);
     }
 
     void Update()
     {
-        if (Vector2.Distance(previousPos, Input.mousePosition) >= dragTreshold)
+        if (Vector2.Distance(draggable.PrevMousePos,
+            draggable.CurMousePos) >= dragTreshold && dish != null)
         {
-            if (dish != null)
-            {
-                dish.ReduceDirtRate(drainRate * Time.deltaTime);
-                previousPos = Input.mousePosition;
-            }
+            dish.ReduceDirtRate(drainRate * Time.deltaTime);
         }
-    }
-
-    void OnMouseDrag()
-    {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = mousePos;
-    }
-
-    void OnMouseUp()
-    {
-        // The sponge will be back to its current position
-        transform.position = currentPosition;
-    }
-
-    void OnMouseDown()
-    {
-        previousPos = Input.mousePosition;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,7 +45,8 @@ public class Sponge : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         // Checks if the exiting collision is the current dish
-        if (collision.GetComponent<Dish>() && collision.gameObject == dish.gameObject)
+        if (collision.GetComponent<Dish>() && 
+            collision.gameObject == dish.gameObject)
         {
             dish = null;
         }

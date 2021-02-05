@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class ToyBin : MonoBehaviour
 {
+    [HideInInspector]
     public UnityEvent   onMinigameCompleted = new UnityEvent();
 
     private bool        isHoveredOver;
@@ -52,7 +53,7 @@ public class ToyBin : MonoBehaviour
         toy.transform.parent = transform;
         toy.transform.position = transform.position;
         toy.GetComponent<Collider2D>().enabled = false;
-        counter.objectsCollected++;
+        counter.IncreaseProgress();
         curToys++;
 
         if (curToys >= toyCount) MinigameCompleted();

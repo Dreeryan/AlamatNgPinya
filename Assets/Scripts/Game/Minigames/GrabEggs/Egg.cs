@@ -19,8 +19,10 @@ public class Egg : MonoBehaviour
     void Start()
     {
         currentPosition = transform.position;
-		//A: Finding via name is very risky and bug prone
-        eggBasket = GameObject.Find("Egg Basket").transform;
+
+        if (eggBasket == null) eggBasket = FindObjectOfType<Counter>().transform;
+        if (counter == null) counter = FindObjectOfType<Counter>();
+        if (counter != null) counter.IncreaseGoalCount(1);
     }
 
     private void Update()
@@ -41,19 +43,21 @@ public class Egg : MonoBehaviour
 
     void OnMouseUp()
     {
-        //if (IsNearHolder())
-        //{
+        {
+            //if (IsNearHolder())
+            //{
 
-        //}
-        // Else, it will be placed back to it's last position
+            //}
+            // Else, it will be placed back to it's last position
 
-        //if (collisionChecker.hasCollided) transform.position = eggBasket.transform.position;
+            //if (collisionChecker.hasCollided) transform.position = eggBasket.transform.position;
+        }
 
         // If the object is near the item holder, the object will automatically be placed.
         if (isOnGoal)
-        { 
+        {
             // Adds a point for every item that collides with the goal
-            if (counter != null) counter.objectsCollected++;
+            if (counter != null) counter.IncreaseProgress();
 
             transform.position = eggBasket.transform.position;
             if (collider != null) collider.enabled = false;

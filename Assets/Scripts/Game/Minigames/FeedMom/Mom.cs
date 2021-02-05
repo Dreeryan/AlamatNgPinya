@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Mom : MonoBehaviour
 {
+    [SerializeField] Counter counter;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (counter == null) counter = FindObjectOfType<Counter>();
     }
 
     // Update is called once per frame
@@ -21,7 +22,11 @@ public class Mom : MonoBehaviour
         if (collision.GetComponent<Spoon>())
         {
             Spoon spoon = collision.GetComponent<Spoon>();
-            if (spoon.IsSpoonFull) spoon.EmptySpoon();
+            if (spoon.IsSpoonFull)
+            {
+                spoon.EmptySpoon();
+            }
+            counter.IncreaseProgress();
         }
     }
 }

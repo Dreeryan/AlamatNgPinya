@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bowl : MonoBehaviour
 {
+    [SerializeField] private Counter counter;
+
     [Header("Bowl Settings")]
     [SerializeField] private int maxSoupCount = 5;
     public  int MaxSoupCount => maxSoupCount;
@@ -20,6 +22,8 @@ public class Bowl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (counter == null) counter = FindObjectOfType<Counter>();
+        if (counter != null) counter.SetGoalCount(maxSoupCount);
         sRenderer = GetComponent<SpriteRenderer>();
         curSoupCount = maxSoupCount;
     }

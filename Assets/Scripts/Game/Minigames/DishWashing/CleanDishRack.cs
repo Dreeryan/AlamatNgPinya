@@ -44,7 +44,7 @@ public class CleanDishRack : MonoBehaviour
         dishCount++;
         ChangeSprite();
         //progressManager.AddProgress();
-        counter.objectsCollected++;
+        counter.IncreaseProgress();
         dishAdded.Invoke(dishCount);
     }
 }

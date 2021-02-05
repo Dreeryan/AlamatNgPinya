@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Toy : MonoBehaviour
 {
-    public bool     isPlaced;
+    public  bool    isPlaced;
     private bool    isHoveredOver;
 
     private bool    willBePickedUp;
-    public bool     WillBePickedUp
+    public  bool    WillBePickedUp => willBePickedUp;
+
+    private void Start()
     {
-        get { return willBePickedUp; }
+        Counter counter = FindObjectOfType<Counter>();
+        if (counter != null) counter.IncreaseGoalCount(1);
     }
 
     // Update is called once per frame

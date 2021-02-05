@@ -25,7 +25,7 @@ public class PauseFunction : MonoBehaviour
     {
         // Hides Pause Button if Player wins
         if (counter != null)
-            if (counter.hasWon)
+            if (counter.HasWon)
                 pauseButton.SetActive(false);
 
         if (progressionBar != null)

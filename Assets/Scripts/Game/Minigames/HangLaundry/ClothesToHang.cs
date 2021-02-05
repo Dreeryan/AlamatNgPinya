@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClothesPlacement : MonoBehaviour
+public class ClothesToHang : MonoBehaviour
 {
     [SerializeField] private float  valueToTarget = 1.2f;
 
@@ -21,6 +21,9 @@ public class ClothesPlacement : MonoBehaviour
     void Start()
     {
         currentPosition = transform.position;
+
+        if (counter == null) counter = FindObjectOfType<Counter>();
+        if (counter != null) counter.IncreaseGoalCount(1);
     }
 
     // Checks if object can be seen by the camera
@@ -39,7 +42,7 @@ public class ClothesPlacement : MonoBehaviour
     void OnMouseUp()
     {
         if (counter != null && isOnGoal)
-            counter.objectsCollected++;
+            counter.IncreaseProgress();
 
         if (clothingPosition != null && isOnGoal)
         {

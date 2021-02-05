@@ -8,47 +8,66 @@ using TMPro;
 
 public class Counter : MonoBehaviour
 {
-    public  TextMeshProUGUI     counterText;
-    public  int                 objectsCollected;
-    public bool                 hasWon;
-    private int                 previousObjectsCollected;
-    private bool                isCounted;
+    public TextMeshProUGUI  counterText;
 
-    [SerializeField] private CollisionChecker   collisionChecker;
-    [SerializeField] private int                objectGoal;
-    [SerializeField] private GameObject         winScreen;
-    [SerializeField] private string             objectTag;
+    private bool            hasWon;
+    public bool             HasWon => hasWon;
+
+    private int             objectGoal;
+    public int              ObjectGoal => objectGoal;
+    private int             curProgress;
+    public int              CurProgress => curProgress;
+
+    [SerializeField] private string     objectTag;
+    [SerializeField] private GameObject winScreen;
 
     // Start is called before the first frame update
     void Start()
     {
         hasWon                      = false;
-        previousObjectsCollected    = objectsCollected;
 
-        // Sets the goal to how many items are active
-        CheckForObjectsToCollect();
-
-        winScreen.SetActive(false);
+        if (winScreen != null) winScreen.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckForObjectsToCollect();
+    }
 
-        if (objectsCollected > previousObjectsCollected)
+    public void IncreaseGoalCount(int value)
+    {
+        objectGoal += value;
+        if (counterText != null) UpdateDisplayText();
+    }
+
+    public void SetGoalCount(int value)
+    {
+        objectGoal = value;
+        if (counterText != null) UpdateDisplayText();
+    }
+
+    public void IncreaseProgress()
+    {
+        curProgress++;
+        if (curProgress > objectGoal) curProgress = objectGoal;
+        if (counterText != null) UpdateDisplayText();
+
+        CheckGoal();
+    }
+
+    private void UpdateDisplayText()
+    {
+        counterText.text = "Collected: " + curProgress + " / " + objectGoal;
+    }
+
+    void CheckGoal()
+    {
+        if (curProgress >= objectGoal)
         {
-            previousObjectsCollected = objectsCollected;
-
-            if (objectsCollected >= objectGoal)
-            {
-                hasWon = true;
-                winScreen.SetActive(true);
-                Time.timeScale = 0.0f;
-            }
+            hasWon = true;
+            winScreen.SetActive(true);
+            Time.timeScale = 0.0f;
         }
-
-        counterText.text = "Collected: " + objectsCollected + " / " + objectGoal;
     }
 
     public void CheckForObjectsToCollect()
@@ -58,9 +77,5 @@ public class Counter : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == objectTag)
-        {
-            collisionChecker = collision.gameObject.GetComponent<CollisionChecker>();
-        }
     }
 }

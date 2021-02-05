@@ -5468,7 +5468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654001710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.08, y: 0.02, z: 0}
+  m_LocalPosition: {x: 1.08, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1924482965}
@@ -5994,7 +5994,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: 317936751515956651, guid: f4da550618f9cd1418fbe8eac4187089, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.91, y: 6.35}
@@ -6252,12 +6252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterText: {fileID: 259120497}
-  objectsCollected: 0
-  hasWon: 0
-  collisionChecker: {fileID: 0}
-  objectGoal: 0
-  winScreen: {fileID: 574603370}
   objectTag: Toy
+  winScreen: {fileID: 574603370}
 --- !u!4 &2002730475
 Transform:
   m_ObjectHideFlags: 0
@@ -6782,7 +6778,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132216170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8200002, y: 0.02000004, z: 0}
+  m_LocalPosition: {x: 1.82, y: 0.02000004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1924482965}

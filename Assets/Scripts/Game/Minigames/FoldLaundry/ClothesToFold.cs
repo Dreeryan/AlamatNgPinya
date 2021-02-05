@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Clothing : MonoBehaviour
+public class ClothesToFold : MonoBehaviour
 {
     private enum Directions
     {
@@ -13,30 +13,29 @@ public class Clothing : MonoBehaviour
         Down = 3,
         Up = 4,
     }
-    private Directions  currentDirection;
+    private Directions currentDirection;
 
-    private UnityEvent  onClothingFolded = new UnityEvent();
-    public UnityEvent   OnClothingFolded
-    {
-        get { return onClothingFolded; }
-    }
+    private UnityEvent onClothingFolded = new UnityEvent();
+    public  UnityEvent OnClothingFolded => onClothingFolded;
 
     [Header("Laundry Sprites")]
     [SerializeField] private Sprite[]   laundrySprites;
 
-    [SerializeField] private int        currentSequence;
-
-    private Vector2         startPosition;
-    private Vector2         endPosition;
-    private SpriteRenderer  sRenderer;
-    private bool            canBeFolded     = false;
+    private int            currentSequence;
+    private bool           canBeFolded = false;
+    private Vector2        startPosition;
+    private Vector2        endPosition;
+    private SpriteRenderer sRenderer;
 
     void Start()
     {
+        sRenderer = GetComponent<SpriteRenderer>();
+        
         currentDirection = 0;
         currentSequence = 0;
 
-        sRenderer = GetComponent<SpriteRenderer>();
+        Counter counter = FindObjectOfType<Counter>();
+        if (counter != null) counter.IncreaseGoalCount(1);
     }
 
     void Update()
@@ -135,6 +134,7 @@ public class Clothing : MonoBehaviour
         yield return new WaitForSeconds(1f);
         DisableCLothing();
         onClothingFolded.Invoke();
+
         //yield return null;
         //gameObject.SetActive(false);
     }

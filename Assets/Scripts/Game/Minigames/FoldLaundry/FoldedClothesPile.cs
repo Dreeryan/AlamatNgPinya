@@ -6,28 +6,21 @@ using UnityEngine.Events;
 public class FoldedClothesPile : MonoBehaviour
 {
     private UnityEvent  onClothingAdded = new UnityEvent();
-    public UnityEvent   OnClothingAdded
-    {
-        get { return onClothingAdded; }
-    }
+    public  UnityEvent  OnClothingAdded => onClothingAdded;
 
     private int         clothesCounter = 0;
-    public int          ClothesCounter
-    {
-        get { return clothesCounter; }
-    }
+    public  int         ClothesCounter => clothesCounter;
 
-    //[SerializeField] private ProgressManager    manager;
     [SerializeField] private Counter            counter;
     [SerializeField] private GameObject[]       foldedSprites;
-    [SerializeField] private Clothing[]         clothesToFold;
+    [SerializeField] private ClothesToFold[]    clothesToFold;
 
     private void Start()
     {
         //if (manager == null) manager = FindObjectOfType<ProgressManager>();
         if (counter == null) counter = FindObjectOfType<Counter>();
 
-        foreach (Clothing clothing in clothesToFold)
+        foreach (ClothesToFold clothing in clothesToFold)
         {
             clothing.OnClothingFolded.AddListener(ShowNextFoldedClothing);
         }
@@ -37,8 +30,7 @@ public class FoldedClothesPile : MonoBehaviour
     {
         clothesCounter++;
         foldedSprites[clothesCounter - 1].gameObject.SetActive(true);
-        counter.objectsCollected++;
-        //manager.AddProgress();
+        counter.IncreaseProgress();
         OnClothingAdded.Invoke();
     }
 }

@@ -8,10 +8,7 @@ using TMPro;
 public class Dish : MonoBehaviour
 {
     private UnityEvent  onDishCleaned = new UnityEvent();
-    public UnityEvent   OnDishCleaned
-    {
-        get { return onDishCleaned; }
-    }
+    public UnityEvent   OnDishCleaned => onDishCleaned;
 
     [Header("Dish Settings")]
     [SerializeField] private float              maxDirtRate = 100f;
@@ -34,6 +31,9 @@ public class Dish : MonoBehaviour
         if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
 
         if (cleanDishRack == null) cleanDishRack = FindObjectOfType<CleanDishRack>().transform;
+
+        Counter counter = FindObjectOfType<Counter>();
+        if (counter != null) counter.IncreaseGoalCount(1);
 
         currentDirtRate = maxDirtRate;
     }

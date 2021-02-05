@@ -16,6 +16,8 @@ public class CleanDish : MonoBehaviour
     void Start()
     {
         returnPos = transform.position;
+        Counter counter = FindObjectOfType<Counter>();
+        if (counter != null) counter.IncreaseGoalCount(1);
     }
 
     void OnMouseDrag()

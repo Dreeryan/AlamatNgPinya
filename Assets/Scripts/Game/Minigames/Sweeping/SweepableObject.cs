@@ -17,6 +17,9 @@ public class SweepableObject : MonoBehaviour
     private void Start()
     {
         currentPosition = transform.position;
+
+        if (counter == null) counter = FindObjectOfType<Counter>();
+        if (counter != null) counter.IncreaseGoalCount(1);
     }
 
     public void Update()
@@ -46,15 +49,14 @@ public class SweepableObject : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         // Place all objectives that happen once trash is sweeped to specified area here
-        if (collision.gameObject.tag == "Goal")
+        if (collision.CompareTag("Goal"))
         {
             // Snaps the object into the specified area if it collides with it
             //A: Directly assign instead of making new vector if possible. This can cause memory issues
             transform.position = itemHolder.transform.position;
             isPlaced = true;
 
-            counter = collision.gameObject.GetComponent<Counter>();
-            counter.objectsCollected++;
+            if (counter != null) counter.IncreaseProgress();
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Dishrack : MonoBehaviour
 {
-    [SerializeField] Counter manager;
+    [SerializeField] Counter counter;
 
     private bool    isOccupied = false;
     public bool     IsOccupied
@@ -15,7 +15,7 @@ public class Dishrack : MonoBehaviour
 
     private void Start()
     {
-        if (manager == null) manager = FindObjectOfType<Counter>();
+        if (counter == null) counter = FindObjectOfType<Counter>();
     }
 
     private void Update()
@@ -47,6 +47,6 @@ public class Dishrack : MonoBehaviour
 
     void OnSlotFilled()
     {
-        manager.objectsCollected++;
+        counter.IncreaseProgress();
     }
 }

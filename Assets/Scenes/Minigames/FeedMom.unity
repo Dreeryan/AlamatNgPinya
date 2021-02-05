@@ -828,6 +828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1530219455}
   - component: {fileID: 1530219454}
+  - component: {fileID: 1530219456}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -850,6 +851,7 @@ MonoBehaviour:
   counterText: {fileID: 0}
   objectTag: 
   winScreen: {fileID: 342573925}
+  motivationModifier: {fileID: 1530219456}
 --- !u!4 &1530219455
 Transform:
   m_ObjectHideFlags: 0
@@ -864,6 +866,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1530219456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530219453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifier: -1
 --- !u!1 &1748693519
 GameObject:
   m_ObjectHideFlags: 0

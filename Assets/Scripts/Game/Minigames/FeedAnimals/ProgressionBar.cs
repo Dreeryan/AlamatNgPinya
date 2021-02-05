@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ProgressionBar : MonoBehaviour
 {
-    [SerializeField] private Image      fillBar;
-    [SerializeField] private GameObject WinScreen;
-
+    [SerializeField] private Image              fillBar;
+    [SerializeField] private GameObject         WinScreen;
+    [SerializeField] private MotivationModifier motivationModifier;
     public  bool  hasWon;
 
     private float maxAmount = 1;
@@ -20,15 +20,9 @@ public class ProgressionBar : MonoBehaviour
 
         if (WinScreen != null)
             WinScreen.SetActive(false);
-    }
 
-    private void Update()
-    {
-        if (fillBar.fillAmount >= maxAmount)
-        {
-            WinScreen.SetActive(true);
-            hasWon = true;
-        }
+        if (motivationModifier == null)
+            motivationModifier = GetComponent<MotivationModifier>();
     }
 
     public void SetFood(int food)
@@ -39,5 +33,14 @@ public class ProgressionBar : MonoBehaviour
     public void AddFood()
     {
         fillBar.fillAmount += 1 * Time.deltaTime;
+
+        if (fillBar.fillAmount >= maxAmount)
+        {
+            WinScreen.SetActive(true);
+            hasWon = true;
+
+            if (motivationModifier != null)
+                motivationModifier.IncrementMotivation();
+        }
     }
 }

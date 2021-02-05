@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10416849b04f0d48b670c7904353ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  counter: {fileID: 0}
 --- !u!61 &172620113
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ PrefabInstance:
     - target: {fileID: 6192101272100059989, guid: de99fe26cb03ce045a925ebdf9ef7739,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6192101272100059989, guid: de99fe26cb03ce045a925ebdf9ef7739,
         type: 3}
@@ -900,6 +900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 338174540}
   - component: {fileID: 338174541}
+  - component: {fileID: 338174539}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -907,6 +908,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &338174539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338174538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifier: -1
 --- !u!4 &338174540
 Transform:
   m_ObjectHideFlags: 0
@@ -934,12 +948,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterText: {fileID: 216756872}
-  objectsCollected: 0
-  hasWon: 0
-  collisionChecker: {fileID: 0}
-  objectGoal: 0
-  winScreen: {fileID: 239311392}
   objectTag: CleanDish
+  winScreen: {fileID: 239311392}
+  motivationModifier: {fileID: 338174539}
 --- !u!1 &345395881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10416849b04f0d48b670c7904353ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  counter: {fileID: 0}
 --- !u!1 &474610580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,7 +2234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10416849b04f0d48b670c7904353ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  counter: {fileID: 0}
 --- !u!1 &880996582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,7 +2992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10416849b04f0d48b670c7904353ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  counter: {fileID: 0}
 --- !u!61 &1138380675
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3338,7 +3349,7 @@ PrefabInstance:
     - target: {fileID: 2249433026130453459, guid: 654bf7019572df0489e86a7ec15e7647,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2249433026130453459, guid: 654bf7019572df0489e86a7ec15e7647,
         type: 3}

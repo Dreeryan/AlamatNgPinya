@@ -10,10 +10,7 @@ public class ToyBin : MonoBehaviour
 
     private bool        isHoveredOver;
     private bool        isSelected = false;
-    public bool         IsSelected
-    {
-        get { return isSelected; }
-    }
+    public bool         IsSelected => isSelected;
 
     [SerializeField] private Counter counter;
 

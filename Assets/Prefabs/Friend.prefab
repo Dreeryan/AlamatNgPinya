@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2609790458234287858}
   - component: {fileID: 2609790458234287856}
-  - component: {fileID: 2609790458234287857}
   - component: {fileID: 2609790458234287855}
   - component: {fileID: 2609790458234287854}
   - component: {fileID: 2609790458234287853}
@@ -86,33 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2609790458234287857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2609790458234287859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783b34307ed756348bbc1088d8eccd3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectTrigger: {fileID: 2609790458234287859}
-  OnObjectClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2609790458234287853}
-        m_MethodName: CountFriends
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!50 &2609790458234287855
 Rigidbody2D:
   serializedVersion: 4

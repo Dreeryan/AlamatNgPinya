@@ -2650,6 +2650,7 @@ GameObject:
   - component: {fileID: 452776959}
   - component: {fileID: 452776958}
   - component: {fileID: 452776957}
+  - component: {fileID: 452776961}
   m_Layer: 0
   m_Name: Egg Basket
   m_TagString: Goal
@@ -2670,12 +2671,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterText: {fileID: 2011958047}
-  objectsCollected: 0
-  hasWon: 0
-  collisionChecker: {fileID: 0}
-  objectGoal: 0
-  winScreen: {fileID: 260114530}
   objectTag: Egg
+  winScreen: {fileID: 260114530}
+  motivationModifier: {fileID: 452776961}
 --- !u!61 &452776958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2768,6 +2766,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &452776961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452776956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifier: -1
 --- !u!1 &472138902
 GameObject:
   m_ObjectHideFlags: 0

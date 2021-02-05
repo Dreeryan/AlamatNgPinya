@@ -18,20 +18,20 @@ public class Counter : MonoBehaviour
     private int             curProgress;
     public int              CurProgress => curProgress;
 
-    [SerializeField] private string     objectTag;
-    [SerializeField] private GameObject winScreen;
+    [SerializeField] private string             objectTag;
+    [SerializeField] private GameObject         winScreen;
+    [SerializeField] private MotivationModifier motivationModifier;
 
     // Start is called before the first frame update
     void Start()
     {
-        hasWon                      = false;
+        hasWon = false;
 
-        if (winScreen != null) winScreen.SetActive(false);
-    }
+        if (winScreen != null)
+            winScreen.SetActive(false);
 
-    // Update is called once per frame
-    void Update()
-    {
+        if (motivationModifier == null)
+            motivationModifier = GetComponent<MotivationModifier>();
     }
 
     public void IncreaseGoalCount(int value)
@@ -48,11 +48,19 @@ public class Counter : MonoBehaviour
 
     public void IncreaseProgress()
     {
+        if (hasWon) return;
+
         curProgress++;
         if (curProgress > objectGoal) curProgress = objectGoal;
         if (counterText != null) UpdateDisplayText();
 
-        CheckGoal();
+        if (HasReachedGoal())
+        {
+            hasWon = true;
+            winScreen.SetActive(true);
+            Time.timeScale = 0.0f;
+            motivationModifier.IncrementMotivation();
+        }
     }
 
     private void UpdateDisplayText()
@@ -60,14 +68,10 @@ public class Counter : MonoBehaviour
         counterText.text = "Collected: " + curProgress + " / " + objectGoal;
     }
 
-    void CheckGoal()
+    bool HasReachedGoal()
     {
-        if (curProgress >= objectGoal)
-        {
-            hasWon = true;
-            winScreen.SetActive(true);
-            Time.timeScale = 0.0f;
-        }
+        if (curProgress >= objectGoal) return true;
+        return false;
     }
 
     public void CheckForObjectsToCollect()

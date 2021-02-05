@@ -3125,6 +3125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1171402098}
   - component: {fileID: 1171402100}
+  - component: {fileID: 1171402097}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -3132,6 +3133,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1171402097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171402096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifier: -1
 --- !u!4 &1171402098
 Transform:
   m_ObjectHideFlags: 0
@@ -3159,12 +3173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterText: {fileID: 540975657}
-  objectsCollected: 0
-  hasWon: 0
-  collisionChecker: {fileID: 0}
-  objectGoal: 0
-  winScreen: {fileID: 1528116966}
   objectTag: DirtyDish
+  winScreen: {fileID: 1528116966}
+  motivationModifier: {fileID: 1171402097}
 --- !u!1 &1195904685
 GameObject:
   m_ObjectHideFlags: 0

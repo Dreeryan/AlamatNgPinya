@@ -792,7 +792,6 @@ MonoBehaviour:
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   vision: {fileID: 177444135}
-  counter: {fileID: 0}
   collider: {fileID: 177444136}
 --- !u!50 &177444134
 Rigidbody2D:
@@ -993,7 +992,6 @@ MonoBehaviour:
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   vision: {fileID: 208480617}
-  counter: {fileID: 0}
   collider: {fileID: 208480618}
 --- !u!50 &208480616
 Rigidbody2D:
@@ -2661,7 +2659,6 @@ MonoBehaviour:
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   vision: {fileID: 504803005}
-  counter: {fileID: 0}
   collider: {fileID: 504803004}
 --- !u!50 &504803007
 Rigidbody2D:
@@ -5706,7 +5703,6 @@ MonoBehaviour:
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   vision: {fileID: 1059201451}
-  counter: {fileID: 0}
   collider: {fileID: 1059201450}
 --- !u!50 &1059201453
 Rigidbody2D:
@@ -8626,7 +8622,6 @@ MonoBehaviour:
   clothingPosition: {fileID: 1753569345}
   canSnapbackToStart: 1
   vision: {fileID: 1598950579}
-  counter: {fileID: 0}
   collider: {fileID: 1598950578}
 --- !u!50 &1598950581
 Rigidbody2D:
@@ -9627,6 +9622,7 @@ GameObject:
   - component: {fileID: 1753569342}
   - component: {fileID: 1753569345}
   - component: {fileID: 1753569344}
+  - component: {fileID: 1753569346}
   m_Layer: 0
   m_Name: Line
   m_TagString: Goal
@@ -9743,12 +9739,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterText: {fileID: 1789442174}
-  objectsCollected: 0
-  hasWon: 0
-  collisionChecker: {fileID: 0}
-  objectGoal: 0
-  winScreen: {fileID: 721104754}
   objectTag: Clothes
+  winScreen: {fileID: 721104754}
+  motivationModifier: {fileID: 1753569346}
 --- !u!114 &1753569345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9767,6 +9760,19 @@ MonoBehaviour:
   - {fileID: 2088131282}
   - {fileID: 1759016077}
   - {fileID: 1151815802}
+--- !u!114 &1753569346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753569340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifier: -1
 --- !u!1 &1755589747
 GameObject:
   m_ObjectHideFlags: 0

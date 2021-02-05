@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class Porridge : MonoBehaviour
@@ -56,7 +57,7 @@ public class Porridge : MonoBehaviour
         // Getting the current temp from the slider value
         currentTemp = (int)(porridgeSlider.value * 100);
 
-        if (Input.GetMouseButton(0) && Time.timeScale > 0 && !hasWon)
+        if (Input.GetMouseButton(0) && Time.timeScale > 0 && !hasWon && !EventSystem.current.IsPointerOverGameObject())
         {
             porridgeSlider.value += addTemperature * Time.deltaTime;
 

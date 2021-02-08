@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 1309698effef54a49849c7bebc399edb
   - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 59aa9d0cdc34a2944882c4d666ad1848
+  - enabled: 1
     path: Assets/Scenes/Minigames/CookPorridge.unity
     guid: 8dd30a390d7ae5441adb7e352b96c526
   - enabled: 1

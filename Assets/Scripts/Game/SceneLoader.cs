@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : BaseManager<SceneLoader>
 {
-    public void ChangeScene(string sceneName, bool isPopup)
+    public void ChangeScene(string sceneName, bool isPopup = false)
     {
         LoadSceneMode mode;
         if (isPopup) mode = LoadSceneMode.Additive;

@@ -12,7 +12,7 @@ public class ButtonFunctions : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         //if (SceneLoader.Instance == null) return;
-        SceneLoader.Instance.ChangeScene(sceneName, false);
+        SceneLoader.Instance.ChangeScene(sceneName);
     }
 
     public void LoadChoreMinigame(string sceneName)
@@ -20,7 +20,7 @@ public class ButtonFunctions : MonoBehaviour
         if (MotivationManager.Instance == null) return;
 
         if (MotivationManager.Instance.HasEnoughMotivation())
-            SceneLoader.Instance.ChangeScene(sceneName, false);
+            SceneLoader.Instance.ChangeScene(sceneName);
     }
 
     public void CloseGame()

@@ -33,10 +33,7 @@ public class DebugLoadSpecificScene : MonoBehaviour
             return;
         }
 
-        if (isPopup)
-            SceneLoader.Instance.OpenPopup(sceneToLoad);
-        else
-            SceneLoader.Instance.ChangeScene(sceneToLoad);
+        SceneLoader.Instance.ChangeScene(sceneToLoad, isPopup);
     }
 
     private bool IsSceneValid(string nameToCheck)

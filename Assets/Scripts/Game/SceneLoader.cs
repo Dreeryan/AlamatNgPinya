@@ -5,15 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : BaseManager<SceneLoader>
 {
-    public void ChangeScene(string sceneName)
+    public void ChangeScene(string sceneName, bool isPopup)
     {
-        SceneManager.LoadScene(sceneName);
-        Time.timeScale = 1.0f;       
-    }
+        LoadSceneMode mode;
+        if (isPopup) mode = LoadSceneMode.Additive;
+        else mode = LoadSceneMode.Single;
 
-    public void OpenPopup(string popupName)
-    {
-        SceneManager.LoadScene(popupName, LoadSceneMode.Additive);
+        SceneManager.LoadScene(sceneName, mode);
+        Time.timeScale = 1.0f;       
     }
 
     public void ClosePopup(string popupName)

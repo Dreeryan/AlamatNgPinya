@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class MotivationManager : BaseManager<MotivationManager>
 {
-    [SerializeField] private int maxMotivation;
+    [Header("Default Settings")]
+    public int defaultIncrementation = 1;
+    public int defaultRequirement = 1;
 
+    [Header("Settings")]
+    [SerializeField] private int maxMotivation;
+    [SerializeField] private MotivationData data;
     private int currMotivation;
 
+    public MotivationData Data => data;
     public int MaxMotivation => maxMotivation;
     public int CurrMotivation => currMotivation;
 
@@ -36,5 +42,19 @@ public class MotivationManager : BaseManager<MotivationManager>
     public void ResetMotivation()
     {
         currMotivation = maxMotivation;
+        OnMotivationUpdated?.Invoke(fillRatio);
+    }
+
+    public void EmptyMotivation()
+    {
+        currMotivation = 0;
+        OnMotivationUpdated?.Invoke(fillRatio);
+    }
+
+    public bool HasEnoughMotivation()
+    {
+        if (data == null && currMotivation >= defaultRequirement) return true;
+        if (currMotivation >= data.ReqMotivation) return true;
+        return false;
     }
 }

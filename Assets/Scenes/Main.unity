@@ -2765,8 +2765,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1344146581}
-  m_Father: {fileID: 673351837}
-  m_RootOrder: 10
+  m_Father: {fileID: 728779803}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2829,7 +2829,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 459751566}
-        m_MethodName: LoadScene
+        m_MethodName: LoadChoreMinigame
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4136,7 +4136,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1312346442}
-  m_Father: {fileID: 673351837}
+  m_Father: {fileID: 728779803}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4187,8 +4187,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607082012}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 459751566}
+        m_MethodName: LoadChoreMinigame
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4805,19 +4805,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1551155692}
-  - {fileID: 607082008}
-  - {fileID: 2104065709}
-  - {fileID: 1472373695}
-  - {fileID: 1583741118}
-  - {fileID: 861684114}
-  - {fileID: 910302898}
-  - {fileID: 1017444028}
-  - {fileID: 1543791640}
-  - {fileID: 1349863656}
-  - {fileID: 459751565}
-  - {fileID: 1811218917}
-  - {fileID: 1817447073}
+  - {fileID: 728779803}
+  - {fileID: 1870864983}
   m_Father: {fileID: 459384649}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5387,6 +5376,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &728779802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 728779803}
+  m_Layer: 5
+  m_Name: Chores
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &728779803
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728779802}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1551155692}
+  - {fileID: 607082008}
+  - {fileID: 2104065709}
+  - {fileID: 1472373695}
+  - {fileID: 1583741118}
+  - {fileID: 861684114}
+  - {fileID: 910302898}
+  - {fileID: 1543791640}
+  - {fileID: 1349863656}
+  - {fileID: 459751565}
+  - {fileID: 1817447073}
+  m_Father: {fileID: 673351837}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &765053040
 GameObject:
   m_ObjectHideFlags: 0
@@ -5773,7 +5808,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1347601006}
-  m_Father: {fileID: 673351837}
+  m_Father: {fileID: 728779803}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5824,8 +5859,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607082012}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 459751566}
+        m_MethodName: LoadChoreMinigame
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5997,7 +6032,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1107647212}
-  m_Father: {fileID: 673351837}
+  m_Father: {fileID: 728779803}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6048,8 +6083,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607082012}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 459751566}
+        m_MethodName: LoadChoreMinigame
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6819,8 +6854,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 93694958}
-  m_Father: {fileID: 673351837}
-  m_RootOrder: 7
+  m_Father: {fileID: 1870864983}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9685,8 +9720,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 63023526}
-  m_Father: {fileID: 673351837}
-  m_RootOrder: 9
+  m_Father: {fileID: 728779803}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9736,8 +9771,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607082012}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 459751566}
+        m_MethodName: LoadChoreMinigame
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10652,7 +10687,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2060265623}
-  m_Father: {fileID: 673351837}
+  m_Father: {fileID: 728779803}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -10703,8 +10738,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607082012}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 459751566}
+        m_MethodName: LoadChoreMinigame
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11235,8 +11270,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 617782308}
-  m_Father: {fileID: 673351837}
-  m_RootOrder: 8
+  m_Father: {fileID: 728779803}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11286,8 +11321,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607082012}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 459751566}
+        m_MethodName: LoadChoreMinigame
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11378,7 +11413,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1393529995}
-  m_Father: {fileID: 673351837}
+  m_Father: {fileID: 728779803}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -11429,8 +11464,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1551155696}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 459751566}
+        m_MethodName: LoadChoreMinigame
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11603,7 +11638,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 337298230}
-  m_Father: {fileID: 673351837}
+  m_Father: {fileID: 728779803}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -11654,8 +11689,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607082012}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 459751566}
+        m_MethodName: LoadChoreMinigame
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12962,8 +12997,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 832646197}
-  m_Father: {fileID: 673351837}
-  m_RootOrder: 11
+  m_Father: {fileID: 1870864983}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13105,8 +13140,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1311298217}
-  m_Father: {fileID: 673351837}
-  m_RootOrder: 12
+  m_Father: {fileID: 728779803}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13168,8 +13203,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1817447074}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 459751566}
+        m_MethodName: LoadChoreMinigame
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13448,6 +13483,43 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0171959, y: 0.5775789}
   m_EdgeRadius: 0
+--- !u!1 &1870864982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870864983}
+  m_Layer: 5
+  m_Name: Distractions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1870864983
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870864982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1017444028}
+  - {fileID: 1811218917}
+  m_Father: {fileID: 673351837}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1875441049
 GameObject:
   m_ObjectHideFlags: 0
@@ -14711,7 +14783,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1370524817}
-  m_Father: {fileID: 673351837}
+  m_Father: {fileID: 728779803}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -14762,8 +14834,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607082012}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 459751566}
+        m_MethodName: LoadChoreMinigame
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14977,6 +15049,7 @@ MonoBehaviour:
   incrementValue: 1
   increaseKey: 280
   decreaseKey: 281
+  ResetKey: 305
 --- !u!1 &2121672251
 GameObject:
   m_ObjectHideFlags: 0

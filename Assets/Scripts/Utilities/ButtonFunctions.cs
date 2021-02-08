@@ -15,6 +15,14 @@ public class ButtonFunctions : MonoBehaviour
         SceneLoader.Instance.ChangeScene(sceneName);
     }
 
+    public void LoadChoreMinigame(string sceneName)
+    {
+        if (MotivationManager.Instance == null) return;
+
+        if (MotivationManager.Instance.HasEnoughMotivation())
+            SceneLoader.Instance.ChangeScene(sceneName);
+    }
+
     public void CloseGame()
     {
         Application.Quit();

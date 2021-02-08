@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioDB: {fileID: 11400000, guid: 6306f137e04b87a4b8f723a819aba181, type: 2}
   audioMix: {fileID: 24100000, guid: 7b507b6201ad7a94482ef71458f8d163, type: 2}
+  bgmFadeTime: 1

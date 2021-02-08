@@ -17,9 +17,9 @@ MonoBehaviour:
     audioFile: {fileID: 8300000, guid: 5a66120d722d3994ba6e364d72140c5d, type: 3}
     volume: 1
     mixGroup: Music
-    isLooping: 0
+    isLooping: 1
   - id: msc[Overworld]
     audioFile: {fileID: 8300000, guid: d706f9f43822a2647ba139b25c2e0de9, type: 3}
     volume: 1
-    mixGroup: SFX
-    isLooping: 0
+    mixGroup: Music
+    isLooping: 1

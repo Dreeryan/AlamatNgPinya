@@ -9,6 +9,8 @@ public class AudioObject : MonoBehaviour
 
     public string ID => aData.ID;
 
+    private float currVolume;
+
     public void Initialize(AudioData newData)
     {
         aData = newData;
@@ -23,7 +25,17 @@ public class AudioObject : MonoBehaviour
 			aSource.outputAudioMixerGroup = AudioManager.Instance
 				.AudioMix.FindMatchingGroups(newData.MixGroup)[0];
 
-        aSource.volume = newData.Volume;
+        if (newData.MixGroup == "Music")
+        {
+            aSource.volume = 0;
+            currVolume = 0;
+            FadeAudio(newData.Volume);
+        }
+        else
+        {
+            aSource.volume = newData.Volume;
+            currVolume = newData.Volume;
+        }
 
         aSource.loop = newData.IsLooping;
 
@@ -35,5 +47,29 @@ public class AudioObject : MonoBehaviour
         if (aSource == null) return;
 
         aSource.Play();
+    }
+
+    public void FadeAudio(float targetVol)
+    {
+        StartCoroutine(LerpAudioVolumeCR(targetVol));
+    }
+
+    private IEnumerator LerpAudioVolumeCR(float targetVol)
+    {
+        float timeElapsed = 0;
+        float initVal = currVolume;
+        float lerpTime = AudioManager.Instance.BGMFadeTime;
+
+        while (timeElapsed < lerpTime)
+        {
+            currVolume = Mathf.Lerp(initVal, targetVol, timeElapsed / lerpTime);
+            timeElapsed += Time.deltaTime;
+
+            aSource.volume = currVolume;
+            yield return null;
+        }
+
+        currVolume = targetVol;
+        aSource.volume = currVolume;
     }
 }

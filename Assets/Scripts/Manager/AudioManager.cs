@@ -11,7 +11,6 @@ public class AudioManager : BaseManager<AudioManager>
 
     public float                BGMFadeTime => bgmFadeTime;
     public AudioMixer           AudioMix => audioMix;
-
     private List<AudioObject>   spawnedAudio = new List<AudioObject>();
 
     public static void PlayAudio(string idToPlay)
@@ -34,23 +33,19 @@ public class AudioManager : BaseManager<AudioManager>
 
     private static void PlaySFX(AudioData data)
     {
-        if (Instance.spawnedAudio.Exists(obj => obj.ID == data.ID))
+        if (IdExists(data.ID))
         {
             Instance.spawnedAudio.Find(obj => obj.ID == data.ID).PlayAudio();
         }
         else
         {
-            AudioObject ao = Instance.gameObject.AddComponent<AudioObject>();
-
-            ao.Initialize(data);
-
-            Instance.spawnedAudio.Add(ao);
+            AddAudioObject(data);
         }
     }
 
     private static void PlayBGM(AudioData data)
     {
-        if (Instance.spawnedAudio.Exists(obj => obj.ID == data.ID))
+        if (IdExists(data.ID))
         {
             AudioObject ao = Instance.spawnedAudio.Find(obj => obj.ID == data.ID);
             ao.FadeAudio(data.Volume);
@@ -58,11 +53,7 @@ public class AudioManager : BaseManager<AudioManager>
         }
         else
         {
-            AudioObject ao = Instance.gameObject.AddComponent<AudioObject>();
-
-            ao.Initialize(data);
-
-            Instance.spawnedAudio.Add(ao);
+            AddAudioObject(data);
         }
 
         foreach(AudioObject ao in Instance.spawnedAudio)
@@ -70,5 +61,19 @@ public class AudioManager : BaseManager<AudioManager>
             if (ao.ID != data.ID)
                 ao.FadeAudio(0);
         }
+    }
+
+    private static void AddAudioObject(AudioData toAdd)
+    {
+        AudioObject ao = Instance.gameObject.AddComponent<AudioObject>();
+
+        ao.Initialize(toAdd);
+
+        Instance.spawnedAudio.Add(ao);
+    }
+
+    private static bool IdExists(string id)
+    {
+        return Instance.spawnedAudio.Exists(obj => obj.ID == id);
     }
 }

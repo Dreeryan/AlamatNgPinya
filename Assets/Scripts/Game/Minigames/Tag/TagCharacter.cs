@@ -8,12 +8,7 @@ public class TagCharacter : MonoBehaviour
     public class OnTagged : UnityEvent<TagCharacter> { }
     public OnTagged             tagged              = new OnTagged();
 
-    private bool                isTagged            = false;
-    public bool                 IsTagged
-    {
-        get { return isTagged; }
-        set { isTagged = value; }
-    }
+    public bool                 IsTagged            = false;
 
     private SpriteRenderer      sRenderer;
     private TagCharacter        previousTagged      = null;
@@ -34,7 +29,7 @@ public class TagCharacter : MonoBehaviour
     {
         if (sRenderer != null)
         {
-            if (isTagged) sRenderer.color = Color.black;
+            if (IsTagged) sRenderer.color = Color.black;
             else sRenderer.color = Color.white;
         }
     }
@@ -63,7 +58,7 @@ public class TagCharacter : MonoBehaviour
     {
         TagCharacter collided = collision.GetComponent<TagCharacter>();
         // If tagging
-        if (collided != null && isTagged)
+        if (collided != null && IsTagged)
         {
             /* 
              *  If colliding object is equal to the previous tagger return

@@ -7,6 +7,9 @@ public class PlayerTagChar : TagCharacter
     protected override void OnMinigameCompleted()
     {
         PlayerController controller = GetComponent<PlayerController>();
-        if (controller != null) controller.CanMove = false;
+        if (controller == null) return;
+        
+        controller.CanMove = false;
+        controller.PlayerAnim.DisableAnimation();
     }
 }

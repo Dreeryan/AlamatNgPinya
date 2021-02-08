@@ -10,27 +10,25 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Distance the player can be from the target position before stopping")]
     [SerializeField] private float moveOffset = 0.01f;
 
-    private SpriteFlipper   sFlipper;
-    private Animator        playerAnim;
-    private Vector3         targetPoint;
-    private bool            isMoving = false;
-    private bool            canMove  = true;
-    public bool             CanMove
-    {
-        get { return canMove; }
-        set { canMove = value; }
-    }
+    public bool                 CanMove =   true;
+
+    private SpriteFlipper       sFlipper;
+    private PlayerAnimations    playerAnim;
+    private Vector3             targetPoint;
+    private bool                isMoving =  false;
+
+    public PlayerAnimations     PlayerAnim => playerAnim;
 
     protected void Start()
     {
-        canMove = true;
-        playerAnim = GetComponent<Animator>();
+        CanMove = true;
+        playerAnim = GetComponent<PlayerAnimations>();
         sFlipper = GetComponent<SpriteFlipper>();
     }
 
     void Update()
     {
-        if (!canMove || Time.timeScale == 0) return;
+        if (!CanMove || Time.timeScale == 0) return;
         if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             // Player will go to the clicked area.
@@ -43,34 +41,29 @@ public class PlayerController : MonoBehaviour
             isMoving = true;
         }
 
-        // To move the player
+        
         if (isMoving)
         {
             Movement();
-            if (playerAnim != null) playerAnim.Play("Player_Running");
+            if (playerAnim != null) playerAnim.PlayerWalking(true);
         }
         else
         {
-            if (playerAnim != null) playerAnim.Play("Player_Idle");
+            if (playerAnim != null) playerAnim.PlayerWalking(false);
         }
-
-        // Uneeded for now
-        //if (Input.GetMouseButton(1))
-        //{
-        //    playerAnim.Play("Player_Pickup");
-        //}
     }
 
     void Movement()
     {
         // To move the player to the desired position
         transform.position = Vector3.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
-       
+
         if (Vector3.Distance(transform.position, targetPoint) <= moveOffset)
         {
             isMoving = false;
         }
     }
+
 
     void OnCollisionStay2D(Collision2D collision)
     {

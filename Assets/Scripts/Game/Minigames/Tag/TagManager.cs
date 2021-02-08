@@ -6,10 +6,7 @@ using UnityEngine.Events;
 public class TagManager : MonoBehaviour
 {
     private UnityEvent  onMinigameCompleted = new UnityEvent();
-    public UnityEvent   OnMinigameCompleted
-    {
-        get { return onMinigameCompleted; }
-    }
+    public UnityEvent   OnMinigameCompleted => onMinigameCompleted;
 
     [Header("UI")]
     [SerializeField] private GameObject     winScreen;
@@ -20,6 +17,7 @@ public class TagManager : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float completionTimer = 5.0f;
+    [Header("")]
     public float debugTimer;
 
     private TagCharacter currentTagged;

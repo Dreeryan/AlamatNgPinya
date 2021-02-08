@@ -4,31 +4,26 @@ using UnityEngine;
 using UnityEngine.Events;
 public class PlayerAnimations : MonoBehaviour
 {
-    private Animator            anim;
-    private PlayerController    controller;
-    
+    private const string CONST_PLAYERWALK = "isMoving";
+
+    private Animator    anim;
+
+    private bool        willPlay;
     // Start is called before the first frame update
     void Start()
     {
-        controller = GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
-
-        // Only for testing
-        PlayerWalking(); 
+        anim.speed = 1.0f;
     }
 
-    public void PlayerWalking()
+    public void PlayerWalking(bool state)
     {
-        if (anim != null)
-            // Walking animation
-            //anim.SetBool("IsWalking", controller.isMoving);
-
-        Debug.Log("Walking animation");
+        if (anim == null) return;
+        anim.SetBool(CONST_PLAYERWALK, state);
     }
 
-    // For form changes (to be implemented later on once other scripts are made)
-    void SwitchForAnim()
+    public void DisableAnimation()
     {
-
+        anim.speed = 0.0f;
     }
 }

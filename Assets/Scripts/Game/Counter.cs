@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 
 public class Counter : MonoBehaviour
 {
+    [SerializeField] private UnityEvent MinigameCompleted;
+
     public TextMeshProUGUI  counterText;
 
     private bool            hasWon;
@@ -60,6 +61,7 @@ public class Counter : MonoBehaviour
             winScreen.SetActive(true);
             Time.timeScale = 0.0f;
             motivationModifier.IncrementMotivation();
+            MinigameCompleted?.Invoke();
         }
     }
 
@@ -72,11 +74,6 @@ public class Counter : MonoBehaviour
     {
         if (curProgress >= objectGoal) return true;
         return false;
-    }
-
-    public void CheckForObjectsToCollect()
-    {
-        objectGoal = GameObject.FindGameObjectsWithTag(objectTag).Length;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

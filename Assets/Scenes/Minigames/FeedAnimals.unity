@@ -469,7 +469,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 403777238}
-  - component: {fileID: 403777235}
   - component: {fileID: 403777236}
   m_Layer: 0
   m_Name: FeedDropArea
@@ -478,27 +477,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &403777235
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403777234}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!61 &403777236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2737,7 +2715,7 @@ Transform:
   m_Children:
   - {fileID: 403777238}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1327311823
 GameObject:
@@ -4077,7 +4055,7 @@ Transform:
   m_Children:
   - {fileID: 309255231}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2015480062
 GameObject:
@@ -4175,6 +4153,7 @@ GameObject:
   - component: {fileID: 2020409171}
   - component: {fileID: 2020409169}
   - component: {fileID: 2020409175}
+  - component: {fileID: 2020409170}
   m_Layer: 0
   m_Name: AnimalFeed
   m_TagString: Untagged
@@ -4208,6 +4187,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.95, y: 3.8500001}
   m_EdgeRadius: 0
+--- !u!114 &2020409170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020409168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac68d9c21379fd24ca8a1d315f47b756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &2020409171
 Rigidbody2D:
   serializedVersion: 4
@@ -4216,7 +4207,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020409168}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -4241,6 +4232,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7687f15ebb07184186fd86e22a34ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFeedPickedUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2020409170}
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[testHideFriend]
+          m_BoolArgument: 0
+        m_CallState: 2
   OnShake:
     m_PersistentCalls:
       m_Calls:
@@ -4255,8 +4260,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  shakeObject: {fileID: 2020409174}
-  isShaking: 0
+      - m_Target: {fileID: 2020409170}
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[testHideFriend]
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &2020409173
 SpriteRenderer:
   m_ObjectHideFlags: 0

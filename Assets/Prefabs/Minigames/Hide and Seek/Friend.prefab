@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2609790458234287855}
   - component: {fileID: 2609790458234287854}
   - component: {fileID: 2609790458234287853}
+  - component: {fileID: 7876331089159031016}
   m_Layer: 0
   m_Name: Friend
   m_TagString: Friend
@@ -144,6 +145,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b86a0fda636a984fb88317c4057069a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  friendFound: {fileID: 0}
+  onFriendClicked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7876331089159031016}
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[testHideFriend]
+          m_BoolArgument: 0
+        m_CallState: 2
   spriteRenderer: {fileID: 2609790458234287856}
   collider: {fileID: 2609790458234287854}
+--- !u!114 &7876331089159031016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609790458234287859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac68d9c21379fd24ca8a1d315f47b756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

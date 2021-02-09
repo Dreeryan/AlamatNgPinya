@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ClothesToHang : MonoBehaviour
 {
-    [SerializeField] private float  valueToTarget = 1.2f;
+    [SerializeField] private UnityEvent onClothingPickedUp;
+    [SerializeField] private UnityEvent onClothingHung;
 
-    public Transform                itemHolder;
-    public ClothingPositioning      clothingPosition;
+    [SerializeField] private float      valueToTarget = 1.2f;
+
 
     private Vector2                 mousePos;
     private Vector2                 currentPosition;
     private bool                    isOnGoal;
-    private Counter                 counter;
+    private ClothesLine             clothesLine;
 
     [SerializeField] private bool               canSnapbackToStart;
     [SerializeField] private ReturnIfVisionLost vision;
@@ -22,7 +24,7 @@ public class ClothesToHang : MonoBehaviour
     {
         currentPosition = transform.position;
 
-        if (counter == null) counter = FindObjectOfType<Counter>();
+        Counter counter = FindObjectOfType<Counter>();
         if (counter != null) counter.IncreaseGoalCount(1);
     }
 
@@ -33,6 +35,11 @@ public class ClothesToHang : MonoBehaviour
             transform.position = currentPosition;
     }
 
+    private void OnMouseDown()
+    {
+        onClothingPickedUp?.Invoke();
+    }
+
     void OnMouseDrag()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -41,14 +48,12 @@ public class ClothesToHang : MonoBehaviour
 
     void OnMouseUp()
     {
-        if (counter != null && isOnGoal)
-            counter.IncreaseProgress();
-
-        if (clothingPosition != null && isOnGoal)
+        if (clothesLine != null && isOnGoal)
         {
-            transform.position = clothingPosition.GetNextAvailablePosition();
-            clothingPosition.UpdateIndex();
+            clothesLine.HangClothing(this);
             collider.enabled = false;
+
+            onClothingHung?.Invoke();
         }
         // Else, it will be placed back to it's last position
         else
@@ -61,15 +66,19 @@ public class ClothesToHang : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Goal"))
+        if (collision.GetComponent<ClothesLine>())
         {
-            counter = collision.gameObject.GetComponent<Counter>();
-            if (counter != null) isOnGoal = true;
+            clothesLine = collision.GetComponent<ClothesLine>();
+            if (clothesLine != null) isOnGoal = true;
         }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Goal")) isOnGoal = false;
+        if (collision.GetComponent<ClothesLine>() == clothesLine)
+        {
+            clothesLine = null;
+            isOnGoal = false;
+        }
     }
 }

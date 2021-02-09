@@ -5,25 +5,24 @@ using UnityEngine.Events;
 
 public class ShakeObject : MonoBehaviour
 {
-    public UnityEvent   OnShake;
-    public Transform    shakeObject;
+    [SerializeField] private UnityEvent OnFeedPickedUp;
 
-    private SpriteRenderer  renderers;
+    [SerializeField] private UnityEvent OnShake;
+
     private bool            isOnFeedArea;
     private bool            isMouseDrag;
+    private bool            isShaking;
     private Vector2         currentPosition;
     private Vector2         mousePos;
-    private Vector2         previousPos = Vector2.zero;
-    private float           threshold   = 0.1f;
+    private SpriteRenderer  sRenderer;
 
-    [SerializeField] private bool isShaking;
     private void Start()
     {
         isMouseDrag     = false;
         isOnFeedArea    = false;
         isShaking       = false;
 
-        renderers = GetComponent<SpriteRenderer>();
+        sRenderer = GetComponent<SpriteRenderer>();
 
         currentPosition = gameObject.transform.position;
 
@@ -49,12 +48,16 @@ public class ShakeObject : MonoBehaviour
 
         // Calls event is object is shaken
         if (isShaking)
-            OnShake.Invoke();
+            OnShake?.Invoke();
+    }
+
+    void OnMouseDown()
+    {
+        OnFeedPickedUp?.Invoke();
     }
 
     void OnMouseDrag()
     {
-        previousPos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = mousePos;
     }
@@ -80,8 +83,8 @@ public class ShakeObject : MonoBehaviour
             {
                 isShaking = true;
 
-                if (renderers != null)
-                    renderers.flipY = true;
+                if (sRenderer != null)
+                    sRenderer.flipY = true;
             }
         }
     }
@@ -93,7 +96,7 @@ public class ShakeObject : MonoBehaviour
         {
             isOnFeedArea = false;
             isShaking = false;
-            renderers.flipY = false;
+            sRenderer.flipY = false;
         }
     }
 }

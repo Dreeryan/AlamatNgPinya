@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class CountFriend : MonoBehaviour
+public class HideFriends : MonoBehaviour
 {
+    [SerializeField] private UnityEvent onFriendClicked;
+
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Collider2D     collider;
 
@@ -28,14 +31,11 @@ public class CountFriend : MonoBehaviour
     public void CountFriends()
     {
         // Counts a friend if found by player
-
-        if (spriteRenderer != null)
-            spriteRenderer.enabled = false;
-
-        if (collider != null)
-            collider.enabled = false;
-
         if (counter != null)
             counter.IncreaseProgress();
+
+        onFriendClicked?.Invoke();
+
+        gameObject.SetActive(false);
     }
 }

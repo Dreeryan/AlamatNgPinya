@@ -28,12 +28,15 @@ public class Dish : MonoBehaviour
         sRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
 
-        if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
+        if (dirtRateText != null) 
+            dirtRateText.gameObject.SetActive(false);
 
-        if (cleanDishRack == null) cleanDishRack = FindObjectOfType<CleanDishRack>().transform;
+        if (cleanDishRack == null) 
+            cleanDishRack = FindObjectOfType<CleanDishRack>().transform;
 
         Counter counter = FindObjectOfType<Counter>();
-        if (counter != null) counter.IncreaseGoalCount(1);
+        if (counter != null) 
+            counter.IncreaseGoalCount(1);
 
         currentDirtRate = maxDirtRate;
     }

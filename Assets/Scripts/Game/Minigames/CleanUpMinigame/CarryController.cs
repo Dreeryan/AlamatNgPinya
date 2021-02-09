@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.Events;
 
 public class CarryController : MonoBehaviour
 {
+    [SerializeField] private UnityEvent onToyPickedUp;
+    [SerializeField] private UnityEvent onToyDropped;
+
     private Toy overlappedToy;
     private Toy carriedToy;
     
@@ -60,6 +63,8 @@ public class CarryController : MonoBehaviour
         carriedToy.gameObject.transform.position = itemCarrier.position;
 
         itemText.gameObject.SetActive(false);
+
+        onToyPickedUp?.Invoke();
     }
 
     void DropToy(ToyBin bin)
@@ -69,6 +74,8 @@ public class CarryController : MonoBehaviour
         isCarrying = false;
         carriedToy = null;
         itemText.gameObject.SetActive(false);
+
+        onToyDropped?.Invoke();
     }
 
     void OnMinigameComplete()

@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 
 public class Sponge : MonoBehaviour
 {
-    private Dish    dish;
+    [SerializeField] private UnityEvent OnScrubbingDish;
 
-    [SerializeField] private Draggable draggable;
+    private Dish        dish;
+    private Draggable   draggable;
 
     [Header("Sponge Settings")]
     [SerializeField] private float      drainRate;
@@ -19,7 +20,7 @@ public class Sponge : MonoBehaviour
 
     void Start()
     {
-        if (draggable == null) draggable = GetComponent<Draggable>();
+        draggable = GetComponent<Draggable>();
 
         if (guideText != null) guideText.gameObject.SetActive(true);
     }
@@ -29,6 +30,7 @@ public class Sponge : MonoBehaviour
         if (Vector2.Distance(draggable.PrevMousePos,
             draggable.CurMousePos) >= dragTreshold && dish != null)
         {
+            OnScrubbingDish?.Invoke();
             dish.ReduceDirtRate(drainRate * Time.deltaTime);
         }
     }

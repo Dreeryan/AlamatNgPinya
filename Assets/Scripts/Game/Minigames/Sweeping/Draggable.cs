@@ -8,12 +8,11 @@ public class Draggable : MonoBehaviour
     [SerializeField] private float      valueToTarget = 1.2f;
 
     private Vector2 curMousePos;
-    public  Vector2 CurMousePos        => curMousePos;
-
     private Vector2 prevMousePos;
-    public  Vector2 PrevMousePos    => prevMousePos;
-
     private Vector2 returnPosition;
+
+    public  Vector2 CurMousePos     => curMousePos;
+    public  Vector2 PrevMousePos    => prevMousePos;
     public  Vector2 ReturnPosition  => returnPosition;
 
     [SerializeField] private bool canSnapbackToStart;

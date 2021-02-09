@@ -7,8 +7,8 @@ using TMPro;
 
 public class Dish : MonoBehaviour
 {
-    private UnityEvent  onDishCleaned = new UnityEvent();
-    public UnityEvent   OnDishCleaned => onDishCleaned;
+    [SerializeField] private UnityEvent onDishCleaned;
+    public UnityEvent OnDishCleaned => onDishCleaned;
 
     [Header("Dish Settings")]
     [SerializeField] private float              maxDirtRate = 100f;
@@ -64,8 +64,8 @@ public class Dish : MonoBehaviour
 
         transform.parent = cleanDishRack;
         if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
-        onDishCleaned.Invoke();
-        GetComponent<Collider2D>().enabled = false;
+        onDishCleaned?.Invoke();
+        collider.enabled = false;
     }
 
     void OnTriggerStay2D(Collider2D collision)

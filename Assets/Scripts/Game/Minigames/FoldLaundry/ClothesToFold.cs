@@ -15,8 +15,10 @@ public class ClothesToFold : MonoBehaviour
     }
     private Directions currentDirection;
 
-    private UnityEvent onClothingFolded = new UnityEvent();
-    public  UnityEvent OnClothingFolded => onClothingFolded;
+    [SerializeField] private UnityEvent onFolded;
+
+    private UnityEvent onCompleteFold = new UnityEvent();
+    public  UnityEvent OnCompleteFold => onCompleteFold;
 
     [Header("Laundry Sprites")]
     [SerializeField] private Sprite[]   laundrySprites;
@@ -108,6 +110,7 @@ public class ClothesToFold : MonoBehaviour
 
     public void TwoFoldSequence()
     {
+        if (currentSequence >= 3) return;
         // Swipe from right to left
         if (currentSequence == 0 && currentDirection == Directions.Left)
         {
@@ -124,16 +127,18 @@ public class ClothesToFold : MonoBehaviour
 
         if (currentSequence == 2)
         {
-            StartCoroutine(OnFolded());
+            StartCoroutine(OnCompletelyFolded());
             currentSequence++;
         }
+
+        onFolded?.Invoke();
     }
 
-    IEnumerator OnFolded()
+    IEnumerator OnCompletelyFolded()
     {
         yield return new WaitForSeconds(1f);
         DisableCLothing();
-        onClothingFolded.Invoke();
+        onCompleteFold.Invoke();
 
         //yield return null;
         //gameObject.SetActive(false);

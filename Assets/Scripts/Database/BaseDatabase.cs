@@ -10,7 +10,7 @@ public class BaseDatabase<T> : ScriptableObject where T : BaseData
     {
         if(!dataSet.Exists(obj => obj.ID == id))
         {
-            Debug.LogErrorFormat("No {0} found!", id);
+            Debug.LogErrorFormat("No {0} found of {1} type!", id, typeof(T));
             return null;
         }
 

@@ -34,14 +34,14 @@ public class AudioManager : BaseManager<AudioManager>
     public static void StopAudio(string id)
     {
         if (IdExists(id))
-            Instance.spawnedAudio.Find(obj => obj.ID == id).StopAudio();
+            GetAudioObject(id).StopAudio();
     }
 
     private static void PlaySFX(AudioData data)
     {
         if (IdExists(data.ID))
         {
-            Instance.spawnedAudio.Find(obj => obj.ID == data.ID).PlayAudio();
+           GetAudioObject(data.ID).PlayAudio();
         }
         else
         {
@@ -53,7 +53,7 @@ public class AudioManager : BaseManager<AudioManager>
     {
         if (IdExists(data.ID))
         {
-            AudioObject ao = Instance.spawnedAudio.Find(obj => obj.ID == data.ID);
+            AudioObject ao = GetAudioObject(data.ID);
             ao.FadeAudio(data.Volume);
             ao.PlayAudio();
         }
@@ -76,6 +76,11 @@ public class AudioManager : BaseManager<AudioManager>
         ao.Initialize(toAdd);
 
         Instance.spawnedAudio.Add(ao);
+    }
+
+    private static AudioObject GetAudioObject(string id)
+    {
+        return Instance.spawnedAudio.Find(obj => obj.ID == id);
     }
 
     private static bool IdExists(string id)

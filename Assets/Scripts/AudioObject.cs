@@ -49,6 +49,12 @@ public class AudioObject : MonoBehaviour
         aSource.Play();
     }
 
+    public void StopAudio()
+    {
+        if (aSource == null) return;
+        aSource.Stop();
+    }
+
     public void FadeAudio(float targetVol)
     {
         StartCoroutine(LerpAudioVolumeCR(targetVol));

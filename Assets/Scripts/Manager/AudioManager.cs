@@ -5,13 +5,13 @@ using UnityEngine.Audio;
 
 public class AudioManager : BaseManager<AudioManager>
 {
-    [SerializeField] private AudioDatabase  audioDB;
-    [SerializeField] private AudioMixer     audioMix;
-    [SerializeField] private float          bgmFadeTime = 1;
+    [SerializeField] private AudioDatabase audioDB;
+    [SerializeField] private AudioMixer audioMix;
+    [SerializeField] private float bgmFadeTime = 1;
 
-    public float                BGMFadeTime => bgmFadeTime;
-    public AudioMixer           AudioMix => audioMix;
-    private List<AudioObject>   spawnedAudio = new List<AudioObject>();
+    public float BGMFadeTime => bgmFadeTime;
+    public AudioMixer AudioMix => audioMix;
+    private List<AudioObject> spawnedAudio = new List<AudioObject>();
 
     public static void PlayAudio(string idToPlay)
     {
@@ -29,6 +29,12 @@ public class AudioManager : BaseManager<AudioManager>
             PlaySFX(ad);
         else
             PlayBGM(ad);
+    }
+
+    public static void StopAudio(string id)
+    {
+        if (IdExists(id))
+            Instance.spawnedAudio.Find(obj => obj.ID == id).StopAudio();
     }
 
     private static void PlaySFX(AudioData data)

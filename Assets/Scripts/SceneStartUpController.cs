@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MainMenuController : MonoBehaviour
+public class SceneStartUpController : MonoBehaviour
 {
     [SerializeField] private UnityEvent onStart;
 

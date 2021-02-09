@@ -12,19 +12,13 @@ public class CarryController : MonoBehaviour
 
     [Header("Item Carrier")]
     [SerializeField] private Transform  itemCarrier;
-    public Transform                    ItemCarrier
-    {
-        get { return itemCarrier;  }
-    }
+    public Transform                    ItemCarrier => itemCarrier;
 
     [Header("UI")]
     [SerializeField] GameObject         itemText;
 
     private bool    isCarrying = false;
-    public bool     IsCarrying
-    {
-        get { return isCarrying; }
-    }
+    public bool     IsCarrying => isCarrying;
 
     void Start()
     {

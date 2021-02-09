@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 1309698effef54a49849c7bebc399edb
   - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: d9ae8f2237d1e914d94b5e3f9796fad3
+  - enabled: 1
     path: Assets/Scenes/PauseMenu.unity
     guid: 59aa9d0cdc34a2944882c4d666ad1848
   - enabled: 1
@@ -48,9 +51,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigames/PlantWatering.unity
     guid: 316b7b6a1f4f4bc458885e0d5a0f0b50
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: d9ae8f2237d1e914d94b5e3f9796fad3
-  - enabled: 1
     path: Assets/Scenes/Minigames/HideAndSeek.unity
     guid: d112c649d71acf247a0b73927c63025e
   - enabled: 1
@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/HarvestCrops.unity
     guid: 2c1b9429363773a4cb10aab7498789af
+  - enabled: 1
+    path: Assets/Scenes/Minigames/FeedMom.unity
+    guid: 729c9ad8e205c6d41bfc3093066b8ab4
   m_configObjects: {}

@@ -23,3 +23,8 @@ MonoBehaviour:
     volume: 1
     mixGroup: Music
     isLooping: 1
+  - id: sfx[testWalk]
+    audioFile: {fileID: 8300000, guid: 8c29a521c5efbcb478403a8e2541d9b3, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 1

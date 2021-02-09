@@ -8,4 +8,9 @@ public class AudioTrigger : MonoBehaviour
     {
         AudioManager.PlayAudio(audioId);
     }
+
+    public void StopAudio(string audioId)
+    {
+        AudioManager.StopAudio(audioId);
+    }
 }

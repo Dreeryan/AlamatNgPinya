@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataSet:
   - id: msc[Main Menu]
-    audioFile: {fileID: 8300000, guid: 5a66120d722d3994ba6e364d72140c5d, type: 3}
+    audioFile: {fileID: 8300000, guid: 7538fba01c8f2f54c980394905962327, type: 3}
     volume: 1
     mixGroup: Music
     isLooping: 1
@@ -28,8 +28,43 @@ MonoBehaviour:
     volume: 1
     mixGroup: SFX
     isLooping: 1
-  - id: sfx[testHideFriend]
-    audioFile: {fileID: 8300000, guid: 8c29a521c5efbcb478403a8e2541d9b3, type: 3}
+  - id: sfx[Menu YES]
+    audioFile: {fileID: 8300000, guid: ecfd3347a677a864696f5a99a399545b, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Menu NO]
+    audioFile: {fileID: 8300000, guid: f75f9e88efced614bbceb4b11b1108f7, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Menu PAUSE]
+    audioFile: {fileID: 8300000, guid: b407afde52a9ac044b56c72184756597, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Fold 1]
+    audioFile: {fileID: 8300000, guid: 25f08e54effc6d646ba7a6e2aab07fe8, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Fold 2]
+    audioFile: {fileID: 8300000, guid: 0456d8b27e3a6344890b9f8f7af455a1, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Fold 3]
+    audioFile: {fileID: 8300000, guid: 66c71945a4e822743bc2423ebe0870cb, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Fold STACK]
+    audioFile: {fileID: 8300000, guid: 7128a129fd8035942b6b78bc80b31082, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Friend FOUND]
+    audioFile: {fileID: 8300000, guid: 276f256d727eded4cba32ab86e72e0ff, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0

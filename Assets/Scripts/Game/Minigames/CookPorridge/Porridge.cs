@@ -17,7 +17,6 @@ public class Porridge : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private Slider porridgeSlider;
-    [SerializeField] private GameObject winningPanel;
 
     [Header("Porridge Settings")]
     [SerializeField] private float maxTemp = 100.0f;
@@ -30,11 +29,6 @@ public class Porridge : MonoBehaviour
     [SerializeField] private float secondsToUndercooked;
     [SerializeField] private float secondsToCooked;
     [SerializeField] private float secondsToWin;
-
-    void Start()
-    {
-        if (winningPanel != null) winningPanel.SetActive(false);
-    }
 
     void Update()
     {
@@ -109,6 +103,7 @@ public class Porridge : MonoBehaviour
         potCoverAnimator.SetBool("isCooked", true);
         yield return new WaitForSeconds(secondsToWin);
         hasWon = true;
-        winningPanel.SetActive(true);
+
+        SceneLoader.Instance.ChangeScene("WinScene", true);
     }
 }

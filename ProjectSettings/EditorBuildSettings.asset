@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/FeedMom.unity
     guid: 729c9ad8e205c6d41bfc3093066b8ab4
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: c6e73a963437fb74796ad6facbbd1386
   m_configObjects: {}

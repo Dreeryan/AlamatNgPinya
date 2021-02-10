@@ -7,29 +7,32 @@ using TMPro;
 
 public class Counter : MonoBehaviour
 {
-    [SerializeField] private UnityEvent MinigameCompleted;
-
-    public TextMeshProUGUI  counterText;
+    [Header("Variables")]
+    [SerializeField]
+    private string objectTag;
 
     private bool            hasWon;
     public bool             HasWon => hasWon;
 
     private int             objectGoal;
     public int              ObjectGoal => objectGoal;
+
     private int             curProgress;
     public int              CurProgress => curProgress;
 
-    [SerializeField] private string             objectTag;
-    [SerializeField] private GameObject         winScreen;
-    [SerializeField] private MotivationModifier motivationModifier;
+    [Header("References")]
+    public TextMeshProUGUI  counterText;
+
+    [SerializeField] 
+    private MotivationModifier motivationModifier;
+
+    [SerializeField] 
+    private UnityEvent      MinigameCompleted;
 
     // Start is called before the first frame update
     void Start()
     {
         hasWon = false;
-
-        if (winScreen != null)
-            winScreen.SetActive(false);
 
         if (motivationModifier == null)
             motivationModifier = GetComponent<MotivationModifier>();
@@ -55,28 +58,19 @@ public class Counter : MonoBehaviour
         if (curProgress > objectGoal) curProgress = objectGoal;
         if (counterText != null) UpdateDisplayText();
 
-        if (HasReachedGoal())
+        if (curProgress >= objectGoal)
         {
             hasWon = true;
-            winScreen.SetActive(true);
             Time.timeScale = 0.0f;
             motivationModifier.IncrementMotivation();
             MinigameCompleted?.Invoke();
+
+            SceneLoader.Instance.ChangeScene("WinScene", true);
         }
     }
 
     private void UpdateDisplayText()
     {
         counterText.text = "Collected: " + curProgress + " / " + objectGoal;
-    }
-
-    bool HasReachedGoal()
-    {
-        if (curProgress >= objectGoal) return true;
-        return false;
-    }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
     }
 }

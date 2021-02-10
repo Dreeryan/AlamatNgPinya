@@ -6,10 +6,8 @@ using UnityEngine.Events;
 public class ClothesToHang : MonoBehaviour
 {
     [SerializeField] private UnityEvent onClothingPickedUp;
-    [SerializeField] private UnityEvent onClothingHung;
 
     [SerializeField] private float      valueToTarget = 1.2f;
-
 
     private Vector2                 mousePos;
     private Vector2                 currentPosition;
@@ -35,6 +33,16 @@ public class ClothesToHang : MonoBehaviour
             transform.position = currentPosition;
     }
 
+    public void EnableClothing()
+    {
+        collider.enabled = true;
+    }
+
+    public void DisableClothing()
+    {
+        collider.enabled = false;
+    }
+
     private void OnMouseDown()
     {
         onClothingPickedUp?.Invoke();
@@ -51,9 +59,7 @@ public class ClothesToHang : MonoBehaviour
         if (clothesLine != null && isOnGoal)
         {
             clothesLine.HangClothing(this);
-            collider.enabled = false;
-
-            onClothingHung?.Invoke();
+            EnableClothing();
         }
         // Else, it will be placed back to it's last position
         else

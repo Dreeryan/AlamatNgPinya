@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ClothesLine : MonoBehaviour
 {
+    [SerializeField] private UnityEvent onClothingHung;
+
     [SerializeField] private Counter counter;
     // Make "First in First out" kind of placement
     [SerializeField] private List<Transform> clothingSpots;
@@ -26,6 +29,8 @@ public class ClothesLine : MonoBehaviour
         UpdateIndex();
 
         if (counter != null) counter.IncreaseProgress();
+
+        onClothingHung?.Invoke();
     }
 
     // Calls for the next position available in the index

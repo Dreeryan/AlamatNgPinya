@@ -65,4 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: c6e73a963437fb74796ad6facbbd1386
+  - enabled: 1
+    path: Assets/Scenes/Timer.unity
+    guid: 0133039ae1710194bb12a302cd3c8759
   m_configObjects: {}

@@ -1614,12 +1614,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541861167}
   m_CullTransparentMesh: 0
---- !u!1 &574603370 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6192101272100059988, guid: de99fe26cb03ce045a925ebdf9ef7739,
-    type: 3}
-  m_PrefabInstance: {fileID: 6192101272674073406}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &574603371 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6192101272100059989, guid: de99fe26cb03ce045a925ebdf9ef7739,
@@ -6157,6 +6151,7 @@ GameObject:
   - component: {fileID: 2002730475}
   - component: {fileID: 2002730474}
   - component: {fileID: 2002730476}
+  - component: {fileID: 2002730477}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -6176,6 +6171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectTag: Toy
+  counterText: {fileID: 259120497}
+  motivationModifier: {fileID: 2002730476}
   MinigameCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -6190,10 +6188,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  counterText: {fileID: 259120497}
-  objectTag: Toy
-  winScreen: {fileID: 574603370}
-  motivationModifier: {fileID: 2002730476}
+      - m_Target: {fileID: 2002730477}
+        m_MethodName: StopTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &2002730475
 Transform:
   m_ObjectHideFlags: 0
@@ -6221,6 +6226,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+--- !u!114 &2002730477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002730473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2069693479
 GameObject:
   m_ObjectHideFlags: 0
@@ -6581,6 +6598,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minigame Start
       objectReference: {fileID: 0}
+    - target: {fileID: 5429315086098372140, guid: 343fa59815efd1640a66504e50b10481,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5429315086098372143, guid: 343fa59815efd1640a66504e50b10481,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6686,8 +6708,50 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5429315086533719511, guid: 343fa59815efd1640a66504e50b10481,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5429315086533719511, guid: 343fa59815efd1640a66504e50b10481,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5429315086533719511, guid: 343fa59815efd1640a66504e50b10481,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5429315086533719511, guid: 343fa59815efd1640a66504e50b10481,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 5429315085893431310}
+    - target: {fileID: 5429315086533719511, guid: 343fa59815efd1640a66504e50b10481,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartTimer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5429315086533719511, guid: 343fa59815efd1640a66504e50b10481,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343fa59815efd1640a66504e50b10481, type: 3}
+--- !u!114 &5429315085893431310 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5429315086533719508, guid: 343fa59815efd1640a66504e50b10481,
+    type: 3}
+  m_PrefabInstance: {fileID: 5429315085893431309}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce962f4901ea9418d800e443c8f903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6192101272674073406
 PrefabInstance:
   m_ObjectHideFlags: 0

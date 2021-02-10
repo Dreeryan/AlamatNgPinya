@@ -15,6 +15,16 @@ public class ButtonFunctions : MonoBehaviour
         SceneLoader.Instance.ChangeScene(sceneName);
     }
 
+    public void StartTimer()
+    {
+        TimerManager.Instance.StartTimer();
+    }
+    
+    public void StopTimer()
+    {
+        TimerManager.Instance.StopTimer();
+    }
+
     public void LoadChoreMinigame(string sceneName)
     {
         if (MotivationManager.Instance == null) return;

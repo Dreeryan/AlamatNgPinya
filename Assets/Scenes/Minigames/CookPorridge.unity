@@ -1832,6 +1832,69 @@ Transform:
   m_Father: {fileID: 1617983046}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &542915162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 542915165}
+  - component: {fileID: 542915163}
+  - component: {fileID: 542915164}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &542915163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542915162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectGoal: 1
+  counterText: {fileID: 0}
+  motivationModifier: {fileID: 542915164}
+  MinigameCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &542915164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542915162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+--- !u!4 &542915165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542915162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1983134693}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &591177934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,7 +2545,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: -756140949714930907, guid: 4373fe99ac4cd0e41bae374bc4ed7e67,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3141,7 +3204,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: -8022905870536274504, guid: 574478d57444c4b4784f7364b91d9a7c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3349,9 +3412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae575e660823fac4d841164212e3b5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireAnimator: {fileID: 2134135917}
-  potCoverAnimator: {fileID: 926880413}
-  porridgeSlider: {fileID: 2024910071}
   maxTemp: 100
   rightTemp: 30
   addTemperature: 0.03
@@ -3359,6 +3419,10 @@ MonoBehaviour:
   secondsToUndercooked: 3
   secondsToCooked: 5
   secondsToWin: 2
+  fireAnimator: {fileID: 2134135917}
+  potCoverAnimator: {fileID: 926880413}
+  porridgeSlider: {fileID: 2024910071}
+  counter: {fileID: 542915163}
   onFireTurnOn:
     m_PersistentCalls:
       m_Calls: []
@@ -4253,6 +4317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 950055954}
+  - {fileID: 542915165}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

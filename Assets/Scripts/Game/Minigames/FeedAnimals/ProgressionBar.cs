@@ -34,7 +34,7 @@ public class ProgressionBar : MonoBehaviour
     {
         fillBar.fillAmount += 1 * Time.deltaTime;
 
-        if (fillBar.fillAmount >= maxAmount)
+        if (fillBar.fillAmount >= maxAmount && !hasWon)
         {
             WinScreen.SetActive(true);
             hasWon = true;

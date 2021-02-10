@@ -12,13 +12,6 @@ public class Porridge : MonoBehaviour
     private bool isRightTemp = false;
     private bool hasWon = false;
 
-    [Header("Animator")]
-    public Animator fireAnimator;
-    public Animator potCoverAnimator;
-
-    [Header("UI")]
-    [SerializeField] private Slider porridgeSlider;
-
     [Header("Porridge Settings")]
     [SerializeField] private float maxTemp = 100.0f;
     [SerializeField] private float rightTemp = 30f;
@@ -27,6 +20,17 @@ public class Porridge : MonoBehaviour
     [SerializeField] private float secondsToUndercooked;
     [SerializeField] private float secondsToCooked;
     [SerializeField] private float secondsToWin;
+
+    [Header("Animator")]
+    public Animator fireAnimator;
+    public Animator potCoverAnimator;
+
+    [Header("UI")]
+    [SerializeField] private Slider porridgeSlider;
+
+    [Header("References")]
+    [SerializeField] private Counter counter;
+
 
     [Header("Sound Settings")]
     [SerializeField] private UnityEvent onFireTurnOn;
@@ -37,10 +41,10 @@ public class Porridge : MonoBehaviour
     void Update()
     {
         UpdateTemp();
-        print(currentTemp);
+        //print(currentTemp);
 
         // If its at the right temp
-        if (isRightTemp)
+        if (isRightTemp && !hasWon)
         {
             StartCoroutine("RightTempCountdown");
         }
@@ -94,7 +98,7 @@ public class Porridge : MonoBehaviour
     }
 
     IEnumerator RightTempCountdown()
-    {
+    {        
         yield return new WaitForSeconds(secondsToUndercooked);
 
         yield return new WaitForSeconds(secondsToCooked);
@@ -104,6 +108,6 @@ public class Porridge : MonoBehaviour
         yield return new WaitForSeconds(secondsToWin);
         hasWon = true;
 
-        SceneLoader.Instance.ChangeScene("WinScene", true);
+        counter.IncreaseProgress();
     }
 }

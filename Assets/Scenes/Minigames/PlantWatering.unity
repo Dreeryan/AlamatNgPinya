@@ -3981,6 +3981,7 @@ GameObject:
   - component: {fileID: 542165243}
   - component: {fileID: 542165242}
   - component: {fileID: 542165244}
+  - component: {fileID: 542165245}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -4002,7 +4003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectGoal: 5
   counterText: {fileID: 0}
-  motivationModifier: {fileID: 0}
+  motivationModifier: {fileID: 542165245}
   MinigameCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -4032,6 +4033,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac68d9c21379fd24ca8a1d315f47b756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &542165245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542165241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &548779996
 GameObject:
   m_ObjectHideFlags: 0

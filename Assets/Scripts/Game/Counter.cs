@@ -8,12 +8,13 @@ using TMPro;
 public class Counter : MonoBehaviour
 {
     [Header("Variables")]
-    [SerializeField]
-    private string objectTag;
+    /*[SerializeField]
+    private string objectTag;*/
 
     private bool            hasWon;
     public bool             HasWon => hasWon;
 
+    [SerializeField]
     private int             objectGoal;
     public int              ObjectGoal => objectGoal;
 

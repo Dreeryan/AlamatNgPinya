@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 using TMPro;
 
 public class Porridge : MonoBehaviour
@@ -23,12 +24,15 @@ public class Porridge : MonoBehaviour
     [SerializeField] private float rightTemp = 30f;
     [SerializeField] private float addTemperature;
     [SerializeField] private float decreaseTemperature;
-    [SerializeField] private float coldTemp;
-    [SerializeField] private float cookTemp;
-    [SerializeField] private float hotTemp;
     [SerializeField] private float secondsToUndercooked;
     [SerializeField] private float secondsToCooked;
     [SerializeField] private float secondsToWin;
+
+    [Header("Sound Settings")]
+    [SerializeField] private UnityEvent onFireTurnOn;
+    [SerializeField] private UnityEvent onUndercooked;
+    [SerializeField] private UnityEvent onSlightlyCooked;
+    [SerializeField] private UnityEvent onCooked;
 
     void Update()
     {
@@ -55,20 +59,13 @@ public class Porridge : MonoBehaviour
         {
             porridgeSlider.value += addTemperature * Time.deltaTime;
 
-            if (currentTemp >= maxTemp)
-            {
-                currentTemp = maxTemp;
-            }
+            if (currentTemp >= maxTemp) currentTemp = maxTemp;
         }
-
         else
         {
-            if(!hasWon) porridgeSlider.value -= decreaseTemperature * Time.deltaTime;
+            if (!hasWon) porridgeSlider.value -= decreaseTemperature * Time.deltaTime;
 
-            if (currentTemp <= 0)
-            {
-                currentTemp = 0;
-            }
+            if (currentTemp <= 0) currentTemp = 0;
         }
 
         fireAnimator.SetFloat("Temp", currentTemp);
@@ -78,6 +75,7 @@ public class Porridge : MonoBehaviour
         {
             fireAnimator.SetBool("isFireOn", true);
             potCoverAnimator.SetBool("isFireOn", true);
+            onFireTurnOn?.Invoke();
         }
         else
         {
@@ -98,9 +96,11 @@ public class Porridge : MonoBehaviour
     IEnumerator RightTempCountdown()
     {
         yield return new WaitForSeconds(secondsToUndercooked);
-        potCoverAnimator.SetBool("isFireOn", true);
+
         yield return new WaitForSeconds(secondsToCooked);
+
         potCoverAnimator.SetBool("isCooked", true);
+        onCooked?.Invoke();
         yield return new WaitForSeconds(secondsToWin);
         hasWon = true;
 

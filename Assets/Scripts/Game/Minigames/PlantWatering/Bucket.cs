@@ -1,20 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Bucket : MonoBehaviour
 {
     [Header("Variables")]
     [SerializeField]
     [Tooltip("Rotation of the sprite when the mouse pointer is above a plant")]
-    private float canFillRotation;
+    private float canFillRotation = 30f;
 
     [SerializeField]
     [Tooltip("Rotation of the sprite when the mouse is clicked on top of a plant")]
-    private float isFillingRotation;
+    private float isFillingRotation = 60f;
 
     private bool canFill;
     private bool isFilling;
+
+    [Header("Sound")]
+    [SerializeField]
+    private UnityEvent onFilling;
 
     void Update()
     {
@@ -23,6 +28,7 @@ public class Bucket : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             isFilling = true;
+            onFilling?.Invoke();
             UpdateSprite();
         }
 

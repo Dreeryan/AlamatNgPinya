@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class Watering : MonoBehaviour
 {
@@ -16,7 +16,7 @@ public class Watering : MonoBehaviour
     private bool isBucketOnMe;
 
     [Header("References")]
-    [SerializeField] private ProgressManager progressManager;
+    [SerializeField] private Counter counter;
     [SerializeField] private Bucket bucket;
 
     [Header("UI")]
@@ -27,6 +27,9 @@ public class Watering : MonoBehaviour
     [SerializeField] private Image plant;
     [SerializeField] private Sprite dryPlant;
     [SerializeField] private Sprite wateredPlant;
+
+    [Header("Sound")]
+    [SerializeField] private UnityEvent onWatered;
 
     void Start()
     {
@@ -64,7 +67,11 @@ public class Watering : MonoBehaviour
                 // show watered version of plant
                 if (wateredPlant != null) plant.sprite = wateredPlant;
 
-                progressManager.AddProgress();
+                // SFX
+                onWatered?.Invoke();
+
+                // increase progress
+                counter.IncreaseProgress();
             }
 
             UpdateUI();

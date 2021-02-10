@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6409897020900722037}
   - component: {fileID: 3746543945012756444}
   - component: {fileID: 4653104684366659466}
-  - component: {fileID: 6685725489185511279}
   - component: {fileID: 4743468782995224815}
+  - component: {fileID: 5623564112769073015}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Egg
@@ -99,10 +99,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a30c6233ae0234bac64880f9c1f085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onEggPickedUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5623564112769073015}
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[Menu YES]
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEggDropped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5623564112769073015}
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[Menu YES]
+          m_BoolArgument: 0
+        m_CallState: 2
   eggBasket: {fileID: 0}
-  isPlaced: 0
   vision: {fileID: 3746543945012756444}
-  collisionChecker: {fileID: 6685725489185511279}
+  collisionChecker: {fileID: 0}
   counter: {fileID: 0}
   collider: {fileID: 4743468782995224815}
 --- !u!114 &3746543945012756444
@@ -139,20 +166,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &6685725489185511279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6409897020900722038}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 187ac7d6ee1a94743ad0df3c438b6e25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasCollided: 0
-  col: {fileID: 4743468782995224815}
 --- !u!70 &4743468782995224815
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -169,3 +182,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.22, y: 1.69}
   m_Direction: 0
+--- !u!114 &5623564112769073015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409897020900722038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac68d9c21379fd24ca8a1d315f47b756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

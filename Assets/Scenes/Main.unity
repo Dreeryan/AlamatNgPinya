@@ -6754,6 +6754,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: FeedMom
       objectReference: {fileID: 0}
+    - target: {fileID: 6555224529867527865, guid: 314f47c43a5a3944b971b3855392f47d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: sfx[Menu YES]
+      objectReference: {fileID: 0}
     - target: {fileID: 6555224529867527871, guid: 314f47c43a5a3944b971b3855392f47d,
         type: 3}
       propertyPath: m_Name
@@ -9537,6 +9542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Tag
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899162052944352175, guid: 9c9db1bfa6e7465498c405ddb14fd34a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: sfx[Menu YES]
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c9db1bfa6e7465498c405ddb14fd34a, type: 3}
@@ -14685,6 +14695,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 459384649}
     m_Modifications:
+    - target: {fileID: 3521910321168637976, guid: 96456d5b1d69a2f4e9a24edb0cc6102d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: sfx[Menu PAUSE]
+      objectReference: {fileID: 0}
     - target: {fileID: 3521910321204515557, guid: 96456d5b1d69a2f4e9a24edb0cc6102d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14914,6 +14929,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3899162052944352175, guid: 9c9db1bfa6e7465498c405ddb14fd34a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: sfx[Menu YES]
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c9db1bfa6e7465498c405ddb14fd34a, type: 3}
 --- !u!1001 &6555224530742843220
@@ -15027,6 +15047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555224529867527865, guid: 314f47c43a5a3944b971b3855392f47d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: sfx[Menu YES]
       objectReference: {fileID: 0}
     - target: {fileID: 6555224529867527871, guid: 314f47c43a5a3944b971b3855392f47d,
         type: 3}

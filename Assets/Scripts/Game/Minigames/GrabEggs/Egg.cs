@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Egg : MonoBehaviour
 {
+    [SerializeField] private UnityEvent onEggPickedUp;
+    [SerializeField] private UnityEvent onEggDropped;
+
     [SerializeField] private Transform eggBasket;
 
     private Vector2             mousePos;
@@ -31,6 +35,11 @@ public class Egg : MonoBehaviour
             transform.position = currentPosition;
     }
 
+    private void OnMouseDown()
+    {
+        onEggPickedUp?.Invoke();
+    }
+
     void OnMouseDrag()
     {
         // If the item is not yet placed while dragging, the item will be placed in the last position.
@@ -43,22 +52,13 @@ public class Egg : MonoBehaviour
 
     void OnMouseUp()
     {
-        {
-            //if (IsNearHolder())
-            //{
-
-            //}
-            // Else, it will be placed back to it's last position
-
-            //if (collisionChecker.hasCollided) transform.position = eggBasket.transform.position;
-        }
-
         // If the object is near the item holder, the object will automatically be placed.
         if (isOnGoal)
         {
             // Adds a point for every item that collides with the goal
             if (counter != null) counter.IncreaseProgress();
 
+            onEggDropped?.Invoke();
             transform.position = eggBasket.transform.position;
             if (collider != null) collider.enabled = false;
             isPlaced = true;

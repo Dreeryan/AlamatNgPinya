@@ -13,6 +13,8 @@ public class AudioManager : BaseManager<AudioManager>
     public AudioMixer AudioMix => audioMix;
     private List<AudioObject> spawnedAudio = new List<AudioObject>();
 
+    private static string currBGM;
+
     public static void PlayAudio(string idToPlay)
     {
         if (Instance == null)
@@ -53,12 +55,18 @@ public class AudioManager : BaseManager<AudioManager>
     {
         if (IdExists(data.ID))
         {
+            if (currBGM == data.ID) return;
+
+            currBGM = data.ID;
+
             AudioObject ao = GetAudioObject(data.ID);
             ao.FadeAudio(data.Volume);
             ao.PlayAudio();
+            
         }
         else
         {
+            currBGM = data.ID;
             AddAudioObject(data);
         }
 

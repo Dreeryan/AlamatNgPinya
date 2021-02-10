@@ -21,6 +21,7 @@ public class TimerManager : BaseManager<TimerManager>
 
     public void StartTimer()
     {
+        if (timerRoutine != null) return;
         ResetTimer();
         SceneLoader.Instance.ChangeScene("Timer", true);
         timerRoutine = StartCoroutine(TimerRoutine());

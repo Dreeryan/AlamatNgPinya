@@ -1,45 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Chicken : MonoBehaviour
 {
+    [SerializeField] private UnityEvent onChickenClicked;
+
     public Transform    endPoint;
     public float        speed;
-    private Vector3     target;
+    public float        moveOffset = 0.01f;
 
-    [SerializeField] private GameObject endPointObject;
-    [SerializeField] private bool       isSelected;
+    private bool        isSelected;
+    private Vector3     endPos;
+
     void Start()
     {
-        target = transform.position;
+        endPos = transform.position;
         isSelected = false;
     }
 
     private void Update()
     {
         if (isSelected)
-            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        {
+            transform.position = Vector3.MoveTowards(transform.position, endPos, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, endPos) <= moveOffset) isSelected = false;
+        }
     }
 
-    void OnMouseOver()
+    private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            isSelected = true;
-            // Gets the mouse cursor's position
-            target = endPointObject.transform.position;
+        isSelected = true;
 
-            // Keeps the Z-Position at 0
-            target.z = transform.position.z;
-        }
+        if (endPoint != null)
+            endPos = endPoint.position;
 
-		//A: Nullcheck endpoint. Thats still an object
-        // Disables chicken movement once it moves to specified location
-        if (transform.position == endPoint.position)
-        {
-            if (endPointObject != null)
-                endPointObject.SetActive(false);
-        }
+        // Keeps the Z-Position at 0
+        endPos.z = transform.position.z;
+
+        GetComponent<SpriteFlipper>().FlipSprite(transform.position.x - endPos.x);
+        GetComponent<Collider2D>().enabled = false;
+
+        onChickenClicked?.Invoke();
     }
 }

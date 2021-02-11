@@ -39,7 +39,7 @@ public class TimerManager : BaseManager<TimerManager>
     {
         for(; ; )
         {
-            if (Time.timeScale > 0)
+            if (!GameManager.Instance.IsPaused)
             {
                 curTime += Time.timeScale * Time.deltaTime;
                 OnTimerUpdated?.Invoke(curTime);

@@ -62,7 +62,7 @@ public class Counter : MonoBehaviour
         if (curProgress >= objectGoal)
         {
             hasWon = true;
-            Time.timeScale = 0.0f;
+            //Time.timeScale = 0.0f;
             motivationModifier.IncrementMotivation();
             MinigameCompleted?.Invoke();
 

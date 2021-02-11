@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 public class PlayerAnimations : MonoBehaviour
 {
     private const string CONST_PLAYERWALK = "isMoving";
@@ -14,6 +11,14 @@ public class PlayerAnimations : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.speed = 1.0f;
+    }
+
+
+    private void Update()
+    {
+        if (GameManager.Instance.IsPaused) anim.speed = 0f;
+        else anim.speed = 1f;
+        
     }
 
     public void PlayerWalking(bool state)

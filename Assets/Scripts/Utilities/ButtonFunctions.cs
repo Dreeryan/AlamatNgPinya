@@ -34,6 +34,16 @@ public class ButtonFunctions : MonoBehaviour
             SceneLoader.Instance.LoadScene(sceneName);
     }
 
+    public void PauseGame()
+    {
+        GameManager.Instance.IsPaused = true;
+    }
+
+    public void PlayGame()
+    {
+        GameManager.Instance.IsPaused = false;
+    }
+
     public void CloseGame()
     {
         Application.Quit();

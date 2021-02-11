@@ -66,7 +66,7 @@ public class Counter : MonoBehaviour
             motivationModifier.IncrementMotivation();
             MinigameCompleted?.Invoke();
 
-            SceneLoader.Instance.ChangeScene("WinScene", true);
+            SceneLoader.Instance.LoadScene("WinScene", true);
         }
     }
 

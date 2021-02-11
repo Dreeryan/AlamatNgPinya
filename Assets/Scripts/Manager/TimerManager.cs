@@ -23,12 +23,14 @@ public class TimerManager : BaseManager<TimerManager>
     {
         if (timerRoutine != null) return;
         ResetTimer();
-        SceneLoader.Instance.ChangeScene("Timer", true);
+        SceneLoader.Instance.LoadScene("Timer", true);
         timerRoutine = StartCoroutine(TimerRoutine());
     }
 
     public void StopTimer()
     {
+        if (timerRoutine == null) return;
+
         StopCoroutine(timerRoutine);
         timerRoutine = null;
     }

@@ -37,8 +37,11 @@ public class TimerManager : BaseManager<TimerManager>
     {
         for(; ; )
         {
-            curTime += Time.deltaTime;
-            OnTimerUpdated?.Invoke(curTime);
+            if (Time.timeScale > 0)
+            {
+                curTime += Time.timeScale * Time.deltaTime;
+                OnTimerUpdated?.Invoke(curTime);
+            }
             yield return null;
         }
     }

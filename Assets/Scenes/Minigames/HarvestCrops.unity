@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectives: {fileID: 1811696956}
   currentSeconds: 10
-  resetTime: 5
+  resetTime: 99
 --- !u!114 &298749834
 MonoBehaviour:
   m_ObjectHideFlags: 0

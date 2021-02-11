@@ -51,11 +51,11 @@ public class Counter : MonoBehaviour
         if (counterText != null) UpdateDisplayText();
     }
 
-    public void IncreaseProgress()
+    public void IncreaseProgress(int value = 1)
     {
         if (hasWon) return;
 
-        curProgress++;
+        curProgress += value;
         if (curProgress > objectGoal) curProgress = objectGoal;
         if (counterText != null) UpdateDisplayText();
 

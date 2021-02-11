@@ -59,6 +59,7 @@ public class TagManager : MonoBehaviour
     void OnComplete()
     {
         onMinigameCompleted.Invoke();
+        SceneLoader.Instance.LoadScene("WinScene", true);
         //Time.timeScale = 0.0f;
     }
 

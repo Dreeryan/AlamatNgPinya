@@ -19,6 +19,6 @@ public class MinigameConfirmation : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneLoader.Instance.ChangeScene("MainMenu");
+        SceneLoader.Instance.ChangeScene("Main");
     }
 }

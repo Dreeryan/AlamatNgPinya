@@ -8,9 +8,6 @@ public class TagManager : MonoBehaviour
     private UnityEvent  onMinigameCompleted = new UnityEvent();
     public UnityEvent   OnMinigameCompleted => onMinigameCompleted;
 
-    [Header("UI")]
-    [SerializeField] private GameObject     winScreen;
-
     [Header("Kids")]
     [SerializeField] private TagCharacter[] kids;
     [SerializeField] private TagCharacter   startingTagged;
@@ -25,8 +22,6 @@ public class TagManager : MonoBehaviour
 
     void Start()
     {
-        if (winScreen != null) winScreen.SetActive(false);
-
         // Adds listener for when a kid gets tagged
         foreach (TagCharacter kid in kids)
         {
@@ -63,14 +58,8 @@ public class TagManager : MonoBehaviour
 
     void OnComplete()
     {
-        DisplayWinScreen();
         onMinigameCompleted.Invoke();
         //Time.timeScale = 0.0f;
-    }
-
-    void DisplayWinScreen() 
-    {
-        winScreen.SetActive(true);
     }
 
     IEnumerator BeginCompletionCountdown()

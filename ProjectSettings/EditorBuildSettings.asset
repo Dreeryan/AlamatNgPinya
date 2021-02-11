@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: d9ae8f2237d1e914d94b5e3f9796fad3
   - enabled: 1
-    path: Assets/Scenes/PauseMenu.unity
+    path: Assets/Scenes/UI/PauseMenu.unity
     guid: 59aa9d0cdc34a2944882c4d666ad1848
   - enabled: 1
     path: Assets/Scenes/Minigames/CookPorridge.unity
@@ -63,9 +63,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigames/FeedMom.unity
     guid: 729c9ad8e205c6d41bfc3093066b8ab4
   - enabled: 1
-    path: Assets/Scenes/WinScene.unity
+    path: Assets/Scenes/UI/WinScene.unity
     guid: c6e73a963437fb74796ad6facbbd1386
   - enabled: 1
-    path: Assets/Scenes/Timer.unity
+    path: Assets/Scenes/UI/Timer.unity
     guid: 0133039ae1710194bb12a302cd3c8759
+  - enabled: 1
+    path: Assets/Scenes/UI/MinigameConfirmation.unity
+    guid: 87414bef858b72949b448ddeeedd695f
   m_configObjects: {}

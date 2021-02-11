@@ -12,5 +12,8 @@ public class SceneStartUpController : MonoBehaviour
         onStart?.Invoke();
     }
 
-
+    public void MinigameStartup()
+    {
+        SceneLoader.Instance.ChangeScene("MinigameConfirmation", true);
+    }
 }

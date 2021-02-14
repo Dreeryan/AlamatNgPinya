@@ -74,7 +74,7 @@ public class ShakeObject : MonoBehaviour
     void OnTriggerStay2D(Collider2D collision)
     {
         // If animal feed is on a shakeable area
-        if (collision.gameObject.CompareTag("FeedArea"))
+        if (collision.GetComponent<FeedHolder>())
         {
             isOnFeedArea = true;
 
@@ -92,7 +92,7 @@ public class ShakeObject : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         // If animal feed leaves the shakeable area
-        if (collision.gameObject.CompareTag("FeedArea"))
+        if (collision.GetComponent<FeedHolder>())
         {
             isOnFeedArea = false;
             isShaking = false;

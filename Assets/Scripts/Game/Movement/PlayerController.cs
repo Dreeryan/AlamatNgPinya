@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!CanMove || Time.timeScale == 0) return;
+        if (!CanMove || GameManager.Instance.IsPaused) return;
         if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             SetMovePosition();

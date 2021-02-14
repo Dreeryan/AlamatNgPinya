@@ -10,7 +10,7 @@ public class PauseFunction : MonoBehaviour
         // Freezes the game
         Time.timeScale = 0.0f;
 
-        SceneLoader.Instance.ChangeScene("PauseMenu", true);
+        SceneLoader.Instance.LoadScene("PauseMenu", true);
     }
 
     // Continues the game via timescale and closes pause menu

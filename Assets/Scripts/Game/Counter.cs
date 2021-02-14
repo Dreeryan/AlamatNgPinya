@@ -51,22 +51,22 @@ public class Counter : MonoBehaviour
         if (counterText != null) UpdateDisplayText();
     }
 
-    public void IncreaseProgress()
+    public void IncreaseProgress(int value = 1)
     {
         if (hasWon) return;
 
-        curProgress++;
+        curProgress += value;
         if (curProgress > objectGoal) curProgress = objectGoal;
         if (counterText != null) UpdateDisplayText();
 
         if (curProgress >= objectGoal)
         {
             hasWon = true;
-            Time.timeScale = 0.0f;
+            //Time.timeScale = 0.0f;
             motivationModifier.IncrementMotivation();
             MinigameCompleted?.Invoke();
 
-            SceneLoader.Instance.ChangeScene("WinScene", true);
+            SceneLoader.Instance.LoadScene("WinScene", true);
         }
     }
 

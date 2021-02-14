@@ -23,12 +23,14 @@ public class TimerManager : BaseManager<TimerManager>
     {
         if (timerRoutine != null) return;
         ResetTimer();
-        SceneLoader.Instance.ChangeScene("Timer", true);
+        SceneLoader.Instance.LoadScene("Timer", true);
         timerRoutine = StartCoroutine(TimerRoutine());
     }
 
     public void StopTimer()
     {
+        if (timerRoutine == null) return;
+
         StopCoroutine(timerRoutine);
         timerRoutine = null;
     }
@@ -37,7 +39,7 @@ public class TimerManager : BaseManager<TimerManager>
     {
         for(; ; )
         {
-            if (Time.timeScale > 0)
+            if (!GameManager.Instance.IsPaused)
             {
                 curTime += Time.timeScale * Time.deltaTime;
                 OnTimerUpdated?.Invoke(curTime);

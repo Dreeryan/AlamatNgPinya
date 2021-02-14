@@ -11,8 +11,9 @@ public class ButtonFunctions : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        //if (SceneLoader.Instance == null) return;
-        SceneLoader.Instance.ChangeScene(sceneName);
+        TimerManager.Instance.StopTimer();
+
+        SceneLoader.Instance.LoadScene(sceneName);
     }
 
     public void StartTimer()
@@ -27,10 +28,20 @@ public class ButtonFunctions : MonoBehaviour
 
     public void LoadChoreMinigame(string sceneName)
     {
-        if (MotivationManager.Instance == null) return;
+        TimerManager.Instance.StopTimer();
 
         if (MotivationManager.Instance.HasEnoughMotivation())
-            SceneLoader.Instance.ChangeScene(sceneName);
+            SceneLoader.Instance.LoadScene(sceneName);
+    }
+
+    public void PauseGame()
+    {
+        GameManager.Instance.IsPaused = true;
+    }
+
+    public void PlayGame()
+    {
+        GameManager.Instance.IsPaused = false;
     }
 
     public void CloseGame()

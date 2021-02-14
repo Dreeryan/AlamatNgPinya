@@ -3108,7 +3108,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[testHideFriend]
+          m_StringArgument: sfx[Feeding PICKUP]
           m_BoolArgument: 0
         m_CallState: 2
   OnShake:
@@ -3133,7 +3133,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[testHideFriend]
+          m_StringArgument: sfx[Feeding SHAKE]
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!212 &2020409173

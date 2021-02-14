@@ -10254,7 +10254,7 @@ PrefabInstance:
     - target: {fileID: 8165169935274278547, guid: 0e6169d0baa07894691bcde83d0c350f,
         type: 3}
       propertyPath: OnPlayerMove.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: test
+      value: sfx[Overworld WALK]
       objectReference: {fileID: 0}
     - target: {fileID: 8165169935274278550, guid: 0e6169d0baa07894691bcde83d0c350f,
         type: 3}

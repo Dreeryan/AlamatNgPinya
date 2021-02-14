@@ -158,7 +158,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[testWalk]
+          m_StringArgument: sfx[Overworld WALK]
           m_BoolArgument: 0
         m_CallState: 2
   OnPlayerStop:
@@ -172,7 +172,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[testWalk]
+          m_StringArgument: sfx[Overworld WALK]
           m_BoolArgument: 0
         m_CallState: 2
   moveSpeed: 5

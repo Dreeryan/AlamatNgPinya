@@ -171,21 +171,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[testHideFriend]
-          m_BoolArgument: 0
-        m_CallState: 2
-  onClothingHung:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 155137975164501822}
-        m_MethodName: PlayAudio
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: sfx[testHideFriend]
+          m_StringArgument: sfx[Hanging PICKUP]
           m_BoolArgument: 0
         m_CallState: 2
   valueToTarget: 0

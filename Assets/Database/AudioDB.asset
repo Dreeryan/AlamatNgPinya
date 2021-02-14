@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataSet:
   - id: msc[Main Menu]
-    audioFile: {fileID: 8300000, guid: 7538fba01c8f2f54c980394905962327, type: 3}
+    audioFile: {fileID: 8300000, guid: 64f4fc62ec627a94d8ea0331b347c720, type: 3}
     volume: 1
     mixGroup: Music
     isLooping: 1
@@ -65,6 +65,36 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Friend FOUND]
     audioFile: {fileID: 8300000, guid: 276f256d727eded4cba32ab86e72e0ff, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Overworld WALK]
+    audioFile: {fileID: 8300000, guid: 2451affcdb48e4f46b98207413f56891, type: 3}
+    volume: 5
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Hanging PICKUP]
+    audioFile: {fileID: 8300000, guid: 1659b4e4b2ddcab4ba90d9295229cfa0, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Hanging HANG]
+    audioFile: {fileID: 8300000, guid: 8ebc1ba3ededf4348b55edc9f48393f3, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Washing STACK]
+    audioFile: {fileID: 8300000, guid: c03e4706acaa0fe478043a484cea5c30, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Feeding PICKUP]
+    audioFile: {fileID: 8300000, guid: d0186a2dbc85ba741a0e3bd8df30d684, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Feeding SHAKE]
+    audioFile: {fileID: 8300000, guid: d4fa0e3fe9655db448775347f7e39fa0, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0

@@ -2272,6 +2272,7 @@ GameObject:
   - component: {fileID: 452776958}
   - component: {fileID: 452776957}
   - component: {fileID: 452776961}
+  - component: {fileID: 452776962}
   m_Layer: 0
   m_Name: Egg Basket
   m_TagString: Goal
@@ -2403,6 +2404,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+--- !u!114 &452776962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452776956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac68d9c21379fd24ca8a1d315f47b756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &472138902
 GameObject:
   m_ObjectHideFlags: 0
@@ -4729,7 +4742,7 @@ MonoBehaviour:
   - {fileID: 2029191528}
   - {fileID: 855230536}
   - {fileID: 854271851}
-  eggPrefab: {fileID: 6409897020900722038, guid: d3b5f152135658e4b9acf150f05421f5,
+  eggPrefab: {fileID: 5921475080761693790, guid: 53a0f630eefb4b04bbf6132156497762,
     type: 3}
 --- !u!4 &880460469
 Transform:

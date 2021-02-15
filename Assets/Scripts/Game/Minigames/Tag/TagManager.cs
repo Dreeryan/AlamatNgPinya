@@ -13,15 +13,22 @@ public class TagManager : MonoBehaviour
     [SerializeField] private TagCharacter   startingTagged;
 
     [Header("Settings")]
-    [SerializeField] private float completionTimer = 5.0f;
-    [Header("")]
-    public float debugTimer;
+    [SerializeField] private float maxTime = 5.0f;
 
-    private TagCharacter currentTagged;
-    private Coroutine   completionCountdown = null;
+    private float curTime = 0;
+
+    [Header("Debug")]
+    public float debugTimerDisplay;
+
+    private TagCharacter    currentTagged;
+    private Coroutine       completionCountdown = null;
+
+    public float MaxTime => maxTime;
+    public float CurTime => curTime;
 
     void Start()
     {
+        curTime = maxTime;
         // Adds listener for when a kid gets tagged
         foreach (TagCharacter kid in kids)
         {
@@ -65,12 +72,15 @@ public class TagManager : MonoBehaviour
 
     IEnumerator BeginCompletionCountdown()
     {
-        float timer = completionTimer;
-        debugTimer = timer;
-        while (timer > 0)
+        curTime = maxTime;
+
+        debugTimerDisplay = curTime;
+        while (curTime > 0)
         {
-            timer -= Time.deltaTime;
-            debugTimer = timer;
+            curTime -= Time.deltaTime;
+            curTime = Mathf.Clamp(curTime, 0, maxTime);
+
+            debugTimerDisplay = curTime;
             yield return null;
         }
         yield return null;

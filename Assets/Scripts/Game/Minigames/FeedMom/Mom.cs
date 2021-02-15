@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Mom : MonoBehaviour
 {
+    [SerializeField] private UnityEvent OnEating;
+
     [SerializeField] Counter counter;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,8 @@ public class Mom : MonoBehaviour
                 spoon.EmptySpoon();
             }
             counter.IncreaseProgress();
+
+            OnEating?.Invoke();
         }
     }
 }

@@ -35,13 +35,13 @@ public class TagCharacter : MonoBehaviour
     }
 
     // Assign the target as the new tagged
-    void TagTarget(TagCharacter target)
+    protected virtual void TagTarget(TagCharacter target)
     {
         target.GetTagged(this);
         DebugUpdateColor();
     }
 
-    void GetTagged(TagCharacter collider)
+    protected virtual void GetTagged(TagCharacter collider)
     {
         // Assign the collided object's previous tagged object to avoid backtagging
         previousTagged = collider;

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Bowl : MonoBehaviour
 {
+    [SerializeField] private UnityEvent OnScooped;
+
     [SerializeField] private Counter counter;
 
     [Header("Bowl Settings")]
@@ -28,12 +31,6 @@ public class Bowl : MonoBehaviour
         curSoupCount = maxSoupCount;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void ReduceSoupAmount()
     {
         curSoupCount--;
@@ -41,6 +38,8 @@ public class Bowl : MonoBehaviour
 
         if (IsEmpty && sRenderer != null) 
             sRenderer.sprite = emptySprite;
+
+        OnScooped?.Invoke();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

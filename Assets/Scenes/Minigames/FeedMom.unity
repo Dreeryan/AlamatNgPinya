@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 206955957}
   - component: {fileID: 206955959}
   - component: {fileID: 206955960}
+  - component: {fileID: 206955961}
   m_Layer: 0
   m_Name: Mom
   m_TagString: Untagged
@@ -249,6 +250,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3e84f2cd310714b9f5999b7338c1de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEating:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 206955961}
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   counter: {fileID: 0}
 --- !u!61 &206955960
 BoxCollider2D:
@@ -276,6 +291,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20.48, y: 20.48}
   m_EdgeRadius: 0
+--- !u!114 &206955961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206955956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac68d9c21379fd24ca8a1d315f47b756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &405528530
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minigameID: 
   objectGoal: 0
   counterText: {fileID: 0}
   motivationModifier: {fileID: 1530219456}
@@ -850,6 +878,7 @@ GameObject:
   - component: {fileID: 1748693520}
   - component: {fileID: 1748693522}
   - component: {fileID: 1748693523}
+  - component: {fileID: 1748693524}
   m_Layer: 0
   m_Name: Soup bowl
   m_TagString: Untagged
@@ -934,6 +963,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db26a3a6eeced2c48a8e8ca076740668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnScooped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1748693524}
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   counter: {fileID: 0}
   maxSoupCount: 5
   fullSprite: {fileID: -7612879768662879193, guid: d3dcf12ce6142ca4eb97058fedc17f7f,
@@ -966,6 +1009,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.59, y: 4.97}
   m_EdgeRadius: 0
+--- !u!114 &1748693524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748693519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac68d9c21379fd24ca8a1d315f47b756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1902205690
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,9 +1032,9 @@ GameObject:
   - component: {fileID: 1902205692}
   - component: {fileID: 1902205691}
   - component: {fileID: 1902205693}
+  - component: {fileID: 1902205696}
   - component: {fileID: 1902205695}
   - component: {fileID: 1902205694}
-  - component: {fileID: 1902205696}
   m_Layer: 0
   m_Name: Spoon
   m_TagString: Untagged

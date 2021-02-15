@@ -14,16 +14,14 @@ public class TrashBin : MonoBehaviour
         if (counter == null) counter = FindObjectOfType<Counter>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ThrowTrash(GameObject trash)
     {
         trash.transform.parent = transform;
         transform.transform.position = transform.position;
+
+        trash.SetActive(false);
+
+        onTrashAdded?.Invoke();
 
         if (counter != null) counter.IncreaseProgress();
     }

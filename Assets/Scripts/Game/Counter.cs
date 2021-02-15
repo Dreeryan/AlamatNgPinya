@@ -10,6 +10,7 @@ public class Counter : MonoBehaviour
     [Header("Variables")]
     /*[SerializeField]
     private string objectTag;*/
+    [SerializeField] private string minigameID;
 
     private bool            hasWon;
     public bool             HasWon => hasWon;
@@ -61,13 +62,22 @@ public class Counter : MonoBehaviour
 
         if (curProgress >= objectGoal)
         {
-            hasWon = true;
-            //Time.timeScale = 0.0f;
-            motivationModifier.IncrementMotivation();
-            MinigameCompleted?.Invoke();
-
-            SceneLoader.Instance.LoadScene("WinScene", true);
+            OnComplete();
         }
+    }
+
+    private void OnComplete()
+    {
+        hasWon = true;
+        //Time.timeScale = 0.0f;
+        motivationModifier.IncrementMotivation();
+        MinigameCompleted?.Invoke();
+
+        TimerManager.Instance.StopTimer();
+        float score = ScoreManager.Instance.GetFinalScore(minigameID,
+            TimerManager.Instance.CurTime);
+        GameManager.Instance.UpdateScore(score);
+        SceneLoader.Instance.LoadScene("WinScene", true);
     }
 
     private void UpdateDisplayText()

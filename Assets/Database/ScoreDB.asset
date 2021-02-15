@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: ScoreDB
   m_EditorClassIdentifier: 
   dataSet:
-  - id: 
-    minigameId: 
-    baseScoreValue: 0
-    secondsTarget: 0
+  - id: test
+    baseScoreValue: 5
+    secondsTarget: 10

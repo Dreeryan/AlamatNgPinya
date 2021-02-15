@@ -88,6 +88,11 @@ MonoBehaviour:
     volume: 1
     mixGroup: SFX
     isLooping: 0
+  - id: sfx[Washing CLEAN]
+    audioFile: {fileID: 8300000, guid: 9873173ed8410dc48a62d8ac47bd5bf8, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
   - id: sfx[Feeding PICKUP]
     audioFile: {fileID: 8300000, guid: d0186a2dbc85ba741a0e3bd8df30d684, type: 3}
     volume: 1
@@ -95,6 +100,16 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Feeding SHAKE]
     audioFile: {fileID: 8300000, guid: d4fa0e3fe9655db448775347f7e39fa0, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Watering POUR]
+    audioFile: {fileID: 8300000, guid: 6feee65f93c2f8448be15f6f043dbb6a, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Watering FILLED]
+    audioFile: {fileID: 8300000, guid: d9a704aa4d02731499222a651884bb0d, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0

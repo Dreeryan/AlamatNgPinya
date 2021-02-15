@@ -8,7 +8,6 @@ public class Egg : MonoBehaviour
     [SerializeField] private UnityEvent onEggPickedUp;
     [SerializeField] private UnityEvent onEggDropped;
 
-    [SerializeField] private Transform eggBasket;
 
     private Vector2             mousePos;
     private Vector2             currentPosition;
@@ -17,14 +16,12 @@ public class Egg : MonoBehaviour
 
     public  ReturnIfVisionLost  vision;
 
-    [SerializeField] private CollisionChecker collisionChecker;
     [SerializeField] private Counter          counter;
     [SerializeField] private Collider2D       collider;
     void Start()
     {
         currentPosition = transform.position;
 
-        if (eggBasket == null) eggBasket = FindObjectOfType<Counter>().transform;
         if (counter == null) counter = FindObjectOfType<Counter>();
         if (counter != null) counter.IncreaseGoalCount(1);
     }
@@ -59,7 +56,7 @@ public class Egg : MonoBehaviour
             if (counter != null) counter.IncreaseProgress();
 
             onEggDropped?.Invoke();
-            transform.position = eggBasket.transform.position;
+            transform.position = counter.transform.position;
             if (collider != null) collider.enabled = false;
             isPlaced = true;
         }
@@ -71,13 +68,13 @@ public class Egg : MonoBehaviour
 
     private bool IsNearHolder()
     {
-        return Mathf.Abs(transform.position.x - eggBasket.transform.position.x) <= 1.2f &&
-               Mathf.Abs(transform.position.y - eggBasket.transform.position.y) <= 1.2f;
+        return Mathf.Abs(transform.position.x - counter.transform.position.x) <= 1.2f &&
+               Mathf.Abs(transform.position.y - counter.transform.position.y) <= 1.2f;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Goal"))
+        if (collision.GetComponent<Counter>())
         {
             isOnGoal = true;
 
@@ -88,9 +85,9 @@ public class Egg : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        counter = null;
-        if (collision.CompareTag("Goal"))
+        if (collision.GetComponent<Counter>() == counter)
         {
+            counter = null;
             isOnGoal = false;
         }
     }

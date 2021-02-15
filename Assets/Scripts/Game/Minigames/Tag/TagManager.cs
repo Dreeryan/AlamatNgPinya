@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class TagManager : MonoBehaviour
 {
+    [SerializeField] private UnityEvent onPlayerTagging;
+    [SerializeField] private UnityEvent onPlayerTagged;
+    [SerializeField] private UnityEvent onEnemyTag;
     private UnityEvent  onMinigameCompleted = new UnityEvent();
     public UnityEvent   OnMinigameCompleted => onMinigameCompleted;
 
@@ -44,10 +47,7 @@ public class TagManager : MonoBehaviour
     // Changes the current tagged kid
     void OnCurrentTaggedChange(TagCharacter newTagged) 
     {
-        currentTagged.IsTagged = false;
-
-        currentTagged = newTagged;
-        currentTagged.IsTagged = true;
+        ProcessTag(newTagged);
 
         // If the current tagged is one of the other kids, complete the minigame
         if (currentTagged.CompareTag("Enemy")
@@ -55,12 +55,35 @@ public class TagManager : MonoBehaviour
         {
             completionCountdown = StartCoroutine(BeginCompletionCountdown());
         }
-        else if (currentTagged.CompareTag("Player")
+        if (currentTagged.CompareTag("Player")
             && completionCountdown != null)
         {
             StopCoroutine(completionCountdown);
             completionCountdown = null;
         }
+    }
+
+    void ProcessTag(TagCharacter newTagged)
+    {
+        // Checks if the player is involved in the tag event
+        if (currentTagged.CompareTag("Player") || newTagged.CompareTag("Player"))
+        {
+            // If the player is the one tagging
+            if (currentTagged.CompareTag("Player")) 
+                onPlayerTagging?.Invoke();
+            // If the player is the one getting tagged
+            else onPlayerTagged?.Invoke();
+        }
+        // If the player is not involved in the tag event
+        else
+        {
+            onEnemyTag?.Invoke();
+        }
+
+        // Reassign tag state
+        currentTagged.IsTagged = false;
+        currentTagged = newTagged;
+        currentTagged.IsTagged = true;
     }
 
     void OnComplete()

@@ -6158,6 +6158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1359422667}
   - component: {fileID: 1359422668}
+  - component: {fileID: 1359422666}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -6165,6 +6166,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1359422666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359422665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac68d9c21379fd24ca8a1d315f47b756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1359422667
 Transform:
   m_ObjectHideFlags: 0
@@ -6191,6 +6204,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af56461a41e9e2c408aaad515cbfbb7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlayerTagging:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1359422666}
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[Menu YES]
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPlayerTagged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1359422666}
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[Menu NO]
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnemyTag:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1359422666}
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[Menu PAUSE]
+          m_BoolArgument: 0
+        m_CallState: 2
   kids:
   - {fileID: 2028395378}
   - {fileID: 2118625864}
@@ -8219,6 +8274,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTagged: 0
+  onPlayerTag:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2093930379
 GameObject:
   m_ObjectHideFlags: 0

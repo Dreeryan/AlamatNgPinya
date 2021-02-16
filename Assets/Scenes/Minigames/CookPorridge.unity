@@ -1842,7 +1842,6 @@ GameObject:
   m_Component:
   - component: {fileID: 542915165}
   - component: {fileID: 542915163}
-  - component: {fileID: 542915164}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1862,25 +1861,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectGoal: 1
-  counterText: {fileID: 0}
-  motivationModifier: {fileID: 542915164}
+  minigameID: CookPorridge
+  progressText: {fileID: 0}
   MinigameCompleted:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &542915164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542915162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
 --- !u!4 &542915165
 Transform:
   m_ObjectHideFlags: 0

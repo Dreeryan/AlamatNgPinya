@@ -5,14 +5,11 @@ using UnityEngine.Events;
 
 public class CleanDishRack : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Counter counter;
-
     public class OnDishAdded : UnityEvent<int> { }
     private OnDishAdded dishAdded = new OnDishAdded();
     public OnDishAdded  DishAdded => dishAdded;
 
-    [Header("")]
+    [Header("References")]
     [SerializeField] private Dish[]     dirtyDishes;
     [SerializeField] private Sprite[]   cleanSprites;
 
@@ -38,6 +35,7 @@ public class CleanDishRack : MonoBehaviour
 
     private void DishCleaned()
     {
+        Debug.Log("DishCleaned"); 
         dishCount++;
         ChangeSprite();
         WinCheck.Instance.IncreaseProgress();

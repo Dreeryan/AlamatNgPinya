@@ -11,24 +11,13 @@ public class Counter : MonoBehaviour
     [SerializeField] private string minigameID;
 
     [Header("References")]
-    public TextMeshProUGUI counterText;
-
-    [Header("UI Settings")]
-    [Tooltip("Words before it shows progress, [phrase] : [current] / [goal] ")]
-    [SerializeField]
-    private string phrase;
+    public TextMeshProUGUI progressText;
 
     [SerializeField]
     private UnityEvent MinigameCompleted;
 
     void Start()
     {
-        Debug.Log("minigameID: " + minigameID);
-        WinCheck.Instance.Initialize(minigameID, MinigameCompleted);
-    }
-
-    public void UpdateDisplayText()
-    {
-        counterText.text = phrase + " : " + WinCheck.Instance.CurProgress + " / " + WinCheck.Instance.Goal;
+        WinCheck.Instance.Initialize(minigameID, MinigameCompleted, progressText);
     }
 }

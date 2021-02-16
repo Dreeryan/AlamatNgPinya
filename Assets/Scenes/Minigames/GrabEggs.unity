@@ -377,7 +377,7 @@ Transform:
   m_Children:
   - {fileID: 1056699813}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &121212609
 GameObject:
@@ -473,7 +473,7 @@ RectTransform:
   - {fileID: 1234045801}
   - {fileID: 1976640523}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1746,7 +1746,7 @@ Transform:
   - {fileID: 1102620874}
   - {fileID: 145522547}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &621957250
 GameObject:
@@ -2156,6 +2156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9323a30eb72509498ac4a1993eae5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counter: {fileID: 0}
   SpawnPoints:
   - {fileID: 242715298}
   - {fileID: 1918258166}
@@ -2177,7 +2178,6 @@ GameObject:
   - component: {fileID: 897994915}
   - component: {fileID: 897994917}
   - component: {fileID: 897994918}
-  - component: {fileID: 897994919}
   m_Layer: 0
   m_Name: Egg Basket
   m_TagString: Goal
@@ -2289,25 +2289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectGoal: 0
-  counterText: {fileID: 188355961}
-  motivationModifier: {fileID: 897994919}
+  minigameID: GrabEggs
+  progressText: {fileID: 0}
   MinigameCompleted:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &897994919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897994914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
 --- !u!1001 &1056699812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2618,7 +2604,7 @@ Transform:
   - {fileID: 678610261}
   - {fileID: 19680830}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1550680305
 GameObject:
@@ -2730,36 +2716,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1640686614}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1798341688
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1798341690}
-  m_Layer: 0
-  m_Name: Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1798341690
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798341688}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77.484406, y: 581.4823, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1817593801
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,7 +3011,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1918258165
 GameObject:

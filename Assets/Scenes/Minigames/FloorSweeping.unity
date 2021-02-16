@@ -328,7 +328,6 @@ MonoBehaviour:
           m_StringArgument: sfx[Menu YES]
           m_BoolArgument: 0
         m_CallState: 2
-  counter: {fileID: 445883875}
 --- !u!61 &206580263
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1187,11 +1186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigameID: 
-  taskID: sweepfloor
-  objectGoal: 0
-  counterText: {fileID: 1144925701}
-  motivationModifier: {fileID: 206580266}
+  minigameID: FloorSweeping
+  progressText: {fileID: 0}
   MinigameCompleted:
     m_PersistentCalls:
       m_Calls: []

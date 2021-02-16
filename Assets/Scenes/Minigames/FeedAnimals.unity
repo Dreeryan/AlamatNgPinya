@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004b1970670b3864b891738a55efc569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: {fileID: 2037446346}
+  minigameID: 
   fillBar: {fileID: 1864944121}
   maxFeedValue: 200
 --- !u!61 &1300411026
@@ -3210,7 +3210,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2037446344}
   - component: {fileID: 2037446346}
-  - component: {fileID: 2037446345}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -3232,19 +3231,6 @@ Transform:
   m_Father: {fileID: 2004939820}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2037446345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037446343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
 --- !u!114 &2037446346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3257,9 +3243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectGoal: 0
-  counterText: {fileID: 0}
-  motivationModifier: {fileID: 2037446345}
+  minigameID: FeedAnimals
+  progressText: {fileID: 0}
   MinigameCompleted:
     m_PersistentCalls:
       m_Calls: []

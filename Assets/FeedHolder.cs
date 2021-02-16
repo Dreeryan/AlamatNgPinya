@@ -9,7 +9,6 @@ public class FeedHolder : MonoBehaviour
     [SerializeField] private string minigameID;
 
     [Header("References")]
-    [SerializeField] private Counter    counter;
     [SerializeField] private Image      fillBar;
 
     [SerializeField] private int        maxFeedValue;

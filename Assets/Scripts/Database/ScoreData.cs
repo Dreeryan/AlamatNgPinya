@@ -7,8 +7,15 @@ public class ScoreData : BaseData
 {
     [Header("WinCheck")]
     [SerializeField] private int goal;
-    [SerializeField] private MotivationType motivationType;
+    [Tooltip("Words before it shows progress, [phrase] : [current] / [goal] ")]
+    [SerializeField] private string phrase;
+
     public int Goal => goal;
+    public string Phrase => phrase;
+
+    [Header("MotivationManager")]
+    [SerializeField] private MotivationType motivationType;
+    
     public MotivationType MotivationType => motivationType;
 
     [Header("ScoreData")]

@@ -34,8 +34,6 @@ public class Dish : MonoBehaviour
         if (cleanDishRack == null) 
             cleanDishRack = FindObjectOfType<CleanDishRack>().transform;
 
-        WinCheck.Instance.IncreaseProgress();
-
         currentDirtRate = maxDirtRate;
     }
 

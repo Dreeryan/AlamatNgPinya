@@ -152,7 +152,7 @@ Transform:
   - {fileID: 1748693521}
   - {fileID: 1902205692}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &206955956
 GameObject:
@@ -264,7 +264,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  counter: {fileID: 0}
 --- !u!61 &206955960
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -450,7 +449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &674103224
 PrefabInstance:
@@ -555,8 +554,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 674103225}
+  - {fileID: 1530219455}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1137303539
 GameObject:
@@ -650,7 +650,7 @@ RectTransform:
   m_Children:
   - {fileID: 1544019914}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -667,7 +667,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1530219455}
   - component: {fileID: 1530219454}
-  - component: {fileID: 1530219456}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -688,9 +687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameID: FeedMom
-  objectGoal: 0
-  counterText: {fileID: 0}
-  motivationModifier: {fileID: 1530219456}
+  progressText: {fileID: 0}
   MinigameCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -701,26 +698,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530219453}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.4549999, y: -0.027500391, z: 0.16536169}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 742861535}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1530219456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530219453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
 --- !u!1001 &1544019913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -977,8 +961,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  counter: {fileID: 0}
-  maxSoupCount: 5
   fullSprite: {fileID: -7612879768662879193, guid: d3dcf12ce6142ca4eb97058fedc17f7f,
     type: 3}
   emptySprite: {fileID: -8658410242837071990, guid: d3dcf12ce6142ca4eb97058fedc17f7f,

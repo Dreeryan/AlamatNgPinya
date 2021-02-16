@@ -18,32 +18,33 @@ public class WinCheck : BaseManager<WinCheck>
     public bool HasWon => hasWon;
 
     private MotivationType motivationType;
+    private TextMeshProUGUI progressText;
+    private string phrase;
     private UnityEvent minigameCompleted;
 
-    public void Initialize(string _minigameID, UnityEvent _minigameCompleted)
+    public void Initialize(string _minigameID, UnityEvent _minigameCompleted, TextMeshProUGUI _progressText = null)
     {
-        Debug.Log("enter initialization with values: " + _minigameID + " and " + _minigameCompleted);
-
         hasWon = false;
         curProgress = 0;
         minigameCompleted?.RemoveAllListeners();
 
-        Debug.Log("values reset");
-
         minigameID = _minigameID;
         ScoreData scoreData = Instance.data.GetData(_minigameID);
         goal = scoreData.Goal;
+        phrase = scoreData.Phrase;
+        progressText = _progressText;
         motivationType = scoreData.MotivationType;
         minigameCompleted = _minigameCompleted;
-
-        Debug.Log("Done initialization");
     }
 
     public void IncreaseProgress(int value = 1)
     {
+        Debug.Log("ProgressIncresed");
+
         if (hasWon) return;
 
         curProgress += value;
+        UpdateDisplayText();
         if (curProgress > goal) curProgress = goal;
 
         if (curProgress >= goal) OnComplete();
@@ -62,5 +63,11 @@ public class WinCheck : BaseManager<WinCheck>
 
         GameManager.Instance.UpdateScore(score);
         SceneLoader.Instance.LoadScene("WinScene", true);
+    }
+
+    private void UpdateDisplayText()
+    {
+        if(progressText != null)
+            progressText.text = phrase + " : " + curProgress + " / " + goal;
     }
 }

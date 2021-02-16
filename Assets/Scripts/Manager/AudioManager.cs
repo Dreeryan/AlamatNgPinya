@@ -11,7 +11,7 @@ public class AudioManager : BaseManager<AudioManager>
 
     public float BGMFadeTime => bgmFadeTime;
     public AudioMixer AudioMix => audioMix;
-    private List<AudioObject> spawnedAudio = new List<AudioObject>();
+    public List<AudioObject> spawnedAudio = new List<AudioObject>();
 
     private static string currBGM;
 
@@ -55,16 +55,13 @@ public class AudioManager : BaseManager<AudioManager>
     {
         if (IdExists(data.ID))
         {
-            if (currBGM == data.ID) return;
-
-
-            Debug.LogError("Switch to " + data.ID);
-            currBGM = data.ID;
-
-            AudioObject ao = GetAudioObject(data.ID);
-            ao.FadeAudio(data.Volume);
-            ao.PlayAudio();
-            
+            if (currBGM != data.ID)
+            {
+                currBGM = data.ID;
+                AudioObject ao = GetAudioObject(data.ID);
+                ao.FadeAudio(1);
+                ao.PlayAudio();
+            }
         }
         else
         {
@@ -72,11 +69,14 @@ public class AudioManager : BaseManager<AudioManager>
             AddAudioObject(data);
         }
 
-        foreach(AudioObject ao in Instance.spawnedAudio)
+        foreach (AudioObject ao in Instance.spawnedAudio)
         {
-            if (ao.ID != data.ID && ao.MixGroup == "Music")
-                ao.FadeAudio(0);
+            if (ao.MixGroup == "SFX") continue;
+
+            if (ao.ID != currBGM)
+                ao.FadeStopAudio();
         }
+
     }
 
     private static void AddAudioObject(AudioData toAdd)

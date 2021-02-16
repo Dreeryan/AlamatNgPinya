@@ -34,11 +34,13 @@ public class Egg : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GameManager.Instance.IsPaused) return;
         onEggPickedUp?.Invoke();
     }
 
     void OnMouseDrag()
     {
+        if (GameManager.Instance.IsPaused) return;
         // If the item is not yet placed while dragging, the item will be placed in the last position.
         if (!isPlaced)
         {
@@ -55,10 +57,10 @@ public class Egg : MonoBehaviour
             // Adds a point for every item that collides with the goal
             if (counter != null) counter.IncreaseProgress();
 
-            onEggDropped?.Invoke();
             transform.position = counter.transform.position;
             if (collider != null) collider.enabled = false;
             isPlaced = true;
+            onEggDropped?.Invoke();
         }
         else
         {

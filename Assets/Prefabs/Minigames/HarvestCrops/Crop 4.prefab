@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5408232640290106311}
   - component: {fileID: 4959343431731358815}
   m_Layer: 0
-  m_Name: Crop
+  m_Name: Crop 4
   m_TagString: Egg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -5683172777529628088, guid: 03d4533b458711243a82b3ca8161ba68,
+  m_Sprite: {fileID: 5705813200215033560, guid: 03d4533b458711243a82b3ca8161ba68,
     type: 3}
   m_Color: {r: 0.9339623, g: 0.9295568, b: 0.9295568, a: 1}
   m_FlipX: 0
@@ -177,8 +177,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.007003069, y: -0.014006257}
-  m_Size: {x: 0.9678893, y: 1.14376}
+  m_Offset: {x: -0.028296351, y: -0.10746896}
+  m_Size: {x: 2.04625, y: 2.8330543}
   m_Direction: 0
 --- !u!114 &4959343431731358815
 MonoBehaviour:

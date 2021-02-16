@@ -27,17 +27,8 @@ public class AudioObject : MonoBehaviour
 			aSource.outputAudioMixerGroup = AudioManager.Instance
 				.AudioMix.FindMatchingGroups(newData.MixGroup)[0];
 
-        if (newData.MixGroup == "Music")
-        {
-            aSource.volume = 0;
-            currVolume = 0;
-            FadeAudio(newData.Volume);
-        }
-        else
-        {
-            aSource.volume = newData.Volume;
-            currVolume = newData.Volume;
-        }
+        aSource.volume = newData.Volume;
+        currVolume = newData.Volume;
 
         aSource.loop = newData.IsLooping;
 
@@ -53,24 +44,15 @@ public class AudioObject : MonoBehaviour
         }
 
         aSource.Play();
+
+        if (aSource.volume <= 0)
+            aSource.volume = 1;
     }
 
     public void StopAudio()
     {
         if (aSource == null) return;
         aSource.Stop();
-    }
-
-    public void FadeAudio(float targetVol)
-    {
-        aSource.DOFade(targetVol, AudioManager.Instance.BGMFadeTime);
-    }
-
-    public void FadeStopAudio()
-    {
-        float stopTime = AudioManager.Instance.BGMFadeTime;
-        aSource.DOFade(0, stopTime);
-        StartCoroutine(DelayedStopCR(stopTime));
     }
 
     private IEnumerator DelayedStopCR(float delay)

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+/// <summary>
+/// Handle all audio systems
+/// </summary>
 public class AudioManager : BaseManager<AudioManager>
 {
     [SerializeField] private AudioDatabase audioDB;

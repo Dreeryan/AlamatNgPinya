@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+/// <summary>
+/// Instance holder for the audio source
+/// </summary>
 public class AudioObject : MonoBehaviour
 {
     private AudioData   aData;
@@ -31,6 +33,10 @@ public class AudioObject : MonoBehaviour
         aSource.Play();
     }
 
+    /// <summary>
+    /// Play the audio clip
+    /// </summary>
+    /// <param name="fadeIn">Fade in to set volume if curremt volume is 0</param>
     public void PlayAudio(bool fadeIn = false)
     {
         if (aSource == null)
@@ -51,14 +57,13 @@ public class AudioObject : MonoBehaviour
         aSource.Stop();
     }
 
+    /// <summary>
+    /// Fade the audio volume by tween
+    /// </summary>
+    /// <param name="targetVol"> New volume value</param>
+    /// <param name="duration"> Duration of tween</param>
     public void FadeAudio(float targetVol, float duration)
     {
         aSource.DOFade(targetVol, duration).SetUpdate(true);
-    }
-
-    private IEnumerator DelayedStopCR(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        aSource.Stop();
     }
 }

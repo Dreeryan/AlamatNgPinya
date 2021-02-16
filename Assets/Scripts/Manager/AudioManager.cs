@@ -54,7 +54,7 @@ public class AudioManager : BaseManager<AudioManager>
         if (IdExists(data.ID))
         {
             AudioObject ao = GetAudioObject(data.ID);
-            ao.PlayAudio();
+            ao.PlayAudio(true);
         }
         else
         {
@@ -66,7 +66,7 @@ public class AudioManager : BaseManager<AudioManager>
             if (ao.MixGroup == "SFX") continue;
 
             if (ao.ID != data.ID)
-                ao.StopAudio();
+                ao.FadeAudio(0, Instance.bgmFadeTime);
         }
     }
 

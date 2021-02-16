@@ -22,7 +22,7 @@ public class MotivationMeter : MonoBehaviour
     private void Start()
     {
         if (fillImage != null && MotivationManager.Instance != null)
-            fillImage.fillAmount = MotivationManager.Instance.fillRatio;
+            fillImage.fillAmount = MotivationManager.Instance.FillRatio;
     }
 
     private void OnMotivationUpdated(float newVal)

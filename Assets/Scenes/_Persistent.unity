@@ -325,6 +325,7 @@ Transform:
   - {fileID: 1092236339}
   - {fileID: 2995056003567245908}
   - {fileID: 6433733514212348041}
+  - {fileID: 991013644}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1117,6 +1118,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1914537361229777325, guid: 6b0e7c8ce14c5714f989d43dbec8e37d,
     type: 3}
   m_PrefabInstance: {fileID: 926684748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &991013644 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8059217381679637371}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1087696556
 GameObject:
@@ -2104,3 +2111,98 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6433733514212348040}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8059217381679637371
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 185036732}
+    m_Modifications:
+    - target: {fileID: 359770125104136608, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_Name
+      value: TaskListManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363242280549829875, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319939688766965950, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: Tasks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319939688766965950, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: Tasks.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319939688766965950, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: Tasks.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319939688766965950, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: Tasks.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319939688766965950, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2,
+        type: 3}
+      propertyPath: taskDB
+      value: 
+      objectReference: {fileID: 11400000, guid: 3992712ca80274f40afb451e9a278aba,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b45fe35d4fac8a6439e5ea1b7f05c8c2, type: 3}

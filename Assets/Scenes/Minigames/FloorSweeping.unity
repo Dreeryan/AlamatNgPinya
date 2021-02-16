@@ -1188,6 +1188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameID: 
+  taskID: sweepfloor
   objectGoal: 0
   counterText: {fileID: 1144925701}
   motivationModifier: {fileID: 206580266}

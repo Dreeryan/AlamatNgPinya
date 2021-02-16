@@ -11,7 +11,7 @@ public class Counter : MonoBehaviour
     /*[SerializeField]
     private string objectTag;*/
     [SerializeField] private string minigameID;
-
+    [SerializeField] private string taskID;
     private bool            hasWon;
     public bool             HasWon => hasWon;
 
@@ -78,6 +78,7 @@ public class Counter : MonoBehaviour
             TimerManager.Instance.CurTime);
         GameManager.Instance.UpdateScore(score);
         SceneLoader.Instance.LoadScene("WinScene", true);
+        TaskListManager.Instance.RemoveTaskFromList(this.taskID);
     }
 
     private void UpdateDisplayText()

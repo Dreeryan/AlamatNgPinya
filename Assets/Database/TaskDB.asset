@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: TaskDB
   m_EditorClassIdentifier: 
   dataSet:
-  - id: tsk[sweep]
+  - id: tsk[sweepfloor]
     task: Sweep the floor
   - id: tsk[cleantoys]
     task: Clean up toys
   - id: tsk[washdishes]
     task: Wash the dishes
+  - id: tsk[foldclothes]
+    task: Fold the clothes

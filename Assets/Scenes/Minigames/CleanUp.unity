@@ -5037,6 +5037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameID: test
+  taskID: tsk[cleantoys]
   objectGoal: 0
   counterText: {fileID: 259120497}
   motivationModifier: {fileID: 2002730476}

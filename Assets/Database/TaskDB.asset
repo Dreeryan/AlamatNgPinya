@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85e19a67315d21946b7fc9440dd7f9cc, type: 3}
-  m_Name: MotivationData
+  m_Script: {fileID: 11500000, guid: 9be8cfc0a2f660347b7d2547c2b2f49a, type: 3}
+  m_Name: TaskDB
   m_EditorClassIdentifier: 
-  reqMotivation: 1
-  baseGain: 1
-  baseReduction: 1
+  dataSet:
+  - id: tsk[sweep]
+    task: Sweep the floor
+  - id: tsk[cleantoys]
+    task: Clean up toys
+  - id: tsk[washdishes]
+    task: Wash the dishes

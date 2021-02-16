@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class MotivationManager : BaseManager<MotivationManager>
 {
-    [Header("Default Settings")]
-    public int defaultIncrementation = 1;
-    public int defaultRequirement = 1;
-
     [Header("Settings")]
+    [Tooltip("Maximum motivation")]
     [SerializeField] private int maxMotivation;
-    [SerializeField] private MotivationData data;
+    [Tooltip("Motivation required to do chores")]
+    [SerializeField] private int reqMotivation;
+    [Tooltip("Motivation gained or reduced when completing minigames")]
+    [SerializeField] private int incrementation;
     private int currMotivation;
 
-    public MotivationData Data => data;
     public int MaxMotivation => maxMotivation;
+    public int ReqMotivation => reqMotivation;
+    public int Incrementation => incrementation;
     public int CurrMotivation => currMotivation;
 
-    public float fillRatio => (float)currMotivation / (float)maxMotivation;
+    public float FillRatio => (float)currMotivation / (float)maxMotivation;
 
     public static System.Action<float> OnMotivationUpdated;
 
@@ -36,25 +37,24 @@ public class MotivationManager : BaseManager<MotivationManager>
             , 0
             , maxMotivation);
 
-        OnMotivationUpdated?.Invoke(fillRatio);
+        OnMotivationUpdated?.Invoke(FillRatio);
     }
 
     public void ResetMotivation()
     {
         currMotivation = maxMotivation;
-        OnMotivationUpdated?.Invoke(fillRatio);
+        OnMotivationUpdated?.Invoke(FillRatio);
     }
 
     public void EmptyMotivation()
     {
         currMotivation = 0;
-        OnMotivationUpdated?.Invoke(fillRatio);
+        OnMotivationUpdated?.Invoke(FillRatio);
     }
 
     public bool HasEnoughMotivation()
     {
-        if (data == null && currMotivation >= defaultRequirement) return true;
-        if (currMotivation >= data.ReqMotivation) return true;
+        if (currMotivation >= reqMotivation) return true;
         return false;
     }
 }

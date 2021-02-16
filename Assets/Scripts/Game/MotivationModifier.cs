@@ -18,30 +18,14 @@ public class MotivationModifier : MonoBehaviour
 
         MotivationManager manager = MotivationManager.Instance;
 
-        if (MotivationManager.Instance.Data != null)
+        switch (type)
         {
-            switch (type)
-            {
-                case MotivationType.Gain:
-                    manager.IncrementMotivation(manager.Data.BaseGain);
-                    break;
-                case MotivationType.Reduce:
-                    manager.IncrementMotivation(-manager.Data.BaseReduction);
-                    break;
-            }
-        }
-        else
-        {
-            switch (type)
-            {
-                case MotivationType.Gain:
-                    manager.IncrementMotivation(manager.defaultIncrementation);
-                    break;
-                case MotivationType.Reduce:
-                    manager.IncrementMotivation(-manager.defaultIncrementation);
-                    break;
-            }
-        }
-
+            case MotivationType.Gain:
+                manager.IncrementMotivation(manager.Incrementation);
+                break;
+            case MotivationType.Reduce:
+                manager.IncrementMotivation(-manager.Incrementation);
+                break;
+        }       
     }
 }

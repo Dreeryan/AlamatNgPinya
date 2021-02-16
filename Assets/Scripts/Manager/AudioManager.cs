@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+/// <summary>
+/// Handle all audio systems
+/// </summary>
 public class AudioManager : BaseManager<AudioManager>
 {
     [SerializeField] private AudioDatabase audioDB;
@@ -11,9 +14,7 @@ public class AudioManager : BaseManager<AudioManager>
 
     public float BGMFadeTime => bgmFadeTime;
     public AudioMixer AudioMix => audioMix;
-    private List<AudioObject> spawnedAudio = new List<AudioObject>();
-
-    private static string currBGM;
+    public List<AudioObject> spawnedAudio = new List<AudioObject>();
 
     public static void PlayAudio(string idToPlay)
     {
@@ -55,25 +56,20 @@ public class AudioManager : BaseManager<AudioManager>
     {
         if (IdExists(data.ID))
         {
-            if (currBGM == data.ID) return;
-
-            currBGM = data.ID;
-
             AudioObject ao = GetAudioObject(data.ID);
-            ao.FadeAudio(data.Volume);
-            ao.PlayAudio();
-            
+            ao.PlayAudio(true);
         }
         else
         {
-            currBGM = data.ID;
             AddAudioObject(data);
         }
 
-        foreach(AudioObject ao in Instance.spawnedAudio)
+        foreach (AudioObject ao in Instance.spawnedAudio)
         {
+            if (ao.MixGroup == "SFX") continue;
+
             if (ao.ID != data.ID)
-                ao.FadeAudio(0);
+                ao.FadeAudio(0, Instance.bgmFadeTime);
         }
     }
 

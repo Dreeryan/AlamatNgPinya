@@ -57,6 +57,8 @@ public class AudioManager : BaseManager<AudioManager>
         {
             if (currBGM == data.ID) return;
 
+
+            Debug.LogError("Switch to " + data.ID);
             currBGM = data.ID;
 
             AudioObject ao = GetAudioObject(data.ID);
@@ -72,7 +74,7 @@ public class AudioManager : BaseManager<AudioManager>
 
         foreach(AudioObject ao in Instance.spawnedAudio)
         {
-            if (ao.ID != data.ID)
+            if (ao.ID != data.ID && ao.MixGroup == "Music")
                 ao.FadeAudio(0);
         }
     }

@@ -8,6 +8,7 @@ public class AudioObject : MonoBehaviour
     private AudioSource aSource;
 
     public string ID => aData.ID;
+    public string MixGroup => aData.MixGroup;
 
     private float currVolume;
 
@@ -44,7 +45,11 @@ public class AudioObject : MonoBehaviour
 
     public void PlayAudio()
     {
-        if (aSource == null) return;
+        if (aSource == null)
+        {
+            Debug.LogError("Lost Audio Source!");
+            return;
+        }
 
         aSource.Play();
     }

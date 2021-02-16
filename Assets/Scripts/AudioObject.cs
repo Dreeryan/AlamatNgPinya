@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class AudioObject : MonoBehaviour
 {
@@ -62,25 +63,19 @@ public class AudioObject : MonoBehaviour
 
     public void FadeAudio(float targetVol)
     {
-        StartCoroutine(LerpAudioVolumeCR(targetVol));
+        aSource.DOFade(targetVol, AudioManager.Instance.BGMFadeTime);
     }
 
-    private IEnumerator LerpAudioVolumeCR(float targetVol)
+    public void FadeStopAudio()
     {
-        float timeElapsed = 0;
-        float initVal = currVolume;
-        float lerpTime = AudioManager.Instance.BGMFadeTime;
+        float stopTime = AudioManager.Instance.BGMFadeTime;
+        aSource.DOFade(0, stopTime);
+        StartCoroutine(DelayedStopCR(stopTime));
+    }
 
-        while (timeElapsed < lerpTime)
-        {
-            currVolume = Mathf.Lerp(initVal, targetVol, timeElapsed / lerpTime);
-            timeElapsed += Time.deltaTime;
-
-            aSource.volume = currVolume;
-            yield return null;
-        }
-
-        currVolume = targetVol;
-        aSource.volume = currVolume;
+    private IEnumerator DelayedStopCR(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        aSource.Stop();
     }
 }

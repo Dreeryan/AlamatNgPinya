@@ -4585,7 +4585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameID: 
-  taskID: tsk[foldclothes]
+  taskID: foldclothes
   objectGoal: 0
   counterText: {fileID: 585812893}
   motivationModifier: {fileID: 1603624921}

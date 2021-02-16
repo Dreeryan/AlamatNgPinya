@@ -2041,7 +2041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameID: 
-  taskID: tsk[washdishes]
+  taskID: washdishes
   objectGoal: 0
   counterText: {fileID: 540975657}
   motivationModifier: {fileID: 1171402097}

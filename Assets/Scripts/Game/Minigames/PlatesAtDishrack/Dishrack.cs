@@ -1,48 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Dishrack : MonoBehaviour
 {
+    [SerializeField] private UnityEvent onPlatePlaced;
+
     [SerializeField] Counter counter;
 
     private bool    isOccupied = false;
-    public bool     IsOccupied
-    {
-        get { return isOccupied; }
-    }
-    private bool    isOverlapped = false;
+    public bool     IsOccupied => isOccupied;
 
     private void Start()
     {
         if (counter == null) counter = FindObjectOfType<Counter>();
     }
 
-    private void Update()
+    public void PlacePlate(CleanDish dish)
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (!IsOccupied && isOverlapped)
-            {
-                isOccupied = true;
-                OnSlotFilled();
-            }
-        }
-    }
+        dish.transform.parent = transform;
+        dish.transform.position = transform.position;
 
-    void OnTriggerStay2D(Collider2D collision)
-    {
-        if (isOccupied) return;
-        if (collision.gameObject.GetComponent<CleanDish>())
-        {
-            isOverlapped = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (isOccupied) return;
-        else isOverlapped = false;
+        isOccupied = true;
+        OnSlotFilled();
     }
 
     void OnSlotFilled()

@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CleanDish : MonoBehaviour
 {
+    [SerializeField] private UnityEvent onPickedUp;
+
     private Vector2             mousePos;
     private Vector2             returnPos;
     private bool                isPlaced        = false;
     private bool                isOverlapping   = false;
-    private GameObject          dishRack;
+    private Dishrack            dishRack;
 
     [Header("Rack Variables")]
     [SerializeField] private float distanceToRack = 1.2f;
@@ -18,6 +21,11 @@ public class CleanDish : MonoBehaviour
         returnPos = transform.position;
         Counter counter = FindObjectOfType<Counter>();
         if (counter != null) counter.IncreaseGoalCount(1);
+    }
+
+    private void OnMouseDown()
+    {
+        onPickedUp?.Invoke();
     }
 
     void OnMouseDrag()
@@ -31,7 +39,7 @@ public class CleanDish : MonoBehaviour
     {
         if (isOverlapping)
         {
-            transform.position = dishRack.transform.position;
+            dishRack.PlacePlate(this);
             isPlaced = true;
         }
         else
@@ -45,7 +53,7 @@ public class CleanDish : MonoBehaviour
         if (collision.GetComponent<Dishrack>() &&
             !collision.GetComponent<Dishrack>().IsOccupied)
         {
-            if (dishRack == null) dishRack = collision.gameObject;
+            if (dishRack == null) dishRack = collision.GetComponent<Dishrack>();
 
             if (CheckDistance())
             {

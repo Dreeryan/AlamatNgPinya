@@ -11,6 +11,7 @@ public class TaskListManager : BaseManager<TaskListManager>
     public List<string> taskList { get; private set; } = new List<string>();
 
     public UnityEvent    onTaskRemoved;
+    public int numberOfTimesAsked { get; private set; }
 
     private void Awake()
     {
@@ -20,11 +21,7 @@ public class TaskListManager : BaseManager<TaskListManager>
     protected override void Start()
     {
         base.Start();
-
-
-
     }
-
 
     public string GetTask(string TaskId)
     {
@@ -52,6 +49,11 @@ public class TaskListManager : BaseManager<TaskListManager>
             this.taskList.Add(taskDB.dataSet[i].GetTask());
             
         }
+    }
+
+    public void AddNumberOfTimesAsked()
+    {
+        this.numberOfTimesAsked += 1;
     }
 
 }

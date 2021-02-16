@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EggSpawner : MonoBehaviour
 {
+    [SerializeField] private Counter counter;
     [SerializeField] private List<Transform> SpawnPoints;
     [SerializeField] private GameObject eggPrefab;
     private int spawnPointIndex = 0;
@@ -16,9 +17,11 @@ public class EggSpawner : MonoBehaviour
         while (spawnPointIndex < SpawnPoints.Count)
         {
             GameObject egg = Instantiate(eggPrefab, SpawnPoints[spawnPointIndex].position, Quaternion.identity);
+            egg.GetComponent<Egg>().Initialize(counter);
             spawnPointIndex++;
         }
     }
+
     //[Header("Variables")]
     //[Tooltip("It counts how many items will be spawned")]
     //[SerializeField] private int spawnCount;

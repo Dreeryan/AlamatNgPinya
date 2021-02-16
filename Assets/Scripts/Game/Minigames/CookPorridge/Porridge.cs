@@ -108,6 +108,6 @@ public class Porridge : MonoBehaviour
         yield return new WaitForSeconds(secondsToWin);
         hasWon = true;
 
-        counter.IncreaseProgress();
+        WinCheck.Instance.IncreaseProgress();
     }
 }

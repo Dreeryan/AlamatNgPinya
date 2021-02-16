@@ -31,7 +31,7 @@ public class FoldedClothesPile : MonoBehaviour
     {
         clothesCounter++;
         foldedSprites[clothesCounter - 1].gameObject.SetActive(true);
-        counter.IncreaseProgress();
+        WinCheck.Instance.IncreaseProgress();
         onClothingAdded?.Invoke();
     }
 }

@@ -413,7 +413,7 @@ Transform:
   - {fileID: 415147576}
   - {fileID: 1321080962}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &180394275
 GameObject:
@@ -718,7 +718,7 @@ Transform:
   - {fileID: 1513266317}
   - {fileID: 583218884}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &259120495
 GameObject:
@@ -904,8 +904,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1557441661}
+  - {fileID: 2002730475}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &292316928
 GameObject:
@@ -971,7 +972,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &311877569
 GameObject:
@@ -1632,7 +1633,6 @@ MonoBehaviour:
   onMinigameCompleted:
     m_PersistentCalls:
       m_Calls: []
-  counter: {fileID: 2002730474}
 --- !u!61 &583218886
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4263,6 +4263,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minigame Startup
       objectReference: {fileID: 0}
+    - target: {fileID: 7836889217918782639, guid: 0c3242857da9993469a418e5d048858f,
+        type: 3}
+      propertyPath: onStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9179801949583006665, guid: 0c3242857da9993469a418e5d048858f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4420,7 +4425,7 @@ RectTransform:
   - {fileID: 37214011}
   - {fileID: 927972479}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5015,7 +5020,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2002730475}
   - component: {fileID: 2002730474}
-  - component: {fileID: 2002730476}
   - component: {fileID: 2002730477}
   m_Layer: 0
   m_Name: Manager
@@ -5036,10 +5040,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigameID: test
-  objectGoal: 0
+  minigameID: CleanUp
   counterText: {fileID: 259120497}
-  motivationModifier: {fileID: 2002730476}
+  phrase: Toys picked up
   MinigameCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -5054,17 +5057,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
       - m_Target: {fileID: 8165169936571676931}
         m_MethodName: StopAudio
         m_Mode: 5
@@ -5083,26 +5075,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002730473}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.2750072, y: -1.0199995, z: 0.14403419}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 264973801}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2002730476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002730473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2028f38928fd71e4894d37bece5f9c01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
 --- !u!114 &2002730477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5597,7 +5576,7 @@ PrefabInstance:
     - target: {fileID: 8165169935274278551, guid: 0e6169d0baa07894691bcde83d0c350f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8165169935274278551, guid: 0e6169d0baa07894691bcde83d0c350f,
         type: 3}

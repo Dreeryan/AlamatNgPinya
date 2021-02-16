@@ -1530,6 +1530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minigameID: HideAndSeek
   objectGoal: 0
   counterText: {fileID: 0}
   motivationModifier: {fileID: 399419046}

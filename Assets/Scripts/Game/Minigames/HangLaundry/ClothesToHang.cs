@@ -21,9 +21,6 @@ public class ClothesToHang : MonoBehaviour
     void Start()
     {
         currentPosition = transform.position;
-
-        Counter counter = FindObjectOfType<Counter>();
-        if (counter != null) counter.IncreaseGoalCount(1);
     }
 
     // Checks if object can be seen by the camera

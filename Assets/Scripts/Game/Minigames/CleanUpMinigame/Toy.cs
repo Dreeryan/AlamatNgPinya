@@ -10,13 +10,6 @@ public class Toy : MonoBehaviour
     private bool    willBePickedUp;
     public  bool    WillBePickedUp => willBePickedUp;
 
-    private void Start()
-    {
-        Counter counter = FindObjectOfType<Counter>();
-        if (counter != null) counter.IncreaseGoalCount(1);
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))

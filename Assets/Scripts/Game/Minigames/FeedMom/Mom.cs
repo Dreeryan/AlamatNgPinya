@@ -7,19 +7,6 @@ public class Mom : MonoBehaviour
 {
     [SerializeField] private UnityEvent OnEating;
 
-    [SerializeField] Counter counter;
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (counter == null) counter = FindObjectOfType<Counter>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Spoon>())
@@ -29,7 +16,7 @@ public class Mom : MonoBehaviour
             {
                 spoon.EmptySpoon();
             }
-            counter.IncreaseProgress();
+            WinCheck.Instance.IncreaseProgress();
 
             OnEating?.Invoke();
         }

@@ -8,80 +8,27 @@ using TMPro;
 public class Counter : MonoBehaviour
 {
     [Header("Variables")]
-    /*[SerializeField]
-    private string objectTag;*/
     [SerializeField] private string minigameID;
 
-    private bool            hasWon;
-    public bool             HasWon => hasWon;
+    [Header("References")]
+    public TextMeshProUGUI counterText;
+
+    [Header("UI Settings")]
+    [Tooltip("Words before it shows progress, [phrase] : [current] / [goal] ")]
+    [SerializeField]
+    private string phrase;
 
     [SerializeField]
-    private int             objectGoal;
-    public int              ObjectGoal => objectGoal;
+    private UnityEvent MinigameCompleted;
 
-    private int             curProgress;
-    public int              CurProgress => curProgress;
-
-    [Header("References")]
-    public TextMeshProUGUI  counterText;
-
-    [SerializeField] 
-    private MotivationModifier motivationModifier;
-
-    [SerializeField] 
-    private UnityEvent      MinigameCompleted;
-
-    // Start is called before the first frame update
     void Start()
     {
-        hasWon = false;
-
-        if (motivationModifier == null)
-            motivationModifier = GetComponent<MotivationModifier>();
+        Debug.Log("minigameID: " + minigameID);
+        WinCheck.Instance.Initialize(minigameID, MinigameCompleted);
     }
 
-    public void IncreaseGoalCount(int value)
+    public void UpdateDisplayText()
     {
-        objectGoal += value;
-        if (counterText != null) UpdateDisplayText();
-    }
-
-    public void SetGoalCount(int value)
-    {
-        objectGoal = value;
-        if (counterText != null) UpdateDisplayText();
-    }
-
-    public void IncreaseProgress(int value = 1)
-    {
-        if (hasWon) return;
-
-        curProgress += value;
-        if (curProgress > objectGoal) curProgress = objectGoal;
-        if (counterText != null) UpdateDisplayText();
-
-        if (curProgress >= objectGoal)
-        {
-            OnComplete();
-        }
-    }
-
-    private void OnComplete()
-    {
-        hasWon = true;
-        //Time.timeScale = 0.0f;
-        motivationModifier.IncrementMotivation();
-        MinigameCompleted?.Invoke();
-
-        TimerManager.Instance.StopTimer();
-        float score = ScoreManager.Instance.GetFinalScore(minigameID,
-            TimerManager.Instance.CurTime);
-        GameManager.Instance.UpdateScore(score);
-        SceneLoader.Instance.LoadScene("WinScene", true);
-    }
-
-    private void UpdateDisplayText()
-    {
-        counterText.text = "Collected: " + curProgress + " / " + objectGoal;
+        counterText.text = phrase + " : " + WinCheck.Instance.CurProgress + " / " + WinCheck.Instance.Goal;
     }
 }

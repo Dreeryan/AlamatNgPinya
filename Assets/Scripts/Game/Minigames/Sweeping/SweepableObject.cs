@@ -6,7 +6,6 @@ public class SweepableObject : MonoBehaviour
 {
     [SerializeField] private float          pushStrength;
     [SerializeField] private Transform      itemHolder;
-    [SerializeField] private Counter        counter;
 
     public ReturnIfVisionLost vision;
 
@@ -15,9 +14,6 @@ public class SweepableObject : MonoBehaviour
     private void Start()
     {
         currentPosition = transform.position;
-
-        if (counter == null) counter = FindObjectOfType<Counter>();
-        if (counter != null) counter.IncreaseGoalCount(1);
     }
 
     public void Update()

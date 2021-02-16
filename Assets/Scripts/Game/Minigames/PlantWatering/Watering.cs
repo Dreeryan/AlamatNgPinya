@@ -71,7 +71,7 @@ public class Watering : MonoBehaviour
                 onWatered?.Invoke();
 
                 // increase progress
-                counter.IncreaseProgress();
+                WinCheck.Instance.IncreaseProgress();
             }
 
             UpdateUI();

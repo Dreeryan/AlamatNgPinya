@@ -16,14 +16,16 @@ public class Egg : MonoBehaviour
 
     public  ReturnIfVisionLost  vision;
 
-    [SerializeField] private Counter          counter;
+    private Counter          counter;
     [SerializeField] private Collider2D       collider;
     void Start()
     {
         currentPosition = transform.position;
+    }
 
-        if (counter == null) counter = FindObjectOfType<Counter>();
-        if (counter != null) counter.IncreaseGoalCount(1);
+    public void Initialize(Counter _counter)
+    {
+        counter = _counter;
     }
 
     private void Update()
@@ -55,7 +57,7 @@ public class Egg : MonoBehaviour
         if (isOnGoal)
         {
             // Adds a point for every item that collides with the goal
-            if (counter != null) counter.IncreaseProgress();
+            WinCheck.Instance.IncreaseProgress();
 
             transform.position = counter.transform.position;
             if (collider != null) collider.enabled = false;

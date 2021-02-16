@@ -7,13 +7,6 @@ public class TrashBin : MonoBehaviour
 {
     [SerializeField] private UnityEvent onTrashAdded;
 
-    [SerializeField] private Counter counter;
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (counter == null) counter = FindObjectOfType<Counter>();
-    }
-
     public void ThrowTrash(GameObject trash)
     {
         trash.transform.parent = transform;
@@ -23,6 +16,6 @@ public class TrashBin : MonoBehaviour
 
         onTrashAdded?.Invoke();
 
-        if (counter != null) counter.IncreaseProgress();
+        WinCheck.Instance.IncreaseProgress();
     }
 }

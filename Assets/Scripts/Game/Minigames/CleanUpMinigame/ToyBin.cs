@@ -12,8 +12,6 @@ public class ToyBin : MonoBehaviour
     private bool        isSelected = false;
     public bool         IsSelected => isSelected;
 
-    [SerializeField] private Counter counter;
-
     #region temp
     private int curToys;
     private int toyCount;
@@ -23,7 +21,6 @@ public class ToyBin : MonoBehaviour
     {
         curToys = 0;
         toyCount = GameObject.FindGameObjectsWithTag("Toy").Length;
-        if (counter == null) counter = FindObjectOfType<Counter>();
     }
 
     private void Update()
@@ -50,7 +47,7 @@ public class ToyBin : MonoBehaviour
         toy.transform.parent = transform;
         toy.transform.position = transform.position;
         toy.GetComponent<Collider2D>().enabled = false;
-        counter.IncreaseProgress();
+        WinCheck.Instance.IncreaseProgress();
         curToys++;
 
         if (curToys >= toyCount) MinigameCompleted();

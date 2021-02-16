@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class MotivationModifier : MonoBehaviour
 {
-    public enum MotivationType
-    {
-        Gain    = 0,
-        Reduce  = 1
-    }
-
     [SerializeField] private MotivationType type = MotivationType.Reduce;
 
     public void IncrementMotivation()
@@ -21,10 +15,10 @@ public class MotivationModifier : MonoBehaviour
         switch (type)
         {
             case MotivationType.Gain:
-                manager.IncrementMotivation(manager.Incrementation);
+                manager.UpdateMotivation(MotivationType.Gain);
                 break;
             case MotivationType.Reduce:
-                manager.IncrementMotivation(-manager.Incrementation);
+                manager.UpdateMotivation(MotivationType.Reduce);
                 break;
         }       
     }

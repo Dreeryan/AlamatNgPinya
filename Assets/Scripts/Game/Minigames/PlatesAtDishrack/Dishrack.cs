@@ -28,6 +28,6 @@ public class Dishrack : MonoBehaviour
 
     void OnSlotFilled()
     {
-        counter.IncreaseProgress();
+        WinCheck.Instance.IncreaseProgress();
     }
 }

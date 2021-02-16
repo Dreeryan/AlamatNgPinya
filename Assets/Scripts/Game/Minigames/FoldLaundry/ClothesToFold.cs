@@ -35,9 +35,6 @@ public class ClothesToFold : MonoBehaviour
         
         currentDirection = 0;
         currentSequence = 0;
-
-        Counter counter = FindObjectOfType<Counter>();
-        if (counter != null) counter.IncreaseGoalCount(1);
     }
 
     void Update()

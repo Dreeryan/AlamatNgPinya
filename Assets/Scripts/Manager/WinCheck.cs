@@ -11,27 +11,32 @@ public class WinCheck : BaseManager<WinCheck>
     private string minigameID;
     private int goal;
     private int curProgress;
-
     private bool hasWon;
+
+    public int Goal => goal;
+    public int CurProgress => curProgress;
     public bool HasWon => hasWon;
 
-    [Header("References")]
-    private TextMeshProUGUI counterText;
+    private MotivationType motivationType;
+    private UnityEvent minigameCompleted;
 
-    private MotivationModifier motivationModifier;
-
-    private UnityEvent MinigameCompleted;
-
-    public void Initialize(string _minigameID, int _goal, MotivationModifier _motivationModifier, UnityEvent _minigameCompleted)
+    public void Initialize(string _minigameID, UnityEvent _minigameCompleted)
     {
+        Debug.Log("enter initialization with values: " + _minigameID + " and " + _minigameCompleted);
+
         hasWon = false;
         curProgress = 0;
-        MinigameCompleted.RemoveAllListeners();
+        minigameCompleted?.RemoveAllListeners();
+
+        Debug.Log("values reset");
 
         minigameID = _minigameID;
-        goal = _goal;
-        motivationModifier = _motivationModifier;
-        MinigameCompleted = _minigameCompleted;
+        ScoreData scoreData = Instance.data.GetData(_minigameID);
+        goal = scoreData.Goal;
+        motivationType = scoreData.MotivationType;
+        minigameCompleted = _minigameCompleted;
+
+        Debug.Log("Done initialization");
     }
 
     public void IncreaseProgress(int value = 1)
@@ -40,7 +45,6 @@ public class WinCheck : BaseManager<WinCheck>
 
         curProgress += value;
         if (curProgress > goal) curProgress = goal;
-        if (counterText != null) UpdateDisplayText();
 
         if (curProgress >= goal) OnComplete();
     }
@@ -48,19 +52,15 @@ public class WinCheck : BaseManager<WinCheck>
     private void OnComplete()
     {
         hasWon = true;
-        motivationModifier.IncrementMotivation();
-        MinigameCompleted?.Invoke();
 
         TimerManager.Instance.StopTimer();
         float score = ScoreManager.Instance.GetFinalScore(minigameID,
             TimerManager.Instance.CurTime);
 
+        MotivationManager.Instance.UpdateMotivation(motivationType);
+        minigameCompleted?.Invoke();
+
         GameManager.Instance.UpdateScore(score);
         SceneLoader.Instance.LoadScene("WinScene", true);
-    }
-
-    private void UpdateDisplayText()
-    {
-        counterText.text = "Collected: " + curProgress + " / " + goal;
     }
 }

@@ -7,11 +7,7 @@ public class Bowl : MonoBehaviour
 {
     [SerializeField] private UnityEvent OnScooped;
 
-    [SerializeField] private Counter counter;
-
     [Header("Bowl Settings")]
-    [SerializeField] private int maxSoupCount = 5;
-    public  int MaxSoupCount => maxSoupCount;
     private int curSoupCount;
     public  int CurSoupCount => curSoupCount;
     public bool IsEmpty => curSoupCount == 0;
@@ -25,10 +21,8 @@ public class Bowl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (counter == null) counter = FindObjectOfType<Counter>();
-        if (counter != null) counter.SetGoalCount(maxSoupCount);
         sRenderer = GetComponent<SpriteRenderer>();
-        curSoupCount = maxSoupCount;
+        curSoupCount = WinCheck.Instance.Goal;
     }
 
     void ReduceSoupAmount()

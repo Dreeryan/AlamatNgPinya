@@ -13,6 +13,73 @@ MonoBehaviour:
   m_Name: ScoreDB
   m_EditorClassIdentifier: 
   dataSet:
-  - id: test
+  - id: CleanUp
+    goal: 3
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: CookPorridge
+    goal: 1
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: DishWashing
+    goal: 3
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: FeedAnimals
+    goal: 200
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: FeedMom
+    goal: 5
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: FloorSweep
+    goal: 3
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: FoldLaundry
+    goal: 5
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: GrabEggs
+    goal: 6
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: HangLaundry
+    goal: 5
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: HarvestCrops
+    goal: 5
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: HideAndSeek
+    goal: 3
+    motivationType: 0
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: PlantWatering
+    goal: 5
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: PlatesAtDishrack
+    goal: 4
+    motivationType: 1
+    baseScoreValue: 5
+    secondsTarget: 10
+  - id: Tag
+    goal: 0
+    motivationType: 0
     baseScoreValue: 5
     secondsTarget: 10

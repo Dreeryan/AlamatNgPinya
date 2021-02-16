@@ -7,7 +7,9 @@ public class ScoreData : BaseData
 {
     [Header("WinCheck")]
     [SerializeField] private int goal;
+    [SerializeField] private MotivationType motivationType;
     public int Goal => goal;
+    public MotivationType MotivationType => motivationType;
 
     [Header("ScoreData")]
     [SerializeField] private float  baseScoreValue;

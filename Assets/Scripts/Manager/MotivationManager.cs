@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MotivationType
+{
+    Gain = 0,
+    Reduce = 1
+}
+
 public class MotivationManager : BaseManager<MotivationManager>
 {
     [Header("Settings")]
@@ -29,8 +35,10 @@ public class MotivationManager : BaseManager<MotivationManager>
         currMotivation = maxMotivation;
     }
 
-    public void IncrementMotivation(int delta)
+    public void UpdateMotivation(MotivationType type)
     {
+        int delta = incrementation;
+        if (type == MotivationType.Reduce) delta *= -1;
         currMotivation += delta;
 
         currMotivation = Mathf.Clamp(currMotivation

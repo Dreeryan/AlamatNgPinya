@@ -7,7 +7,6 @@ public class ClothesLine : MonoBehaviour
 {
     [SerializeField] private UnityEvent onClothingHung;
 
-    [SerializeField] private Counter counter;
     // Make "First in First out" kind of placement
     [SerializeField] private List<Transform> clothingSpots;
     private int indexNum;
@@ -15,8 +14,6 @@ public class ClothesLine : MonoBehaviour
     private void Start()
     {
         indexNum = 0;
-
-        if (counter == null) counter = FindObjectOfType<Counter>();
     }
 
     public void HangClothing(ClothesToHang clothing)
@@ -28,7 +25,7 @@ public class ClothesLine : MonoBehaviour
 
         UpdateIndex();
 
-        if (counter != null) counter.IncreaseProgress();
+        WinCheck.Instance.IncreaseProgress();
 
         onClothingHung?.Invoke();
     }

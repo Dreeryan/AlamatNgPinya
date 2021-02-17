@@ -8,7 +8,7 @@ public enum MotivationType
     Reduce = 1
 }
 
-public class MotivationManager : BaseManager<MotivationManager>
+public class MotivationManager : BaseManager<MotivationManager>, IManager
 {
     [Header("Settings")]
     [Tooltip("Maximum motivation")]
@@ -17,7 +17,8 @@ public class MotivationManager : BaseManager<MotivationManager>
     [SerializeField] private int reqMotivation;
     [Tooltip("Motivation gained or reduced when completing minigames")]
     [SerializeField] private int incrementation;
-    private int currMotivation;
+
+    [SerializeField] private int currMotivation;
 
     public int MaxMotivation => maxMotivation;
     public int ReqMotivation => reqMotivation;
@@ -35,6 +36,11 @@ public class MotivationManager : BaseManager<MotivationManager>
         currMotivation = maxMotivation;
     }
 
+    public void LoadData(PlayerSave loadedData)
+    {
+        currMotivation = loadedData.savedMotivation;
+    }
+
     public void UpdateMotivation(MotivationType type)
     {
         int delta = incrementation;
@@ -46,6 +52,10 @@ public class MotivationManager : BaseManager<MotivationManager>
             , maxMotivation);
 
         OnMotivationUpdated?.Invoke(FillRatio);
+
+        SaveManager.PlayerData.savedMotivation = currMotivation;
+
+        SaveManager.SavePlayer();
     }
 
     public void ResetMotivation()

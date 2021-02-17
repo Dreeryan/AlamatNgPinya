@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,20 @@ public class MenuItems
 
             EditorApplication.isPlaying = true;
         }
+    }
+
+    [MenuItem("Game/ DELETE ALL SAVES")]
+    public static void DeleteSaves()
+    {
+        DirectoryInfo di = new DirectoryInfo(Application.persistentDataPath);
+        FileInfo[] files = di.GetFiles("*.sav");
+
+        foreach (FileInfo file in files)
+        {
+            File.Delete(file.FullName);
+        }
+
+        Debug.LogError("Saves deleted!");
     }
 }
 #endif

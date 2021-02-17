@@ -5,8 +5,45 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine;
 
+[System.Serializable]
+public class PlayerSave
+{
+    public PlayerSave()
+    {
+        savedMotivation = MotivationManager.Instance.MaxMotivation;
+    }
+    public int savedMotivation;
+}
+
 public class SaveManager : BaseManager<SaveManager>
 {
+    private static PlayerSave playerData;
+    public static PlayerSave PlayerData => playerData;
+
+    public List<GameObject> managers = new List<GameObject>();
+
+    protected override void Start()
+    {
+        base.Start();
+
+        if (DoesFileExist("player"))
+        {
+            playerData = LoadData<PlayerSave>("player");
+
+            managers.ForEach(obj =>
+            {
+                IManager manager = obj.GetComponent<IManager>();
+
+                if (manager != null)
+                    manager.LoadData(playerData);
+            });
+        }
+        else
+        {
+            playerData = new PlayerSave();
+            SavePlayer();
+        }
+    }
     /*
      * Call Example
      * int oldHighScore;
@@ -33,7 +70,7 @@ public class SaveManager : BaseManager<SaveManager>
     */
     public static T LoadData<T>(string fileName)
     {
-        if(!File.Exists(fileName))
+        if (!DoesFileExist(fileName))
         {
             Debug.LogErrorFormat("{0} cannot be loaded as it does NOT exist!", fileName);
             return default;
@@ -58,11 +95,22 @@ public class SaveManager : BaseManager<SaveManager>
         loadedFile = JsonUtility.FromJson<T>(json);
 
         return loadedFile;
+    }
 
+    public static bool DoesFileExist(string fileName)
+    {
+        return File.Exists(MakePath(fileName));
     }
 
     private static string MakePath(string fileName, string format = ".sav")
     {
         return Application.persistentDataPath + "/" + fileName + format;
     }
+
+    #region Shortcut Save functions
+    public static void SavePlayer()
+    {
+        SaveData(playerData, "player");
+    }
+    #endregion
 }

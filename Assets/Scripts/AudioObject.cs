@@ -47,7 +47,7 @@ public class AudioObject : MonoBehaviour
 
         aSource.Play();
 
-        if (aSource.volume <= 0 && fadeIn)
+        if (aSource.volume <= aData.Volume && fadeIn)
             FadeAudio(aData.Volume, AudioManager.Instance.BGMFadeTime);
     }
 

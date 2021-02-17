@@ -14,4 +14,10 @@ public class GameManager : BaseManager<GameManager>
     {
         Score += val;
     }
+
+    // Delete Save Data
+    private void Start()
+    {
+        SaveManager.DeleteFile("lastPosition");
+    }
 }

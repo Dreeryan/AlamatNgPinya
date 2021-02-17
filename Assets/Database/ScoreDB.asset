@@ -92,7 +92,7 @@ MonoBehaviour:
     baseScoreValue: 5
     secondsTarget: 10
   - id: Tag
-    goal: 0
+    goal: 1
     phrase: 
     motivationType: 0
     baseScoreValue: 5

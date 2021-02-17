@@ -6159,6 +6159,7 @@ GameObject:
   - component: {fileID: 1359422667}
   - component: {fileID: 1359422668}
   - component: {fileID: 1359422666}
+  - component: {fileID: 1359422669}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -6254,6 +6255,23 @@ MonoBehaviour:
   startingTagged: {fileID: 2028395378}
   maxTime: 5
   debugTimerDisplay: 0
+--- !u!114 &1359422669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359422665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameID: Tag
+  progressText: {fileID: 0}
+  MinigameCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1363145762 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2459832687665057330, guid: 0e9aae72003a7d945816ee3aa2ce61e5,

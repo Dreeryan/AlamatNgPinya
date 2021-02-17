@@ -53,7 +53,7 @@ public class Watering : MonoBehaviour
 
     void Update()
     {
-        if (bucket.GetisFilling() && isBucketOnMe)
+        if (bucket.GetisFilling() && isBucketOnMe && !isWatered)
         {
             // while it's not filled up
             if (fillAmount < maxFill)

@@ -44,8 +44,9 @@ public class WinCheck : BaseManager<WinCheck>
         if (hasWon) return;
 
         curProgress += value;
-        UpdateDisplayText();
+
         if (curProgress > goal) curProgress = goal;
+        UpdateDisplayText();
 
         if (curProgress >= goal) OnComplete();
     }

@@ -1486,6 +1486,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2036420235}
+        m_MethodName: RemoveCurrentPlant
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &167266190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1866,6 +1877,9 @@ MonoBehaviour:
     type: 3}
   wateredPlant: {fileID: 8635903978712429406, guid: 213746fc40ef34d4ca35a8aebdbbb356,
     type: 3}
+  onFilling:
+    m_PersistentCalls:
+      m_Calls: []
   onWatered:
     m_PersistentCalls:
       m_Calls: []
@@ -8100,6 +8114,9 @@ MonoBehaviour:
     type: 3}
   wateredPlant: {fileID: -1268064389544249124, guid: 213746fc40ef34d4ca35a8aebdbbb356,
     type: 3}
+  onFilling:
+    m_PersistentCalls:
+      m_Calls: []
   onWatered:
     m_PersistentCalls:
       m_Calls: []
@@ -8178,6 +8195,9 @@ MonoBehaviour:
     type: 3}
   wateredPlant: {fileID: -5840972274582744104, guid: 213746fc40ef34d4ca35a8aebdbbb356,
     type: 3}
+  onFilling:
+    m_PersistentCalls:
+      m_Calls: []
   onWatered:
     m_PersistentCalls:
       m_Calls: []
@@ -8829,6 +8849,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2036420235}
+        m_MethodName: RemoveCurrentPlant
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1374960257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9371,6 +9402,9 @@ MonoBehaviour:
     type: 3}
   wateredPlant: {fileID: 1352955200029874055, guid: 213746fc40ef34d4ca35a8aebdbbb356,
     type: 3}
+  onFilling:
+    m_PersistentCalls:
+      m_Calls: []
   onWatered:
     m_PersistentCalls:
       m_Calls: []
@@ -11983,6 +12017,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2036420235}
+        m_MethodName: RemoveCurrentPlant
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1920256683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12693,6 +12738,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2036420235}
+        m_MethodName: RemoveCurrentPlant
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2012011374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13143,9 +13199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canFillRotation: 30
   isFillingRotation: 60
-  onFilling:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2036420236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13259,6 +13312,9 @@ MonoBehaviour:
     type: 3}
   wateredPlant: {fileID: 3365857472248335254, guid: 213746fc40ef34d4ca35a8aebdbbb356,
     type: 3}
+  onFilling:
+    m_PersistentCalls:
+      m_Calls: []
   onWatered:
     m_PersistentCalls:
       m_Calls: []
@@ -13373,6 +13429,17 @@ MonoBehaviour:
       - m_Target: {fileID: 2059104812}
         m_MethodName: SetIsBucketOnMe
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2036420235}
+        m_MethodName: RemoveCurrentPlant
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

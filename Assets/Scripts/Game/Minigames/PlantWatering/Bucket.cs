@@ -17,9 +17,7 @@ public class Bucket : MonoBehaviour
     private bool canFill;
     private bool isFilling;
 
-    [Header("Sound")]
-    [SerializeField]
-    private UnityEvent onFilling;
+    private Watering currentPlant;
 
     void Update()
     {
@@ -28,7 +26,6 @@ public class Bucket : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             isFilling = true;
-            onFilling?.Invoke();
             UpdateSprite();
         }
 
@@ -51,16 +48,26 @@ public class Bucket : MonoBehaviour
         return isFilling;
     }
 
-    void UpdateSprite()
+    public void UpdateSprite()
     {
         if (canFill)
         {
             transform.rotation = Quaternion.Euler(0, 0, canFillRotation);
 
-            if (isFilling)
+            if (isFilling && currentPlant != null && !currentPlant.IsWatered)
                 transform.rotation = Quaternion.Euler(0, 0, isFillingRotation);
         }
         else
             transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    public void SetCurrentPlant(Watering plant)
+    {
+        currentPlant = plant;
+    }
+
+    public void RemoveCurrentPlant()
+    {
+        currentPlant = null;
     }
 }

@@ -40,65 +40,59 @@ public class Porridge : MonoBehaviour
 
     void Update()
     {
-        UpdateTemp();
-        //print(currentTemp);
-
-        // If its at the right temp
-        if (isRightTemp && !hasWon)
+        if (!hasWon && !GameManager.Instance.IsPaused)
         {
-            StartCoroutine("RightTempCountdown");
-        }
-        else
-        {
-            StopCoroutine("RightTempCountdown");
-        }
-    }
+            // Getting the current temp from the slider value
+            currentTemp = (int)(porridgeSlider.value * 100);
 
-    public void UpdateTemp()
-    {
-        // Getting the current temp from the slider value
-        currentTemp = (int)(porridgeSlider.value * 100);
+            if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
+            {
+                porridgeSlider.value += addTemperature * Time.deltaTime;
 
-        if (Input.GetMouseButton(0) && Time.timeScale > 0 && !hasWon && !EventSystem.current.IsPointerOverGameObject())
-        {
-            porridgeSlider.value += addTemperature * Time.deltaTime;
+                if (currentTemp >= maxTemp) currentTemp = maxTemp;
+            }
+            else
+            {
+                porridgeSlider.value -= decreaseTemperature * Time.deltaTime;
 
-            if (currentTemp >= maxTemp) currentTemp = maxTemp;
-        }
-        else
-        {
-            if (!hasWon) porridgeSlider.value -= decreaseTemperature * Time.deltaTime;
+                if (currentTemp <= 0) currentTemp = 0;
+            }
 
-            if (currentTemp <= 0) currentTemp = 0;
-        }
+            #region Animation
 
-        fireAnimator.SetFloat("Temp", currentTemp);
-        potCoverAnimator.SetFloat("Temp", currentTemp);
+            fireAnimator.SetFloat("Temp", currentTemp);
+            potCoverAnimator.SetFloat("Temp", currentTemp);
 
-        if (currentTemp > 0)
-        {
-            fireAnimator.SetBool("isFireOn", true);
-            potCoverAnimator.SetBool("isFireOn", true);
-            onFireTurnOn?.Invoke();
-        }
-        else
-        {
-            fireAnimator.SetBool("isFireOn", false);
-            potCoverAnimator.SetBool("isFireOn", false);
-        }
+            if (currentTemp > 0)
+            {
+                fireAnimator.SetBool("isFireOn", true);
+                potCoverAnimator.SetBool("isFireOn", true);
+                onFireTurnOn?.Invoke();
+            }
+            else
+            {
+                fireAnimator.SetBool("isFireOn", false);
+                potCoverAnimator.SetBool("isFireOn", false);
+            }
 
-        if (currentTemp > rightTemp)
-        {
-            isRightTemp = true;
-        }
-        else
-        {
-            isRightTemp = false;
+            #endregion
+
+            if (currentTemp > rightTemp && !isRightTemp)
+            {
+                StartCoroutine("RightTempCountdown");
+            }
+            else if (currentTemp < rightTemp)
+            {
+                StopCoroutine("RightTempCountdown");
+                isRightTemp = false;
+            }
         }
     }
 
     IEnumerator RightTempCountdown()
-    {        
+    {
+        isRightTemp = true;
+
         yield return new WaitForSeconds(secondsToUndercooked);
 
         yield return new WaitForSeconds(secondsToCooked);

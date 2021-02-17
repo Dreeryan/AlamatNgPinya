@@ -14,6 +14,9 @@ public class Watering : MonoBehaviour
 
     private float fillAmount;
     private bool isBucketOnMe;
+    private bool isWatered;
+
+    public bool IsWatered => isWatered;
 
     [Header("References")]
     [SerializeField] private Counter counter;
@@ -29,10 +32,13 @@ public class Watering : MonoBehaviour
     [SerializeField] private Sprite wateredPlant;
 
     [Header("Sound")]
+    [SerializeField] private UnityEvent onFilling;
     [SerializeField] private UnityEvent onWatered;
 
     void Start()
     {
+        isWatered = false;
+
         // hide the bar at the start
         if (fillBar != null) fillBar.SetActive(false);
 
@@ -49,17 +55,27 @@ public class Watering : MonoBehaviour
     {
         if (bucket.GetisFilling() && isBucketOnMe)
         {
-            // show bar when its the first time or when it's not yet full
-            if (fillAmount < maxFill) fillBar.SetActive(true);
+            // while it's not filled up
+            if (fillAmount < maxFill)
+            {
+                // show bar when its the first time or when it's not yet full
+                fillBar.SetActive(true);
 
-            // increase the fill amount by fill rate
-            if (fillAmount < maxFill) fillAmount += fillRate * Time.deltaTime;
+                // increase the fill amount by fill rate
+                fillAmount += fillRate * Time.deltaTime;
+
+                // play filling sound
+                onFilling?.Invoke();
+            }            
 
             // when it's filled up
             if (fillAmount > maxFill)
             {
                 // clamping of values
                 fillAmount = maxFill;
+
+                // set is watered
+                isWatered = true;
 
                 // hide the bar when its full
                 if (fillBar != null) fillBar.SetActive(false);
@@ -69,6 +85,9 @@ public class Watering : MonoBehaviour
 
                 // SFX
                 onWatered?.Invoke();
+
+                // update bucket sprite
+                bucket.UpdateSprite();
 
                 // increase progress
                 WinCheck.Instance.IncreaseProgress();
@@ -81,6 +100,7 @@ public class Watering : MonoBehaviour
     public void SetIsBucketOnMe(bool p_isBucketOnMe)
     {
         isBucketOnMe = p_isBucketOnMe;
+        bucket.SetCurrentPlant(this); 
     }
 
     void UpdateUI()

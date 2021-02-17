@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : BaseManager<GameManager>
 {
     public bool IsPaused { get; set; } = false;
+    public bool IsNewGame { get; set; } = true;
+
 
     public float Score { get; set; } = 0f;
 

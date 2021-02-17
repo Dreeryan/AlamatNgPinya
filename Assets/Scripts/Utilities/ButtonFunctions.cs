@@ -48,4 +48,9 @@ public class ButtonFunctions : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void NewGame()
+    {
+        GameManager.Instance.IsNewGame = true;
+    }
 }

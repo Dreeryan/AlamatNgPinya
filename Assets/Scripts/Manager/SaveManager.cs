@@ -96,7 +96,22 @@ public class SaveManager : BaseManager<SaveManager>
 
         return loadedFile;
     }
-
+	
+	 public static void DeleteFile(string fileName)
+    {
+		if(!DoesFileExist(fileName)) return;
+		
+        try
+        {
+            Debug.LogError("Deleting " + fileName);
+            File.Delete(MakePath(fileName));
+        }
+        catch(Exception e)
+        {
+            Debug.LogError(e);
+        }
+    }
+	
     public static bool DoesFileExist(string fileName)
     {
         return File.Exists(MakePath(fileName));

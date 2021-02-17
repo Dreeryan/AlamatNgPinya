@@ -30,7 +30,11 @@ public class TaskListManager : BaseManager<TaskListManager>
 
     public void RemoveTaskFromList(string TaskId)
     {
-        string task = taskDB.GetData(TaskId).GetTask();
+        string task;
+
+        if (taskDB.GetData(TaskId) == null) return;
+
+         task= taskDB.GetData(TaskId).GetTask();
 
         for (int i = 0; i < taskList.Count; i++)
         {

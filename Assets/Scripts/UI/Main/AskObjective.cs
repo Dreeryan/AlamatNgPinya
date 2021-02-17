@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class AskObjective : MonoBehaviour
 {
-    [SerializeField] private GameObject objectives;
-    [SerializeField] private float      currentSeconds;
-    [SerializeField] private float      resetTime;
+    [SerializeField] private GameObject   objectives;
+    [SerializeField] private GameObject[] objectiveTexts;
+    [SerializeField] private float        currentSeconds;
+    [SerializeField] private float        resetTime;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class AskObjective : MonoBehaviour
 			
             if (objectives != null)
                 objectives.SetActive(false);
+            DisableObjectiveTexts();
         }
     }
 
@@ -41,5 +43,14 @@ public class AskObjective : MonoBehaviour
 
         if (objectives != null)
             objectives.SetActive(true);
+    }
+
+    private void DisableObjectiveTexts()
+    {
+        if (objectiveTexts==null) return;
+        for (int i = 0; i < objectiveTexts.Length; i++)
+        {
+            objectiveTexts[i].SetActive(false);
+        }
     }
 }

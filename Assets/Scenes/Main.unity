@@ -11993,6 +11993,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemButton: {fileID: 1349863657}
+--- !u!1 &1495385087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8165169935274278540, guid: 0e6169d0baa07894691bcde83d0c350f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1476801375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1495385097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495385087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80782aa9cbaa7d54d89c346a4933ff59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPineappleTransform:
+    m_PersistentCalls:
+      m_Calls: []
+  MaxNumberToAsk: 3
+  spriteSheetName: Character_Pina_RunningPickup
 --- !u!1 &1506593389
 GameObject:
   m_ObjectHideFlags: 0
@@ -12117,6 +12140,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 189900569}
         m_MethodName: UpdateTaskList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1495385097}
+        m_MethodName: TurnToPina
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

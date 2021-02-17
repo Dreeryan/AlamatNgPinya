@@ -17,7 +17,6 @@ public class TaskListUI : MonoBehaviour
 
     public void UpdateTaskList()
     {
-        Debug.Log(taskListManagerObj.taskList.Count);
         //Enable the remaining objectives and set texts for them everytime player asks
         for (int i = 0; i < taskListManagerObj.taskList.Count; i++)
         {

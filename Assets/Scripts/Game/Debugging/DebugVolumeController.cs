@@ -7,13 +7,25 @@ using TMPro;
 
 public class DebugVolumeController : MonoBehaviour
 {
-    [SerializeField] private AudioMixer mixer;
-    [SerializeField] private Toggle enableOverride;
-    [SerializeField] private GameObject panel;
+    //[SerializeField] private Toggle enableOverride;
+    [SerializeField] private string mixGroup;
     [SerializeField] private Slider slider;
     [SerializeField] private TMP_Text text;
-    [SerializeField] private KeyCode toggleKey = KeyCode.F2;
 
+    private AudioMixer mixer;
+
+
+    #region sliderValues
+    float curMin = -80f;
+    float curMax = 0f;
+
+    float newMin = 0f;
+    float newMax = 100f;
+
+    float curRange => curMax - curMin;
+    float newRange => newMax - newMin;
+
+    #endregion
     private void OnEnable()
     {
         slider.onValueChanged.AddListener(ModifyVolume);
@@ -27,42 +39,31 @@ public class DebugVolumeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mixer.GetFloat("Master", out float volume);
+        mixer = AudioManager.Instance.AudioMix;
+
+        if (mixer == null) return;
+
+        mixer.GetFloat(mixGroup, out float volume);
         slider.value = volume;
 
-        slider.minValue = -80f;
-        slider.maxValue = 0f;
+        slider.minValue = curMin;
+        slider.maxValue = curMax;
 
-        panel.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(toggleKey)) panel.SetActive(!panel.activeSelf);
     }
 
     void UpdateText(float val)
     {
-        float oldMin = -80f;
-        float oldMax = 0f;
-        float oldRange = oldMax - oldMin;
+        // scaling formula
+        float converted = ((val - curMin) * newRange / curRange) + newMin;
 
-        float newMin = 0f;
-        float newMax = 100f;
-        float newRange = newMax - newMin;
-
-        float converted = ((val - oldMin) * newRange / oldRange) + newMin;
-
-
-        text.text = string.Format("Volume: {0}", System.Math.Round(converted, 0));
+        text.text = string.Format("{0}", System.Math.Round(converted, 0));
     }
 
     void ModifyVolume(float volume)
     {
         AudioMixer mixer = AudioManager.Instance.AudioMix;
 
-        mixer.SetFloat("Master", volume);
+        mixer.SetFloat(mixGroup, volume);
 
         UpdateText(volume);
     }

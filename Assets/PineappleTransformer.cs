@@ -1,17 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PineappleTransformer : MonoBehaviour
 {
-    public Sprite                     playerSprite;
-    [SerializeField] private int      maximumAmountToAsk;
-    [SerializeField] private Sprite[] pineappleTransformation;
-    private void TransformPlayer()
+    public UnityEvent onPineappleTransform = new UnityEvent();
+    public UnityEvent onCompletePineappleTransformation = new UnityEvent();
+
+    [SerializeField] private Sprite[] pineapplePlayerSprites;
+
+    [SerializeField] private int maxNumberToAsk;
+    private int                  currentAskedAmount=0;
+    private Image                imageComponent;
+
+    // Use this for initialization
+    private void Start()
     {
-        // probably modify this later and make it singleton
-        TaskListManager.Instance.AddNumberOfTimesAsked();
-        playerSprite = pineappleTransformation[TaskListManager.Instance.numberOfTimesAsked];
+        imageComponent = GetComponent<Image>();
     }
 
+    public void TurnToPineapple()
+    {
+        if (currentAskedAmount >= maxNumberToAsk) return;
+
+        currentAskedAmount += 1;
+        this.imageComponent.sprite = pineapplePlayerSprites[currentAskedAmount];
+        onPineappleTransform.Invoke();
+
+        if (currentAskedAmount == maxNumberToAsk) onCompletePineappleTransformation.Invoke();
+
+    }
 }
+
+

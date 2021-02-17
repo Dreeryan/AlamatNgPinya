@@ -13,11 +13,27 @@ MonoBehaviour:
   m_Name: TaskDB
   m_EditorClassIdentifier: 
   dataSet:
-  - id: sweepfloor
-    task: Sweep the floor
-  - id: cleantoys
+  - id: CleanUp
     task: Clean up toys
-  - id: washdishes
+  - id: CookPorridge
+    task: Cook food for us
+  - id: DishWashing
     task: Wash the dishes
-  - id: foldclothes
-    task: Fold the clothes
+  - id: FeedAnimals
+    task: Feed the animals
+  - id: FeedMom
+    task: Feed mom
+  - id: FloorSweep
+    task: Sweep the floor
+  - id: FoldLaundry
+    task: Fold the laundry
+  - id: GrabEggs
+    task: Grab some eggs
+  - id: HangLaundry
+    task: Hang the laundry
+  - id: HarvestCrops
+    task: Harvest the crops
+  - id: PlantWatering
+    task: Water the plants
+  - id: PlatesAtDishrack
+    task: Put plates at dishrack

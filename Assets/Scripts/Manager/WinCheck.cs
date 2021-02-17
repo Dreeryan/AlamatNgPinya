@@ -61,7 +61,7 @@ public class WinCheck : BaseManager<WinCheck>
 
         MotivationManager.Instance.UpdateMotivation(motivationType);
         minigameCompleted?.Invoke();
-
+        TaskListManager.Instance.RemoveTaskFromList(minigameID);
         GameManager.Instance.UpdateScore(score);
         SceneLoader.Instance.LoadScene("WinScene", true);
     }

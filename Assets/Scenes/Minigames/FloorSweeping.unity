@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecad432bfc80c34b92b7894df7d610f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigameID: FloorSweeping
+  minigameID: FloorSweep
   progressText: {fileID: 0}
   MinigameCompleted:
     m_PersistentCalls:
@@ -2483,6 +2483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives: {fileID: 1257332238}
+  objectiveTexts: []
   currentSeconds: 10
   resetTime: 5
 --- !u!114 &1026779078

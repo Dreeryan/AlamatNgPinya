@@ -1,0 +1,368 @@
+fileFormatVersion: 2
+guid: 62f4deaaab380b843a9656cc45ca4f1c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2040934838569796493
+    second: Character_Pina_PinaRunning_0
+  - first:
+      213: 9094975331670271755
+    second: Character_Pina_PinaRunning_1
+  - first:
+      213: -2249069815653060172
+    second: Character_Pina_PinaRunning_2
+  - first:
+      213: -1890105475400924394
+    second: Character_Pina_PinaRunning_3
+  - first:
+      213: 5849654707798400134
+    second: Character_Pina_PinaRunning_4
+  - first:
+      213: -9147976287832324209
+    second: Character_Pina_PinaRunning_5
+  - first:
+      213: -8117936417063827744
+    second: Character_Pina_PinaRunning_6
+  - first:
+      213: 5516684495688246140
+    second: Character_Pina_PinaRunning_7
+  - first:
+      213: -5766636143783865021
+    second: Character_Pina_PinaRunning_8
+  - first:
+      213: 7774482280517194896
+    second: Character_Pina_PinaRunning_9
+  - first:
+      213: -1841051250888981493
+    second: Character_Pina_PinaRunning_10
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Character_Pina_PinaRunning_0
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 1667
+        width: 160
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37cf351e3942da3e0800000000000000
+      internalID: -2040934838569796493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Pina_PinaRunning_1
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 1667
+        width: 153
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07a52d70e7d73e70800000000000000
+      internalID: 9094975331670271755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Pina_PinaRunning_2
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 1667
+        width: 130
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b132f23be2b9c0e0800000000000000
+      internalID: -2249069815653060172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Pina_PinaRunning_3
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 1667
+        width: 156
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61305b6951ff4c5e0800000000000000
+      internalID: -1890105475400924394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Pina_PinaRunning_4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1155
+        width: 136
+        height: 272
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68cd305c6f52e2150800000000000000
+      internalID: 5849654707798400134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Pina_PinaRunning_5
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 596
+        width: 183
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87ce06c80cdb0180800000000000000
+      internalID: -9147976287832324209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Pina_PinaRunning_6
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 596
+        width: 174
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e604bfd6db475f80800000000000000
+      internalID: -8117936417063827744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Pina_PinaRunning_7
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 596
+        width: 178
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c732767f1533f8c40800000000000000
+      internalID: 5516684495688246140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Pina_PinaRunning_8
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 596
+        width: 178
+        height: 282
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34595dceafac8ffa0800000000000000
+      internalID: -5766636143783865021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Pina_PinaRunning_9
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 84
+        width: 178
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094dbc2717284eb60800000000000000
+      internalID: 7774482280517194896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Pina_PinaRunning_10
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 84
+        width: 177
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04497144a54376e0800000000000000
+      internalID: -1841051250888981493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

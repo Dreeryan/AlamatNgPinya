@@ -29,6 +29,8 @@ public class DebugVolumeController : MonoBehaviour
     private void OnEnable()
     {
         slider.onValueChanged.AddListener(ModifyVolume);
+
+        if (mixer != null) UpdateController();
     }
 
     private void OnDisable()
@@ -42,13 +44,18 @@ public class DebugVolumeController : MonoBehaviour
         mixer = AudioManager.Instance.AudioMix;
 
         if (mixer == null) return;
+        UpdateController();
+    }
 
+    void UpdateController()
+    {
         mixer.GetFloat(mixGroup, out float volume);
-        slider.value = volume;
+        //Debug.LogFormat("{0}: {1}", mixGroup, volume);
 
         slider.minValue = curMin;
         slider.maxValue = curMax;
 
+        slider.value = volume;
     }
 
     void UpdateText(float val)

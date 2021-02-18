@@ -230,7 +230,7 @@ PrefabInstance:
         type: 3}
       propertyPath: eggPrefab
       value: 
-      objectReference: {fileID: 5921475080761693790, guid: 33b35f6b0a4481941a19490886911eaf,
+      objectReference: {fileID: 8274236660247600427, guid: 00f8d2145377c444aa4ff00bfb2798c8,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f1e2c9cfa06e7b4a8c4aae4fb2228a9, type: 3}
@@ -1016,6 +1016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives: {fileID: 1811696956}
+  objectiveTexts: []
   currentSeconds: 10
   resetTime: 99
 --- !u!114 &298749834
@@ -2209,7 +2210,7 @@ PrefabInstance:
         type: 3}
       propertyPath: eggPrefab
       value: 
-      objectReference: {fileID: 5921475080761693790, guid: d83d811ed619a3a45958b7b2d1b3d1bb,
+      objectReference: {fileID: 7962042938796515164, guid: 2d29e0c280d57e4418d84aef9e68949c,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f1e2c9cfa06e7b4a8c4aae4fb2228a9, type: 3}
@@ -3166,7 +3167,7 @@ PrefabInstance:
         type: 3}
       propertyPath: eggPrefab
       value: 
-      objectReference: {fileID: 5921475080761693790, guid: fb2d678f4389c824ba193b389b61695d,
+      objectReference: {fileID: 4771473567510047975, guid: 5b90ce3e0d48a3b4b8f7328d8995d334,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f1e2c9cfa06e7b4a8c4aae4fb2228a9, type: 3}
@@ -5503,7 +5504,7 @@ PrefabInstance:
         type: 3}
       propertyPath: eggPrefab
       value: 
-      objectReference: {fileID: 5921475080761693790, guid: 00f8d2145377c444aa4ff00bfb2798c8,
+      objectReference: {fileID: 6905339371812723239, guid: 33b35f6b0a4481941a19490886911eaf,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f1e2c9cfa06e7b4a8c4aae4fb2228a9, type: 3}

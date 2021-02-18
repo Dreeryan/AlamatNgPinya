@@ -553,7 +553,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[testHideFriend]
+          m_StringArgument: sfx[Toy PICKUP]
           m_BoolArgument: 0
         m_CallState: 2
   onToyDropped:
@@ -567,7 +567,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[testHideFriend]
+          m_StringArgument: sfx[Toy DROP]
           m_BoolArgument: 0
         m_CallState: 2
   toyBin: {fileID: 583218885}
@@ -4485,6 +4485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives: {fileID: 640651908}
+  objectiveTexts: []
   currentSeconds: 10
   resetTime: 5
 --- !u!114 &1650430422
@@ -5040,8 +5041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameID: CleanUp
-  counterText: {fileID: 259120497}
-  phrase: Toys cleaned
+  progressText: {fileID: 0}
   MinigameCompleted:
     m_PersistentCalls:
       m_Calls:

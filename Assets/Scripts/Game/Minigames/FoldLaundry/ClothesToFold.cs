@@ -39,7 +39,7 @@ public class ClothesToFold : MonoBehaviour
 
     void Update()
     {
-        if (!canBeFolded || Time.timeScale == 0.0f) return;
+        if (!canBeFolded || GameManager.Instance.IsPaused) return;
 
         if (Input.GetMouseButtonDown(0))
         {

@@ -8,7 +8,7 @@ public class PauseFunction : MonoBehaviour
     public void Pause()
     {
         // Freezes the game
-        Time.timeScale = 0.0f;
+        GameManager.Instance.IsPaused = true;
 
         SceneLoader.Instance.LoadScene("PauseMenu", true);
     }
@@ -17,7 +17,7 @@ public class PauseFunction : MonoBehaviour
     public void Resume() 
     {
         // Unfreezes the game
-        Time.timeScale = 1.0f;
+        GameManager.Instance.IsPaused = false;
 
         SceneLoader.Instance.ClosePopup("PauseMenu");
     }

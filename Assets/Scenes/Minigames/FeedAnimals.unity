@@ -1400,6 +1400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives: {fileID: 1389388156}
+  objectiveTexts: []
   currentSeconds: 10
   resetTime: 5
 --- !u!114 &796309019
@@ -1835,7 +1836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004b1970670b3864b891738a55efc569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigameID: 
+  minigameID: FeedAnimals
   fillBar: {fileID: 1864944121}
   maxFeedValue: 200
 --- !u!61 &1300411026

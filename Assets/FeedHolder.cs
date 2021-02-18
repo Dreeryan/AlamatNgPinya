@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class FeedHolder : MonoBehaviour
 {
-    [Header("Variables")]
-    [SerializeField] private string minigameID;
-
     [Header("References")]
     [SerializeField] private Image      fillBar;
 
@@ -17,14 +14,11 @@ public class FeedHolder : MonoBehaviour
     public float    CurFeedValue    => curFeedValue;
     public float    FillRatio       => curFeedValue / (float)maxFeedValue;
 
-    void Start()
-    {
-        WinCheck.Instance.Initialize(minigameID, null);
-        maxFeedValue = WinCheck.Instance.Goal;
-    }
-
     public void IncreaseFeedCount(float value)
     {
+        // Make sure maxFeedValue has been initialized
+        if (maxFeedValue <= 0) maxFeedValue = WinCheck.Instance.Goal;
+
         if (curFeedValue >= maxFeedValue) return;
 
         curFeedValue += value;

@@ -24,6 +24,8 @@ public class Dishrack : MonoBehaviour
 
         isOccupied = true;
         OnSlotFilled();
+
+        onPlatePlaced?.Invoke();
     }
 
     void OnSlotFilled()

@@ -54,11 +54,11 @@ public class ClothesToFold : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            SwipeDirection();
+            currentDirection = SwipeDirection();
             TwoFoldSequence();
         }
     }
-    public void SwipeDirection()
+    private Directions SwipeDirection()
     {
         float horizontalSwipe = Mathf.Abs(startPosition.x - endPosition.x);
         float verticalSwipe = Mathf.Abs(startPosition.y - endPosition.y);
@@ -67,16 +67,17 @@ public class ClothesToFold : MonoBehaviour
         {
             if (horizontalSwipe > verticalSwipe)
             {
-                if (startPosition.x > endPosition.x)    currentDirection = Directions.Left;
-                else                                    currentDirection = Directions.Right;
+                if (startPosition.x > endPosition.x)    return Directions.Left;
+                else                                    return Directions.Right;
             }
             else if (verticalSwipe > horizontalSwipe)
             {
-                if (startPosition.y > endPosition.y)    currentDirection = Directions.Down;
-                else                                    currentDirection = Directions.Up;
+                if (startPosition.y > endPosition.y)    return Directions.Down;
+                else                                    return Directions.Up;
             }
-            else return;
         }
+        return Directions.None;
+
     }
 
     public void FoldSequence()
@@ -107,11 +108,12 @@ public class ClothesToFold : MonoBehaviour
 
     public void TwoFoldSequence()
     {
-        if (currentSequence >= 3) return;
+        if (currentSequence > 2 || currentDirection == Directions.None) return;
         // Swipe from right to left
         if (currentSequence == 0 && currentDirection == Directions.Left)
         {
             GetComponent<SpriteRenderer>().sprite = laundrySprites[0];
+            onFolded?.Invoke();
             currentSequence++;
         }
 
@@ -119,6 +121,7 @@ public class ClothesToFold : MonoBehaviour
         if (currentSequence == 1 && currentDirection == Directions.Up)
         {
             GetComponent<SpriteRenderer>().sprite = laundrySprites[1];
+            onFolded?.Invoke();
             currentSequence++;
         }
 
@@ -128,7 +131,6 @@ public class ClothesToFold : MonoBehaviour
             currentSequence++;
         }
 
-        onFolded?.Invoke();
     }
 
     IEnumerator OnCompletelyFolded()

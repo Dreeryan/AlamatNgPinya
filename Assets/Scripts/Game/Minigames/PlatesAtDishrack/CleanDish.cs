@@ -19,7 +19,7 @@ public class CleanDish : MonoBehaviour
     void Start()
     {
         returnPos = transform.position;
-        WinCheck.Instance.IncreaseProgress();
+        //WinCheck.Instance.IncreaseProgress();
     }
 
     private void OnMouseDown()

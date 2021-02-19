@@ -9,66 +9,47 @@ public class ShakeObject : MonoBehaviour
 
     [SerializeField] private UnityEvent OnShake;
 
+    [SerializeField] private Draggable draggable;
+
     private bool            isOnFeedArea;
-    private bool            isMouseDrag;
     private bool            isShaking;
-    private Vector2         currentPosition;
-    private Vector2         mousePos;
     private SpriteRenderer  sRenderer;
+
+    public bool IsOnFeedArea => isOnFeedArea;
+    public bool IsShaking => isShaking;
 
     private void Start()
     {
-        isMouseDrag     = false;
         isOnFeedArea    = false;
         isShaking       = false;
 
         sRenderer = GetComponent<SpriteRenderer>();
 
-        currentPosition = gameObject.transform.position;
-
+        if (draggable == null) 
+            draggable = GetComponent<Draggable>();
     }
 
-    void Update()
+    private void OnMouseDrag()
     {
-        if (transform.hasChanged)
-        {
-            isMouseDrag = true;
-            transform.hasChanged = false;
-        }
+        if (draggable == null) return;
 
+        if (draggable.HasMovedEnough)
+            isShaking = true;
         else
-        {
-            isMouseDrag = false;
-        }
+            isShaking = false;
 
-        if (!isMouseDrag)
+        if (isShaking && isOnFeedArea)
         {
-            isShaking = false;  
-        }
-
-        // Calls event is object is shaken
-        if (isShaking)
             OnShake?.Invoke();
+
+            if (sRenderer != null)
+                sRenderer.flipY = true;
+        }
     }
 
     void OnMouseDown()
     {
         OnFeedPickedUp?.Invoke();
-    }
-
-    void OnMouseDrag()
-    {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = mousePos;
-    }
-
-    void OnMouseUp()
-    {
-        // The object will snap back to it's original position
-        transform.position = currentPosition;
-
-        isMouseDrag = false;
-        isShaking = false;
     }
 
     void OnTriggerStay2D(Collider2D collision)
@@ -77,15 +58,6 @@ public class ShakeObject : MonoBehaviour
         if (collision.GetComponent<FeedHolder>())
         {
             isOnFeedArea = true;
-
-            // Triggers shaking
-            if (isOnFeedArea && isMouseDrag)
-            {
-                isShaking = true;
-
-                if (sRenderer != null)
-                    sRenderer.flipY = true;
-            }
         }
     }
 
@@ -95,8 +67,8 @@ public class ShakeObject : MonoBehaviour
         if (collision.GetComponent<FeedHolder>())
         {
             isOnFeedArea = false;
-            isShaking = false;
-            sRenderer.flipY = false;
+            if (sRenderer != null)
+                sRenderer.flipY = false;
         }
     }
 }

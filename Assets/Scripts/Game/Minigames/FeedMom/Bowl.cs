@@ -8,14 +8,13 @@ public class Bowl : MonoBehaviour
     [SerializeField] private UnityEvent OnScooped;
 
     [Header("Bowl Settings")]
-    private int curSoupCount;
-    public  int CurSoupCount => curSoupCount;
+    private float curSoupCount;
+    public  float CurSoupCount => curSoupCount;
     public bool IsEmpty => curSoupCount == 0;
 
     [Header("Sprites  (Change to animation later)")]
     [SerializeField] private Sprite fullSprite;
     [SerializeField] private Sprite emptySprite;
-
 
     private SpriteRenderer sRenderer;
     // Start is called before the first frame update

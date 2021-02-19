@@ -9,12 +9,12 @@ public class WinCheck : BaseManager<WinCheck>
     [SerializeField] private ScoreDatabase data;
 
     private string minigameID;
-    private int goal;
-    private int curProgress;
+    private float goal;
+    private float curProgress;
     private bool hasWon;
 
-    public int Goal => goal;
-    public int CurProgress => curProgress;
+    public float Goal => goal;
+    public float CurProgress => curProgress;
     public bool HasWon => hasWon;
 
     private MotivationType motivationType;
@@ -37,7 +37,7 @@ public class WinCheck : BaseManager<WinCheck>
         minigameCompleted = _minigameCompleted;
     }
 
-    public void IncreaseProgress(int value = 1)
+    public void IncreaseProgress(float value = 1)
     {
         Debug.Log("ProgressIncresed");
 

@@ -32,7 +32,7 @@ MonoBehaviour:
     baseScoreValue: 5
     secondsTarget: 10
   - id: FeedAnimals
-    goal: 200
+    goal: 1
     phrase: 
     motivationType: 1
     baseScoreValue: 5

@@ -8,25 +8,37 @@ public class FeedHolder : MonoBehaviour
     [Header("References")]
     [SerializeField] private Image      fillBar;
 
-    [SerializeField] private int        maxFeedValue;
+    [SerializeField] private float        defaultFeedMax;
+    private float   maxFeedValue = -1;
     private float   curFeedValue = 0;
 
     public float    CurFeedValue    => curFeedValue;
-    public float    FillRatio       => curFeedValue / (float)maxFeedValue;
+    public float    MaxFeedValue    => maxFeedValue;
+    public float    FillRatio       => curFeedValue / maxFeedValue;
 
     public void IncreaseFeedCount(float value)
     {
-        // Make sure maxFeedValue has been initialized
-        if (maxFeedValue <= 0) maxFeedValue = WinCheck.Instance.Goal;
+        if (maxFeedValue == -1f)
+            InitFeedGoal();
 
         if (curFeedValue >= maxFeedValue) return;
 
-        curFeedValue += value;
+        float increaseValue = value * Time.deltaTime;
 
+        curFeedValue += increaseValue;
         curFeedValue = Mathf.Clamp(curFeedValue, 0, maxFeedValue);
 
-
         if (fillBar != null) fillBar.fillAmount = FillRatio;
-        WinCheck.Instance.IncreaseProgress();
+
+        WinCheck.Instance.IncreaseProgress(increaseValue);
+    }
+
+    void InitFeedGoal()
+    {
+        // Make sure maxFeedValue has been initialized
+        if (WinCheck.Instance != null)
+            maxFeedValue = WinCheck.Instance.Goal;
+        else
+            maxFeedValue = defaultFeedMax;
     }
 }

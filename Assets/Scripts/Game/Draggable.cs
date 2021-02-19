@@ -5,7 +5,8 @@ using UnityEngine;
 public class Draggable : MonoBehaviour
 {
     [SerializeField] private Transform  itemHolder;
-    [SerializeField] private float      valueToTarget = 1.2f;
+    [Tooltip("Amount of distance required to trigger movement codes")]
+    [SerializeField] private float      moveOffset = 1.2f;
 
     private Vector2 curMousePos;
     private Vector2 prevMousePos;
@@ -14,6 +15,8 @@ public class Draggable : MonoBehaviour
     public  Vector2 CurMousePos     => curMousePos;
     public  Vector2 PrevMousePos    => prevMousePos;
     public  Vector2 ReturnPosition  => returnPosition;
+
+    public bool     HasMovedEnough  => Vector2.Distance(curMousePos, prevMousePos) >= moveOffset;
 
     [SerializeField] private bool canSnapbackToStart;
 
@@ -56,7 +59,7 @@ public class Draggable : MonoBehaviour
 
     private bool IsNearHolder()
     {
-        return Mathf.Abs(transform.position.x - itemHolder.transform.position.x) <= valueToTarget &&
-               Mathf.Abs(transform.position.y - itemHolder.transform.position.y) <= valueToTarget;
+        return Mathf.Abs(transform.position.x - itemHolder.transform.position.x) <= moveOffset &&
+               Mathf.Abs(transform.position.y - itemHolder.transform.position.y) <= moveOffset;
     }
 }

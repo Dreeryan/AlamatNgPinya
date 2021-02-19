@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum MotivationType
 {
@@ -10,6 +11,8 @@ public enum MotivationType
 
 public class MotivationManager : BaseManager<MotivationManager>, IManager
 {
+    [SerializeField] private UnityEvent OnLowMotivation;
+
     [Header("Settings")]
     [Tooltip("Maximum motivation")]
     [SerializeField] private int maxMotivation;
@@ -18,7 +21,7 @@ public class MotivationManager : BaseManager<MotivationManager>, IManager
     [Tooltip("Motivation gained or reduced when completing minigames")]
     [SerializeField] private int incrementation;
 
-    [SerializeField] private int currMotivation;
+    private int currMotivation;
 
     public int MaxMotivation => maxMotivation;
     public int ReqMotivation => reqMotivation;
@@ -73,6 +76,7 @@ public class MotivationManager : BaseManager<MotivationManager>, IManager
     public bool HasEnoughMotivation()
     {
         if (currMotivation >= reqMotivation) return true;
+        OnLowMotivation?.Invoke();
         return false;
     }
 }

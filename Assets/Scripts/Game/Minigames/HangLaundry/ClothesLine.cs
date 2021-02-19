@@ -22,12 +22,14 @@ public class ClothesLine : MonoBehaviour
 
         clothing.transform.parent = hangSpot;
         clothing.transform.position = hangSpot.position;
+        clothing.DisableClothing();
 
         UpdateIndex();
 
-        WinCheck.Instance.IncreaseProgress();
-
         onClothingHung?.Invoke();
+
+        if (WinCheck.Instance != null)
+            WinCheck.Instance.IncreaseProgress();
     }
 
     // Calls for the next position available in the index

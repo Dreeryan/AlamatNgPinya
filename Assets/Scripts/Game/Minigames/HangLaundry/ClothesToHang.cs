@@ -56,7 +56,7 @@ public class ClothesToHang : MonoBehaviour
         if (clothesLine != null && isOnGoal)
         {
             clothesLine.HangClothing(this);
-            EnableClothing();
+            //EnableClothing();
         }
         // Else, it will be placed back to it's last position
         else

@@ -21,6 +21,8 @@ public class ClothesBasket : MonoBehaviour
     public void EnableNextClothing()
     {
         curClothing++;
+        if (curClothing >= Clothes.Count) return;
+
         Clothes[curClothing].EnableClothing();
     }
 }

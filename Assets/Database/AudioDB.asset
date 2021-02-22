@@ -107,7 +107,7 @@ MonoBehaviour:
     audioFile: {fileID: 8300000, guid: 6feee65f93c2f8448be15f6f043dbb6a, type: 3}
     volume: 1
     mixGroup: SFX
-    isLooping: 0
+    isLooping: 1
   - id: sfx[Watering FILLED]
     audioFile: {fileID: 8300000, guid: d9a704aa4d02731499222a651884bb0d, type: 3}
     volume: 1

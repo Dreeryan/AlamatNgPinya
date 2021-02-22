@@ -21,4 +21,9 @@ public class SceneStartUpController : MonoBehaviour
     {
         MotivationManager.Instance.ResetMotivation();
     }
+
+    public void UnpauseGame()
+    {
+        GameManager.Instance.IsPaused = false;
+    }
 }

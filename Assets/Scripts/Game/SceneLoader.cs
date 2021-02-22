@@ -12,7 +12,7 @@ public class SceneLoader : BaseManager<SceneLoader>
         else mode = LoadSceneMode.Single;
 
         SceneManager.LoadScene(sceneName, mode);
-        GameManager.Instance.IsPaused = false;     
+        //GameManager.Instance.IsPaused = false;     
     }
 
     public void ClosePopup(string popupName)

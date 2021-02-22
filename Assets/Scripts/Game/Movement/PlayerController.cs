@@ -37,14 +37,17 @@ public class PlayerController : MonoBehaviour
         {
             SetMovePosition();
 
-            if (sFlipper != null) 
+            if (sFlipper != null)
                 sFlipper.FlipSprite(targetPoint.x - transform.position.x);
 
-            OnPlayerMove?.Invoke();
-            
-            if (playerAnim != null) playerAnim.PlayerWalking(true);
+            if (!isMoving)
+            {
+                OnPlayerMove?.Invoke();
 
-            isMoving = true;
+                if (playerAnim != null) playerAnim.PlayerWalking(true);
+
+                isMoving = true;
+            }
         }
 
         if (isMoving) Movement();       

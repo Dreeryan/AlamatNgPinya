@@ -6271,7 +6271,18 @@ MonoBehaviour:
   progressText: {fileID: 0}
   MinigameCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1820968897}
+        m_MethodName: StopAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[Overworld WALK]
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1363145762 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2459832687665057330, guid: 0e9aae72003a7d945816ee3aa2ce61e5,
@@ -7650,11 +7661,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8165169935274278547, guid: 0e6169d0baa07894691bcde83d0c350f,
-        type: 3}
-      propertyPath: OnPlayerMove.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: test
-      objectReference: {fileID: 0}
     - target: {fileID: 8165169935274278551, guid: 0e6169d0baa07894691bcde83d0c350f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7718,6 +7724,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1820968895}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1820968897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7973328924286812541, guid: 0e6169d0baa07894691bcde83d0c350f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1820968895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028395377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac68d9c21379fd24ca8a1d315f47b756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1893365840
 GameObject:
   m_ObjectHideFlags: 0
@@ -8294,7 +8312,18 @@ MonoBehaviour:
   IsTagged: 0
   onPlayerTag:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1820968897}
+        m_MethodName: StopAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[Overworld WALK]
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2093930379
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class StateController : MonoBehaviour
 	public State RemainState;
 	public State CurrentState;
 
-	[SerializeField]private bool aiActive;
+	[SerializeField]private bool aiActive = true;
 	public float gizmoSphereCastRadius;
 
     private void Start()

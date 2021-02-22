@@ -5,10 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PluggableAI/Decisions/Run")]
 public class Decision_Run : Decision
 {
-
+    
     private bool hasStartedTimer = false;
     private float lastTimerTime;
-    public float maxRunCooldown;
+    public float stateChangeCooldown;
+    public float distanceToRun;
     public override bool Decide(StateController controller)
     {
        bool isTrasitioningToRun = TimeCooldown(controller);
@@ -17,6 +18,7 @@ public class Decision_Run : Decision
 
     private bool TimeCooldown(StateController controller)
     {
+        // if you're near target and cooldown is up go run
         Debug.Log(controller.timerManagerObj.CurTime);
         if (!hasStartedTimer)
         {
@@ -27,13 +29,14 @@ public class Decision_Run : Decision
 
         if (!hasStartedTimer) return false;
         // if time's up
-        if ((controller.timerManagerObj.CurTime - this.lastTimerTime)>=maxRunCooldown)
+        if ((controller.timerManagerObj.CurTime - this.lastTimerTime)>=stateChangeCooldown)
         {
-
             // end and reset timer
             hasStartedTimer = !hasStartedTimer;
             this.lastTimerTime = 0;
-            return true;
+            if (Vector3.Distance(controller.transform.position,
+                controller.targetToRunFrom.position) <= distanceToRun) return true;
+            else return false;
         }
         else
         {

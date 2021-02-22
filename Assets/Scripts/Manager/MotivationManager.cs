@@ -12,6 +12,7 @@ public enum MotivationType
 public class MotivationManager : BaseManager<MotivationManager>, IManager
 {
     [SerializeField] private UnityEvent OnLowMotivation;
+    [SerializeField] private UnityEvent OnEnoughMotivation;
 
     [Header("Settings")]
     [Tooltip("Maximum motivation")]
@@ -75,7 +76,11 @@ public class MotivationManager : BaseManager<MotivationManager>, IManager
 
     public bool HasEnoughMotivation()
     {
-        if (currMotivation >= reqMotivation) return true;
+        if (currMotivation >= reqMotivation)
+        {
+            OnEnoughMotivation?.Invoke();
+            return true; 
+        }
         OnLowMotivation?.Invoke();
         return false;
     }

@@ -39,6 +39,7 @@ public class Action_Patrol : Action
 
     public override void Act(StateController controller)
     {
-        RandomPatrol(controller);
+        Debug.Log("Patrolling");
+      //  RandomPatrol(controller);
     }
 }

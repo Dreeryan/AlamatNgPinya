@@ -8,38 +8,21 @@ public class StateController : MonoBehaviour
 {
 
 	public Rigidbody2D rb2DComponent { get; private set; }
+	public TimerManager timerManagerObj { get; private set; }
 
 	public Transform targetToRunFrom;
 	//Updates the state
 	public State RemainState;
 	public State CurrentState;
 
-	private bool aiActive;
-	
+	[SerializeField]private bool aiActive;
+	public float gizmoSphereCastRadius;
 
-	void Awake()
-	{
-		//EnemyAIComponent = GetComponent<EnemyAI>();
-	}
-
-	private void Start()
-	{
-		SetupAI();
-	}
-
-	public void SetupAI()
-	{
-        if (aiActive)
-        {
-
-
-        }
-        else
-        {
-
-        }
+    private void Start()
+    {
+		timerManagerObj = TimerManager.Instance;
     }
-	private void Update()
+    private void Update()
 	{
 		if (!aiActive) return;
 		CurrentState.UpdateState(this);
@@ -47,12 +30,12 @@ public class StateController : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		//if (CurrentState != null && eyes !=null)
-		//{
-		//	Gizmos.color = CurrentState.SceneGizmoColor;
-		//	Gizmos.DrawWireSphere(eyes.position, enemyStats.lookSphereCastRadius);
-		//}
-	}
+        if (CurrentState != null )
+        {
+            Gizmos.color = CurrentState.SceneGizmoColor;
+            Gizmos.DrawWireSphere(this.transform.position, gizmoSphereCastRadius);
+        }
+    }
 
 	//Check if it's time to transition to the new state by 
 	public void TransitionToState(State nextState)

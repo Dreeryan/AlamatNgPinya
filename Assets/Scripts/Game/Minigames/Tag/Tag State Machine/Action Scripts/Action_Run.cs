@@ -2,43 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Action_Run : MonoBehaviour
+[CreateAssetMenu(menuName = "PluggableAI/Actions/RunFromIt")]
+public class Action_Run : Action
 {
-    [SerializeField]private Transform targetToRunFrom;
     [SerializeField] private float distance;
     [SerializeField] private float velocity;
-    [SerializeField] private Rigidbody2D rbComponent;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        RunAwayFromTarget();
-        TransitionToPatrol();
-    }
-
-    private void RunAwayFromTarget()
+    private void RunAwayFromTarget(StateController controller)
     {
         //Get the opposite direction of the target
-        Vector3 TargetToRunTo = this.transform.position - targetToRunFrom.position;
+        Vector3 TargetToRunTo = controller.transform.position - controller.targetToRunFrom.position;
         TargetToRunTo = TargetToRunTo.normalized;
 
 
-        rbComponent.AddForce(TargetToRunTo * velocity * Time.fixedDeltaTime);
+        controller.rb2DComponent.AddForce(TargetToRunTo * velocity * Time.fixedDeltaTime);
     }
 
-    private void TransitionToPatrol()
+    private void TransitionToPatrol(StateController controller)
     {
-        Debug.Log(Vector3.Distance(this.transform.position, targetToRunFrom.position));
+        Debug.Log(Vector3.Distance(controller.transform.position, controller.targetToRunFrom.position));
         //WIP
-        if (Vector3.Distance(this.transform.position,targetToRunFrom.position) >= distance)
+        if (Vector3.Distance(controller.transform.position, controller.targetToRunFrom.position) >= distance)
         {
             velocity = 0;
-            rbComponent.velocity = new Vector2(0,0);
+            controller.rb2DComponent.velocity = new Vector2(0, 0);
             return;
         }
         else
@@ -46,5 +33,10 @@ public class Action_Run : MonoBehaviour
             velocity = 15;
         }
 
+    }
+
+    public override void Act(StateController controller)
+    {
+        RunAwayFromTarget(controller);
     }
 }

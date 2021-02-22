@@ -7,20 +7,18 @@ using UnityEngine.AI;
 public class StateController : MonoBehaviour
 {
 
+	public Rigidbody2D rb2DComponent { get; private set; }
+
+	public Transform targetToRunFrom;
 	//Updates the state
 	public State RemainState;
 	public State CurrentState;
 
-	public LayerMask TargetLayerMask;
-	public LayerMask GroundLayerMask;
-   // [HideInInspector] public EnemyAI EnemyAIComponent;
 	private bool aiActive;
-
+	
 
 	void Awake()
 	{
-
-
 		//EnemyAIComponent = GetComponent<EnemyAI>();
 	}
 
@@ -31,19 +29,16 @@ public class StateController : MonoBehaviour
 
 	public void SetupAI()
 	{
-	// Default variables on AI
-		//if (aiActive)
-		//{
+        if (aiActive)
+        {
 
-		//	AIPath = GetComponent<AIPath>();
-		//	AIDestinationSetter = GetComponent<AIDestinationSetter>();
-		//	AIDestinationSetter.target = eyes;
-		//}
-		//else
-		//{
-	
-		//}
-	}
+
+        }
+        else
+        {
+
+        }
+    }
 	private void Update()
 	{
 		if (!aiActive) return;

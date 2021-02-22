@@ -2,32 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Action_Patrol : MonoBehaviour
+[CreateAssetMenu(menuName = "PluggableAI/Actions/Patrol")]
+public class Action_Patrol : Action
 {
     [SerializeField] private float distanceToPatrol;
     [SerializeField] private float velocity;
-    [SerializeField] private Rigidbody2D rbComponent;
     private Vector3 randomPosition;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         randomPosition += new Vector3(Random.Range(-distanceToPatrol, distanceToPatrol), Random.Range(-distanceToPatrol, distanceToPatrol));
     }
 
-    private void Update()
-    {
-        RandomPatrol();
-    }
+
     // Update is called once per frame
-    private void RandomPatrol()
+    private void RandomPatrol(StateController controller)
     {
 
-        if (Vector3.Distance(this.transform.position, randomPosition) >=2)
+        if (Vector3.Distance(controller.transform.position, randomPosition) >= 2)
         {
 
-         //   rbComponent.MovePosition()
-        //    rbComponent.AddForce(randomPosition.normalized * velocity * Time.fixedDeltaTime);
+            //   rbComponent.MovePosition()
+            //    rbComponent.AddForce(randomPosition.normalized * velocity * Time.fixedDeltaTime);
 
             // go to location
             // dont change location
@@ -35,8 +32,13 @@ public class Action_Patrol : MonoBehaviour
         }
         else
         {
-            rbComponent.velocity = new Vector2(0, 0);
+            controller.rb2DComponent.velocity = new Vector2(0, 0);
             randomPosition += new Vector3(Random.Range(-distanceToPatrol, distanceToPatrol), Random.Range(-distanceToPatrol, distanceToPatrol));
         }
+    }
+
+    public override void Act(StateController controller)
+    {
+        RandomPatrol(controller);
     }
 }

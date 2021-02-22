@@ -16,4 +16,9 @@ public class SceneStartUpController : MonoBehaviour
     {
         SceneLoader.Instance.LoadScene("MinigameConfirmation", true);
     }
+
+    public void ResetMotivation()
+    {
+        MotivationManager.Instance.ResetMotivation();
+    }
 }

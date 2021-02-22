@@ -174,6 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives: {fileID: 272741026}
+  objectiveTexts: []
   currentSeconds: 10
   resetTime: 5
 --- !u!114 &24259797
@@ -1468,7 +1469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855ca53b49b3b724c97dcb1951f73cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: {fileID: 1171402100}
   dirtyDishes:
   - {fileID: 1661122625}
   - {fileID: 1728551441}
@@ -2012,7 +2012,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1470984525}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1171402100
 MonoBehaviour:
@@ -2030,7 +2030,18 @@ MonoBehaviour:
   progressText: {fileID: 0}
   MinigameCompleted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1195904692}
+        m_MethodName: StopAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[Washing CLEAN]
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1195904685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,7 +2217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemHolder: {fileID: 0}
-  valueToTarget: 1.2
+  moveOffset: 1.2
   canSnapbackToStart: 1
 --- !u!114 &1195904692
 MonoBehaviour:
@@ -2880,8 +2891,8 @@ Transform:
   m_LocalPosition: {x: 1.2750072, y: 1.0199995, z: -0.14403419}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1131553183}
   - {fileID: 1171402098}
+  - {fileID: 1131553183}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

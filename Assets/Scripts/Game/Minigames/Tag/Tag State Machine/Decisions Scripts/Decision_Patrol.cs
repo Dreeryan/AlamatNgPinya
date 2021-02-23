@@ -18,7 +18,11 @@ public class Decision_Patrol : Decision
     {
         // if you're far from target go patrol
         if (Vector3.Distance(controller.transform.position,
-                controller.targetToRunFrom.position) >= distanceFromTarget) return true;
+                controller.targetToRunFrom.position) >= distanceFromTarget)
+        {
+            controller.rb2DComponent.velocity = new Vector2(0,0);
+            return true;
+        }
         else return false;
     }
 

@@ -7,7 +7,8 @@ using UnityEngine.AI;
 public class StateController : MonoBehaviour
 {
 
-	public Rigidbody2D rb2DComponent { get; private set; }
+	[SerializeField] public Rigidbody2D rb2DComponent;
+	[SerializeField] public Timer objectTimer;
 	public TimerManager timerManagerObj { get; private set; }
 
 	public Transform targetToRunFrom;

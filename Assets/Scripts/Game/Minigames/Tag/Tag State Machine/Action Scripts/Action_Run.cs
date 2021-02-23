@@ -5,34 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PluggableAI/Actions/RunFromIt")]
 public class Action_Run : Action
 {
-    [SerializeField] private float distance;
-    [SerializeField] private float velocity;
+    [SerializeField] private float runningSpeed;
 
     private void RunAwayFromTarget(StateController controller)
     {
         //Get the opposite direction of the target
-        Vector3 TargetToRunTo = controller.transform.position - controller.targetToRunFrom.position;
-        TargetToRunTo = TargetToRunTo.normalized;
+        Vector3 targetDirection = controller.transform.position - controller.targetToRunFrom.position;
+        targetDirection = targetDirection.normalized;
 
 
-        controller.rb2DComponent.AddForce(TargetToRunTo * velocity * Time.fixedDeltaTime);
-    }
-
-    private void TransitionToPatrol(StateController controller)
-    {
-        Debug.Log(Vector3.Distance(controller.transform.position, controller.targetToRunFrom.position));
-        //WIP
-        if (Vector3.Distance(controller.transform.position, controller.targetToRunFrom.position) >= distance)
-        {
-            velocity = 0;
-            controller.rb2DComponent.velocity = new Vector2(0, 0);
-            return;
-        }
-        else
-        {
-            velocity = 15;
-        }
-
+        controller.rb2DComponent.MovePosition(controller.transform.position + targetDirection * runningSpeed * Time.fixedDeltaTime);
     }
 
     public override void Act(StateController controller)

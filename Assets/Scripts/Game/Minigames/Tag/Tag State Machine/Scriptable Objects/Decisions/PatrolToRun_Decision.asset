@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6db5dc42719bc4aa0979c463861dfe, type: 3}
   m_Name: PatrolToRun_Decision
   m_EditorClassIdentifier: 
-  maxRunCooldown: 5
+  stateChangeCooldown: 3
+  distanceToRun: 6

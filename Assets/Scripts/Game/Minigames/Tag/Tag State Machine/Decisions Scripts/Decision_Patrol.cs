@@ -7,15 +7,14 @@ public class Decision_Patrol : Decision
 {
     private bool hasStartedTimer = false;
     private float lastTimerTime;
-    public float stateChangeCooldown;
-    public float distanceFromTarget;
+    [SerializeField]private float distanceFromTarget;
     public override bool Decide(StateController controller)
     {
-        bool isTrasitioningToRun = TimeCooldown(controller);
+        bool isTrasitioningToRun = isFarFromTarget(controller);
         return isTrasitioningToRun;
     }
 
-    private bool TimeCooldown(StateController controller)
+    private bool isFarFromTarget(StateController controller)
     {
         // if you're far from target go patrol
         if (Vector3.Distance(controller.transform.position,

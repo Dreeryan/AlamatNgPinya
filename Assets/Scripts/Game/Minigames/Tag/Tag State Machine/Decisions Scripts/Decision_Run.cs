@@ -8,8 +8,8 @@ public class Decision_Run : Decision
     
     private bool hasStartedTimer = false;
     private float lastTimerTime;
-    public float stateChangeCooldown;
-    public float distanceToRun;
+    [SerializeField]private float stateChangeCooldown;
+    [SerializeField]private float distanceToRun;
     public override bool Decide(StateController controller)
     {
        bool isTrasitioningToRun = TimeCooldown(controller);
@@ -29,7 +29,7 @@ public class Decision_Run : Decision
 
         if (!hasStartedTimer) return false;
         // if time's up
-        if ((controller.timerManagerObj.CurTime - this.lastTimerTime)>=stateChangeCooldown)
+        if ((controller.timerManagerObj.CurTime - this.lastTimerTime) >= stateChangeCooldown)
         {
             // end and reset timer
             hasStartedTimer = !hasStartedTimer;
@@ -38,10 +38,8 @@ public class Decision_Run : Decision
                 controller.targetToRunFrom.position) <= distanceToRun) return true;
             else return false;
         }
-        else
-        {
-            return false;
-        }
+        else return false;
+        
     }
     
 

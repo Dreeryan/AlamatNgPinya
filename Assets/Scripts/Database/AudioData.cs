@@ -5,13 +5,13 @@ using UnityEngine;
 [System.Serializable]
 public class AudioData : BaseData
 {
-    [SerializeField] private AudioClip audioFile;
-    [SerializeField] private float volume;
-    [SerializeField] private string mixGroup;
-    [SerializeField] private bool isLooping;
+    [SerializeField] private List<AudioClip>    audioFile;
+    [SerializeField] private float              volume;
+    [SerializeField] private string             mixGroup;
+    [SerializeField] private bool               isLooping;
 
-    public AudioClip    AudioFile => audioFile; 
-    public float        Volume => volume;
-    public string       MixGroup => mixGroup;
-    public bool         IsLooping =>  isLooping; 
+    public List<AudioClip>  AudioFile => audioFile; 
+    public float            Volume => volume;
+    public string           MixGroup => mixGroup;
+    public bool             IsLooping =>  isLooping; 
 }

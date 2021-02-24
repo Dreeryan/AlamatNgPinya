@@ -21,7 +21,7 @@ public class AudioObject : MonoBehaviour
 
         aSource = this.gameObject.AddComponent<AudioSource>();
 
-        aSource.clip = newData.AudioFile;
+        aSource.clip = GetRandomClip();
 	
 		if(AudioManager.Instance.AudioMix != null)
 			aSource.outputAudioMixerGroup = AudioManager.Instance
@@ -45,6 +45,9 @@ public class AudioObject : MonoBehaviour
             return;
         }
 
+        if(aData.AudioFile.Count > 1)
+            aSource.clip = GetRandomClip();
+
         aSource.Play();
 
         if (aSource.volume <= aData.Volume && fadeIn)
@@ -65,5 +68,14 @@ public class AudioObject : MonoBehaviour
     public void FadeAudio(float targetVol, float duration)
     {
         aSource.DOFade(targetVol, duration).SetUpdate(true);
+    }
+
+    private AudioClip GetRandomClip()
+    {
+        //Unity sometimes bugs out if randomizing 1 item lists
+        if (aData.AudioFile.Count == 1)
+            return aData.AudioFile[0];
+        else
+            return aData.AudioFile[Random.Range(0, aData.AudioFile.Count)];
     }
 }

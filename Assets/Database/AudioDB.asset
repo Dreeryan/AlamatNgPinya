@@ -14,127 +14,152 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataSet:
   - id: msc[Main Menu]
-    audioFile: {fileID: 8300000, guid: 64f4fc62ec627a94d8ea0331b347c720, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 64f4fc62ec627a94d8ea0331b347c720, type: 3}
     volume: 0.6
     mixGroup: Music
     isLooping: 1
   - id: msc[Overworld]
-    audioFile: {fileID: 8300000, guid: d706f9f43822a2647ba139b25c2e0de9, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: d706f9f43822a2647ba139b25c2e0de9, type: 3}
     volume: 0.5
     mixGroup: Music
     isLooping: 1
   - id: sfx[testWalk]
-    audioFile: {fileID: 8300000, guid: 8c29a521c5efbcb478403a8e2541d9b3, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: b209a882dab4b5c48ad7117ab3245162, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 1
   - id: sfx[Menu YES]
-    audioFile: {fileID: 8300000, guid: ecfd3347a677a864696f5a99a399545b, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: ecfd3347a677a864696f5a99a399545b, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Menu NO]
-    audioFile: {fileID: 8300000, guid: f75f9e88efced614bbceb4b11b1108f7, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: f75f9e88efced614bbceb4b11b1108f7, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Menu PAUSE]
-    audioFile: {fileID: 8300000, guid: b407afde52a9ac044b56c72184756597, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: b407afde52a9ac044b56c72184756597, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Fold 1]
-    audioFile: {fileID: 8300000, guid: 07c2cf18450e20d4aa2f196c9ed78dd3, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 07c2cf18450e20d4aa2f196c9ed78dd3, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Fold 2]
-    audioFile: {fileID: 8300000, guid: 0456d8b27e3a6344890b9f8f7af455a1, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 0456d8b27e3a6344890b9f8f7af455a1, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Fold 3]
-    audioFile: {fileID: 8300000, guid: 66c71945a4e822743bc2423ebe0870cb, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 66c71945a4e822743bc2423ebe0870cb, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Fold STACK]
-    audioFile: {fileID: 8300000, guid: 7128a129fd8035942b6b78bc80b31082, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 7128a129fd8035942b6b78bc80b31082, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Friend FOUND]
-    audioFile: {fileID: 8300000, guid: 4db11ca36faa4a844a98c186bb2c3ac7, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 4db11ca36faa4a844a98c186bb2c3ac7, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Overworld WALK]
-    audioFile: {fileID: 8300000, guid: b209a882dab4b5c48ad7117ab3245162, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: b209a882dab4b5c48ad7117ab3245162, type: 3}
     volume: 0.4
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Hanging PICKUP]
-    audioFile: {fileID: 8300000, guid: a8f046969bc2d8a4bb973f3220fdfcd4, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: a8f046969bc2d8a4bb973f3220fdfcd4, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Hanging HANG]
-    audioFile: {fileID: 8300000, guid: 272a33d8e2d544f4a9783a7d6c36f0d4, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 272a33d8e2d544f4a9783a7d6c36f0d4, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Washing STACK]
-    audioFile: {fileID: 8300000, guid: c03e4706acaa0fe478043a484cea5c30, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: c03e4706acaa0fe478043a484cea5c30, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Washing CLEAN]
-    audioFile: {fileID: 8300000, guid: 885843d81f771854983758216088daa7, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 885843d81f771854983758216088daa7, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Feeding PICKUP]
-    audioFile: {fileID: 8300000, guid: d0186a2dbc85ba741a0e3bd8df30d684, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: d0186a2dbc85ba741a0e3bd8df30d684, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Feeding SHAKE]
-    audioFile: {fileID: 8300000, guid: d4fa0e3fe9655db448775347f7e39fa0, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: d4fa0e3fe9655db448775347f7e39fa0, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Watering POUR]
-    audioFile: {fileID: 8300000, guid: 6feee65f93c2f8448be15f6f043dbb6a, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 6feee65f93c2f8448be15f6f043dbb6a, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 1
   - id: sfx[Watering FILLED]
-    audioFile: {fileID: 8300000, guid: d9a704aa4d02731499222a651884bb0d, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: d9a704aa4d02731499222a651884bb0d, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Toy PICKUP]
-    audioFile: {fileID: 8300000, guid: 3190dda0ed598e14e833f9dfdf09136b, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 3190dda0ed598e14e833f9dfdf09136b, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Toy DROP]
-    audioFile: {fileID: 8300000, guid: 0e6cad3ff4299e149a202a16b6f0c683, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 0e6cad3ff4299e149a202a16b6f0c683, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Plate PICKUP]
-    audioFile: {fileID: 8300000, guid: da7473d6e55df7440808d82ee2736239, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: da7473d6e55df7440808d82ee2736239, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Plate STACK]
-    audioFile: {fileID: 8300000, guid: 9a04f320f578fb041b4ce59e0928cbcd, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 9a04f320f578fb041b4ce59e0928cbcd, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Task WIN]
-    audioFile: {fileID: 8300000, guid: 034b4645e9417e042bd82ff6cc6e6d59, type: 3}
+    audioFile:
+    - {fileID: 8300000, guid: 034b4645e9417e042bd82ff6cc6e6d59, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0

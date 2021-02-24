@@ -19,6 +19,7 @@ public class Action_Run : Action
 
     public override void Act(StateController controller)
     {
+        base.Act(controller);
         RunAwayFromTarget(controller);
     }
 }

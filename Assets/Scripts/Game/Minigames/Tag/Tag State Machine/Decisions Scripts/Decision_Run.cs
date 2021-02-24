@@ -6,7 +6,6 @@ using UnityEngine;
 public class Decision_Run : Decision
 {
     
-    private bool hasStartedTimer = false;
     private float elapsedTime;
     [SerializeField]private float stateChangeCooldown;
     [SerializeField]private float distanceToRun;

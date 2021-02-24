@@ -15,7 +15,6 @@ public class Action_Patrol : Action
     void Start()
     {
         hasStartedTimer = false;
-       // randomAdditiveVector = new Vector3(Random.Range(-distanceToPatrol, distanceToPatrol), Random.Range(-distanceToPatrol, distanceToPatrol));
     }
 
 
@@ -37,6 +36,7 @@ public class Action_Patrol : Action
 
     public override void Act(StateController controller)
     {
+        base.Act(controller);
         RandomPatrol(controller);
     }
 }

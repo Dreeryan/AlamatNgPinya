@@ -9,7 +9,8 @@ public class StateController : MonoBehaviour
 
 	[SerializeField] public Rigidbody2D rb2DComponent;
 	[SerializeField] public Timer objectTimer;
-	[SerializeField] private TagCharacter tagCharacterComponent;
+	[SerializeField] public TagCharacter tagCharacterComponent;
+	[SerializeField] public TagManager tagManagerObj;
 	public TimerManager timerManagerObj { get; private set; }
 
 	public Transform targetToRunFrom;

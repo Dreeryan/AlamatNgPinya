@@ -93,6 +93,19 @@ public class TagManager : MonoBehaviour
         //Time.timeScale = 0.0f;
     }
 
+    public List<TagCharacter> GetNonTagged()
+    {
+        List<TagCharacter> NonTagged = new List<TagCharacter>();
+        foreach (TagCharacter kid in kids)
+        {
+            if (!kid.IsTagged)
+            {
+                NonTagged.Add(kid);
+            }
+        }
+        return NonTagged;
+    }
+
     IEnumerator BeginCompletionCountdown()
     {
         curTime = maxTime;

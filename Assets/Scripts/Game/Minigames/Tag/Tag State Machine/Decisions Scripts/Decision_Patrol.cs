@@ -5,12 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PluggableAI/Decisions/Patrol")]
 public class Decision_Patrol : Decision
 {
-    private bool hasStartedTimer = false;
-    private float lastTimerTime;
     [SerializeField]private float distanceFromTarget;
     public override bool Decide(StateController controller)
     {
-        if (GameManager.Instance.IsPaused) return false;
+     //   if (GameManager.Instance.IsPaused) return false;
         bool isTrasitioningToRun = isFarFromTarget(controller);
         return isTrasitioningToRun;
     }

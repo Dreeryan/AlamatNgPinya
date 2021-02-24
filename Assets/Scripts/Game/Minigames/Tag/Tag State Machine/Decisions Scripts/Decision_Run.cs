@@ -18,7 +18,7 @@ public class Decision_Run : Decision
 
     private bool TimeCooldown(StateController controller)
     {
-        if (GameManager.Instance.IsPaused) return false;
+      //  if (GameManager.Instance.IsPaused) return false;
         AddTime();
         if (HasExceededTime(stateChangeCooldown))
         {
@@ -26,14 +26,14 @@ public class Decision_Run : Decision
             if (Vector3.Distance(controller.transform.position,
                 controller.targetToRunFrom.position) <= distanceToRun)
             {
-                Debug.Log("lapit kaya tumakbo");
+                //near
                 ResetTimer();
                 return true;
             }
           
             else
             {
-                Debug.Log("malayo");
+                //far
                 return false;
             }
         }

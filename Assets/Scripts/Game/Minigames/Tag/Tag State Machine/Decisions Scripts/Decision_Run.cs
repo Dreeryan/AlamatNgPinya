@@ -19,7 +19,7 @@ public class Decision_Run : Decision
 
     private bool TimeCooldown(StateController controller)
     {
-
+        if (GameManager.Instance.IsPaused) return false;
         AddTime();
         if (HasExceededTime(stateChangeCooldown))
         {

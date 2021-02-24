@@ -27,6 +27,7 @@ public class StateController : MonoBehaviour
     private void Update()
 	{
 		if (!aiActive) return;
+		if (GameManager.Instance.IsPaused) return;
 		CurrentState.UpdateState(this);
 	}
 

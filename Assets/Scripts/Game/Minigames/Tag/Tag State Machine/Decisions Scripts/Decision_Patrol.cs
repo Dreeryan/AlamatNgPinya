@@ -10,6 +10,7 @@ public class Decision_Patrol : Decision
     [SerializeField]private float distanceFromTarget;
     public override bool Decide(StateController controller)
     {
+        if (GameManager.Instance.IsPaused) return false;
         bool isTrasitioningToRun = isFarFromTarget(controller);
         return isTrasitioningToRun;
     }

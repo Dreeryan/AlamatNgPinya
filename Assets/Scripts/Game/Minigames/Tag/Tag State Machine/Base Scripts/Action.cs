@@ -4,5 +4,8 @@ using UnityEngine;
 
 public abstract class Action : ScriptableObject
 {
-    public abstract void Act(StateController controller);
+    public virtual void Act(StateController controller)
+    {
+        if (GameManager.Instance.IsPaused) return;
+    }
 }

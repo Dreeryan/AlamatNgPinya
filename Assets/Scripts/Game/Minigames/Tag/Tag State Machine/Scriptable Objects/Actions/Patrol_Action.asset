@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c47292d56503574abb0eede7ccbb63b, type: 3}
   m_Name: Patrol_Action
   m_EditorClassIdentifier: 
+  distanceTravel: 1
   patrolSpeed: 2
   timeToSwitch: 0.5

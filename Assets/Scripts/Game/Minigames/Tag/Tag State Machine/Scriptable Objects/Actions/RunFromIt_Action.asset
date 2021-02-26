@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: RunFromIt_Action
   m_EditorClassIdentifier: 
   runningSpeed: 3
+  switchNodeCooldown: 1

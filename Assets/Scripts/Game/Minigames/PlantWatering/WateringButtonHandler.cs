@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class WateringButtonHandler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] private Watering plant;
+
     [SerializeField] 
     private UnityEvent onLeftPointerDown;
     [SerializeField]
@@ -14,6 +16,11 @@ public class WateringButtonHandler : MonoBehaviour, IPointerDownHandler, IPointe
     private UnityEvent onPointerEnter;
     [SerializeField]
     private UnityEvent onPointerExit;
+
+    private void Start()
+    {
+        if (plant == null) plant = GetComponentInParent<Watering>();
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {

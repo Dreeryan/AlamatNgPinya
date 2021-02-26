@@ -14,6 +14,10 @@ public class Bucket : MonoBehaviour
     [Tooltip("Rotation of the sprite when the mouse is clicked on top of a plant")]
     private float isFillingRotation = 60f;
 
+    [SerializeField] private UnityEvent onFilling;
+    [SerializeField] private UnityEvent onStopFilling;
+
+
     private bool canFill;
     private bool isFilling;
 
@@ -40,6 +44,7 @@ public class Bucket : MonoBehaviour
     {
         canFill = p_canFill;
 
+
         UpdateSprite();
     }
 
@@ -55,7 +60,14 @@ public class Bucket : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, canFillRotation);
 
             if (isFilling && currentPlant != null && !currentPlant.IsWatered)
+            {
+                onFilling?.Invoke();
                 transform.rotation = Quaternion.Euler(0, 0, isFillingRotation);
+            }
+            else
+            {
+                onStopFilling?.Invoke();
+            }
         }
         else
             transform.rotation = Quaternion.Euler(0, 0, 0);

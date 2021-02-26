@@ -3336,7 +3336,7 @@ MonoBehaviour:
   counter: {fileID: 542915163}
   softBoilSFX: sfx[Cooking SOFT]
   regularBoilSFX: sfx[Cooking REGULAR]
-  hardBoilSFX: 
+  hardBoilSFX: sfx[Cooking INTENSE]
   onFireTurnOn:
     m_PersistentCalls:
       m_Calls: []

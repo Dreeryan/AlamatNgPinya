@@ -110,7 +110,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[Eggs PICKUP]
+          m_StringArgument: sfx[Menu YES]
           m_BoolArgument: 0
         m_CallState: 2
   onEggDropped:
@@ -124,10 +124,13 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[Eggs DROP]
+          m_StringArgument: sfx[Menu YES]
           m_BoolArgument: 0
         m_CallState: 2
+  eggBasket: {fileID: 0}
   vision: {fileID: 3746543945012756444}
+  collisionChecker: {fileID: 0}
+  counter: {fileID: 0}
   collider: {fileID: 4743468782995224815}
 --- !u!114 &3746543945012756444
 MonoBehaviour:

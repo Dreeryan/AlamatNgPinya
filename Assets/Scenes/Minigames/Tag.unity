@@ -6707,7 +6707,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[Tag PLAYER TAG]
+          m_StringArgument: sfx[Menu YES]
           m_BoolArgument: 0
         m_CallState: 2
   onPlayerTagged:
@@ -6721,7 +6721,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[Tag PLAYER IT]
+          m_StringArgument: sfx[Menu NO]
           m_BoolArgument: 0
         m_CallState: 2
   onEnemyTag:
@@ -6735,7 +6735,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: sfx[Tag NPC TAG]
+          m_StringArgument: sfx[Menu PAUSE]
           m_BoolArgument: 0
         m_CallState: 2
   kids:

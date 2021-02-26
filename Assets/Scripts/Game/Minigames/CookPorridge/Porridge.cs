@@ -33,6 +33,10 @@ public class Porridge : MonoBehaviour
 
 
     [Header("Sound Settings")]
+    [SerializeField] private string softBoilSFX;
+    [SerializeField] private string regularBoilSFX;
+    [SerializeField] private string hardBoilSFX;
+
     [SerializeField] private UnityEvent onFireTurnOn;
     [SerializeField] private UnityEvent onUndercooked;
     [SerializeField] private UnityEvent onSlightlyCooked;
@@ -47,6 +51,7 @@ public class Porridge : MonoBehaviour
             
             if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
             {
+                if (currentTemp == 0) OnSoftBoil();
                 porridgeSlider.value += addTemperature * Time.deltaTime;
 
                 if (currentTemp >= maxTemp) currentTemp = maxTemp;
@@ -67,7 +72,6 @@ public class Porridge : MonoBehaviour
             {
                 fireAnimator.SetBool("isFireOn", true);
                 potCoverAnimator.SetBool("isFireOn", true);
-                onFireTurnOn?.Invoke();
             }
             else
             {
@@ -79,14 +83,40 @@ public class Porridge : MonoBehaviour
 
             if (currentTemp > rightTemp && !isRightTemp)
             {
-                StartCoroutine("RightTempCountdown");
+                StartCoroutine(RightTempCountdown());
             }
             else if (currentTemp < rightTemp)
             {
-                StopCoroutine("RightTempCountdown");
+                StopCoroutine(RightTempCountdown());
                 isRightTemp = false;
             }
         }
+    }
+
+    void OnSoftBoil()
+    {
+        AudioManager.PlayAudio(softBoilSFX);
+        AudioManager.StopAudio(regularBoilSFX);
+        AudioManager.StopAudio(hardBoilSFX);
+    }
+    void OnRegularBoil()
+    {
+        AudioManager.StopAudio(softBoilSFX);
+        AudioManager.PlayAudio(regularBoilSFX);
+        AudioManager.StopAudio(hardBoilSFX);
+    }
+    void OnHardBoil()
+    {
+        AudioManager.StopAudio(softBoilSFX);
+        AudioManager.StopAudio(regularBoilSFX);
+        AudioManager.PlayAudio(hardBoilSFX);
+    }
+
+    void StopAudio()
+    {
+        AudioManager.StopAudio(softBoilSFX);
+        AudioManager.StopAudio(regularBoilSFX);
+        AudioManager.StopAudio(hardBoilSFX);
     }
 
     IEnumerator RightTempCountdown()
@@ -95,11 +125,16 @@ public class Porridge : MonoBehaviour
 
         yield return new WaitForSeconds(secondsToUndercooked);
 
+        OnRegularBoil();
+
         yield return new WaitForSeconds(secondsToCooked);
+
+        OnHardBoil();
 
         potCoverAnimator.SetBool("isCooked", true);
         onCooked?.Invoke();
         yield return new WaitForSeconds(secondsToWin);
+        StopAudio();
         hasWon = true;
 
         WinCheck.Instance.IncreaseProgress();

@@ -2796,6 +2796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives: {fileID: 591553598}
+  objectiveTexts: []
   currentSeconds: 10
   resetTime: 5
 --- !u!114 &1208254940
@@ -3333,6 +3334,9 @@ MonoBehaviour:
   potCoverAnimator: {fileID: 926880413}
   porridgeSlider: {fileID: 2024910071}
   counter: {fileID: 542915163}
+  softBoilSFX: sfx[Cooking SOFT]
+  regularBoilSFX: sfx[Cooking REGULAR]
+  hardBoilSFX: 
   onFireTurnOn:
     m_PersistentCalls:
       m_Calls: []

@@ -186,13 +186,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: ec764cd40a48e7f448380faa0a68aec8, type: 3}
     volume: 1
     mixGroup: SFX
-    isLooping: 0
+    isLooping: 1
   - id: sfx[Cooking REGULAR]
     audioFile:
     - {fileID: 8300000, guid: 2050bf1e259d2b44a82b743ede2ecd06, type: 3}
     volume: 1
     mixGroup: SFX
-    isLooping: 0
+    isLooping: 1
   - id: sfx[Motivation ERROR]
     audioFile:
     - {fileID: 8300000, guid: 5380c6ad4bd13cb42b9ee0ac710a912a, type: 3}
@@ -247,3 +247,9 @@ MonoBehaviour:
     volume: 1
     mixGroup: SFX
     isLooping: 0
+  - id: sfx[Cooking INTENSE]
+    audioFile:
+    - {fileID: 8300000, guid: 1fdb2b5fa8ace8a48baf992f4b52134a, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 1

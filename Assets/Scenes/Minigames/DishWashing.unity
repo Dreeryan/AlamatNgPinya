@@ -2187,7 +2187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9180d8a6b6ac44087c2bf9a8f439a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnScrubbingDish:
+  draggable: {fileID: 0}
+  drainRate: 20
+  guideText: {fileID: 576225321}
+  onScrubbingDish:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1195904692}
@@ -2201,9 +2204,20 @@ MonoBehaviour:
           m_StringArgument: sfx[Washing CLEAN]
           m_BoolArgument: 0
         m_CallState: 2
-  drainRate: 20
-  dragTreshold: 0.01
-  guideText: {fileID: 576225321}
+  onStopScrubbing:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1195904692}
+        m_MethodName: StopAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: sfx[Washing CLEAN]
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1195904691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2217,7 +2231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemHolder: {fileID: 0}
-  moveOffset: 1.2
+  moveOffset: 0.01
   canSnapbackToStart: 1
 --- !u!114 &1195904692
 MonoBehaviour:

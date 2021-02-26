@@ -32,8 +32,6 @@ public class Watering : MonoBehaviour
     [SerializeField] private Sprite wateredPlant;
 
     [Header("Sound")]
-    [SerializeField] private UnityEvent onFilling;
-    [SerializeField] private UnityEvent onFillingStop;
     [SerializeField] private UnityEvent onWatered;
 
     void Start()
@@ -56,18 +54,6 @@ public class Watering : MonoBehaviour
     {
         if (bucket.GetisFilling() && isBucketOnMe && !isWatered)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("press");
-                // play filling sound
-                onFilling?.Invoke();
-            }
-
-            if(Input.GetMouseButtonUp(0))
-            {
-                onFillingStop?.Invoke();
-            }
-
             // while it's not filled up
             if (fillAmount < maxFill)
             {
@@ -76,7 +62,6 @@ public class Watering : MonoBehaviour
 
                 // increase the fill amount by fill rate
                 fillAmount += fillRate * Time.deltaTime;
-
             }            
 
             // when it's filled up
@@ -96,8 +81,6 @@ public class Watering : MonoBehaviour
 
                 // SFX
                 onWatered?.Invoke();
-
-                onFillingStop?.Invoke();
 
                 // update bucket sprite
                 bucket.UpdateSprite();

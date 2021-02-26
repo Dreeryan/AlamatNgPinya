@@ -135,7 +135,7 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Plate PICKUP]
     audioFile:
-    - {fileID: 8300000, guid: c7a78a6c25ed09e44b79be9d843eae9f, type: 3}
+    - {fileID: 8300000, guid: 4837ae0c808c89b44a9f56ebddbc4b7f, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
@@ -153,13 +153,13 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Harvest DROP]
     audioFile:
-    - {fileID: 8300000, guid: 6baf07e338dd19240a3a158127660cde, type: 3}
+    - {fileID: 8300000, guid: b49107f42b009574ba864316b5ce5dd4, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Harvest PICKUP]
     audioFile:
-    - {fileID: 8300000, guid: d72092bf1e0e4a545b5f407621925260, type: 3}
+    - {fileID: 8300000, guid: dc39b4ff4d2c5d04c9782fa25a4a73ed, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0

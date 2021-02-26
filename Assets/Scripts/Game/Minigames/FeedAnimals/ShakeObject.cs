@@ -5,14 +5,16 @@ using UnityEngine.Events;
 
 public class ShakeObject : MonoBehaviour
 {
-    [SerializeField] private UnityEvent OnFeedPickedUp;
-
-    [SerializeField] private UnityEvent OnShake;
+    [SerializeField] private UnityEvent onFeedPickedUp;
+    [SerializeField] private UnityEvent onShakeAudio;
+    [SerializeField] private UnityEvent onShake;
+    [SerializeField] private UnityEvent onStopShake;
 
     [SerializeField] private Draggable draggable;
 
     private bool            isOnFeedArea;
     private bool            isShaking;
+    private bool            isAudioPlaying;
     private SpriteRenderer  sRenderer;
 
     public bool IsOnFeedArea => isOnFeedArea;
@@ -40,16 +42,29 @@ public class ShakeObject : MonoBehaviour
 
         if (isShaking && isOnFeedArea)
         {
-            OnShake?.Invoke();
+            if (!isAudioPlaying)
+            {
+                onShakeAudio?.Invoke();
+                isAudioPlaying = true;
+            }
+            onShake?.Invoke();
 
             if (sRenderer != null)
                 sRenderer.flipY = true;
+        }
+        else
+        {
+            if (isAudioPlaying)
+            {
+                onStopShake?.Invoke();
+                isAudioPlaying = false;
+            }
         }
     }
 
     void OnMouseDown()
     {
-        OnFeedPickedUp?.Invoke();
+        onFeedPickedUp?.Invoke();
     }
 
     void OnTriggerStay2D(Collider2D collision)

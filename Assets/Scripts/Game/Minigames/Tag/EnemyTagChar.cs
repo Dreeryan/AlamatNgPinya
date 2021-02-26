@@ -21,7 +21,7 @@ public class EnemyTagChar : TagCharacter
 
     void Update()
     {
-        if (GameManager.Instance.IsPaused) return;
+    //    if (GameManager.Instance.IsPaused) return;
         if (!isMinigameCompleted) AIRandom();
     }
 

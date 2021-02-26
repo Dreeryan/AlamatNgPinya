@@ -45,8 +45,10 @@ public class Action_Patrol : Action
             }
         }
         //get top 3 nodes
+     
         controller.currentTargetNode = controller.nodeCache[Random.Range(controller.nodeCache.Count - 3, 
-                                                                                controller.nodeCache.Count)];
+                                                                                controller.nodeCache.Count-1)];
+        Debug.Log(controller.nodeCache[controller.nodeCache.Count-1]);  
         controller.nodeCache.Clear();
     }
     public override void Act(StateController controller)

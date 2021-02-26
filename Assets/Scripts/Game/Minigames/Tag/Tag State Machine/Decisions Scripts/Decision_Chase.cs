@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "PluggableAI/Decisions/Chase")]
 public class Decision_Chase : Decision
 {
     public override bool Decide(StateController controller)

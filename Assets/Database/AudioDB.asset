@@ -33,133 +33,223 @@ MonoBehaviour:
     isLooping: 1
   - id: sfx[Menu YES]
     audioFile:
-    - {fileID: 8300000, guid: ecfd3347a677a864696f5a99a399545b, type: 3}
+    - {fileID: 8300000, guid: ebc745e815227b9409ee86f2b24e58d6, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Menu NO]
     audioFile:
-    - {fileID: 8300000, guid: f75f9e88efced614bbceb4b11b1108f7, type: 3}
+    - {fileID: 8300000, guid: e11f143a1bca88b43997534dfc648ee0, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Menu PAUSE]
     audioFile:
-    - {fileID: 8300000, guid: b407afde52a9ac044b56c72184756597, type: 3}
+    - {fileID: 8300000, guid: ff3fbbfe2ea23184eb5193e8c83a0aa1, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Fold 1]
     audioFile:
-    - {fileID: 8300000, guid: 07c2cf18450e20d4aa2f196c9ed78dd3, type: 3}
-    volume: 1
-    mixGroup: SFX
-    isLooping: 0
-  - id: sfx[Fold 2]
-    audioFile:
-    - {fileID: 8300000, guid: 0456d8b27e3a6344890b9f8f7af455a1, type: 3}
-    volume: 1
-    mixGroup: SFX
-    isLooping: 0
-  - id: sfx[Fold 3]
-    audioFile:
-    - {fileID: 8300000, guid: 66c71945a4e822743bc2423ebe0870cb, type: 3}
+    - {fileID: 8300000, guid: 5acf248c9f6433c49b6758dc47503a8d, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Fold STACK]
     audioFile:
-    - {fileID: 8300000, guid: 7128a129fd8035942b6b78bc80b31082, type: 3}
+    - {fileID: 8300000, guid: 734c7cb14fb49454ea6de09677baab6c, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Friend FOUND]
     audioFile:
-    - {fileID: 8300000, guid: 4db11ca36faa4a844a98c186bb2c3ac7, type: 3}
+    - {fileID: 8300000, guid: 186fdeafab19a0041ae1ee5969993a11, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Overworld WALK]
     audioFile:
-    - {fileID: 8300000, guid: b209a882dab4b5c48ad7117ab3245162, type: 3}
-    volume: 0.4
+    - {fileID: 8300000, guid: e806c371730dba448a6c478a0286a4ff, type: 3}
+    volume: 2
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Hanging PICKUP]
     audioFile:
-    - {fileID: 8300000, guid: a8f046969bc2d8a4bb973f3220fdfcd4, type: 3}
+    - {fileID: 8300000, guid: 9c4a11cd7e8cc8b4c845795bf53c7837, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Hanging HANG]
     audioFile:
-    - {fileID: 8300000, guid: 272a33d8e2d544f4a9783a7d6c36f0d4, type: 3}
+    - {fileID: 8300000, guid: 0adb9d7532169a547953a1ef34f18593, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Washing STACK]
     audioFile:
-    - {fileID: 8300000, guid: c03e4706acaa0fe478043a484cea5c30, type: 3}
+    - {fileID: 8300000, guid: 93564fb45687d19438b2fd6a6098e59e, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Washing CLEAN]
     audioFile:
-    - {fileID: 8300000, guid: 885843d81f771854983758216088daa7, type: 3}
+    - {fileID: 8300000, guid: eab2b7daed3fc4e43873a4be9c6917f9, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Feeding PICKUP]
     audioFile:
-    - {fileID: 8300000, guid: d0186a2dbc85ba741a0e3bd8df30d684, type: 3}
+    - {fileID: 8300000, guid: 89b67d3dfa221b3478a683eb6e97bba9, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Feeding SHAKE]
     audioFile:
-    - {fileID: 8300000, guid: d4fa0e3fe9655db448775347f7e39fa0, type: 3}
+    - {fileID: 8300000, guid: 28c82b9532b825c478a60098c18af325, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Watering POUR]
     audioFile:
-    - {fileID: 8300000, guid: 6feee65f93c2f8448be15f6f043dbb6a, type: 3}
+    - {fileID: 8300000, guid: dce8ff204327326478a61039f180384a, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 1
   - id: sfx[Watering FILLED]
     audioFile:
-    - {fileID: 8300000, guid: d9a704aa4d02731499222a651884bb0d, type: 3}
+    - {fileID: 8300000, guid: 5b472df73d30086478961403af6ecf54, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Toy PICKUP]
     audioFile:
-    - {fileID: 8300000, guid: 3190dda0ed598e14e833f9dfdf09136b, type: 3}
+    - {fileID: 8300000, guid: 79cd0dddb8a146a41abd62a959122c8b, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Toy DROP]
     audioFile:
-    - {fileID: 8300000, guid: 0e6cad3ff4299e149a202a16b6f0c683, type: 3}
+    - {fileID: 8300000, guid: dbcaf4a045522ba4d93fde850e867c79, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Plate PICKUP]
     audioFile:
-    - {fileID: 8300000, guid: da7473d6e55df7440808d82ee2736239, type: 3}
+    - {fileID: 8300000, guid: c7a78a6c25ed09e44b79be9d843eae9f, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Plate STACK]
     audioFile:
-    - {fileID: 8300000, guid: 9a04f320f578fb041b4ce59e0928cbcd, type: 3}
+    - {fileID: 8300000, guid: c39dbf7616f0ead478e8713cbfcd6113, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Task WIN]
     audioFile:
-    - {fileID: 8300000, guid: 034b4645e9417e042bd82ff6cc6e6d59, type: 3}
+    - {fileID: 8300000, guid: 9d26f28218b6e2b4b9c8bba96bebcaee, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Harvest DROP]
+    audioFile:
+    - {fileID: 8300000, guid: 6baf07e338dd19240a3a158127660cde, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Harvest PICKUP]
+    audioFile:
+    - {fileID: 8300000, guid: d72092bf1e0e4a545b5f407621925260, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Trash BROOM]
+    audioFile:
+    - {fileID: 8300000, guid: 4c991cf8d8cc34c40a625467507f8434, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Trash DROP]
+    audioFile:
+    - {fileID: 8300000, guid: cfe64d895382a404e9190bcd8d683767, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Trash SWEEP]
+    audioFile:
+    - {fileID: 8300000, guid: 143055d572b4fee49a93e979e87fe70c, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Cooking SOFT]
+    audioFile:
+    - {fileID: 8300000, guid: ec764cd40a48e7f448380faa0a68aec8, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Cooking REGULAR]
+    audioFile:
+    - {fileID: 8300000, guid: 2050bf1e259d2b44a82b743ede2ecd06, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Cooking INTENSE]
+    audioFile:
+    - {fileID: 8300000, guid: 1fdb2b5fa8ace8a48baf992f4b52134a, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Motivation ERROR]
+    audioFile:
+    - {fileID: 8300000, guid: 5380c6ad4bd13cb42b9ee0ac710a912a, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Eggs DROP]
+    audioFile:
+    - {fileID: 8300000, guid: b125adc8e8cabea42ade11ed8387be4c, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Eggs PICKUP]
+    audioFile:
+    - {fileID: 8300000, guid: 5ef6a752cc270cb4ea4ef166c3269e6d, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Eggs AMBIENCE]
+    audioFile:
+    - {fileID: 8300000, guid: afa29aba238357d478811a772629c4b7, type: 3}
+    volume: 0.7
+    mixGroup: Music
+    isLooping: 0
+  - id: sfx[Mom FEED]
+    audioFile:
+    - {fileID: 8300000, guid: a782bd1426a853b4b9f0c620add96979, type: 3}
+    volume: 0.7
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Mom SCOOP]
+    audioFile:
+    - {fileID: 8300000, guid: 91c016efce1a0274dadf856c63dd6507, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Tag PLAYER TAG]
+    audioFile:
+    - {fileID: 8300000, guid: 9c9119aac27ca82459a1114b72e6b8d3, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Tag PLAYER IT]
+    audioFile:
+    - {fileID: 8300000, guid: 4c4a3eaca8ea8164fa4da4dca8105889, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 0
+  - id: sfx[Tag NPC TAG]
+    audioFile:
+    - {fileID: 8300000, guid: d478a531ae5ba2b43bbea543689d49bd, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0

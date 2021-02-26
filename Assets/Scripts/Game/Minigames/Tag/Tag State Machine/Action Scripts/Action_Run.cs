@@ -23,7 +23,7 @@ public class Action_Run : Action
             //Get the furthest node from the target
             this.SetFurthestNode(controller);
             // Vector3 targetDirection = controller.transform.position - controller.targetToRunFrom.position;
-            targetDirection = (controller.currentTargetNode.position - controller.transform.position).normalized;
+            targetDirection = (controller.transform.position - controller.targetToRunFrom.position).normalized;
             targetDirection = targetDirection.normalized;
         }
         else controller.rb2DComponent.MovePosition(controller.transform.position + targetDirection * runningSpeed * Time.fixedDeltaTime);
@@ -34,23 +34,22 @@ public class Action_Run : Action
 
     private void SetFurthestNode(StateController controller)
     {
-        for (int i = 0; i < controller.patrolNodes.Length; i++)
-        {
+       // for (int i = 0; i < controller.patrolNodes.Length; i++)
+       // {
 
-            if (i == 0) controller.currentTargetNode = controller.patrolNodes[i];
-            else
-            {
-                float currentNodeDistance = Vector3.Distance(controller.targetToRunFrom.position, controller.currentTargetNode.position);
-                float nextNodedistance = Vector3.Distance(controller.targetToRunFrom.position, controller.patrolNodes[i].position);
-                if (nextNodedistance > currentNodeDistance)
-                {
-                    controller.nodeCache.Add(controller.patrolNodes[i]);
-                }
-            }
-        }
-        //get top 3 nodes
-        controller.currentTargetNode = controller.nodeCache[Random.Range(controller.nodeCache.Count - 3,
-                                                                                controller.nodeCache.Count)];
-       controller.nodeCache.Clear();
+       //     if (i == 0) controller.currentTargetNode = controller.patrolNodes[i];
+       //     else
+       //     {
+       //         float currentNodeDistance = Vector3.Distance(controller.targetToRunFrom.position, controller.currentTargetNode.position);
+       //         float nextNodedistance = Vector3.Distance(controller.targetToRunFrom.position, controller.patrolNodes[i].position);
+       //         if (currentNodeDistance > nextNodedistance)
+       //         {
+       //             controller.nodeCache.Add(controller.patrolNodes[i]);
+       //         }
+       //     }
+       // }
+       // //get top 3 nodes
+       // controller.currentTargetNode = controller.nodeCache[controller.nodeCache.Count-1];
+       //controller.nodeCache.Clear();
     }
 }

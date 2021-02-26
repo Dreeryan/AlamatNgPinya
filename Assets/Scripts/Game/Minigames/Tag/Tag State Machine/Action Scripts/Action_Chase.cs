@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PluggableAI/Actions/Chase")]
 public class Action_Chase : Action
 {
-
+    public float timeToSwitchTargets;
     public float chaseSpeed;
     private float elapsedTime;
     private Transform targetToTag;
@@ -16,11 +16,22 @@ public class Action_Chase : Action
     public override void Act(StateController controller)
     {
         base.Act(controller);
+
+        AddTime();
+        if (HasExceededTime(timeToSwitchTargets))
+        {
+            ResetTimer();
+            ChooseFromNonTagged(controller);
+      
+        }
+        ChaseTarget(controller);
     }
 
     private void ChooseFromNonTagged(StateController controller)
     {
+        
         int randomNumber = Random.Range(0, (controller.tagManagerObj.GetNonTagged().Count - 1));
+       // randomNumber = 0;
         targetToTag = controller.tagManagerObj.GetNonTagged()[randomNumber].transform;
     }
 

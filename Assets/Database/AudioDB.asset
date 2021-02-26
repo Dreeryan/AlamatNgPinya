@@ -180,7 +180,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 143055d572b4fee49a93e979e87fe70c, type: 3}
     volume: 1
     mixGroup: SFX
-    isLooping: 0
+    isLooping: 1
   - id: sfx[Cooking SOFT]
     audioFile:
     - {fileID: 8300000, guid: ec764cd40a48e7f448380faa0a68aec8, type: 3}

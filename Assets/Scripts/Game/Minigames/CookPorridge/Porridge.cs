@@ -60,7 +60,11 @@ public class Porridge : MonoBehaviour
             {
                 porridgeSlider.value -= decreaseTemperature * Time.deltaTime;
 
-                if (currentTemp <= 0) currentTemp = 0;
+                if (currentTemp <= 0)
+                { 
+                    currentTemp = 0;
+                    StopAudio();
+                }
             }
 
             #region Animation
@@ -88,6 +92,7 @@ public class Porridge : MonoBehaviour
             else if (currentTemp < rightTemp)
             {
                 StopCoroutine(RightTempCountdown());
+                OnSoftBoil();
                 isRightTemp = false;
             }
         }

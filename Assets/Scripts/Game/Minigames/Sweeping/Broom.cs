@@ -6,19 +6,53 @@ using System.Linq;
 
 public class Broom : MonoBehaviour
 {
-    [SerializeField] private UnityEvent onSweeping;
+    [SerializeField] private Draggable draggable;
 
     private bool isSweeping;
+    private bool isPickedUp;
+    private bool isPlayingAudio;
+
     private List<GameObject> sweepedObjects = new List<GameObject>();
+
+    [SerializeField] private UnityEvent onPickup;
+    [SerializeField] private UnityEvent onSweeping;
+    [SerializeField] private UnityEvent onStopSweeping;
+
+    private void Start()
+    {
+        if (draggable == null) draggable = GetComponent<Draggable>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (isSweeping && transform.hasChanged)
+        if (isSweeping && isPickedUp)
         {
-            onSweeping?.Invoke();
-            transform.hasChanged = false;
+            if (!isPlayingAudio)
+            {
+                isPlayingAudio = true;
+                onSweeping?.Invoke();
+            }
         }
+        else
+        {
+            if (isPlayingAudio)
+            {
+                isPlayingAudio = false;
+                onStopSweeping?.Invoke();
+            }
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        isPickedUp = true;
+        onPickup?.Invoke();
+    }
+
+    private void OnMouseUp()
+    {
+        isPickedUp = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

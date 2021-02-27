@@ -5,9 +5,14 @@ using UnityEngine.AI;
 
 public class StateController : MonoBehaviour
 {
-	//components attached
-	[SerializeField] public Rigidbody2D rb2DComponent;
-	[SerializeField] public Timer objectTimer;
+    public Timer chaseActionTimer { get; private set; } = new Timer();
+    public Timer patrolActionTimer { get; private set; } = new Timer();
+    public Timer runActionTimer { get; private set; } = new Timer();
+    public Timer runDecisionTimer { get; private set; } = new Timer();
+
+    public Vector3 movementDirection = new Vector3();
+    //components attached
+    [SerializeField] public Rigidbody2D rb2DComponent;
 	[SerializeField] public TagCharacter tagCharacterComponent;
 	[SerializeField] public TagManager tagManagerObj;
 
@@ -59,4 +64,11 @@ public class StateController : MonoBehaviour
 		}
 		
 	}
+
+    public void MoveToPosition(Vector3 direction,float speed)
+    {
+        this.rb2DComponent.MovePosition(transform.position + direction * speed * Time.fixedDeltaTime);
+    }
+
+
 }

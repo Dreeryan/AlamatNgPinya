@@ -5,8 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "PluggableAI/Decisions/Run")]
 public class Decision_Run : Decision
 {
-    
-    private float elapsedTime;
+   
     [SerializeField]private float stateChangeCooldown;
     [SerializeField]private float distanceToRun;
 
@@ -19,15 +18,15 @@ public class Decision_Run : Decision
     private bool TimeCooldown(StateController controller)
     {
       //  if (GameManager.Instance.IsPaused) return false;
-        AddTime();
-        if (HasExceededTime(stateChangeCooldown))
+        controller.runDecisionTimer.AddTime();
+        if (controller.runDecisionTimer.HasExceededTime(stateChangeCooldown))
         {
            
             if (Vector3.Distance(controller.transform.position,
                 controller.targetToRunFrom.position) <= distanceToRun)
             {
                 //near
-                ResetTimer();
+                controller.runDecisionTimer.ResetTimer();
                 return true;
             }
           
@@ -40,28 +39,4 @@ public class Decision_Run : Decision
         else return false;
 
     }
-
-
-    public bool HasExceededTime(float TimeToWait)
-    {
-        if (elapsedTime >= TimeToWait)
-        {
-            return true;
-        }
-        else return false;
-    }
-
-    public void AddTime()
-    {
-        elapsedTime += Time.deltaTime;
-    }
-
-
-    public void ResetTimer()
-    {
-        elapsedTime = 0;
-    }
-
-
-
 }

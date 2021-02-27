@@ -1321,7 +1321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2DComponent: {fileID: 265056475}
-  objectTimer: {fileID: 265056471}
   tagCharacterComponent: {fileID: 265056470}
   tagManagerObj: {fileID: 1359422668}
   currentTargetNode: {fileID: 593624759}
@@ -1505,7 +1504,7 @@ PrefabInstance:
     - target: {fileID: 2459832687665057337, guid: 0e9aae72003a7d945816ee3aa2ce61e5,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2459832687665057337, guid: 0e9aae72003a7d945816ee3aa2ce61e5,
         type: 3}
@@ -6459,7 +6458,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 272656992}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256116900}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e0e02d639c3d724fbe2e946e0d59bb0, type: 3}
   m_Name: 
@@ -6526,7 +6525,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2DComponent: {fileID: 0}
-  objectTimer: {fileID: 1260436111}
   tagCharacterComponent: {fileID: 0}
   tagManagerObj: {fileID: 0}
   currentTargetNode: {fileID: 0}
@@ -8484,7 +8482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2DComponent: {fileID: 0}
-  objectTimer: {fileID: 1690851979}
   tagCharacterComponent: {fileID: 0}
   tagManagerObj: {fileID: 0}
   currentTargetNode: {fileID: 0}

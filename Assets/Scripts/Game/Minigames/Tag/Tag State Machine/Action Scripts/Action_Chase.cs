@@ -17,10 +17,10 @@ public class Action_Chase : Action
     {
         base.Act(controller);
 
-        AddTime();
-        if (HasExceededTime(timeToSwitchTargets))
+        controller.chaseActionTimer.AddTime();
+        if (controller.chaseActionTimer.HasExceededTime(timeToSwitchTargets))
         {
-            ResetTimer();
+            controller.chaseActionTimer.ResetTimer();
             ChooseFromNonTagged(controller);
       
         }
@@ -40,25 +40,4 @@ public class Action_Chase : Action
         Vector3 targetDirection = (targetToTag.position - controller.transform.position).normalized;
         controller.rb2DComponent.MovePosition(controller.transform.position + targetDirection * chaseSpeed * Time.fixedDeltaTime);
     }
-
-    public bool HasExceededTime(float TimeToWait)
-    {
-        if (elapsedTime >= TimeToWait)
-        {
-            return true;
-        }
-        else return false;
-    }
-
-    public void AddTime()
-    {
-        elapsedTime += Time.deltaTime;
-    }
-
-
-    public void ResetTimer()
-    {
-        elapsedTime = 0;
-    }
-
 }

@@ -15,11 +15,11 @@ public class Action_Run : Action
     }
     private void RunAwayFromTarget(StateController controller)
     {
-        controller.objectTimer.AddTime();
-        if (controller.objectTimer.HasExceededTime(switchNodeCooldown))
+        controller.chaseActionTimer.AddTime();
+        if (controller.chaseActionTimer.HasExceededTime(switchNodeCooldown))
         {
             controller.rb2DComponent.velocity = new Vector2(0, 0);
-            controller.objectTimer.ResetTimer();
+            controller.chaseActionTimer.ResetTimer();
             //Get the furthest node from the target
             this.SetFurthestNode(controller);
             // Vector3 targetDirection = controller.transform.position - controller.targetToRunFrom.position;

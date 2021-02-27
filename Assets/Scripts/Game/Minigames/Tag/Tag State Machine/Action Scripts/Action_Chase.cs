@@ -8,7 +8,6 @@ public class Action_Chase : Action
 {
     public float timeToSwitchTargets;
     public float chaseSpeed;
-    private float elapsedTime;
     private Transform targetToTag;
 
     [SerializeField] private float changeTargetCooldown;
@@ -37,7 +36,7 @@ public class Action_Chase : Action
 
     private void ChaseTarget(StateController controller)
     {
-        Vector3 targetDirection = (targetToTag.position - controller.transform.position).normalized;
-        controller.rb2DComponent.MovePosition(controller.transform.position + targetDirection * chaseSpeed * Time.fixedDeltaTime);
+        controller.movementDirection = (targetToTag.position - controller.transform.position).normalized;   
+        controller.rb2DComponent.MovePosition(controller.transform.position + controller.movementDirection * chaseSpeed * Time.fixedDeltaTime);
     }
 }

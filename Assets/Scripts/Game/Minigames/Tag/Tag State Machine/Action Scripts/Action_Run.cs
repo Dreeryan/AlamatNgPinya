@@ -7,7 +7,6 @@ public class Action_Run : Action
 {
     [SerializeField] private float runningSpeed;
     [SerializeField] private float switchNodeCooldown;
-    Vector3 targetDirection;
     public override void Act(StateController controller)
     {
         base.Act(controller);
@@ -23,10 +22,10 @@ public class Action_Run : Action
             //Get the furthest node from the target
             this.SetFurthestNode(controller);
             // Vector3 targetDirection = controller.transform.position - controller.targetToRunFrom.position;
-            targetDirection = (controller.transform.position - controller.targetToRunFrom.position).normalized;
-            targetDirection = targetDirection.normalized;
+            controller.movementDirection = (controller.transform.position - controller.targetToRunFrom.position).normalized;
+            controller.movementDirection = controller.movementDirection.normalized;
         }
-        else controller.rb2DComponent.MovePosition(controller.transform.position + targetDirection * runningSpeed * Time.fixedDeltaTime);
+        else controller.rb2DComponent.MovePosition(controller.transform.position + controller.movementDirection * runningSpeed * Time.fixedDeltaTime);
         
     }
 

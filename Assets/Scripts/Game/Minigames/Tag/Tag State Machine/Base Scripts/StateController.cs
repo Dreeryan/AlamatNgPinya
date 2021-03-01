@@ -19,7 +19,7 @@ public class StateController : MonoBehaviour
 	//nodes for ai patrolling and running away
 	[SerializeField] public Transform currentTargetNode;
 	[SerializeField] public Transform[] patrolNodes;
-
+    [SerializeField] public Transform[] cornerNodes;
 	//use this node list to determine far and nearby nodes
 	public List<Transform> nodeCache = new List<Transform>();
 	public TimerManager timerManagerObj { get; private set; }

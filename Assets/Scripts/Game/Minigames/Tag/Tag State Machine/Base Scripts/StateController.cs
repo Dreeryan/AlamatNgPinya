@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class StateController : MonoBehaviour
 {
+    public LayerMask NodeLayerMask;
     public Timer chaseActionTimer { get; private set; } = new Timer();
     public Timer patrolActionTimer { get; private set; } = new Timer();
     public Timer runActionTimer { get; private set; } = new Timer();
@@ -19,7 +20,7 @@ public class StateController : MonoBehaviour
 	//nodes for ai patrolling and running away
 	[SerializeField] public Transform currentTargetNode;
 	[SerializeField] public Transform[] patrolNodes;
-    [SerializeField] public Transform[] cornerNodes;
+    [SerializeField] public Transform[] cornerNodes;        
 	//use this node list to determine far and nearby nodes
 	public List<Transform> nodeCache = new List<Transform>();
 	public TimerManager timerManagerObj { get; private set; }
@@ -71,4 +72,21 @@ public class StateController : MonoBehaviour
     }
 
 
+    public Transform GetRandomNearbyNode()
+    {
+        RaycastHit2D[] hit = Physics2D.CircleCastAll(transform.position, 2, new Vector2(0, 0),0,NodeLayerMask);
+        // List<Transform> nearbyNodes = new List<Transform>();
+        if (hit == null) return null;
+        if (hit.Length == 0) return null;
+
+        if (hit.Length<=2)
+        {
+            return hit[0].transform;
+        }
+        else
+        {
+            return hit[Random.Range(0, hit.Length - 1)].transform;
+        }
+    }
+    
 }

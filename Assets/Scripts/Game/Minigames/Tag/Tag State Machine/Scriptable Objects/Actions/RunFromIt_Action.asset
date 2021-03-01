@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0a21a4a4cc0a44b89cb7fa174c0277, type: 3}
   m_Name: RunFromIt_Action
   m_EditorClassIdentifier: 
+  mapLimit: {x: 7, y: 3}
   runningSpeed: 3
   switchNodeCooldown: 1

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3d42ffa0bb83d4f886e947828bdc1b, type: 3}
   m_Name: RunToPatrol_Decision
   m_EditorClassIdentifier: 
-  distanceFromTarget: 6
+  distanceFromTarget: 8

@@ -30,36 +30,6 @@ public class Action_Patrol : Action
 
     private void SetNearestNode(StateController controller)
     {
-
-
-        //for (int i = 0; i < controller.patrolNodes.Length; i++)
-        //{
-
-        //    if (i == 0) controller.currentTargetNode = controller.patrolNodes[i];
-        //    else
-        //    {
-        //        float currentNodeDistance = Vector3.Distance(controller.transform.position, controller.currentTargetNode.position);
-        //        float nextNodedistance = Vector3.Distance(controller.transform.position, controller.patrolNodes[i].position);
-        //        if (nextNodedistance < currentNodeDistance)
-        //        {
-        //            controller.nodeCache.Add(controller.patrolNodes[i]);
-        //        }
-        //    }
-        //}
-        ////Very messy, getting nodes 
-        //if (controller.nodeCache.Count > 2)
-        //{
-        //    controller.currentTargetNode = controller.nodeCache[Random.Range(controller.nodeCache.Count - 3,
-        //                                                                            controller.nodeCache.Count - 1)];
-        //}
-        //else
-        //{
-        //    controller.currentTargetNode = controller.nodeCache[Random.Range(controller.nodeCache.Count - 2,
-        //                                                                                   controller.nodeCache.Count - 1)];
-        //} 
-
-        //controller.nodeCache.Clear();
-
         controller.currentTargetNode = controller.GetRandomNearbyNode();
 
     }

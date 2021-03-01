@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class TagManager : MonoBehaviour
 {
+    public UnityEvent OnTagChanged = new UnityEvent();
     [SerializeField] private UnityEvent onPlayerTagging;
     [SerializeField] private UnityEvent onPlayerTagged;
     [SerializeField] private UnityEvent onEnemyTag;
@@ -61,6 +62,7 @@ public class TagManager : MonoBehaviour
             StopCoroutine(completionCountdown);
             completionCountdown = null;
         }
+        OnTagChanged.Invoke();
     }
 
     void ProcessTag(TagCharacter newTagged)
@@ -104,6 +106,21 @@ public class TagManager : MonoBehaviour
             }
         }
         return NonTagged;
+    }
+
+    public Transform GetTaggedTransform()
+    {
+
+        foreach (TagCharacter kid in kids)
+        {
+            if (kid.IsTagged)
+            {
+                Transform taggedKid = kid.transform;
+                return taggedKid;
+            }
+        }
+        return null;
+ 
     }
 
     IEnumerator BeginCompletionCountdown()

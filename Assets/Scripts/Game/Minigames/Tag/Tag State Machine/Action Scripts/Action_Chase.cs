@@ -10,7 +10,6 @@ public class Action_Chase : Action
     public float chaseSpeed;
     private Transform targetToTag;
 
-    [SerializeField] private float changeTargetCooldown;
 
     public override void Act(StateController controller)
     {

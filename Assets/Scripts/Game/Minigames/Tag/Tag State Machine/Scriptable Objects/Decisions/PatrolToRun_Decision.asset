@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PatrolToRun_Decision
   m_EditorClassIdentifier: 
   stateChangeCooldown: 1
-  distanceToRun: 6
+  distanceToRun: 8

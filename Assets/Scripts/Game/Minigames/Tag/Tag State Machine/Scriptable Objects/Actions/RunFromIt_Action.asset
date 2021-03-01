@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapLimit: {x: 7, y: 3}
   runningSpeed: 3
-  switchNodeCooldown: 1
+  switchNodeCooldown: 0.5

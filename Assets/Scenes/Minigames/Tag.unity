@@ -1104,9 +1104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b59a598be027bc4d80ab1781f483431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NodeLayerMask:
+  nodeLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
+  spriteRendererObj: {fileID: 0}
   movementDirection: {x: 0, y: 0, z: 0}
   rb2DComponent: {fileID: 183884119}
   tagCharacterComponent: {fileID: 183884114}
@@ -3835,9 +3836,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b59a598be027bc4d80ab1781f483431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NodeLayerMask:
+  nodeLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
+  spriteRendererObj: {fileID: 0}
   movementDirection: {x: 0, y: 0, z: 0}
   rb2DComponent: {fileID: 679052854}
   tagCharacterComponent: {fileID: 679052852}
@@ -6591,9 +6593,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b59a598be027bc4d80ab1781f483431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NodeLayerMask:
+  nodeLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
+  spriteRendererObj: {fileID: 0}
   movementDirection: {x: 0, y: 0, z: 0}
   rb2DComponent: {fileID: 1104468612}
   tagCharacterComponent: {fileID: 1104468606}
@@ -7290,9 +7293,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b59a598be027bc4d80ab1781f483431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NodeLayerMask:
+  nodeLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
+  spriteRendererObj: {fileID: 0}
   movementDirection: {x: 0, y: 0, z: 0}
   rb2DComponent: {fileID: 1202607778}
   tagCharacterComponent: {fileID: 1202607776}
@@ -9964,9 +9968,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b59a598be027bc4d80ab1781f483431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NodeLayerMask:
+  nodeLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
+  spriteRendererObj: {fileID: 0}
   movementDirection: {x: 0, y: 0, z: 0}
   rb2DComponent: {fileID: 1570575046}
   tagCharacterComponent: {fileID: 1570575044}
@@ -10410,9 +10415,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b59a598be027bc4d80ab1781f483431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NodeLayerMask:
+  nodeLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  spriteRendererObj: {fileID: 0}
   movementDirection: {x: 0, y: 0, z: 0}
   rb2DComponent: {fileID: 0}
   tagCharacterComponent: {fileID: 0}
@@ -11209,9 +11215,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b59a598be027bc4d80ab1781f483431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NodeLayerMask:
+  nodeLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
+  spriteRendererObj: {fileID: 0}
   movementDirection: {x: 0, y: 0, z: 0}
   rb2DComponent: {fileID: 1863145651}
   tagCharacterComponent: {fileID: 1863145646}

@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class StateController : MonoBehaviour
 {
-    public LayerMask NodeLayerMask;
+    public LayerMask nodeLayerMask;
+    public SpriteFlipper spriteRendererObj;
 
     public Timer chaseActionTimer { get; private set; } = new Timer();
     public Timer patrolActionTimer { get; private set; } = new Timer();
@@ -42,10 +43,15 @@ public class StateController : MonoBehaviour
     private void Update()
 	{
 		if (!aiActive) return;
-		if (GameManager.Instance.IsPaused) return;
+        //if (GameManager.Instance.IsPaused) return;
+        SetDirection();
 		CurrentState.UpdateState(this);
 	}
 
+    private void SetDirection()
+    {
+        spriteRendererObj.FlipSprite(movementDirection.x);
+    }
 	private void OnDrawGizmos()
 	{
         if (CurrentState != null )
@@ -80,7 +86,7 @@ public class StateController : MonoBehaviour
 
     public Transform GetRandomNearbyNode()
     {
-        RaycastHit2D[] hit = Physics2D.CircleCastAll(transform.position, 3.5f, new Vector2(0, 0),0,NodeLayerMask);
+        RaycastHit2D[] hit = Physics2D.CircleCastAll(transform.position, 3.5f, new Vector2(0, 0),0,nodeLayerMask);
         // List<Transform> nearbyNodes = new List<Transform>();
         if (hit == null) return null;
         if (hit.Length == 0) return null;

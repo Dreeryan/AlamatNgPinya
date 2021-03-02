@@ -102,7 +102,7 @@ public class TagManager : MonoBehaviour
         {
             if (!kid.IsTagged)
             {
-                NonTagged.Add(kid);
+                if (kid.CanBeTagged)NonTagged.Add(kid);
             }
         }
         return NonTagged;

@@ -15,7 +15,7 @@ public class TagCharacter : MonoBehaviour
 
     protected bool              isMinigameCompleted = false;
 
-    protected bool              CanBeTagged = true;
+    [SerializeField]public bool CanBeTagged { get; protected set; } = true;
 
   [SerializeField]protected float TagCooldownAmount = 2;
     // Start is called before the first frame update
@@ -69,6 +69,7 @@ public class TagCharacter : MonoBehaviour
              */
             if (collided == previousTagged) return;
             TagTarget(collided);
+            StartCoroutine(TagCooldown());
         }
     }
 
@@ -83,5 +84,6 @@ public class TagCharacter : MonoBehaviour
     {
         CanBeTagged = false;
         yield return new WaitForSeconds(TagCooldownAmount);
+        CanBeTagged = true;
     }
 }

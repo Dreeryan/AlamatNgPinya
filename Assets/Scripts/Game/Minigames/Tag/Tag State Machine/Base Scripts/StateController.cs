@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class StateController : MonoBehaviour
 {
     public LayerMask NodeLayerMask;
+
     public Timer chaseActionTimer { get; private set; } = new Timer();
     public Timer patrolActionTimer { get; private set; } = new Timer();
     public Timer runActionTimer { get; private set; } = new Timer();
@@ -41,7 +42,7 @@ public class StateController : MonoBehaviour
     private void Update()
 	{
 		if (!aiActive) return;
-	//	if (GameManager.Instance.IsPaused) return;
+		if (GameManager.Instance.IsPaused) return;
 		CurrentState.UpdateState(this);
 	}
 
@@ -93,5 +94,7 @@ public class StateController : MonoBehaviour
             return hit[Random.Range(0, hit.Length - 1)].transform;
         }
     }
+
+
     
 }

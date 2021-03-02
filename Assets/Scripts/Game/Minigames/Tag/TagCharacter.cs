@@ -15,6 +15,9 @@ public class TagCharacter : MonoBehaviour
 
     protected bool              isMinigameCompleted = false;
 
+    protected bool              CanBeTagged = true;
+
+  [SerializeField]protected float TagCooldownAmount = 2;
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -74,5 +77,11 @@ public class TagCharacter : MonoBehaviour
         TagCharacter collided = collision.GetComponent<TagCharacter>();
         if (collided != null && collided == previousTagged)
             previousTagged = null;
+    }
+    
+    IEnumerator TagCooldown()
+    {
+        CanBeTagged = false;
+        yield return new WaitForSeconds(TagCooldownAmount);
     }
 }

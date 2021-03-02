@@ -8255,6 +8255,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af56461a41e9e2c408aaad515cbfbb7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnTagChanged:
+    m_PersistentCalls:
+      m_Calls: []
   onPlayerTagging:
     m_PersistentCalls:
       m_Calls:
@@ -8302,7 +8305,8 @@ MonoBehaviour:
   - {fileID: 679052852}
   - {fileID: 1104468606}
   - {fileID: 1570575044}
-  startingTagged: {fileID: 1570575044}
+  - {fileID: 1570575044}
+  startingTagged: {fileID: 2028395378}
   maxTime: 5
   debugTimerDisplay: 0
 --- !u!114 &1359422669
@@ -10757,7 +10761,7 @@ PrefabInstance:
     - target: {fileID: 8165169935274278540, guid: 0e6169d0baa07894691bcde83d0c350f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8165169935274278551, guid: 0e6169d0baa07894691bcde83d0c350f,
         type: 3}
@@ -10767,7 +10771,7 @@ PrefabInstance:
     - target: {fileID: 8165169935274278551, guid: 0e6169d0baa07894691bcde83d0c350f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.05
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 8165169935274278551, guid: 0e6169d0baa07894691bcde83d0c350f,
         type: 3}

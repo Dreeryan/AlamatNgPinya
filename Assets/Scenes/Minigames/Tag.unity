@@ -1106,8 +1106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  spriteRendererObj: {fileID: 0}
+    m_Bits: 1024
+  spriteRendererObj: {fileID: 183884116}
   movementDirection: {x: 0, y: 0, z: 0}
   rb2DComponent: {fileID: 183884119}
   tagCharacterComponent: {fileID: 183884114}
@@ -1938,6 +1938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459832687665057330, guid: 0e9aae72003a7d945816ee3aa2ce61e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2459832687665057332, guid: 0e9aae72003a7d945816ee3aa2ce61e5,
         type: 3}
@@ -3838,8 +3843,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  spriteRendererObj: {fileID: 0}
+    m_Bits: 1024
+  spriteRendererObj: {fileID: 679052850}
   movementDirection: {x: 0, y: 0, z: 0}
   rb2DComponent: {fileID: 679052854}
   tagCharacterComponent: {fileID: 679052852}
@@ -6595,8 +6600,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  spriteRendererObj: {fileID: 0}
+    m_Bits: 1024
+  spriteRendererObj: {fileID: 1104468608}
   movementDirection: {x: 0, y: 0, z: 0}
   rb2DComponent: {fileID: 1104468612}
   tagCharacterComponent: {fileID: 1104468606}
@@ -8127,6 +8132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459832687665057330, guid: 0e9aae72003a7d945816ee3aa2ce61e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2459832687665057332, guid: 0e9aae72003a7d945816ee3aa2ce61e5,
         type: 3}
@@ -10809,6 +10819,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459832687665057330, guid: 0e9aae72003a7d945816ee3aa2ce61e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2459832687665057332, guid: 0e9aae72003a7d945816ee3aa2ce61e5,
         type: 3}

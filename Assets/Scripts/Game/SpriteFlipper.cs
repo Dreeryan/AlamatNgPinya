@@ -40,7 +40,7 @@ public class SpriteFlipper : MonoBehaviour
 
     public void FlipSprite(float direction)
     {
-     //   if (spriteRenderer == null || GameManager.Instance.IsPaused) return;
+        if (spriteRenderer == null || GameManager.Instance.IsPaused) return;
 
         if (direction < 0)      transform.rotation = Quaternion.Euler(0, 180, 0);
         else if (direction > 0) transform.rotation = Quaternion.Euler(0, 0, 0);

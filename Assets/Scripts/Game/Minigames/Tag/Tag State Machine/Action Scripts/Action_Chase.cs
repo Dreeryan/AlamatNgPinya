@@ -42,7 +42,7 @@ public class Action_Chase : Action
 
     private Transform GetNearbyNonTagged(StateController controller)
     {
-        RaycastHit2D[] hit = Physics2D.CircleCastAll(controller.transform.position, 3.5f, new Vector2(0, 0), 0, tagCharacterLayerMask);
+        RaycastHit2D[] hit = Physics2D.CircleCastAll(controller.transform.position, 5, new Vector2(0, 0), 0, tagCharacterLayerMask);
         // List<Transform> nearbyNodes = new List<Transform>();
         if (hit == null) return null;
         if (hit.Length == 0) return null;

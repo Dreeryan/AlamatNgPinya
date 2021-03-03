@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Patrol_Action
   m_EditorClassIdentifier: 
   distanceTravel: 1
-  patrolSpeed: 2
+  patrolSpeed: 3
   timeToSwitch: 0.5

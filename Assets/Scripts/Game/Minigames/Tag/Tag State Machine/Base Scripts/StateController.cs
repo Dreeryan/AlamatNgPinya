@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.Events;
 public class StateController : MonoBehaviour
 {
+    public UnityEvent OnStateUpdate = new UnityEvent { };
     public LayerMask nodeLayerMask;
     public SpriteFlipper spriteRendererObj;
+    public bool hasChosenTarget  { get; set; } = true;
 
     public Timer chaseActionTimer { get; private set; } = new Timer();
     public Timer patrolActionTimer { get; private set; } = new Timer();
@@ -70,7 +72,9 @@ public class StateController : MonoBehaviour
 		if (nextState != RemainState)
 		{
 			CurrentState = nextState;
-		}
+            OnStateUpdate.Invoke();
+            hasChosenTarget = false;
+        }
 		
 	}
 

@@ -68,6 +68,7 @@ public class TagCharacter : MonoBehaviour
              *  Avoids backtagging, sets to null in CollisionExit
              */
             if (collided == previousTagged) return;
+            if (!collided.GetComponent<TagCharacter>().CanBeTagged) return;
             TagTarget(collided);
             StartCoroutine(TagCooldown());
         }

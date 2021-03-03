@@ -73,7 +73,8 @@ public class StateController : MonoBehaviour
 		{
 			CurrentState = nextState;
             OnStateUpdate.Invoke();
-            hasChosenTarget = false;
+            patrolActionTimer.hasTimedUp = true;
+
         }
 		
 	}

@@ -16,7 +16,7 @@ public class Action_Run : Action
     private void RunAwayFromTarget(StateController controller)
     {
         SetRandomNode(controller);
-        controller.chaseActionTimer.AddTime();
+
         if (controller.chaseActionTimer.HasExceededTime(switchNodeCooldown))
         {
             controller.rb2DComponent.velocity = new Vector2(0, 0);
@@ -27,7 +27,11 @@ public class Action_Run : Action
             controller.movementDirection = (controller.transform.position - controller.targetToRunFrom.position).normalized;
             controller.movementDirection = controller.movementDirection.normalized;
         }
-        else controller.rb2DComponent.MovePosition(controller.transform.position + controller.movementDirection * runningSpeed * Time.fixedDeltaTime);
+        else
+        {
+            controller.chaseActionTimer.AddTime();
+            controller.rb2DComponent.MovePosition(controller.transform.position + controller.movementDirection * runningSpeed * Time.fixedDeltaTime);
+        }
             
     }
 

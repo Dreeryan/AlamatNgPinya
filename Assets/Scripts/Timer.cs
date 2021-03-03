@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    private float elapsedTime;
-
+    public float elapsedTime { get; private set; }
+    public bool hasTimedUp;
     public bool HasExceededTime( float TimeToWait)
     {
         if (elapsedTime >= TimeToWait)
         {
-            return true;
+            hasTimedUp = true;
+            return hasTimedUp;
         }
-        else return false;
+        else hasTimedUp = false;
+        return hasTimedUp;
     }
 
     public void AddTime()

@@ -15,7 +15,7 @@ public class TagManager : MonoBehaviour
     [Header("Kids")]
     [SerializeField] private TagCharacter[] kids;
     [SerializeField] private TagCharacter   startingTagged;
-
+    [SerializeField] private TagCharacter   player;
     [Header("Settings")]
     [SerializeField] private float maxTime = 5.0f;
 
@@ -105,9 +105,19 @@ public class TagManager : MonoBehaviour
                 if (kid.CanBeTagged)NonTagged.Add(kid);
             }
         }
-        return NonTagged;
+        if (NonTagged != null) return NonTagged;
+        else
+        {
+            NonTagged.Add(player);
+            return NonTagged;
+        }
+
     }
 
+    public TagCharacter GetPlayerCharacter()
+    {
+        return player;
+    }
     public Transform GetTaggedTransform()
     {
 

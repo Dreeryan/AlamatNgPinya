@@ -12,8 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9909410563c93914ea10696c3be17d1a, type: 3}
   m_Name: Chase_Action
   m_EditorClassIdentifier: 
-  tagCharacterLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   timeToSwitchTargets: 1
-  chaseSpeed: 6
+  chaseSpeed: 5

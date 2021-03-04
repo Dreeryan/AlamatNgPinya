@@ -20,6 +20,7 @@ public class HideFriends : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GameManager.Instance.IsPaused) return;
         CountFriends();
     }
 

@@ -46,6 +46,7 @@ public class Broom : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GameManager.Instance.IsPaused) return;
         isPickedUp = true;
         onPickup?.Invoke();
     }

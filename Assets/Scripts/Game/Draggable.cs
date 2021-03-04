@@ -27,6 +27,7 @@ public class Draggable : MonoBehaviour
 
     void OnMouseDrag()
     {
+        if (GameManager.Instance.IsPaused) return;
         prevMousePos = curMousePos;
         curMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

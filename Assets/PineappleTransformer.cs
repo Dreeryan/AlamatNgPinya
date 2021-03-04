@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine.Events;
-
+using UnityEngine.SceneManagement;
 public class PineappleTransformer : MonoBehaviour
 {
     public UnityEvent onPineappleTransform = new UnityEvent();
@@ -30,8 +30,12 @@ public class PineappleTransformer : MonoBehaviour
         this.imageComponent.sprite = pineapplePlayerSprites[currentAskedAmount];
         onPineappleTransform.Invoke();
 
-        if (currentAskedAmount == maxNumberToAsk) onCompletePineappleTransformation.Invoke();
+        if (currentAskedAmount == maxNumberToAsk)
+        {
 
+            onCompletePineappleTransformation.Invoke();
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+        }
     }
 }
 

@@ -42,17 +42,20 @@ public class ClothesToHang : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GameManager.Instance.IsPaused) return;
         onClothingPickedUp?.Invoke();
     }
 
     void OnMouseDrag()
     {
+        if (GameManager.Instance.IsPaused) return;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = mousePos;
     }
 
     void OnMouseUp()
     {
+        if (GameManager.Instance.IsPaused) return;
         if (clothesLine != null && isOnGoal)
         {
             clothesLine.HangClothing(this);

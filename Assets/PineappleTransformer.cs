@@ -24,10 +24,10 @@ public class PineappleTransformer : MonoBehaviour
 
     public void TurnToPineapple()
     {
-        if (currentAskedAmount >= maxNumberToAsk-1) return;
+        if (currentAskedAmount >= maxNumberToAsk) return;
 
         currentAskedAmount += 1;
-        this.imageComponent.sprite = pineapplePlayerSprites[currentAskedAmount];
+        this.imageComponent.sprite = pineapplePlayerSprites[currentAskedAmount-1];
         onPineappleTransform.Invoke();
 
         if (currentAskedAmount == maxNumberToAsk)

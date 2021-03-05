@@ -99,13 +99,13 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Feeding PICKUP]
     audioFile:
-    - {fileID: 8300000, guid: 89b67d3dfa221b3478a683eb6e97bba9, type: 3}
+    - {fileID: 8300000, guid: 40ca0d3319b7f264eaf0092cbc47f361, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
   - id: sfx[Feeding SHAKE]
     audioFile:
-    - {fileID: 8300000, guid: 28c82b9532b825c478a60098c18af325, type: 3}
+    - {fileID: 8300000, guid: b306744ede1f6574f9058c9c51f084b1, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 1
@@ -147,7 +147,7 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Task WIN]
     audioFile:
-    - {fileID: 8300000, guid: 9d26f28218b6e2b4b9c8bba96bebcaee, type: 3}
+    - {fileID: 8300000, guid: 1018bbdfa50f6064d96734cb0baeccb5, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Eggs DROP]
     audioFile:
-    - {fileID: 8300000, guid: b125adc8e8cabea42ade11ed8387be4c, type: 3}
+    - {fileID: 8300000, guid: 768aab77fb2585f42b7021a3258dfe8a, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
@@ -250,6 +250,12 @@ MonoBehaviour:
   - id: sfx[Cooking INTENSE]
     audioFile:
     - {fileID: 8300000, guid: 1fdb2b5fa8ace8a48baf992f4b52134a, type: 3}
+    volume: 1
+    mixGroup: SFX
+    isLooping: 1
+  - id: sfx[shake test)
+    audioFile:
+    - {fileID: 8300000, guid: b306744ede1f6574f9058c9c51f084b1, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 1

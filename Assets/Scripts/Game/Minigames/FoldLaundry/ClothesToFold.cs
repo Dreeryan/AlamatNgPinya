@@ -22,7 +22,6 @@ public class ClothesToFold : MonoBehaviour
 
     [Header("Laundry Sprites")]
     [SerializeField] private Sprite[]   laundrySprites;
-    [SerializeField] private GameObject     arrowSprite;
 
     private int            currentSequence;
     private bool           canBeFolded = false;
@@ -36,7 +35,6 @@ public class ClothesToFold : MonoBehaviour
         
         currentDirection = 0;
         currentSequence = 0;
-        arrowSprite.transform.localEulerAngles = new Vector3(0, 0, 90);
     }
 
     void Update()
@@ -115,7 +113,6 @@ public class ClothesToFold : MonoBehaviour
         if (currentSequence == 0 && currentDirection == Directions.Left)
         {
             GetComponent<SpriteRenderer>().sprite = laundrySprites[0];
-            arrowSprite.transform.localEulerAngles = new Vector3(0, 0, 0);
             onFolded?.Invoke();
             currentSequence++;
         }
@@ -124,7 +121,6 @@ public class ClothesToFold : MonoBehaviour
         if (currentSequence == 1 && currentDirection == Directions.Up)
         {
             GetComponent<SpriteRenderer>().sprite = laundrySprites[1];
-            arrowSprite.transform.localEulerAngles = new Vector3(0, 0, 90);
             onFolded?.Invoke();
             currentSequence++;
         }
@@ -132,7 +128,6 @@ public class ClothesToFold : MonoBehaviour
         if (currentSequence == 2)
         {
             StartCoroutine(OnCompletelyFolded());
-            arrowSprite.SetActive(false);
             currentSequence++;
         }
 
@@ -152,8 +147,6 @@ public class ClothesToFold : MonoBehaviour
     {
         canBeFolded = true;
         if (sRenderer != null) sRenderer.enabled = true;
-        arrowSprite.gameObject.SetActive(true);
-
     }
 
     public void DisableCLothing()

@@ -22,6 +22,7 @@ public class Bucket : MonoBehaviour
     private bool isFilling;
 
     private Watering currentPlant;
+    private Watering prevPlant;
 
     void Update()
     {
@@ -38,6 +39,12 @@ public class Bucket : MonoBehaviour
             isFilling = false;
             UpdateSprite();
         }
+    }
+
+    public void ResetBucket()
+    {
+        isFilling = false;
+        UpdateSprite();
     }
 
     public void SetCanFill(bool p_canFill)
@@ -63,6 +70,7 @@ public class Bucket : MonoBehaviour
             {
                 onFilling?.Invoke();
                 transform.rotation = Quaternion.Euler(0, 0, isFillingRotation);
+                FinishWatering(currentPlant);
             }
             else
             {
@@ -81,5 +89,15 @@ public class Bucket : MonoBehaviour
     public void RemoveCurrentPlant()
     {
         currentPlant = null;
+    }
+
+    public void SetPreviousPlant(Watering plant)
+    {
+        prevPlant = plant;
+    }
+
+    private void FinishWatering(Watering plant)
+    {
+        if (plant.IsWatered) onStopFilling?.Invoke();
     }
 }

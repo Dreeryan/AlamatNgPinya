@@ -4332,6 +4332,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
         type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
       propertyPath: onPointerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2036420235}
@@ -4345,6 +4350,36 @@ PrefabInstance:
       propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2036420235}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2036420235}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ResetBucket
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7728492415991906242, guid: 353e77990609338498559b84f9094b84,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8602,6 +8637,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
         type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
       propertyPath: onPointerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2036420235}
@@ -8615,6 +8655,36 @@ PrefabInstance:
       propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2036420235}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2036420235}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ResetBucket
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7728492415991906242, guid: 353e77990609338498559b84f9094b84,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8752,6 +8822,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
         type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
       propertyPath: onPointerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2036420235}
@@ -8765,6 +8840,36 @@ PrefabInstance:
       propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2036420235}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2036420235}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ResetBucket
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7728492415991906242, guid: 353e77990609338498559b84f9094b84,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10758,6 +10863,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
         type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
       propertyPath: onPointerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2036420235}
@@ -10771,6 +10881,36 @@ PrefabInstance:
       propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2036420235}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2036420235}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ResetBucket
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7728492415991906242, guid: 353e77990609338498559b84f9094b84,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10908,6 +11048,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
         type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
       propertyPath: onPointerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2036420235}
@@ -10921,6 +11066,41 @@ PrefabInstance:
       propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2036420235}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: RemoveCurrentPlant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2036420235}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ResetBucket
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728492415708419795, guid: 353e77990609338498559b84f9094b84,
+        type: 3}
+      propertyPath: onPointerExit.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7728492415991906242, guid: 353e77990609338498559b84f9094b84,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -6,9 +6,10 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
+
     [SerializeField] private UnityEvent OnPlayerMove;
     [SerializeField] private UnityEvent OnPlayerStop;
-
+    [SerializeField] private float limitOffset;
     [Header("Player move speed")]
     [SerializeField] private float moveSpeed;
     [Tooltip("Distance the player can be from the target position before stopping")]
@@ -58,12 +59,18 @@ public class PlayerController : MonoBehaviour
         // Player will go to the clicked area.
         targetPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         targetPoint.z = transform.position.z;
-        transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
     }
 
     void Movement()
     {
         // To move the player to the desired position
+        if (IsOnEdgeOfScreen(targetPoint))
+        {
+            OnPlayerStop?.Invoke();
+            if (playerAnim != null) playerAnim.PlayerWalking(false);
+            isMoving = false;
+            return;
+        }
         transform.position = Vector3.MoveTowards(transform.position,
             targetPoint, moveSpeed * Time.deltaTime);
 
@@ -86,8 +93,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    isMoving = false;
-    //}
+    bool IsOnEdgeOfScreen(Vector3 targetPosition)
+    {
+        targetPosition = Camera.main.WorldToViewportPoint(targetPosition);
+        Debug.Log(targetPosition);
+        if (targetPosition.x < 0.0 + limitOffset) return true;
+        if (1.0 - limitOffset < targetPosition.x) return true;
+        if (targetPosition.y < 0.0 + limitOffset) return true;
+        if (1.0 - limitOffset < targetPosition.y) return true;
+
+        Debug.Log("pwede magmove");
+        return false;
+
+    }
 }

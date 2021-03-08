@@ -175,6 +175,7 @@ MonoBehaviour:
           m_StringArgument: sfx[Overworld WALK]
           m_BoolArgument: 0
         m_CallState: 2
+  limitOffset: 0
   moveSpeed: 5
   moveOffset: 0.01
   CanMove: 1

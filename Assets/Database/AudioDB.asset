@@ -69,7 +69,7 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Overworld WALK]
     audioFile:
-    - {fileID: 8300000, guid: e806c371730dba448a6c478a0286a4ff, type: 3}
+    - {fileID: 8300000, guid: 2a57d0e4dbf58f34aac18e3708b4c74a, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0

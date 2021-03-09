@@ -96,13 +96,10 @@ public class PlayerController : MonoBehaviour
     bool IsOnEdgeOfScreen(Vector3 targetPosition)
     {
         targetPosition = Camera.main.WorldToViewportPoint(targetPosition);
-        Debug.Log(targetPosition);
         if (targetPosition.x < 0.0 + limitOffset) return true;
         if (1.0 - limitOffset < targetPosition.x) return true;
         if (targetPosition.y < 0.0 + limitOffset) return true;
         if (1.0 - limitOffset < targetPosition.y) return true;
-
-        Debug.Log("pwede magmove");
         return false;
 
     }

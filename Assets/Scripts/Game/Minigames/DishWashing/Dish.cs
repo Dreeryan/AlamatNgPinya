@@ -14,6 +14,7 @@ public class Dish : MonoBehaviour
     [SerializeField] private float              maxDirtRate = 100f;
     [SerializeField] private float              minDirtRate = 0f;
     [SerializeField] private Transform          cleanDishRack;
+    [SerializeField] public Sprite              cleanDishSprite;
     private float currentDirtRate = 0f;
 
     [Header("UI")]
@@ -64,6 +65,7 @@ public class Dish : MonoBehaviour
         transform.parent = cleanDishRack;
         if (dirtRateText != null) dirtRateText.gameObject.SetActive(false);
         onDishCleaned?.Invoke();
+        sRenderer.sprite = this.cleanDishSprite;
         collider.enabled = false;
     }
 

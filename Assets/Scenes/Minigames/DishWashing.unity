@@ -567,6 +567,12 @@ PrefabInstance:
       propertyPath: dirtRateText
       value: 
       objectReference: {fileID: 2080858299}
+    - target: {fileID: 1490722927520015848, guid: c49e3f0e94b8b3340a4c3676ca32d824,
+        type: 3}
+      propertyPath: cleanDishSprite
+      value: 
+      objectReference: {fileID: 2001285907150219134, guid: 21b0243b1fc00b64c8553c7da40ab108,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49e3f0e94b8b3340a4c3676ca32d824, type: 3}
 --- !u!4 &154550296 stripped
@@ -1474,9 +1480,9 @@ MonoBehaviour:
   - {fileID: 1728551441}
   - {fileID: 154550297}
   cleanSprites:
-  - {fileID: -3008117399936434204, guid: 520b84549993ac646b716f225899acf4, type: 3}
-  - {fileID: -178176429179049325, guid: 520b84549993ac646b716f225899acf4, type: 3}
-  - {fileID: -2148111318400254264, guid: 520b84549993ac646b716f225899acf4, type: 3}
+  - {fileID: 2001285907150219134, guid: 21b0243b1fc00b64c8553c7da40ab108, type: 3}
+  - {fileID: -155769475484217582, guid: 21b0243b1fc00b64c8553c7da40ab108, type: 3}
+  - {fileID: 2699288089261625683, guid: 21b0243b1fc00b64c8553c7da40ab108, type: 3}
 --- !u!1 &764557973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2751,7 +2757,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 9069280115393698369, guid: 520b84549993ac646b716f225899acf4,
+  m_Sprite: {fileID: 8139273014979495379, guid: 21b0243b1fc00b64c8553c7da40ab108,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2852,7 +2858,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -7114477305770866935, guid: 520b84549993ac646b716f225899acf4,
+  m_Sprite: {fileID: 2688769853095634780, guid: 21b0243b1fc00b64c8553c7da40ab108,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3119,6 +3125,12 @@ PrefabInstance:
       propertyPath: dirtRateText
       value: 
       objectReference: {fileID: 2080858299}
+    - target: {fileID: 1490722927520015848, guid: c49e3f0e94b8b3340a4c3676ca32d824,
+        type: 3}
+      propertyPath: cleanDishSprite
+      value: 
+      objectReference: {fileID: 2001285907150219134, guid: 21b0243b1fc00b64c8553c7da40ab108,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49e3f0e94b8b3340a4c3676ca32d824, type: 3}
 --- !u!114 &1728551441 stripped
@@ -3569,5 +3581,11 @@ PrefabInstance:
       propertyPath: dirtRateText
       value: 
       objectReference: {fileID: 2080858299}
+    - target: {fileID: 1490722927520015848, guid: c49e3f0e94b8b3340a4c3676ca32d824,
+        type: 3}
+      propertyPath: cleanDishSprite
+      value: 
+      objectReference: {fileID: 2001285907150219134, guid: 21b0243b1fc00b64c8553c7da40ab108,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49e3f0e94b8b3340a4c3676ca32d824, type: 3}

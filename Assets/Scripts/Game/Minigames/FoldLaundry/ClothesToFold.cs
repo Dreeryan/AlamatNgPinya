@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+enum Directions
+{
+    None = 0,
+    Left = 1,
+    Right = 2,
+    Down = 3,
+    Up = 4,
+}
+
 public class ClothesToFold : MonoBehaviour
 {
-    private enum Directions
-    {
-        None = 0,
-        Left = 1,
-        Right = 2,
-        Down = 3,
-        Up = 4,
-    }
     private Directions currentDirection;
 
     [SerializeField] private UnityEvent onFolded;

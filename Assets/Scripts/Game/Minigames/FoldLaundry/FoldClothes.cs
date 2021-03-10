@@ -1,19 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class FoldClothes : MonoBehaviour
 {
+    public UnityEvent OnCompletelyFold = new UnityEvent { };
+
     [SerializeField] private ClothesDatabase clothesDB;
 
     [SerializeField] private string clothId;
     [SerializeField] private int currentNumberOfTimesFolded = 0;
     [SerializeField] private SpriteRenderer sRenderer;
+    [SerializeField]private bool canBeFolded = false;
 
     private Vector2 startPosition;
     private Vector2 endPosition;
     private Directions currentDirection;
 
+    public Directions getCurrentDirection() => currentDirection;
     private void Update()
     {
         SetDirection();
@@ -62,6 +66,7 @@ public class FoldClothes : MonoBehaviour
 
     private void CheckForFoldSequence()
     {
+        if (!canBeFolded) return;
         if (currentNumberOfTimesFolded >= clothesDB.GetData(this.clothId).
             clothesFoldingDirection.Length) return;
 
@@ -76,9 +81,30 @@ public class FoldClothes : MonoBehaviour
             clothesFoldingDirection.Length)
         {
             Debug.Log("Done folding");
+            StartCoroutine(OnCompletelyFolded());
             return;
         }
     }
 
-    
+    IEnumerator OnCompletelyFolded()
+    {
+        yield return new WaitForSeconds(1f);
+        DisableCLothing();
+        OnCompletelyFold.Invoke();
+    }
+
+    public void DisableCLothing()
+    {
+        canBeFolded = false;
+        if (sRenderer != null) sRenderer.enabled = false;
+    }
+
+    public void EnableClothing()
+    {
+        canBeFolded = true;
+        if (sRenderer != null) sRenderer.enabled = true;
+        //arrowSprite.gameObject.SetActive(true);
+
+    }
+
 }

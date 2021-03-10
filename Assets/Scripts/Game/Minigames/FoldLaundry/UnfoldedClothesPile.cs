@@ -7,7 +7,7 @@ public class UnfoldedClothesPile : MonoBehaviour
 {
     [SerializeField] private FoldedClothesPile  foldedClothesPile;
     [SerializeField] private GameObject[]       unfoldedSprites;
-    [SerializeField] private ClothesToFold[]         clothesToFold;
+    [SerializeField] private FoldClothes[]         clothesToFold;
 
     private void Start()
     {

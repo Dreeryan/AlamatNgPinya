@@ -14,16 +14,16 @@ public class FoldedClothesPile : MonoBehaviour
 
     [SerializeField] private Counter            counter;
     [SerializeField] private GameObject[]       foldedSprites;
-    [SerializeField] private ClothesToFold[]    clothesToFold;
-
+  //  [SerializeField] private ClothesToFold[]    clothesToFold;
+    [SerializeField] private FoldClothes[]      foldClothes;
     private void Start()
     {
         //if (manager == null) manager = FindObjectOfType<ProgressManager>();
         if (counter == null) counter = FindObjectOfType<Counter>();
 
-        foreach (ClothesToFold clothing in clothesToFold)
+        foreach (FoldClothes clothing in foldClothes)
         {
-            clothing.OnCompleteFold.AddListener(ShowNextFoldedClothing);
+            clothing.OnCompletelyFold.AddListener(ShowNextFoldedClothing);
         }
     }
 

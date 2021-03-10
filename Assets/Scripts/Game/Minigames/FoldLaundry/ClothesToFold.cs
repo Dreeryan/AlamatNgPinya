@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-enum Directions
+public enum Directions
 {
     None = 0,
     Left = 1,

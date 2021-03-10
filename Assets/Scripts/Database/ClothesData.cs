@@ -5,6 +5,16 @@ using UnityEngine;
 [System.Serializable]
 public class ClothesData : BaseData
 {
-    [SerializeField] private Directions[] clothesFoldingDirection;
-    
+    [SerializeField] public Directions[] clothesFoldingDirection;
+    [SerializeField] public Sprite[] foldedClothesSprite;
+    public Directions[] GetFoldDirections()
+    {
+        return clothesFoldingDirection;
+    }
+
+    public Sprite[] GetFoldedClothesSprite()
+    {
+        return foldedClothesSprite;
+    }
 }
+

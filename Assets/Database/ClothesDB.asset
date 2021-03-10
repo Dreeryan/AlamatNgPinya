@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataSet:
   - id: YellowPolo
-    clothesFoldingDirection: 0200000003000000
+    clothesFoldingDirection: 0100000004000000
+    foldedClothesSprite:
+    - {fileID: -4441996566371481695, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+    - {fileID: 781372478320572571, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - id: BlueJeans
     clothesFoldingDirection: 0100000004000000
+    foldedClothesSprite: []

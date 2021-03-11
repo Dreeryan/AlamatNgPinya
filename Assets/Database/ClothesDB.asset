@@ -20,4 +20,16 @@ MonoBehaviour:
     - {fileID: 781372478320572571, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - id: BlueJeans
     clothesFoldingDirection: 0100000004000000
-    foldedClothesSprite: []
+    foldedClothesSprite:
+    - {fileID: -4554787893758244655, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+    - {fileID: -1951711991544812820, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+  - id: MaroonSkirt
+    clothesFoldingDirection: 0100000004000000
+    foldedClothesSprite:
+    - {fileID: -3731932901275799694, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+    - {fileID: -4216749805413827816, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+  - id: BlueBlouse
+    clothesFoldingDirection: 0100000004000000
+    foldedClothesSprite:
+    - {fileID: -1234569688458538474, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+    - {fileID: 4199008262680283794, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}

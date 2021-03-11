@@ -15,6 +15,7 @@ public class UnfoldedClothesPile : MonoBehaviour
         for (int x = 1; x < clothesToFold.Length; x++)
         {
             clothesToFold[x].GetComponent<SpriteRenderer>().enabled = false;
+            clothesToFold[x].arrowSprite.gameObject.SetActive(false);
         }
         clothesToFold[0].EnableClothing();
     }

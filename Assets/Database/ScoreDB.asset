@@ -50,7 +50,7 @@ MonoBehaviour:
     baseScoreValue: 5
     secondsTarget: 10
   - id: FoldLaundry
-    goal: 5
+    goal: 4
     phrase: 
     motivationType: 1
     baseScoreValue: 5

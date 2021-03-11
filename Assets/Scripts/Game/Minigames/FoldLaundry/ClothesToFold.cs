@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum Directions
-{
-    None = 0,
-    Left = 1,
-    Right = 2,
-    Down = 3,
-    Up = 4,
-}
+
 
 public class ClothesToFold : MonoBehaviour
 {

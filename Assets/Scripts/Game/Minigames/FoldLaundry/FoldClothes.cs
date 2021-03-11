@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+
+public enum Directions
+{
+    None = 0,
+    Left = 1,
+    Right = 2,
+    Down = 3,
+    Up = 4,
+}
 public class FoldClothes : MonoBehaviour
 {
     public UnityEvent OnCompletelyFold = new UnityEvent { };
 
     [SerializeField] private ClothesDatabase clothesDB;
-
+    [SerializeField] public Transform arrowSprite;
     [SerializeField] private string clothId;
     [SerializeField] private int currentNumberOfTimesFolded = 0;
     [SerializeField] private SpriteRenderer sRenderer;
@@ -17,7 +26,10 @@ public class FoldClothes : MonoBehaviour
     private Vector2 endPosition;
     private Directions currentDirection;
 
-    public Directions getCurrentDirection() => currentDirection;
+    private void Start()
+    {
+        SetArrowRotation();
+    }
     private void Update()
     {
         SetDirection();
@@ -61,6 +73,7 @@ public class FoldClothes : MonoBehaviour
         {
             currentDirection = SwipeDirection();
             CheckForFoldSequence();
+            SetArrowRotation();
         }
     }
 
@@ -97,14 +110,33 @@ public class FoldClothes : MonoBehaviour
     {
         canBeFolded = false;
         if (sRenderer != null) sRenderer.enabled = false;
+        arrowSprite.gameObject.SetActive(false);
     }
 
     public void EnableClothing()
     {
         canBeFolded = true;
         if (sRenderer != null) sRenderer.enabled = true;
-        //arrowSprite.gameObject.SetActive(true);
+        arrowSprite.gameObject.SetActive(true);
 
+    }
+
+    private void SetArrowRotation()
+    {
+        Debug.Log(clothesDB.GetData(this.clothId).
+            clothesFoldingDirection[currentNumberOfTimesFolded]);
+        if (clothesDB.GetData(this.clothId).
+            clothesFoldingDirection[currentNumberOfTimesFolded]== Directions.Up) 
+            arrowSprite.localEulerAngles = new Vector3(0, 0, 0);
+        if (clothesDB.GetData(this.clothId).
+            clothesFoldingDirection[currentNumberOfTimesFolded] == Directions.Right) 
+            arrowSprite.localEulerAngles = new Vector3(0, 0, 270);
+        if (clothesDB.GetData(this.clothId).
+            clothesFoldingDirection[currentNumberOfTimesFolded] == Directions.Down) 
+            arrowSprite.localEulerAngles = new Vector3(0, 0, 180);
+        if (clothesDB.GetData(this.clothId).
+            clothesFoldingDirection[currentNumberOfTimesFolded] == Directions.Left) 
+            arrowSprite.localEulerAngles = new Vector3(0, 0, 90);
     }
 
 }

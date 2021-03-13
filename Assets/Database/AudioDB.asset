@@ -147,7 +147,7 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Task WIN]
     audioFile:
-    - {fileID: 8300000, guid: 1018bbdfa50f6064d96734cb0baeccb5, type: 3}
+    - {fileID: 8300000, guid: 3c5e9fca0d430be499cfcb99be560ce4, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Trash DROP]
     audioFile:
-    - {fileID: 8300000, guid: cfe64d895382a404e9190bcd8d683767, type: 3}
+    - {fileID: 8300000, guid: 9468e45a6555ac440a0314cab0d5c952, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Mom SCOOP]
     audioFile:
-    - {fileID: 8300000, guid: 91c016efce1a0274dadf856c63dd6507, type: 3}
+    - {fileID: 8300000, guid: 9e32c27926b191c44861542b31a1eb42, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0

@@ -33,3 +33,8 @@ MonoBehaviour:
     foldedClothesSprite:
     - {fileID: -1234569688458538474, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
     - {fileID: 4199008262680283794, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+  - id: PinkShirt
+    clothesFoldingDirection: 0100000004000000
+    foldedClothesSprite:
+    - {fileID: 766115594850046710, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+    - {fileID: 1081487001028940082, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}

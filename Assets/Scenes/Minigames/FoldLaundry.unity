@@ -696,6 +696,7 @@ MonoBehaviour:
   - {fileID: 654945778}
   - {fileID: 7517392}
   - {fileID: 1039085544}
+  - {fileID: 1225303831}
 --- !u!114 &195094856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3666,6 +3667,18 @@ Transform:
   m_Father: {fileID: 663864306}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1225303831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2217853394388181495, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1678529162}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1236ec7d886b3ad4083df49d5c19c159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1239194420
 GameObject:
   m_ObjectHideFlags: 0
@@ -4847,6 +4860,96 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1678529162
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2217853394388181492, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181492, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181492, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.5334712
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181492, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181492, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181492, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181492, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181492, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181492, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181492, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181492, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181493, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2002840491632191039, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a,
+        type: 3}
+    - target: {fileID: 2217853394388181494, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_Name
+      value: ClothToFold (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181494, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181495, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: canBeFolded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217853394388181495, guid: 3c3206c1fe864404d8a8b48f99f27ce0,
+        type: 3}
+      propertyPath: clothId
+      value: PinkShirt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3c3206c1fe864404d8a8b48f99f27ce0, type: 3}
 --- !u!1001 &1681041596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5865,6 +5968,7 @@ MonoBehaviour:
   - {fileID: 654945778}
   - {fileID: 7517392}
   - {fileID: 1039085544}
+  - {fileID: 1225303831}
 --- !u!212 &1850813060
 SpriteRenderer:
   m_ObjectHideFlags: 0

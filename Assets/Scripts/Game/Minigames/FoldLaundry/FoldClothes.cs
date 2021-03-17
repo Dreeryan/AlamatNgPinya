@@ -32,6 +32,7 @@ public class FoldClothes : MonoBehaviour
     }
     private void Update()
     {
+        if (!canBeFolded) return;
         SetDirection();
     }
 
@@ -123,8 +124,10 @@ public class FoldClothes : MonoBehaviour
 
     private void SetArrowRotation()
     {
-        Debug.Log(clothesDB.GetData(this.clothId).
-            clothesFoldingDirection[currentNumberOfTimesFolded]);
+        // Only set arrow rotation to the amount of times folded
+        if (this.currentNumberOfTimesFolded >= clothesDB.GetData(this.clothId).
+            clothesFoldingDirection.Length) return;
+
         if (clothesDB.GetData(this.clothId).
             clothesFoldingDirection[currentNumberOfTimesFolded]== Directions.Up) 
             arrowSprite.localEulerAngles = new Vector3(0, 0, 0);

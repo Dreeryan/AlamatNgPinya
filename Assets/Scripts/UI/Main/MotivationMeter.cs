@@ -9,14 +9,14 @@ public class MotivationMeter : MonoBehaviour
 
     private void OnEnable()
     {
-        MotivationManager.OnMotivationUpdated += OnMotivationUpdated;
+        MotivationManager.OnMotivationUpdated += UpdateFillAmount;
     }
 
     private void OnDisable()
     {
         if (MotivationManager.IsShuttingDown) return;
 
-        MotivationManager.OnMotivationUpdated -= OnMotivationUpdated;
+        MotivationManager.OnMotivationUpdated -= UpdateFillAmount;
     }
 
     private void Start()
@@ -25,9 +25,15 @@ public class MotivationMeter : MonoBehaviour
             fillImage.fillAmount = MotivationManager.Instance.FillRatio;
     }
 
-    private void OnMotivationUpdated(float newVal)
+    private void UpdateFillAmount(float newVal)
     {
+
+        if (!gameObject.activeSelf) return;
         if (fillImage == null) return;
+
+        float oldVal = newVal + MotivationManager.Instance.Incrementation;
+
+        //Tween from oldval to newval (wip)
 
         fillImage.fillAmount = newVal;
     }

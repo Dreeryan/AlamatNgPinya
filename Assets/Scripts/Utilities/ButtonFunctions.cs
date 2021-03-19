@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class ButtonFunctions : MonoBehaviour
 {
    public void PlayAudio(string audioId)
@@ -53,4 +52,10 @@ public class ButtonFunctions : MonoBehaviour
     {
         GameManager.Instance.IsNewGame = true;
     }
+
+    public void RestartScene()
+    {
+        SceneLoader.Instance.RestartScene();
+    }
+
 }

@@ -10,10 +10,16 @@ public class MotivationTweener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (MotivationManager.Instance.CurrMotivation <= 0) return;
         fillImage.fillAmount = MotivationManager.Instance.FillRatio + 0.2f;
+    }
+
+    private void OnEnable()
+    {
         StartCoroutine(TweenToAmount());
     }
 
+    // There's a bug that doesn't work for incrementing motivation, fix later
     IEnumerator TweenToAmount()
     {
         yield return new WaitForSeconds(1f);

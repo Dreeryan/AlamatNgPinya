@@ -15,6 +15,10 @@ public class SceneLoader : BaseManager<SceneLoader>
         //GameManager.Instance.IsPaused = false;     
     }
 
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void ClosePopup(string popupName)
     {
         SceneManager.UnloadSceneAsync(popupName);

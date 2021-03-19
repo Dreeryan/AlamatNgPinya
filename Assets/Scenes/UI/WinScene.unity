@@ -238,7 +238,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Motivation Bar
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3928968059299759735, guid: ea195026909a6584f9b5c09817ae983f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ea195026909a6584f9b5c09817ae983f, type: 3}
 --- !u!224 &337634958 stripped
 RectTransform:
@@ -262,6 +263,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bd1e5799b5adc346b1ed8cb5bbb0ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillImage: {fileID: 337634961}
+  reductionValue: 0
+--- !u!114 &337634961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3928968059626398591, guid: ea195026909a6584f9b5c09817ae983f,
+    type: 3}
+  m_PrefabInstance: {fileID: 337634957}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &415746102

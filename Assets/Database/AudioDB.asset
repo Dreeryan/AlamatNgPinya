@@ -147,7 +147,7 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Task WIN]
     audioFile:
-    - {fileID: 8300000, guid: 3c5e9fca0d430be499cfcb99be560ce4, type: 3}
+    - {fileID: 8300000, guid: 80c068c65dd372643a6db50c5dd263a0, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
     isLooping: 0
   - id: sfx[Harvest PICKUP]
     audioFile:
-    - {fileID: 8300000, guid: dc39b4ff4d2c5d04c9782fa25a4a73ed, type: 3}
+    - {fileID: 8300000, guid: 00ca6904a4829334ab66f098bd667bad, type: 3}
     volume: 1
     mixGroup: SFX
     isLooping: 0

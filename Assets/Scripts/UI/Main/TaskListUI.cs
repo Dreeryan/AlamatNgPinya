@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 public class TaskListUI : MonoBehaviour
 {
     [SerializeField] private GridLayoutGroup   objectivePanel;
-    [SerializeField] private TextMeshProUGUI[] objectiveTexts; 
+    [SerializeField] private TextMeshProUGUI[] objectiveTexts;
+    [SerializeField] private Image pineappleTransformerMeter;
+    [SerializeField] private PineappleTransformer pineappleTransformerObj;
 
     private TaskListManager taskListManagerObj;
     // Start is called before the first frame update
@@ -23,5 +26,10 @@ public class TaskListUI : MonoBehaviour
             objectiveTexts[i].gameObject.SetActive(true);
             objectiveTexts[i].text = taskListManagerObj.taskList[i];
         }
+    }
+
+    public void UpdatePineappleMeter()
+    {
+        pineappleTransformerMeter.DOFillAmount(pineappleTransformerMeter.fillAmount - 1/pineappleTransformerObj.maxNumToAsk, 0.5f);
     }
 }

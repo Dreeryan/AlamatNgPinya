@@ -30,6 +30,10 @@ public class TaskListUI : MonoBehaviour
 
     public void UpdatePineappleMeter()
     {
-        pineappleTransformerMeter.DOFillAmount(pineappleTransformerMeter.fillAmount - 1/pineappleTransformerObj.maxNumToAsk, 0.5f);
+        Debug.Log("Subtracted");
+        float fillDifference = (float) ((double)pineappleTransformerMeter.fillAmount - (double) (1 /(double) pineappleTransformerObj.maxNumberToAsk));
+        Debug.Log((double)(1 / (double)pineappleTransformerObj.maxNumberToAsk));
+        Debug.Log(fillDifference);
+        pineappleTransformerMeter.DOFillAmount(fillDifference, 0.5f);
     }
 }

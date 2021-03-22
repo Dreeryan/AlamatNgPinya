@@ -12,8 +12,8 @@ public class PineappleTransformer : MonoBehaviour
 
     [SerializeField] private Sprite[] pineapplePlayerSprites;
 
-    [SerializeField] private int maxNumberToAsk;
-    public int maxNumToAsk => maxNumberToAsk;
+    [SerializeField] public int maxNumberToAsk=4;
+
 
     private int                  currentAskedAmount=0;
     private Image                imageComponent;

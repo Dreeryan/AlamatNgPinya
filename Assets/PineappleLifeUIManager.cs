@@ -35,7 +35,7 @@ public class PineappleLifeUIManager : MonoBehaviour
         Debug.Log("test 1");
         if (pineappleLifeManagerRef.currentAskAmount >= pineappleLifeManagerRef.maxAskAmount) return;
         Debug.Log("test 2");
-        pineappleLifeManagerRef.AskAmount();
+        pineappleLifeManagerRef.IncreaseAskAmount();
         //UI Logic
         this.imageComponent.sprite = pineapplePlayerSprites[pineappleLifeManagerRef.currentAskAmount - 1];
         onPineappleTransform.Invoke();

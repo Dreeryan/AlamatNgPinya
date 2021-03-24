@@ -16,10 +16,9 @@ public class PineappleLifeManager : BaseManager<PineappleLifeManager>
     }
 
 
-    public void AskAmount()
+    public void IncreaseAskAmount()
     {
         currentAskAmount += 1;
-        Debug.Log("wattahell");
     }
 
     public void ResetAmount()

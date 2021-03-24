@@ -1196,7 +1196,7 @@ MonoBehaviour:
   - {fileID: 1760652190}
   - {fileID: 997676966}
   pineappleTransformerMeter: {fileID: 4527006465253697688}
-  pineappleTransformerObj: {fileID: 1053424024}
+  pineappleTransformerObj: {fileID: 0}
 --- !u!1 &190387868
 GameObject:
   m_ObjectHideFlags: 0
@@ -8110,7 +8110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1053424022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80782aa9cbaa7d54d89c346a4933ff59, type: 3}
+  m_Script: {fileID: 11500000, guid: 667fe84ccc34dbf4abd9c610355ccbba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onPineappleTransform:
@@ -8120,11 +8120,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   pineapplePlayerSprites:
-  - {fileID: 317936751515956651, guid: 0a614f12b3a10e149a58cb8078c37201, type: 3}
-  - {fileID: -8444454062681035475, guid: 0a614f12b3a10e149a58cb8078c37201, type: 3}
-  - {fileID: -6759817713388767235, guid: 0a614f12b3a10e149a58cb8078c37201, type: 3}
-  - {fileID: 5148198248718758374, guid: 0a614f12b3a10e149a58cb8078c37201, type: 3}
-  maxNumberToAsk: 4
+  - {fileID: -2040934838569796493, guid: 62f4deaaab380b843a9656cc45ca4f1c, type: 3}
+  - {fileID: 9094975331670271755, guid: 62f4deaaab380b843a9656cc45ca4f1c, type: 3}
+  - {fileID: -2249069815653060172, guid: 62f4deaaab380b843a9656cc45ca4f1c, type: 3}
+  - {fileID: -1890105475400924394, guid: 62f4deaaab380b843a9656cc45ca4f1c, type: 3}
 --- !u!114 &1053424025
 MonoBehaviour:
   m_ObjectHideFlags: 0

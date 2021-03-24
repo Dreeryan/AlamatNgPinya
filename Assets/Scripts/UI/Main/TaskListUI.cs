@@ -9,7 +9,7 @@ public class TaskListUI : MonoBehaviour
     [SerializeField] private GridLayoutGroup   objectivePanel;
     [SerializeField] private TextMeshProUGUI[] objectiveTexts;
     [SerializeField] private Image pineappleTransformerMeter;
-    [SerializeField] private PineappleTransformer pineappleTransformerObj;
+    [SerializeField] private PineappleLifeUIManager pineappleTransformerObj;
 
     private TaskListManager taskListManagerObj;
     // Start is called before the first frame update
@@ -18,6 +18,11 @@ public class TaskListUI : MonoBehaviour
         taskListManagerObj = TaskListManager.Instance;
     }
 
+    private void OnEnable()
+    {
+        pineappleTransformerMeter.fillAmount = (float)((double)(PineappleLifeManager.Instance.maxAskAmount - PineappleLifeManager.Instance.currentAskAmount) / PineappleLifeManager.Instance.maxAskAmount);
+
+    }
     public void UpdateTaskList()
     {
         //Enable the remaining objectives and set texts for them everytime player asks
@@ -30,10 +35,9 @@ public class TaskListUI : MonoBehaviour
 
     public void UpdatePineappleMeter()
     {
-        Debug.Log("Subtracted");
-        float fillDifference = (float) ((double)pineappleTransformerMeter.fillAmount - (double) (1 /(double) pineappleTransformerObj.maxNumberToAsk));
-        Debug.Log((double)(1 / (double)pineappleTransformerObj.maxNumberToAsk));
-        Debug.Log(fillDifference);
+        float fillDifference = (float) ((double)pineappleTransformerMeter.fillAmount - (double) (1 /(double) PineappleLifeManager.Instance.maxAskAmount));
         pineappleTransformerMeter.DOFillAmount(fillDifference, 0.5f);
     }
+
+
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class ButtonFunctions : MonoBehaviour
 {
    public void PlayAudio(string audioId)
@@ -53,9 +54,15 @@ public class ButtonFunctions : MonoBehaviour
         GameManager.Instance.IsNewGame = true;
     }
 
-    public void RestartScene()
+    public void RestartChoreMinigame()
     {
-        SceneLoader.Instance.RestartScene();
+        if (SceneManager.GetActiveScene().name == "Tag" || SceneManager.GetActiveScene().name == "HideAndSeek")
+        {
+            SceneLoader.Instance.RestartScene();
+        }
+            if (MotivationManager.Instance.HasEnoughMotivation())
+                SceneLoader.Instance.RestartScene();
+
     }
 
 }

@@ -11365,6 +11365,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1870864983}
     m_Modifications:
+    - target: {fileID: 3899162051987050237, guid: 9c9db1bfa6e7465498c405ddb14fd34a,
+        type: 3}
+      propertyPath: m_text
+      value: Play Tag
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899162051987050237, guid: 9c9db1bfa6e7465498c405ddb14fd34a,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899162051987050237, guid: 9c9db1bfa6e7465498c405ddb14fd34a,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899162051987050237, guid: 9c9db1bfa6e7465498c405ddb14fd34a,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3899162052944352169, guid: 9c9db1bfa6e7465498c405ddb14fd34a,
         type: 3}
       propertyPath: m_Name

@@ -1,18 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DebugIncrementHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField] private KeyCode resetKey = KeyCode.F3;
     // Update is called once per frame
     void Update()
     {
-        
+        if (PineappleLifeManager.Instance == null) return;
+        if (Input.GetKeyDown(resetKey))
+        { 
+            ResetHealth(); 
+        }
+    }
+
+    private void ResetHealth()
+    {
+        PineappleLifeManager.Instance.ResetAmount();
     }
 }

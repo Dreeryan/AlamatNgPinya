@@ -22,6 +22,8 @@ public class Dishrack : MonoBehaviour
         dish.transform.parent = transform;
         dish.transform.position = transform.position;
 
+        if (isOccupied) return;
+
         isOccupied = true;
         OnSlotFilled();
 

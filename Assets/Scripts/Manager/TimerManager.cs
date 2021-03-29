@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.SceneManagement;
 public class TimerManager : BaseManager<TimerManager>
 {
     public static System.Action<float> OnTimerUpdated;
@@ -13,8 +13,12 @@ public class TimerManager : BaseManager<TimerManager>
     public float CurTime => curTime;
 
     private Coroutine timerRoutine;
+    public void Awake()
+    {
+        SceneManager.sceneUnloaded += ResetTimer;
+    }
 
-    public void ResetTimer()
+    public void ResetTimer(Scene scene)
     {
         curTime = 0;
     }
@@ -22,7 +26,6 @@ public class TimerManager : BaseManager<TimerManager>
     public void StartTimer()
     {
         if (timerRoutine != null) return;
-        ResetTimer();
         SceneLoader.Instance.LoadScene("Timer", true);
         timerRoutine = StartCoroutine(TimerRoutine());
     }

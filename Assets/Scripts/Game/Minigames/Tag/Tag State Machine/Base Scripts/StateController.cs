@@ -45,6 +45,7 @@ public class StateController : MonoBehaviour
     private void Update()
 	{
 		if (!aiActive) return;
+        if (TimerManager.Instance.CurTime <= 0) return;
         //if (GameManager.Instance.IsPaused) return;
         SetDirection();
 		CurrentState.UpdateState(this);

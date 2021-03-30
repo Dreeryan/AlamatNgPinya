@@ -13,7 +13,7 @@ public class DisplayScore : MonoBehaviour
         decimal timeAmount = ((decimal)TimerManager.Instance.CurTime);
         timeAmount = decimal.Round(timeAmount,2);
 
-        uiText.text = "Time finished:" +  (timeAmount) +"s";
+        uiText.text = "Time:" +  (timeAmount) +"s";
     }
 
 

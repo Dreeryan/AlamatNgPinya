@@ -10,7 +10,10 @@ public class DisplayScore : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        uiText.text = "Score:" + (int)ScoreManager.Instance.GetFinalScore(SceneManager.GetActiveScene().name, TimerManager.Instance.CurTime);
+        decimal timeAmount = ((decimal)TimerManager.Instance.CurTime);
+        timeAmount = decimal.Round(timeAmount,2);
+
+        uiText.text = "Time finished:" +  (timeAmount) +"s";
     }
 
 

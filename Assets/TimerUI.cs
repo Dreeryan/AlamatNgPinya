@@ -20,7 +20,8 @@ public class TimerUI : MonoBehaviour
     void UpdateText(float value)
     {
         if (timerText == null) return;
-
-        timerText.text = value.ToString();
+        decimal roundedTime = (decimal)value;
+        roundedTime = decimal.Round(roundedTime, 2);
+        timerText.text = roundedTime.ToString();
     }
 }

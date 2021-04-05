@@ -24,11 +24,13 @@ public class CleanDish : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GameManager.Instance.IsPaused) return;
         onPickedUp?.Invoke();
     }
 
     void OnMouseDrag()
     {
+        if (GameManager.Instance.IsPaused) return;
         if (isPlaced) return;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = mousePos;
@@ -36,6 +38,7 @@ public class CleanDish : MonoBehaviour
 
     void OnMouseUp()
     {
+        if (GameManager.Instance.IsPaused) return;
         if (isOverlapping)
         {
             dishRack.PlacePlate(this);

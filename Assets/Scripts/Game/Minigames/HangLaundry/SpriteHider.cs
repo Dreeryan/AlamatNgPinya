@@ -16,6 +16,7 @@ public class SpriteHider : MonoBehaviour
     // Shows sprite when collider is clicked
     private void OnMouseDown()
     {
+        if (GameManager.Instance.IsPaused) return;
         if (spriteRenderer != null)
             spriteRenderer.enabled = true;
     }

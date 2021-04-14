@@ -632,7 +632,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  secondsToWait: 1
+  secondsToWait: 0.25
 --- !u!1 &1440211789
 GameObject:
   m_ObjectHideFlags: 0

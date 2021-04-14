@@ -95,7 +95,6 @@ public class FoldClothes : MonoBehaviour
         if (currentNumberOfTimesFolded >= clothesDB.GetData(this.clothId).
             clothesFoldingDirection.Length)
         {
-            Debug.Log("Done folding");
             StartCoroutine(OnCompletelyFolded());
             return;
         }

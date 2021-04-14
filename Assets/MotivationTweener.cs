@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 public class MotivationTweener : MonoBehaviour
 {
     [SerializeField] private Image fillImage;
@@ -10,7 +11,16 @@ public class MotivationTweener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Temporary fix
+        if (SceneManager.GetActiveScene().name =="Tag" || SceneManager.GetActiveScene().name == "HideAndSeek")
+        {
+
+            fillImage.fillAmount = MotivationManager.Instance.FillRatio -0.2f;
+            return;
+        }
+
         if (MotivationManager.Instance.CurrMotivation <= 0) return;
+
         fillImage.fillAmount = MotivationManager.Instance.FillRatio + 0.2f;
     }
 

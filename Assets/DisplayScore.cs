@@ -10,10 +10,9 @@ public class DisplayScore : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        decimal timeAmount = ((decimal)TimerManager.Instance.CurTime);
-        timeAmount = decimal.Round(timeAmount,2);
+        float timeAmount = TimerManager.Instance.CurTime;
 
-        uiText.text = "Time:" +  (timeAmount) +"s";
+        uiText.text = "Time:" +  (timeAmount.ToString("0.00")) +"s";
     }
 
 

@@ -19,7 +19,6 @@ public class Action_Chase : Action
         {
             Debug.Log("Di pa nakapapili");
             if (targetToTag == null) targetToTag = controller.tagManagerObj.GetPlayerCharacter().transform;
-            ChaseTarget(controller);
           
         }
         else if (controller.hasChosenTarget)
@@ -30,9 +29,11 @@ public class Action_Chase : Action
                 controller.chaseActionTimer.ResetTimer();
                 controller.hasChosenTarget = false;
                 ChooseFromNonTagged(controller);
+
                 if (targetToTag == null) targetToTag = controller.tagManagerObj.GetPlayerCharacter().transform;
             }
         }
+        ChaseTarget(controller);
     }
 
     private void ChooseFromNonTagged(StateController controller)
@@ -54,7 +55,7 @@ public class Action_Chase : Action
     private void ChaseTarget(StateController controller)
     {
         controller.movementDirection = (targetToTag.position - controller.transform.position).normalized;   
-        controller.rb2DComponent.MovePosition(controller.transform.position + controller.movementDirection * chaseSpeed * Time.deltaTime);
+        controller.rb2DComponent.MovePosition(controller.transform.position + controller.movementDirection * chaseSpeed * Time.fixedDeltaTime);
     }
 
 }

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IManager
+public interface ISavedData
 {
-    void InitializeSavedData(PlayerSave toLoad);
+    void InitializeSavedData();
+
+    void SaveData();
 }

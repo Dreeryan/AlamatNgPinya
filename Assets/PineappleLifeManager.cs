@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class PineappleLifeManager : BaseManager<PineappleLifeManager>
+public class PineappleLifeManager : BaseManager<PineappleLifeManager>,ISavedData
 {
     public int currentAskAmount { get; private set; }
     public int maxAskAmount { get; private set; } = 4;
@@ -14,17 +14,7 @@ public class PineappleLifeManager : BaseManager<PineappleLifeManager>
     protected override void Start()
     {
         base.Start();
-
-        if (!SaveManager.DoesFileExist("PlayerData"))
-        {
-            currentAskAmount = 0;
-            return;
-        }
-
-        PlayerSave playerData = SaveManager.LoadData<PlayerSave>("PlayerData");
-        currentAskAmount = playerData.savedPineappleLife;
-        //currentAskAmount = SaveManager.LoadData<int>("AskAmount");
-        //if (!SaveManager.DoesFileExist("AskAmount")) currentAskAmount = 0;
+        InitializeSavedData();
     }
 
 
@@ -41,10 +31,26 @@ public class PineappleLifeManager : BaseManager<PineappleLifeManager>
     protected override void OnApplicationQuit()
     {
         base.OnApplicationQuit();
+        SaveData();
+    }
+
+    public void InitializeSavedData()
+    {
+        if (!SaveManager.DoesFileExist("PlayerData"))
+        {
+            currentAskAmount = 0;
+            return;
+        }
+
+        PlayerSave playerData = SaveManager.LoadData<PlayerSave>("PlayerData");
+        currentAskAmount = playerData.savedPineappleLife;
+    }
+
+    public void SaveData()
+    {
         PlayerSave newPlayerData = new PlayerSave();
         newPlayerData.savedPineappleLife = this.currentAskAmount;
 
         SaveManager.SaveData<PlayerSave>(newPlayerData, "PlayerData");
     }
-
 }

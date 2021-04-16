@@ -9,7 +9,7 @@ public enum MotivationType
     Reduce = 1
 }
 
-public class MotivationManager : BaseManager<MotivationManager>, IManager
+public class MotivationManager : BaseManager<MotivationManager>, ISavedData
 {
     [SerializeField] private UnityEvent OnLowMotivation;
     [SerializeField] private UnityEvent OnEnoughMotivation;
@@ -79,14 +79,12 @@ public class MotivationManager : BaseManager<MotivationManager>, IManager
         base.OnApplicationQuit();
     }
 
-    public void InitializeSavedData(PlayerSave playerSavedData)
+    public void InitializeSavedData()
     {
-        //if (playerSavedData == null)
-        //{
-        //    currMotivation = maxMotivation;
-        //    return;
-        //}
-        //this.currMotivation = playerSavedData.savedMotivation;
        
+    }
+
+    public void SaveData()
+    {
     }
 }

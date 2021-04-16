@@ -14,12 +14,11 @@ public class PineappleLifeUIManager : MonoBehaviour
 
         
 
-    private Image                imageComponent;
+    [SerializeField]private Image imageComponent;
 
     // Use this for initialization
     private void Start()
     {
-        imageComponent = GetComponent<Image>();
         pineappleLifeManagerRef = PineappleLifeManager.Instance;
     }
 
@@ -30,11 +29,10 @@ public class PineappleLifeUIManager : MonoBehaviour
         this.imageComponent.sprite = pineapplePlayerSprites[pineappleLifeManagerRef.currentAskAmount - 1];
     }
 
+    //game over
     public void TurnToPineapple()
     {
-        Debug.Log("test 1");
         if (pineappleLifeManagerRef.currentAskAmount >= pineappleLifeManagerRef.maxAskAmount) return;
-        Debug.Log("test 2");
         pineappleLifeManagerRef.IncreaseAskAmount();
         //UI Logic
         this.imageComponent.sprite = pineapplePlayerSprites[pineappleLifeManagerRef.currentAskAmount - 1];

@@ -5,44 +5,20 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine;
 
-[System.Serializable]
 public class PlayerSave
 {
-    public PlayerSave()
-    {
-        savedMotivation = MotivationManager.Instance.MaxMotivation;
-    }
     public int savedMotivation;
+    public int savedPineappleLife;
+    public int savedList;
 }
 
 public class SaveManager : BaseManager<SaveManager>
 {
-    private static PlayerSave playerData;
-    public static PlayerSave PlayerData => playerData;
-
-    public List<GameObject> managers = new List<GameObject>();
+    //public PlayerSave playerSavedData ;
 
     protected override void Start()
     {
         base.Start();
-
-        if (DoesFileExist("player"))
-        {
-            playerData = LoadData<PlayerSave>("player");
-
-            managers.ForEach(obj =>
-            {
-                IManager manager = obj.GetComponent<IManager>();
-
-                if (manager != null)
-                    manager.LoadData(playerData);
-            });
-        }
-        else
-        {
-            playerData = new PlayerSave();
-            SavePlayer();
-        }
     }
     /*
      * Call Example
@@ -121,11 +97,4 @@ public class SaveManager : BaseManager<SaveManager>
     {
         return Application.persistentDataPath + "/" + fileName + format;
     }
-
-    #region Shortcut Save functions
-    public static void SavePlayer()
-    {
-        SaveData(playerData, "player");
-    }
-    #endregion
 }

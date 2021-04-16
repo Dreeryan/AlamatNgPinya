@@ -36,15 +36,8 @@ public class MotivationManager : BaseManager<MotivationManager>, IManager
     protected override void Start()
     {
         base.Start();
-
-        currMotivation = maxMotivation;
+      //  InitializeSavedData(SaveManager.)
     }
-
-    public void LoadData(PlayerSave loadedData)
-    {
-        currMotivation = loadedData.savedMotivation;
-    }
-
     public void UpdateMotivation(MotivationType type)
     {
         int delta = incrementation;
@@ -56,10 +49,6 @@ public class MotivationManager : BaseManager<MotivationManager>, IManager
             , maxMotivation);
 
         OnMotivationUpdated?.Invoke(FillRatio);
-
-        SaveManager.PlayerData.savedMotivation = currMotivation;
-
-        SaveManager.SavePlayer();
     }
 
     public void ResetMotivation()
@@ -83,5 +72,21 @@ public class MotivationManager : BaseManager<MotivationManager>, IManager
         }
         OnLowMotivation?.Invoke();
         return false;
+    }
+
+    protected override void OnApplicationQuit()
+    {
+        base.OnApplicationQuit();
+    }
+
+    public void InitializeSavedData(PlayerSave playerSavedData)
+    {
+        //if (playerSavedData == null)
+        //{
+        //    currMotivation = maxMotivation;
+        //    return;
+        //}
+        //this.currMotivation = playerSavedData.savedMotivation;
+       
     }
 }

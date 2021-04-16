@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IManager
 {
-    void LoadData(PlayerSave toLoad);
+    void InitializeSavedData(PlayerSave toLoad);
 }

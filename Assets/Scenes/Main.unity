@@ -9065,6 +9065,7 @@ MonoBehaviour:
   - {fileID: 9094975331670271755, guid: 62f4deaaab380b843a9656cc45ca4f1c, type: 3}
   - {fileID: -2249069815653060172, guid: 62f4deaaab380b843a9656cc45ca4f1c, type: 3}
   - {fileID: -1890105475400924394, guid: 62f4deaaab380b843a9656cc45ca4f1c, type: 3}
+  imageComponent: {fileID: 1053424025}
 --- !u!114 &1053424025
 MonoBehaviour:
   m_ObjectHideFlags: 0

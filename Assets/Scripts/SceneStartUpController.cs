@@ -19,7 +19,7 @@ public class SceneStartUpController : MonoBehaviour
 
     public void ResetMotivation()
     {
-        MotivationManager.Instance.ResetMotivation();
+      //  MotivationManager.Instance.ResetMotivation();
     }
 
     public void UnpauseGame()

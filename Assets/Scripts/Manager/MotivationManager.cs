@@ -36,7 +36,7 @@ public class MotivationManager : BaseManager<MotivationManager>, ISavedData
     protected override void Start()
     {
         base.Start();
-      //  InitializeSavedData(SaveManager.)
+        InitializeSavedData();
     }
     public void UpdateMotivation(MotivationType type)
     {
@@ -77,14 +77,26 @@ public class MotivationManager : BaseManager<MotivationManager>, ISavedData
     protected override void OnApplicationQuit()
     {
         base.OnApplicationQuit();
+        SaveData();
     }
 
     public void InitializeSavedData()
     {
-       
+        if (!SaveManager.DoesFileExist("PlayerData"))
+        {
+            this.currMotivation = this.maxMotivation;
+            return;
+        }
+
+        PlayerSave playerData = SaveManager.LoadData<PlayerSave>("PlayerData");
+        currMotivation = playerData.savedMotivation;
     }
 
     public void SaveData()
     {
+        PlayerSave newPlayerData = new PlayerSave();
+        newPlayerData.savedMotivation = this.CurrMotivation;
+
+        SaveManager.SaveData<PlayerSave>(newPlayerData, "PlayerData");
     }
 }

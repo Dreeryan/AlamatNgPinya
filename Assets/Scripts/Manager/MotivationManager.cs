@@ -80,7 +80,6 @@ public class MotivationManager : BaseManager<MotivationManager>, ISavedData
     protected override void OnApplicationQuit()
     {
         base.OnApplicationQuit();
-        SaveData();
     }
 
     public void InitializeSavedData()

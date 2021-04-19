@@ -9,7 +9,7 @@ public class PlayerSave
 {
     public int savedMotivation;
     public int savedPineappleLife;
-    public int savedList;
+    public List<string> savedTaskList = new List<string>();
 }
 
 public class SaveManager : BaseManager<SaveManager>

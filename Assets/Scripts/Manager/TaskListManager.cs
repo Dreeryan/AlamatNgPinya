@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class TaskListManager : BaseManager<TaskListManager>
+public class TaskListManager : BaseManager<TaskListManager>,ISavedData
 {
     [SerializeField] private TaskDatabase taskDB;
 
@@ -21,6 +21,7 @@ public class TaskListManager : BaseManager<TaskListManager>
     protected override void Start()
     {
         base.Start();
+        InitializeSavedData();
     }
 
     public string GetTask(string TaskId)
@@ -44,6 +45,8 @@ public class TaskListManager : BaseManager<TaskListManager>
                 taskList.Remove(taskList[i]);
             }
         }
+
+        SaveData();
     }
 
     private void GetTasksFromDataBase()
@@ -60,4 +63,16 @@ public class TaskListManager : BaseManager<TaskListManager>
         this.numberOfTimesAsked += 1;
     }
 
+    public void InitializeSavedData()
+    {
+        if (!SaveManager.DoesFileExist("PlayerData")) return;
+
+        PlayerSave playerData = SaveManager.LoadData<PlayerSave>("PlayerData");
+        this.taskList = playerData.savedTaskList;
+    }
+
+    public void SaveData()
+    {
+        SaveManager.Instance.playerSavedData.savedTaskList = this.taskList;
+    }
 }

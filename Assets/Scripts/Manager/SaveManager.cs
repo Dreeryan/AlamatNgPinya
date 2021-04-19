@@ -14,8 +14,17 @@ public class PlayerSave
 
 public class SaveManager : BaseManager<SaveManager>
 {
-    //public PlayerSave playerSavedData ;
+    public PlayerSave playerSavedData;
 
+    private void Awake()
+    {
+        if (!SaveManager.DoesFileExist("PlayerData"))
+        {
+            playerSavedData = new PlayerSave();
+            return;
+        }
+        this.playerSavedData = SaveManager.LoadData<PlayerSave>("PlayerData");
+    }
     protected override void Start()
     {
         base.Start();
@@ -96,5 +105,12 @@ public class SaveManager : BaseManager<SaveManager>
     private static string MakePath(string fileName, string format = ".sav")
     {
         return Application.persistentDataPath + "/" + fileName + format;
+    }
+
+    protected override void OnApplicationQuit()
+    {
+        base.OnApplicationQuit();
+
+        SaveManager.SaveData<PlayerSave>(playerSavedData, "PlayerData");
     }
 }

@@ -20,18 +20,19 @@ public class PineappleLifeManager : BaseManager<PineappleLifeManager>,ISavedData
 
     public void IncreaseAskAmount()
     {
+        SaveData();
         currentAskAmount += 1;
     }
 
     public void ResetAmount()
     {
+        SaveData();
         currentAskAmount = 0;
     }
 
     protected override void OnApplicationQuit()
     {
         base.OnApplicationQuit();
-        SaveData();
     }
 
     public void InitializeSavedData()
@@ -48,9 +49,7 @@ public class PineappleLifeManager : BaseManager<PineappleLifeManager>,ISavedData
 
     public void SaveData()
     {
-        PlayerSave newPlayerData = new PlayerSave();
-        newPlayerData.savedPineappleLife = this.currentAskAmount;
-
-        SaveManager.SaveData<PlayerSave>(newPlayerData, "PlayerData");
+        SaveManager.Instance.playerSavedData.savedPineappleLife = this.currentAskAmount;
     }
+
 }

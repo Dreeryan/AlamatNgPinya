@@ -49,18 +49,21 @@ public class MotivationManager : BaseManager<MotivationManager>, ISavedData
             , maxMotivation);
 
         OnMotivationUpdated?.Invoke(FillRatio);
+        SaveData();
     }
 
     public void ResetMotivation()
     {
         currMotivation = maxMotivation;
         OnMotivationUpdated?.Invoke(FillRatio);
+        SaveData();
     }
 
     public void EmptyMotivation()
     {
         currMotivation = 0;
         OnMotivationUpdated?.Invoke(FillRatio);
+        SaveData();
     }
 
     public bool HasEnoughMotivation()
@@ -94,9 +97,6 @@ public class MotivationManager : BaseManager<MotivationManager>, ISavedData
 
     public void SaveData()
     {
-        PlayerSave newPlayerData = new PlayerSave();
-        newPlayerData.savedMotivation = this.CurrMotivation;
-
-        SaveManager.SaveData<PlayerSave>(newPlayerData, "PlayerData");
+        SaveManager.Instance.playerSavedData.savedMotivation = this.currMotivation;
     }
 }

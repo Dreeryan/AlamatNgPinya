@@ -16,7 +16,7 @@ public class TaskListManager : BaseManager<TaskListManager>,ISavedData
     private void Awake()
     {
         //Get all tasks and put it in the list of this manager  
-        GetTasksFromDataBase();
+        AddAllTasks();
     }
     protected override void Start()
     {
@@ -49,7 +49,7 @@ public class TaskListManager : BaseManager<TaskListManager>,ISavedData
         SaveData();
     }
 
-    private void GetTasksFromDataBase()
+    public void AddAllTasks()
     {
         for (int i = 0; i < taskDB.dataSet.Count; i++)
         {

@@ -16,7 +16,7 @@ public class TaskListManager : BaseManager<TaskListManager>,ISavedData
     private void Awake()
     {
         //Get all tasks and put it in the list of this manager  
-        AddAllTasks();
+        ResetTasks();
     }
     protected override void Start()
     {
@@ -49,14 +49,16 @@ public class TaskListManager : BaseManager<TaskListManager>,ISavedData
         SaveData();
     }
 
-    public void AddAllTasks()
+    public void ResetTasks()
     {
+        if (this.taskList.Count >= 1) this.taskList.Clear();
         for (int i = 0; i < taskDB.dataSet.Count; i++)
         {
             this.taskList.Add(taskDB.dataSet[i].GetTask());
             
         }
     }
+    
 
     public void AddNumberOfTimesAsked()
     {

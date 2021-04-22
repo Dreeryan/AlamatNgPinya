@@ -15,9 +15,13 @@ public class GameManager : BaseManager<GameManager>
         Score += val;
     }
 
-    // Delete Save Data
-    private void Start()
+    public void ResetData()
     {
-        SaveManager.DeleteFile("lastPosition");
+        MotivationManager.Instance.ResetMotivation();
+        PineappleLifeManager.Instance.ResetAmount();
+        TaskListManager.Instance.ResetTasks();
+
     }
+
+
 }

@@ -20,14 +20,14 @@ public class PineappleLifeManager : BaseManager<PineappleLifeManager>,ISavedData
 
     public void IncreaseAskAmount()
     {
-        SaveData();
         currentAskAmount += 1;
+        SaveData();
     }
 
     public void ResetAmount()
     {
-        SaveData();
         currentAskAmount = 0;
+        SaveData();
     }
 
     protected override void OnApplicationQuit()

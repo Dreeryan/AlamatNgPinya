@@ -65,4 +65,9 @@ public class ButtonFunctions : MonoBehaviour
 
     }
 
+    public void ResetGame()
+    {
+        GameManager.Instance.ResetData();
+    }
+
 }
